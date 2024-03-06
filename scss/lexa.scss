@@ -40,10 +40,12 @@
 // Navbar.
 .navbar {
     &.fixed-top {
+        padding: 0;
         height: $navbar-height;
         max-height: $navbar-height;
 
         .navbar-row {
+            height: $navbar-height / 2;
             max-height: $navbar-height / 2;
         }
 
