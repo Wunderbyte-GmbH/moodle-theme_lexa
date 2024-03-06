@@ -30,12 +30,28 @@
 // Colour.
 .bg-blue {
     background-color: $blue;
+
+    .btn,
+    .input-group {
+        color: $white;
+    }
 }
 
 // Navbar.
 .navbar {
     &.fixed-top {
-        height: auto; // Todo.
+        height: $navbar-height;
+        max-height: $navbar-height;
+
+        .navbar-row {
+            max-height: $navbar-height / 2;
+        }
+
+        .navbar-brand {
+            .logo {
+                max-height: calc(#{$navbar-height / 2} - (#{$primary-nav-padding-y} * 2));
+            }
+        }
     }
     &.navbar-expand {
         flex-flow: inherit;
@@ -44,4 +60,23 @@
     .primary-navigation {
         margin: auto;
     }
+
+    .popover-region-container {
+        top: $navbar-height / 2;
+    }
+}
+
+// Primary navigation/
+.primary-navigation {
+    .navigation {
+        height: $navbar-height / 2;
+        .nav-link {
+            height: $navbar-height / 2;
+        }
+    }
+}
+
+// Drawer.
+.drawerheader {
+    height: $navbar-height / 2;
 }
