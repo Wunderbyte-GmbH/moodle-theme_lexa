@@ -84,15 +84,16 @@
 }
 
 // Footer.
-@include media-breakpoint-up(md) {
-    #page-footer {
-        margin-left: -3rem;
-        margin-right: -3rem;
-    }
-}
-
 body.limitedwidth #page.drawers .footer-popover {
     max-width: none;
+}
+@include media-breakpoint-up(md) {
+    body.limitedwidth #page.drawers .footer-popover {
+        border-radius: 0;
+        margin-left: -3rem;
+        overflow-x: hidden;
+        width: calc(100% + 6rem);
+    }
 }
 
 .bg-footer {
@@ -117,8 +118,12 @@ body.limitedwidth #page.drawers .footer-popover {
 }
 
 .footer-content-information {
+    padding-left: 3rem;
+    padding-right: 3rem;
+
     .card {
         background-color: $footer;
+        border: none;
         color: $gray-100;
 
         h1,
@@ -130,8 +135,21 @@ body.limitedwidth #page.drawers .footer-popover {
             color: $white;
         }
 
+        .card-header {
+            background-color: transparent;
+            border-bottom: none;
+        }
+
         ul.footer-social li {
             margin-right: 0.5rem;
         }
     }
+
+    hr {
+        border-top: 1px solid $footerdivider;
+    }
+}
+
+.btn-footer-popover {
+    right: 5px;
 }
