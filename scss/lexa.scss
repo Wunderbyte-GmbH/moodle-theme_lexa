@@ -27,7 +27,7 @@
     src: unquote("url('[[font:theme|Roboto-Black-webfont.woff]]') format('woff')");
 }
 
-// Colour.
+// Colour - general.
 .bg-blue {
     background-color: $blue;
 
@@ -81,4 +81,57 @@
 // Drawer.
 .drawerheader {
     height: $navbar-height / 2;
+}
+
+// Footer.
+@include media-breakpoint-up(md) {
+    #page-footer {
+        margin-left: -3rem;
+        margin-right: -3rem;
+    }
+}
+
+body.limitedwidth #page.drawers .footer-popover {
+    max-width: none;
+}
+
+.bg-footer {
+    background-color: $footer;
+    color: $gray-100;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: $white;
+    }
+
+    a {
+        color: $gray-100;
+        @include hover-focus() {
+            color: $white;
+        }
+    }
+}
+
+.footer-content-information {
+    .card {
+        background-color: $footer;
+        color: $gray-100;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: $white;
+        }
+
+        ul.footer-social li {
+            margin-right: 0.5rem;
+        }
+    }
 }
