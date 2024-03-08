@@ -44,6 +44,33 @@ class theme_lexa_toolbox_test extends advanced_testcase {
             'Zweite item|https://testsite.localhost/|Zweite item title|de';
 
         $enitems = $toolbox->convert_text_to_items($testitems, 'en');
-        
+        $this->assertCount(2, $enitems);
+        $this->assertEquals('First item', $enitems[0]['itemtext']);
+        $this->assertEquals('https://testsite.localhost/', $enitems[0]['itemurl']->out());
+        $this->assertEquals('First item title', $enitems[0]['itemtitle']);
+        $this->assertEquals('Second item', $enitems[1]['itemtext']);
+        $this->assertEquals('https://testsite.localhost/', $enitems[1]['itemurl']->out());
+        $this->assertEquals('Second item title', $enitems[1]['itemtitle']);
+
+        $deitems = $toolbox->convert_text_to_items($testitems, 'de');
+        $this->assertCount(2, $deitems);
+        $this->assertEquals('First item', $deitems[0]['itemtext']);
+        $this->assertEquals('https://testsite.localhost/', $deitems[0]['itemurl']->out());
+        $this->assertEquals('First item title', $deitems[0]['itemtitle']);
+        $this->assertEquals('Zweite item', $deitems[1]['itemtext']);
+        $this->assertEquals('https://testsite.localhost/', $deitems[1]['itemurl']->out());
+        $this->assertEquals('Zweite item title', $deitems[1]['itemtitle']);
+
+        $allitems = $toolbox->convert_text_to_items($testitems);
+        $this->assertCount(3, $allitems);
+        $this->assertEquals('First item', $allitems[0]['itemtext']);
+        $this->assertEquals('https://testsite.localhost/', $allitems[0]['itemurl']->out());
+        $this->assertEquals('First item title', $allitems[0]['itemtitle']);
+        $this->assertEquals('Second item', $allitems[1]['itemtext']);
+        $this->assertEquals('https://testsite.localhost/', $allitems[1]['itemurl']->out());
+        $this->assertEquals('Second item title', $allitems[1]['itemtitle']);
+        $this->assertEquals('Zweite item', $allitems[2]['itemtext']);
+        $this->assertEquals('https://testsite.localhost/', $allitems[2]['itemurl']->out());
+        $this->assertEquals('Zweite item title', $allitems[2]['itemtitle']);
     }
 }

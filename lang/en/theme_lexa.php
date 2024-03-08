@@ -54,7 +54,14 @@ $string['footerheadingsub'] = 'Footer settings';
 $string['footerheadingdesc'] = 'Configure the footer settings.';
 
 $string['courseofferings'] = 'Course offerings';
-$string['courseofferingsdesc'] = 'Enter the course offerings - format: TBD.';
+$string['courseofferingsdesc'] = 'Enter the course offerings, for example:
+<pre>
+First item|http://www.moodle.com/
+Second item|http://www.moodle.com/feedback/
+Third item
+English only|http://moodle.com|English only item|en
+German only|http://moodle.de|Deutsch|de,de_du,de_kids
+</pre>';
 
 // Privacy.
 $string['privacynote'] = 'Note: The Lexa theme stores has settings that pertain to its configuration.  Specific user settings are described in the \'Plugin privacy registry\'.  For the other settings, it is your responsibility to ensure that no user data is entered in any of the free text fields.  Setting a setting will result in that action being logged within the core Moodle logging system against the user whom changed it, this is outside of the themes control, please see the core logging system for privacy compliance for this.  When uploading images, you should avoid uploading images with embedded location data (EXIF GPS) included or other such personal data.  It would be possible to extract any location / personal data from the images.  Please examine the code carefully to be sure that it complies with your interpretation of your privacy laws.  I am not a lawyer and my analysis is based on my interpretation.  If you have any doubt then remove the theme forthwith.';

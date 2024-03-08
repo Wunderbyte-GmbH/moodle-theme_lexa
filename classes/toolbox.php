@@ -37,6 +37,11 @@ class toolbox {
     protected static $instance = null;
 
     /**
+     * @var themeconfigs Theme configurations.
+     */
+    protected static $themeconfigs = [];
+
+    /**
      * This is a lonely object.
      */
     private function __construct() {
@@ -183,5 +188,39 @@ class toolbox {
             }
         }
         return $items;
+    }
+
+    /**
+     * Finds the given setting in the theme.
+     *
+     * @param string $settingname Setting name.
+     * @param string $format format_text format or false.
+     * @param string $themename null(default of 'adaptable' used)|theme name.
+     * @param string $settingdefault null|supplied default.
+     *
+     * @return any null|value of setting.
+     */
+    public static function get_setting($settingname, $format = false, $themename = null, $settingdefault = null) {
+
+        if (empty($themename)) {
+            $themename = 'lexa';
+        }
+        if (empty(self::$themeconfigs[$themename])) {
+            self::$themeconfigs[$themename] = \theme_config::load($themename);
+        }
+
+        $setting = (!empty(self::$themeconfigs[$themename]->settings->$settingname)) ? self::$themeconfigs[$themename]->settings->$settingname : $settingdefault;
+
+        if (!$format) {
+            return $setting;
+        } else if ($format === 'format_text') {
+            return format_text($setting, FORMAT_PLAIN);
+        } else if ($format === 'format_moodle') {
+            return format_text($setting, FORMAT_MOODLE);
+        } else if ($format === 'format_html') {
+            return format_text($setting, FORMAT_HTML);
+        } else {
+            return format_string($setting);
+        }
     }
 }
