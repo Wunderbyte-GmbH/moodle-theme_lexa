@@ -1,0 +1,187 @@
+<?php
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * Lexa theme.
+ *
+ * @package    theme_lexa
+ * @copyright  2024 G J Barnard.
+ *               {@link https://gjbarnard.co.uk}
+ * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
+ */
+
+namespace theme_lexa;
+
+use \moodle_url;
+
+/**
+ * The theme's toolbox.
+ */
+class toolbox {
+    /**
+     * @var toolbox Singleton instance of us.
+     */
+    protected static $instance = null;
+
+    /**
+     * This is a lonely object.
+     */
+    private function __construct() {
+    }
+
+    /**
+     * Gets the toolbox singleton.
+     *
+     * @return toolbox The toolbox instance.
+     */
+    public static function get_instance() {
+        if (!is_object(self::$instance)) {
+            self::$instance = new self();
+        }
+        return self::$instance;
+    }
+
+    /**
+     * Add the settings to the theme.
+     *
+     * @param admin_settingpage $settings The core settings page reference.
+     */
+    public function add_settings(\admin_settingpage &$settings) {
+        global $ADMIN;
+
+        $settings = null;
+
+        $ADMIN->add('themes', new \admin_category('theme_lexa', get_string('configtitle', 'theme_lexa')));
+        $lsettings = new \theme_boost_admin_settingspage_tabs('themesettingslexa', get_string('configtabtitle', 'theme_lexa'));
+
+        if ($ADMIN->fulltree) {
+            // The settings pages we create.
+            $settingspages = [
+                'general' => new \admin_settingpage(
+                    'theme_lexa_general',
+                    get_string('generalheading', 'theme_lexa')
+                ),
+                'footer' => new \admin_settingpage(
+                    'theme_lexa_footer',
+                    get_string('footerheading', 'theme_lexa')
+                ),
+            ];
+
+            // General settings.
+            $settingspages['general']->add(
+                new \admin_setting_heading(
+                    'theme_lexa_generalheading',
+                    get_string('generalheadingsub', 'theme_lexa'),
+                    format_text(get_string('generalheadingdesc', 'theme_lexa'), FORMAT_MARKDOWN) . PHP_EOL .
+                    format_text(get_string('privacynote', 'theme_lexa'), FORMAT_MARKDOWN)
+                )
+            );
+
+            // Footer settings.
+            $settingspages['footer']->add(
+                new \admin_setting_heading(
+                    'theme_lexa_footerheading',
+                    get_string('footerheadingsub', 'theme_lexa'),
+                    format_text(get_string('footerheadingdesc', 'theme_lexa'), FORMAT_MARKDOWN) . PHP_EOL .
+                    format_text(get_string('privacynote', 'theme_lexa'), FORMAT_MARKDOWN)
+                )
+            );
+
+            // Course offerings.
+            $name = 'theme_lexa/courseofferings';
+            $title = get_string('courseofferings', 'theme_lexa');
+            $description = get_string('courseofferingsdesc', 'theme_lexa');
+            $default = '';
+            $setting = new \admin_setting_configtextarea($name, $title, $description, $default);
+            //$setting->set_updatedcallback('theme_reset_all_caches');
+            $settingspages['footer']->add($setting);
+
+            // Add the settings pages if they have more than just the settings page heading.
+            foreach (array_values($settingspages) as $settingspage) {
+                $lsettings->add($settingspage);
+            }
+        }
+        $ADMIN->add('theme_lexa', $lsettings);
+    }
+
+    /**
+     * Converts a string into a structured array of custom_menu_items which can
+     * then be added to a custom menu.
+     *
+     * Structure:
+     *     text|url|title|langs
+     * The number of hyphens at the start determines the depth of the item. The
+     * languages are optional, comma separated list of languages the line is for.
+     *
+     * Example structure:
+     *     First item|http://www.moodle.com/
+     *     Second item|http://www.moodle.com/feedback/
+     *     Third item
+     *     English only|http://moodle.com|English only item|en
+     *     German only|http://moodle.de|Deutsch|de,de_du,de_kids
+     *
+     * @static
+     * @param string $text the items definition.
+     * @param string $language the language code, null disables multilang support.
+     * @return array Of named items.
+     */
+    public static function convert_text_to_items($text, $language = null) {
+        $items = [];
+        $lines = explode("\n", $text);
+        foreach ($lines as $linenumber => $line) {
+            $line = trim($line);
+            if (strlen($line) == 0) {
+                continue;
+            }
+            // Parse item settings.
+            $item = [];
+            $itemvisible = true;
+            $settings = explode('|', $line);
+            foreach ($settings as $i => $setting) {
+                $setting = trim($setting);
+                if ($setting !== '') {
+                    switch ($i) {
+                        case 0: // Menu text.
+                            $item['itemtext'] = $setting;
+                            break;
+                        case 1: // URL.
+                            try {
+                                $item['itemurl'] = new moodle_url($setting);
+                            } catch (moodle_exception $exception) {
+                                // We're not actually worried about this, we don't want to mess up the display
+                                // just for a wrongly entered URL.
+                                $item['itemurl'] = null;
+                            }
+                            break;
+                        case 2: // Title attribute.
+                            $item['itemtitle'] = $setting;
+                            break;
+                        case 3: // Language.
+                            if (!empty($language)) {
+                                $itemlanguages = array_map('trim', explode(',', $setting));
+                                $itemvisible &= in_array($language, $itemlanguages);
+                            }
+                            break;
+                    }
+                }
+            }
+            if ($itemvisible) {
+                $items[] = $item;
+            }
+        }
+        return $items;
+    }
+}
