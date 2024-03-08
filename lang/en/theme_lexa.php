@@ -53,12 +53,32 @@ $string['footerheading'] = 'Footer';
 $string['footerheadingsub'] = 'Footer settings';
 $string['footerheadingdesc'] = 'Configure the footer settings.';
 
-$string['courseofferings'] = 'Course offerings';
-$string['courseofferingsdesc'] = 'Enter the course offerings, for example:
+$string['footercourseofferings'] = 'Course offerings';
+$string['footercourseofferingsdesc'] = 'Enter the course offerings, for example:
 <pre>
 First item|http://www.moodle.com/
 Second item|http://www.moodle.com/feedback/
 Third item
+English only|http://moodle.com|English only item|en
+German only|http://moodle.de|Deutsch|de,de_du,de_kids
+</pre>';
+
+$string['footercommunities'] = 'Communities';
+$string['footercommunitiesdesc'] = 'Enter the communities, for example:
+<pre>
+Fourth item|http://www.moodle.com/
+Fifth item|http://www.moodle.com/feedback/
+Sixth item
+English only|http://moodle.com|English only item|en
+German only|http://moodle.de|Deutsch|de,de_du,de_kids
+</pre>';
+
+$string['footercontactus'] = 'Contact us';
+$string['footercontactusdesc'] = 'Enter the contacts, for example:
+<pre>
+Seventh item|http://www.moodle.com/
+Eighth item|http://www.moodle.com/feedback/
+Ninth item
 English only|http://moodle.com|English only item|en
 German only|http://moodle.de|Deutsch|de,de_du,de_kids
 </pre>';

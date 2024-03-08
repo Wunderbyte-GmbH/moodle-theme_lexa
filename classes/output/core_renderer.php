@@ -59,11 +59,27 @@ class core_renderer extends \theme_boost\output\core_renderer {
         return $this->image_url('LeXA_Logo_blue_one_line', 'theme_lexa');
     }
 
-    public function render_courseofferings() {
+    public function render_footercourseofferings() {
         $toolbox = \theme_lexa\toolbox::get_instance();
-        $courseofferings = $toolbox->get_setting('courseofferings');
+        $courseofferings = $toolbox->get_setting('footercourseofferings');
         if (!empty($courseofferings)) {
             return $this->render_footerlist($courseofferings, $toolbox);
+        }
+    }
+
+    public function render_footercommunities() {
+        $toolbox = \theme_lexa\toolbox::get_instance();
+        $communities = $toolbox->get_setting('footercommunities');
+        if (!empty($communities)) {
+            return $this->render_footerlist($communities, $toolbox);
+        }
+    }
+
+    public function render_footercontactus() {
+        $toolbox = \theme_lexa\toolbox::get_instance();
+        $contactus = $toolbox->get_setting('footercontactus');
+        if (!empty($contactus)) {
+            return $this->render_footerlist($contactus, $toolbox);
         }
     }
 

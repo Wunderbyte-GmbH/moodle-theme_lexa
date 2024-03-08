@@ -106,12 +106,27 @@ class toolbox {
             );
 
             // Course offerings.
-            $name = 'theme_lexa/courseofferings';
-            $title = get_string('courseofferings', 'theme_lexa');
-            $description = get_string('courseofferingsdesc', 'theme_lexa');
+            $name = 'theme_lexa/footercourseofferings';
+            $title = get_string('footercourseofferings', 'theme_lexa');
+            $description = get_string('footercourseofferingsdesc', 'theme_lexa');
             $default = '';
             $setting = new \admin_setting_configtextarea($name, $title, $description, $default);
-            //$setting->set_updatedcallback('theme_reset_all_caches');
+            $settingspages['footer']->add($setting);
+
+            // Communites.
+            $name = 'theme_lexa/footercommunities';
+            $title = get_string('footercommunities', 'theme_lexa');
+            $description = get_string('footercommunitiesdesc', 'theme_lexa');
+            $default = '';
+            $setting = new \admin_setting_configtextarea($name, $title, $description, $default);
+            $settingspages['footer']->add($setting);
+
+            // Contact us.
+            $name = 'theme_lexa/footercontactus';
+            $title = get_string('footercontactus', 'theme_lexa');
+            $description = get_string('footercontactusdesc', 'theme_lexa');
+            $default = '';
+            $setting = new \admin_setting_configtextarea($name, $title, $description, $default);
             $settingspages['footer']->add($setting);
 
             // Add the settings pages if they have more than just the settings page heading.
