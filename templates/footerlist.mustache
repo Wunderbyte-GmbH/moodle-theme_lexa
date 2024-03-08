@@ -25,7 +25,7 @@
 }}
 {{#items}}
     <li>
-    {{#itemurl}}<a href="{{itemurl}}"{{#itemtitle}} title="{{itemtitle}}"{{/itemtitle}}>{{#itemtext}}{{itemtext}}{{/itemtext}}</a>{{/itemurl}}
-    {{^itemurl}}<span>{{#itemtext}}{{itemtext}}{{/itemtext}}</span>{{/itemurl}}
+    {{#itemurl}}<a href="{{itemurl}}"{{#itemtitle}} title="{{itemtitle}}"{{/itemtitle}}{{#targetblank}} target="_blank"{{/targetblank}}>{{#faclasses}}<span class="{{faclasses}}{{#itemtext}} mr-1{{/itemtext}}"></span>{{/faclasses}}{{#itemtext}}{{itemtext}}{{/itemtext}}</a>{{/itemurl}}
+    {{^itemurl}}{{#faclasses}}<span class="{{faclasses}}{{#itemtext}} mr-1{{/itemtext}}"></span>{{/faclasses}}<span>{{#itemtext}}{{itemtext}}{{/itemtext}}</span>{{/itemurl}}
     </li>
 {{/items}}

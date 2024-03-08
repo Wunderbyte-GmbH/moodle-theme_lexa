@@ -83,10 +83,21 @@ class core_renderer extends \theme_boost\output\core_renderer {
         }
     }
 
-    private function render_footerlist($text, $toolbox) {
+    public function render_footersocial() {
+        $toolbox = \theme_lexa\toolbox::get_instance();
+        $contactus = $toolbox->get_setting('footersocial');
+        if (!empty($contactus)) {
+            return $this->render_footerlist($contactus, $toolbox, true);
+        }
+    }
+
+    private function render_footerlist($text, $toolbox, $targetblank = false) {
         $items = $toolbox->convert_text_to_items($text, current_language());
         if (!empty($items)) {
-            $context = ['items' => $items];
+            $context = [
+                'items' => $items,
+                'targetblank' => $targetblank,
+            ];
             return $this->render_from_template('theme_lexa/footerlist', $context);
         }
     }

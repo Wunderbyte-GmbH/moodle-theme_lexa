@@ -108,7 +108,9 @@ class toolbox {
             // Course offerings.
             $name = 'theme_lexa/footercourseofferings';
             $title = get_string('footercourseofferings', 'theme_lexa');
-            $description = get_string('footercourseofferingsdesc', 'theme_lexa');
+            $description = get_string('footercourseofferingsdesc', 'theme_lexa').
+                PHP_EOL.get_string('footerformat', 'theme_lexa').
+                PHP_EOL.get_string('footerfontawesomenote', 'theme_lexa');
             $default = '';
             $setting = new \admin_setting_configtextarea($name, $title, $description, $default);
             $settingspages['footer']->add($setting);
@@ -116,7 +118,9 @@ class toolbox {
             // Communites.
             $name = 'theme_lexa/footercommunities';
             $title = get_string('footercommunities', 'theme_lexa');
-            $description = get_string('footercommunitiesdesc', 'theme_lexa');
+            $description = get_string('footercommunitiesdesc', 'theme_lexa').
+                PHP_EOL.get_string('footerformat', 'theme_lexa').
+                PHP_EOL.get_string('footerfontawesomenote', 'theme_lexa');
             $default = '';
             $setting = new \admin_setting_configtextarea($name, $title, $description, $default);
             $settingspages['footer']->add($setting);
@@ -124,7 +128,19 @@ class toolbox {
             // Contact us.
             $name = 'theme_lexa/footercontactus';
             $title = get_string('footercontactus', 'theme_lexa');
-            $description = get_string('footercontactusdesc', 'theme_lexa');
+            $description = get_string('footercontactusdesc', 'theme_lexa').
+                PHP_EOL.get_string('footerformat', 'theme_lexa').
+                PHP_EOL.get_string('footerfontawesomenote', 'theme_lexa');
+            $default = '';
+            $setting = new \admin_setting_configtextarea($name, $title, $description, $default);
+            $settingspages['footer']->add($setting);
+
+            // Social.
+            $name = 'theme_lexa/footersocial';
+            $title = get_string('footersocial', 'theme_lexa');
+            $description = get_string('footersocialdesc', 'theme_lexa').
+                PHP_EOL.get_string('footerformat', 'theme_lexa').
+                PHP_EOL.get_string('footerfontawesomenote', 'theme_lexa');
             $default = '';
             $setting = new \admin_setting_configtextarea($name, $title, $description, $default);
             $settingspages['footer']->add($setting);
@@ -142,7 +158,7 @@ class toolbox {
      * then be added to a custom menu.
      *
      * Structure:
-     *     text|url|title|langs
+     *     text|url|title|langs|fontawesome classes
      * The number of hyphens at the start determines the depth of the item. The
      * languages are optional, comma separated list of languages the line is for.
      *
@@ -194,6 +210,9 @@ class toolbox {
                                 $itemlanguages = array_map('trim', explode(',', $setting));
                                 $itemvisible &= in_array($language, $itemlanguages);
                             }
+                            break;
+                        case 4: // Font awesome icon class.
+                            $item['faclasses'] = $setting;
                             break;
                     }
                 }
