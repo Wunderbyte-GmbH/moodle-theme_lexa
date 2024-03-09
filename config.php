@@ -52,5 +52,5 @@ $THEME->haseditswitch = true;
 $THEME->usescourseindex = true;
 // By default, all Boost themes do not need their titles displayed.
 $THEME->activityheaderconfig = [
-    'notitle' => true
+    'notitle' => true,
 ];

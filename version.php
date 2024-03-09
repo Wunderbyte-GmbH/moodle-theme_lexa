@@ -27,10 +27,10 @@ defined('MOODLE_INTERNAL') || die;
 
 $plugin->version   = 2024030600;
 $plugin->requires = 2023100900.00; // 4.3 (Build: 20231009).
-$plugin->supported = array(403, 403);
+$plugin->supported = [403, 403];
 $plugin->component = 'theme_lexa';
 $plugin->maturity = MATURITY_ALPHA;
 $plugin->release = '403.0.1';
-$plugin->dependencies = array(
-    'theme_boost'  => 2023100900
-);
+$plugin->dependencies = [
+    'theme_boost'  => 2023100900,
+];

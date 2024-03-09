@@ -25,7 +25,7 @@
 
 namespace theme_lexa;
 
-use \moodle_url;
+use moodle_url;
 
 /**
  * The theme's toolbox.

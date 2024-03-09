@@ -4,9 +4,9 @@ composer install --dev
 
 php admin/tool/phpunit/cli/init.php
 
-vendor/bin/phpunit theme/lexa/tests/theme_lexa_toolbox_test.php
+vendor/bin/phpunit theme/lexa/tests/toolbox_test.php
 or
-vendor\bin\phpunit theme/lexa/tests/theme_lexa_toolbox_test.php
+vendor\bin\phpunit theme/lexa/tests/toolbox_test.php
 
 vendor/bin/phpunit --group theme_lexa
 or

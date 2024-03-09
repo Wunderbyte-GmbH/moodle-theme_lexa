@@ -25,11 +25,13 @@
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
  */
 
+namespace theme_lexa;
+
 /**
  * Toolbox unit tests for the Lexa theme.
  * @group theme_lexa
  */
-class theme_lexa_toolbox_test extends advanced_testcase {
+class toolbox_test extends \advanced_testcase {
     protected function setUp(): void {
         $this->resetAfterTest(true);
 
