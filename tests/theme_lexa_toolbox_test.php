@@ -64,9 +64,9 @@ class theme_lexa_toolbox_test extends advanced_testcase {
         $this->assertEquals('Zweite item', $deitems[1]['itemtext']);
         $this->assertEquals('https://testsite.localhost/', $deitems[1]['itemurl']->out());
         $this->assertEquals('Zweite item title', $deitems[1]['itemtitle']);
-        $this->assertEquals('https://testsite.localhost/', $enitems[2]['itemurl']->out());
-        $this->assertEquals('FontAwesome test', $enitems[2]['itemtitle']);
-        $this->assertEquals('fa-solid fa-font-awesome', $enitems[2]['faclasses']);
+        $this->assertEquals('https://testsite.localhost/', $deitems[2]['itemurl']->out());
+        $this->assertEquals('FontAwesome test', $deitems[2]['itemtitle']);
+        $this->assertEquals('fa-solid fa-font-awesome', $deitems[2]['faclasses']);
 
         $allitems = $toolbox->convert_text_to_items($testitems);
         $this->assertCount(4, $allitems);
@@ -79,8 +79,8 @@ class theme_lexa_toolbox_test extends advanced_testcase {
         $this->assertEquals('Zweite item', $allitems[2]['itemtext']);
         $this->assertEquals('https://testsite.localhost/', $allitems[2]['itemurl']->out());
         $this->assertEquals('Zweite item title', $allitems[2]['itemtitle']);
-        $this->assertEquals('https://testsite.localhost/', $enitems[3]['itemurl']->out());
-        $this->assertEquals('FontAwesome test', $enitems[3]['itemtitle']);
-        $this->assertEquals('fa-solid fa-font-awesome', $enitems[3]['faclasses']);
+        $this->assertEquals('https://testsite.localhost/', $allitems[3]['itemurl']->out());
+        $this->assertEquals('FontAwesome test', $allitems[3]['itemtitle']);
+        $this->assertEquals('fa-solid fa-font-awesome', $allitems[3]['faclasses']);
     }
 }

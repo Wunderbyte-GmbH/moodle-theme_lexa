@@ -48,6 +48,9 @@ $string['generalheading'] = 'General';
 $string['generalheadingsub'] = 'General settings';
 $string['generalheadingdesc'] = 'Configure the general settings.';
 
+$string['mod_booking_codes'] = 'Booking module code(s)';
+$string['mod_booking_codesdesc'] = 'Enter the <a href="https://moodle.org/plugins/mod_booking" title="Booking module" target="_blank">Booking module codes</a>';
+
 // Footer.
 $string['footerheading'] = 'Footer';
 $string['footerheadingsub'] = 'Footer settings';

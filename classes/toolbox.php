@@ -95,6 +95,14 @@ class toolbox {
                 )
             );
 
+            // Booking module code(s).
+            $name = 'theme_lexa/mod_booking_codes';
+            $title = get_string('mod_booking_codes', 'theme_lexa');
+            $description = get_string('mod_booking_codesdesc', 'theme_lexa');
+            $default = '';
+            $setting = new \admin_setting_configtext($name, $title, $description, $default);
+            $settingspages['general']->add($setting);
+
             // Footer settings.
             $settingspages['footer']->add(
                 new \admin_setting_heading(

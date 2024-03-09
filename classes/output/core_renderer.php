@@ -59,6 +59,17 @@ class core_renderer extends \theme_boost\output\core_renderer {
         return $this->image_url('LeXA_Logo_blue_one_line', 'theme_lexa');
     }
 
+    public function get_modbookingcodes() {
+        if ($this->page->pagelayout == 'mycourses') {
+            $toolbox = \theme_lexa\toolbox::get_instance();
+            $modbookingcodes = $toolbox->get_setting('mod_booking_codes');
+            if (!empty($modbookingcodes)) {
+                return format_text($modbookingcodes, FORMAT_PLAIN);
+            }
+        }
+        return '';
+    }
+
     public function render_footercourseofferings() {
         $toolbox = \theme_lexa\toolbox::get_instance();
         $courseofferings = $toolbox->get_setting('footercourseofferings');

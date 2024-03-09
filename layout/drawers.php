@@ -105,7 +105,8 @@ $templatecontext = [
     'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
     'overflow' => $overflow,
     'headercontent' => $headercontent,
-    'addblockbutton' => $addblockbutton
+    'addblockbutton' => $addblockbutton,
+    'modbookingcodes' => $OUTPUT->get_modbookingcodes(),
 ];
 
 echo $OUTPUT->render_from_template('theme_lexa/drawers', $templatecontext);
