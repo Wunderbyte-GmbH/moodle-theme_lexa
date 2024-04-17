@@ -27,11 +27,11 @@ defined('MOODLE_INTERNAL') || die;
 
 $THEME->doctype = 'html5';
 $THEME->name = 'lexa';
-$THEME->parents = ['boost'];
+$THEME->parents = ['boost', 'boost_union'];
 $THEME->sheets = [''];
 $THEME->editor_sheets = [];
 $THEME->usefallback = true;
-$THEME->precompiledcsscallback = 'theme_boost_get_precompiled_css';
+$THEME->precompiledcsscallback = 'theme_boost_union_get_precompiled_css';
 $THEME->enable_dock = false;
 
 $THEME->supportscssoptimisation = false;

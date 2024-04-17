@@ -39,17 +39,19 @@ require_once($CFG->dirroot.'/theme/boost/lib.php');
 function theme_lexa_get_pre_scss($theme) {
     global $CFG;
 
-    static $boosttheme = null;
-    if (empty($boosttheme)) {
-        $boosttheme = theme_config::load('boost'); // Needs to be the Boost theme so that we get its settings.
+    static $boostuniontheme = null;
+    if (empty($boostuniontheme)) {
+        $boostuniontheme = theme_config::load('boost_union'); // Needs to be the Boost Union theme so that we get its settings.
     }
 
+    $scss = theme_boost_union_get_pre_scss($boostuniontheme);
+
     // Pre scss.  Note:  Does not work with themedir.
-    $scss = file_get_contents($CFG->dirroot . '/theme/lexa/scss/lexapre.scss');
+    $scss .= file_get_contents($CFG->dirroot . '/theme/lexa/scss/lexapre.scss');
 
     // Prepend pre-scss.
-    if (!empty($boosttheme->settings->scsspre)) {
-        $scss .= $boosttheme->settings->scsspre;
+    if (!empty($boostuniontheme->settings->scsspre)) {
+        $scss .= $boostuniontheme->settings->scsspre;
     }
 
     return $scss;
@@ -66,12 +68,11 @@ function theme_lexa_get_pre_scss($theme) {
 function theme_lexa_get_main_scss_content($theme) {
     global $CFG;
 
-    static $boosttheme = null;
-    if (empty($boosttheme)) {
-        $boosttheme = theme_config::load('boost'); // Needs to be the Boost theme so that we get its settings.
+    static $boostuniontheme = null;
+    if (empty($boostuniontheme)) {
+        $boostuniontheme = theme_config::load('boost_union'); // Needs to be the Boost Union theme so that we get its settings.
     }
-    $boosttheme->settings->preset = 'default.scss'; // Fixed.
-    $scss = theme_boost_get_main_scss_content($boosttheme);
+    $scss = theme_boost_union_get_main_scss_content($boostuniontheme);
 
     // Changed scss.  Note:  Does not work with themedir.
     $scss .= file_get_contents($CFG->dirroot . '/theme/lexa/scss/lexa.scss');
@@ -88,12 +89,14 @@ function theme_lexa_get_main_scss_content($theme) {
  * @return string SCSS.
  */
 function theme_lexa_get_extra_scss($theme) {
-    static $boosttheme = null;
-    $scss = '';
-    if (empty($boosttheme)) {
-        $boosttheme = theme_config::load('boost'); // Needs to be the Boost theme so that we get its settings.
+    static $boostuniontheme = null;
+    if (empty($boostuniontheme)) {
+        $boostuniontheme = theme_config::load('boost_union'); // Needs to be the Boost Union theme so that we get its settings.
     }
-    $scss .= !empty($boosttheme->settings->scss) ? $boosttheme->settings->scss : '';
+
+    $scss = theme_boost_union_get_extra_scss($boostuniontheme);
+    
+    $scss .= !empty($boostuniontheme->settings->scss) ? $boostuniontheme->settings->scss : '';
 
     return $scss;
 }

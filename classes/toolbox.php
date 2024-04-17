@@ -171,7 +171,7 @@ class toolbox {
      * languages are optional, comma separated list of languages the line is for.
      *
      * Example structure:
-     *     First item|http://www.moodle.com/
+     *     First item|http://www.moodle.com/|||fa-solid fa-user-graduate
      *     Second item|http://www.moodle.com/feedback/
      *     Third item
      *     English only|http://moodle.com|English only item|en

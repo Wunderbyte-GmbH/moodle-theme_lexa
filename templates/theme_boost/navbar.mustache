@@ -55,16 +55,35 @@
         ]
     }
 }}
-<nav class="navbar fixed-top navbar-expand" aria-label="{{#str}}sitemenubar, admin{{/str}}">
+{{!
+    This template is a modified version of theme_boost/navbar
+
+    Modifications compared to the original template:
+    * Added the possibility to change navbar color.
+    * Include button for off-canvas region.
+    * Removed the primary menu drawer hamburger menu, added bottom bar more section will help users to open the nav drawer.
+    * Display the logo on mobile viewport. (removed d-none, changed d-md-flex to d-flex)
+    * Added menu bar section.
+    * Added the possibility to use an alternative logo link URL.
+}}
+
+{{#menubar}}
+<nav class="menubar fixed-top boost-union-menubar navbar navbar-expand {{#bottombar.drawer}} smartmenu-bottom-navigation {{/bottombar.drawer}}">
+    {{> core/moremenu}}
+</nav>
+{{/menubar}}
+<nav class="navbar fixed-top {{!navbarcolorclasses}} navbar-expand{{#bottombar.drawer}} smartmenu-bottom-navigation {{/bottombar.drawer}}" aria-label="{{#str}}sitemenubar, admin{{/str}}">
 
     <div class="navbar-row navbar-dark bg-blue d-flex flex-row">
 
+    {{^bottombar.drawer}}
     <button class="navbar-toggler aabtn d-block d-md-none px-1 my-1 border-0" data-toggler="drawers" data-action="toggle" data-target="theme_boost-drawers-primary">
         <span class="navbar-toggler-icon"></span>
         <span class="sr-only">{{#str}}sidepanel, core{{/str}}</span>
     </button>
+    {{/bottombar.drawer}}
 
-    <a href="{{{ config.homeurl }}}" class="navbar-brand d-none d-md-flex align-items-center m-0 mr-4 p-0 aabtn">
+    <a href="{{#alternativelogolinkurl}}{{{alternativelogolinkurl}}}{{/alternativelogolinkurl}}{{^alternativelogolinkurl}}{{{ config.homeurl }}}{{/alternativelogolinkurl}}" class="navbar-brand align-items-center m-0 mr-4 p-0 aabtn {{#bottombar.drawer}} d-flex {{/bottombar.drawer}} {{^bottombar.drawer}} d-none d-md-flex {{/bottombar.drawer}} ">
         <img src="{{output.get_compact_logo_url}}" class="logo mr-1" alt="{{sitename}}">
     </a>
 
@@ -85,6 +104,46 @@
             {{/usermenu}}
         </div>
         {{{ output.edit_switch }}}
+
+        {{^userisediting}}
+            {{#regions.offcanvas.hasblocks}}
+                <div class="divider border-left h-75 align-self-center mx-1"></div>
+                <div class="drawer-offcanvas-toggle d-print-none">
+                    <button
+                        class="btn"
+                        id="theme_boost_union-offcanvas-btn"
+                        data-toggler="drawers"
+                        title="{{#str}}openoffcanvas, theme_boost_union{{/str}}"
+                        data-action="toggle"
+                        data-target="theme_boost_union-drawers-offcanvas"
+                        data-toggle="tooltip"
+                        data-placement="bottom"
+                    >
+                        <span class="sr-only">{{#str}}openoffcanvas, theme_boost_union{{/str}}</span>
+                        <i class="fa fa-grip"></i>
+                    </button>
+                </div>
+            {{/regions.offcanvas.hasblocks}}
+        {{/userisediting}}
+        {{#userisediting}}
+            {{#regions.offcanvas.hasblocks}}
+                <div class="divider border-left h-75 align-self-center mx-1"></div>
+                <div class="drawer-offcanvas-toggle d-print-none">
+                    <button
+                        class="btn"
+                        id="theme_boost_union-offcanvas-btn"
+                        data-toggle="collapse"
+                        title="{{#str}}openoffcanvas, theme_boost_union{{/str}}"
+                        data-target="#theme-block-region-offcanvas-editing"
+                        aria-expanded="false"
+                        aria-controls="theme-block-region-offcanvas-editing"
+                    >
+                        <span class="sr-only">{{#str}}openoffcanvas, theme_boost_union{{/str}}</span>
+                        <i class="fa fa-grip"></i>
+                    </button>
+                </div>
+            {{/regions.offcanvas.hasblocks}}
+        {{/userisediting}}
     </div>
 
     </div>
@@ -103,7 +162,6 @@
             {{{ output.search_box }}}
         {{/output.search_box}}
     </div>
-
 </nav>
 
 {{> theme_boost/primary-drawer-mobile }}
