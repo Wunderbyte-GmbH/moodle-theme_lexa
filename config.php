@@ -35,7 +35,7 @@ $THEME->precompiledcsscallback = 'theme_boost_union_get_precompiled_css';
 $THEME->enable_dock = false;
 
 $THEME->supportscssoptimisation = false;
-$THEME->yuicssmodules = array();
+$THEME->yuicssmodules = [];
 
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 

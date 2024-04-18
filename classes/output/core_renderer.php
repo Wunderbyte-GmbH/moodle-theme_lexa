@@ -25,6 +25,9 @@
 
 namespace theme_lexa\output;
 
+/**
+ * Core renderer.
+ */
 class core_renderer extends \theme_boost\output\core_renderer {
     /**
      * Return the site's logo URL, if any.
@@ -59,6 +62,11 @@ class core_renderer extends \theme_boost\output\core_renderer {
         return $this->image_url('LeXA_Logo_blue_one_line', 'theme_lexa');
     }
 
+    /**
+     * Get the mod booking codes.
+     *
+     * @return string Markup if any.
+     */
     public function get_modbookingcodes() {
         if ($this->page->pagelayout == 'mycourses') {
             $toolbox = \theme_lexa\toolbox::get_instance();
@@ -70,6 +78,11 @@ class core_renderer extends \theme_boost\output\core_renderer {
         return '';
     }
 
+    /**
+     * Get the footer course offerings.
+     *
+     * @return string Markup if any.
+     */
     public function render_footercourseofferings() {
         $toolbox = \theme_lexa\toolbox::get_instance();
         $courseofferings = $toolbox->get_setting('footercourseofferings');
@@ -78,6 +91,11 @@ class core_renderer extends \theme_boost\output\core_renderer {
         }
     }
 
+    /**
+     * Get the footer communities.
+     *
+     * @return string Markup if any.
+     */
     public function render_footercommunities() {
         $toolbox = \theme_lexa\toolbox::get_instance();
         $communities = $toolbox->get_setting('footercommunities');
@@ -86,6 +104,11 @@ class core_renderer extends \theme_boost\output\core_renderer {
         }
     }
 
+    /**
+     * Get the footer contact us.
+     *
+     * @return string Markup if any.
+     */
     public function render_footercontactus() {
         $toolbox = \theme_lexa\toolbox::get_instance();
         $contactus = $toolbox->get_setting('footercontactus');
@@ -94,6 +117,11 @@ class core_renderer extends \theme_boost\output\core_renderer {
         }
     }
 
+    /**
+     * Get the footer social.
+     *
+     * @return string Markup if any.
+     */
     public function render_footersocial() {
         $toolbox = \theme_lexa\toolbox::get_instance();
         $contactus = $toolbox->get_setting('footersocial');
@@ -102,6 +130,11 @@ class core_renderer extends \theme_boost\output\core_renderer {
         }
     }
 
+    /**
+     * Get the footer list.
+     *
+     * @return string Markup if any.
+     */
     private function render_footerlist($text, $toolbox, $targetblank = false) {
         $items = $toolbox->convert_text_to_items($text, current_language());
         if (!empty($items)) {

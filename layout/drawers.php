@@ -36,7 +36,7 @@
  * * Include smart menus
  * * Include course index modification
  *
- * @package   theme_boost_union
+ * @package   theme_lexa
  * @copyright 2022 Luca Bösch, BFH Bern University of Applied Sciences luca.boesch@bfh.ch
  * @copyright based on code from theme_boost by Bas Brands
  * @copyright 2024 G J Barnard.

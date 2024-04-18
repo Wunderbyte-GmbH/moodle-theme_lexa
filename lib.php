@@ -95,7 +95,7 @@ function theme_lexa_get_extra_scss($theme) {
     }
 
     $scss = theme_boost_union_get_extra_scss($boostuniontheme);
-    
+
     $scss .= !empty($boostuniontheme->settings->scss) ? $boostuniontheme->settings->scss : '';
 
     return $scss;

@@ -177,7 +177,6 @@ class toolbox {
      *     English only|http://moodle.com|English only item|en
      *     German only|http://moodle.de|Deutsch|de,de_du,de_kids
      *
-     * @static
      * @param string $text the items definition.
      * @param string $language the language code, null disables multilang support.
      * @return array Of named items.
@@ -251,7 +250,8 @@ class toolbox {
             self::$themeconfigs[$themename] = \theme_config::load($themename);
         }
 
-        $setting = (!empty(self::$themeconfigs[$themename]->settings->$settingname)) ? self::$themeconfigs[$themename]->settings->$settingname : $settingdefault;
+        $setting = (!empty(self::$themeconfigs[$themename]->settings->$settingname)) ?
+            self::$themeconfigs[$themename]->settings->$settingname : $settingdefault;
 
         if (!$format) {
             return $setting;
