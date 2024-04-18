@@ -72,6 +72,15 @@
     .popover-region-container {
         top: $navbar-height / 2;
     }
+
+    .editmode-switch-form {
+        .text-primary {
+            color: $white !important;
+        }
+        .custom-control-input:checked ~ .custom-control-label::before {
+            border-color: $light-borders;
+        }
+    }
 }
 
 @include media-breakpoint-up(md) {
