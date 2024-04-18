@@ -48,7 +48,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
      * @return moodle_url|false
      */
     public function get_compact_logo_url($maxwidth = 300, $maxheight = 300) {
-        return $this->image_url('UniVie_Logo_white', 'theme_lexa');
+        return $this->image_url('UniVie_Logo_blue', 'theme_lexa');
     }
 
     /**

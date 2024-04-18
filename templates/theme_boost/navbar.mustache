@@ -76,15 +76,8 @@
 
     <div class="navbar-row navbar-dark bg-blue d-flex flex-row">
 
-    {{^bottombar.drawer}}
-    <button class="navbar-toggler aabtn d-block d-md-none px-1 my-1 border-0" data-toggler="drawers" data-action="toggle" data-target="theme_boost-drawers-primary">
-        <span class="navbar-toggler-icon"></span>
-        <span class="sr-only">{{#str}}sidepanel, core{{/str}}</span>
-    </button>
-    {{/bottombar.drawer}}
-
     <a href="{{#alternativelogolinkurl}}{{{alternativelogolinkurl}}}{{/alternativelogolinkurl}}{{^alternativelogolinkurl}}{{{ config.homeurl }}}{{/alternativelogolinkurl}}" class="navbar-brand align-items-center m-0 mr-4 p-0 aabtn {{#bottombar.drawer}} d-flex {{/bottombar.drawer}} {{^bottombar.drawer}} d-none d-md-flex {{/bottombar.drawer}} ">
-        <img src="{{output.get_compact_logo_url}}" class="logo mr-1" alt="{{sitename}}">
+        <img src="{{output.get_logo_url}}" class="logo mr-1" alt="{{sitename}}">
     </a>
 
     <ul class="navbar-nav d-none d-md-flex my-1 px-1">
@@ -147,20 +140,28 @@
     </div>
 
     </div>
-    <div class="navbar-row navbar-light bg-white d-flex flex-row">
-        <div class="navbar-brand d-none d-md-flex align-items-center m-0 mr-4 p-0 aabtn">
+    <div class="navbar-row navbar-light bg-white lexa-nav-second-row">
+        <div class="navbar-brand align-items-center m-0 p-0 aabtn">
             <img src="{{output.get_compact_second_logo_url}}" class="logo mr-1" alt="{{sitename}}">
         </div>
 
         {{#primarymoremenu}}
-        <div class="primary-navigation">
+        <div class="primary-navigation d-none d-md-flex">
             {{> core/moremenu}}
         </div>
         {{/primarymoremenu}}
 
         {{# output.search_box }}
+        <div class="d-none d-md-block">
             {{{ output.search_box }}}
+        </div>
         {{/output.search_box}}
+        {{^bottombar.drawer}}
+        <button class="navbar-toggler aabtn d-block d-md-none px-3 my-1 border-0" data-toggler="drawers" data-action="toggle" data-target="theme_boost-drawers-primary">
+            <span class="navbar-toggler-icon"></span>
+            <span class="sr-only">{{#str}}sidepanel, core{{/str}}</span>
+        </button>
+        {{/bottombar.drawer}}
     </div>
 </nav>
 
