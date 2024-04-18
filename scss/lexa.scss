@@ -84,6 +84,10 @@
     height: $navbar-height / 2;
 }
 
+.drawercontent {
+    height: calc(100% - #{$navbar-height / 2});
+}
+
 // Footer.
 body.limitedwidth #page.drawers .footer-popover {
     max-width: none;
