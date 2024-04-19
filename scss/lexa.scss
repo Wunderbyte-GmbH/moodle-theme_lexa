@@ -184,3 +184,10 @@ body.limitedwidth #page.drawers .footer-popover {
 .btn-footer-popover {
     right: 5px;
 }
+
+#page-footer {
+    .copyright {
+        margin-bottom: 0;
+        padding-bottom: 1rem;
+    }
+}
