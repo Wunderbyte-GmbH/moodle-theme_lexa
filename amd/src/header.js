@@ -40,23 +40,24 @@ let initialised = false;
 let headerHeight = 0;
 
 /**
- * Page.
- *
- * @type {element} The page.
- */
-let page = null;
-
-/**
- * Page scroll top.
+ * Window scroll Y.
  *
  * @type {int} In pixels.
  */
-let pageScrollTop = 0;
+let windowScrollY = 0;
+
+const body = document.querySelector('body');
 
 const stickyheader = () => {
-    //pageScrollTop = page.scrollTop;
-    pageScrollTop = window.scrollY;
-    log.debug("pageScrollTop: " + pageScrollTop);
+    windowScrollY = window.scrollY;
+    log.debug("windowScrollY: " + windowScrollY);
+    if (windowScrollY > headerHeight) {
+        body.classList.add('lexascrolled');
+        document.documentElement.style.setProperty('--lexa-navbar-pos', headerHeight / 2 + 'px');
+    } else {
+        body.classList.remove('lexascrolled');
+        document.documentElement.style.setProperty('--lexa-navbar-pos', headerHeight + 'px');
+    }
 };
 
 /**
@@ -72,13 +73,6 @@ export const init = (theHeaderHeight) => {
     }
     initialised = true;
     headerHeight = theHeaderHeight;
-    /*jQuery(document).ready(function() {
-        page = document.getElementById("page-wrapper");
-        page.onscroll = function() {
-            stickyheader();
-        };
-        stickyheader();
-    });*/
     jQuery(document).ready(function() {
         document.addEventListener('scroll', () => {
             stickyheader();
