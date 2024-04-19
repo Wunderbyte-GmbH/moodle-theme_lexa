@@ -30,6 +30,17 @@ namespace theme_lexa\output;
  */
 class core_renderer extends \theme_boost_union\output\core_renderer {
     /**
+     * Return the height of a single row of the header.
+     *
+     * @return int Header row height.
+     */
+    public function get_header_height() {
+        // Navbar height divided by two as there are two rows.
+        // Todo, can be a setting if needed etc.
+        return 60;
+    }
+
+    /**
      * Return the site's logo URL, if any.
      *
      * @param int $maxwidth The maximum width, or null when the maximum width does not matter.

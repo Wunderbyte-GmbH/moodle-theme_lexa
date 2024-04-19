@@ -39,23 +39,29 @@
 }
 
 // Navbar.
+:root {
+    --lexa-navbar-pos: #{$navbar-height};
+}
+
 .navbar {
-    &.fixed-top {
-        padding: 0;
-        height: $navbar-height;
-        max-height: $navbar-height;
+    align-items: stretch;
+    border-bottom: #dee2e6 1px solid;
+    box-shadow: none;
+    height: $navbar-height;
+    max-height: $navbar-height;
+    padding: 0;
 
-        .navbar-row {
-            height: $navbar-height / 2;
-            max-height: $navbar-height / 2;
-        }
+    .navbar-row {
+        height: $navbar-height / 2;
+        max-height: $navbar-height / 2;
+    }
 
-        .navbar-brand {
-            .logo {
-                max-height: calc(#{$navbar-height / 2} - (#{$primary-nav-padding-y} * 2));
-            }
+    .navbar-brand {
+        .logo {
+            max-height: calc(#{$navbar-height / 2} - (#{$primary-nav-padding-y} * 2));
         }
     }
+
     &.navbar-expand {
         flex-flow: inherit;
     }
@@ -70,7 +76,7 @@
     }
 
     .popover-region-container {
-        top: $navbar-height / 2;
+        top: var(--lexa-navbar-pos);
     }
 
     .editmode-switch-form {
@@ -83,11 +89,31 @@
     }
 }
 
+
+
+@include media-breakpoint-up(lg) {
+    .drawer-left,
+    .drawer-right {
+        top: var(--lexa-navbar-pos);
+        height: calc(100vh - #{$navbar-height / 2});
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .navbar {
+        #lexa-navbar-scrolled.fixed-top {
+            .navbar-brand {
+                display: none;
+            }
+        }
+    }
+}
+
 @include media-breakpoint-up(md) {
     .navbar {
         .lexa-nav-second-row {
             display: grid;
-            grid-template-columns: 250px auto 250px;
+            grid-template-columns: 300px auto 300px;
         }
     }
 }
@@ -102,13 +128,41 @@
     }
 }
 
+// Drawers.
+#page,
+#page.drawers {
+    margin-top: 0;
+    transition: margin-top 0.2s;
+
+    body.lexascrolled & {
+        margin-top: $navbar-height / 2;
+    }
+}
+
 // Drawer.
+.drawer {
+    &.drawer-right {
+        @include transition(right 0.2s ease, top 0.0s ease, bottom 0.2s ease, visibility 0.2s ease, transform 0.5s ease);
+    }
+    &.drawer-left {
+        @include transition(left 0.2s ease, top 0.0s ease, bottom 0.2s ease, visibility 0.2s ease);
+    }
+}
+
 .drawerheader {
     height: $navbar-height / 2;
 }
 
-.drawercontent {
-    height: calc(100% - #{$navbar-height / 2});
+@include media-breakpoint-down(md) {
+    .drawercontent {
+        height: 100%;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .drawercontent {
+        height: calc(100% - var(--lexa-navbar-pos));
+    }
 }
 
 // Footer.

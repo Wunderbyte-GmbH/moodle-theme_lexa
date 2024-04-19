@@ -154,6 +154,9 @@
     </div>
 </footer>
 {{#js}}
+require(['theme_lexa/header'], function(Header) {
+    Header.init({{output.get_header_height}});
+});
 require(['theme_boost/footer-popover'], function(FooterPopover) {
     FooterPopover.init();
 });

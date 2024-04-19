@@ -72,7 +72,7 @@
     {{> core/moremenu}}
 </nav>
 {{/menubar}}
-<nav class="navbar fixed-top {{!navbarcolorclasses}} navbar-expand{{#bottombar.drawer}} smartmenu-bottom-navigation {{/bottombar.drawer}}" aria-label="{{#str}}sitemenubar, admin{{/str}}">
+<nav class="navbar {{!navbarcolorclasses}} navbar-expand{{#bottombar.drawer}} smartmenu-bottom-navigation {{/bottombar.drawer}}" aria-label="{{#str}}sitemenubar, admin{{/str}}">
 
     <div class="navbar-row navbar-dark bg-blue d-flex flex-row">
 
@@ -140,8 +140,8 @@
     </div>
 
     </div>
-    <div class="navbar-row navbar-light bg-white lexa-nav-second-row">
-        <div class="navbar-brand align-items-center m-0 p-0 aabtn">
+    <div id="lexa-navbar-scrolled" class="navbar-row navbar-light bg-white lexa-nav-second-row">
+        <div id="lexa-navbar-brand" class="navbar-brand align-items-center m-0 p-0 aabtn">
             <img src="{{output.get_compact_second_logo_url}}" class="logo mr-1" alt="{{sitename}}">
         </div>
 
@@ -151,11 +151,22 @@
         </div>
         {{/primarymoremenu}}
 
-        {{# output.search_box }}
-        <div class="d-none d-md-block">
-            {{{ output.search_box }}}
+        <div>
+            {{# output.search_box }}
+                {{{ output.search_box }}}
+            {{/output.search_box}}
+            <div id="lexa-navbar-scrolled-only" class="navbar-nav ml-auto mr-2 d-none">
+                {{{ output.navbar_plugin_output }}}
+                <div class="d-none d-md-flex align-items-stretch usermenu-container" data-region="usermenu">
+                {{#usermenu}}
+                    {{> core/user_menu }}
+                {{/usermenu}}
+                </div>
+                <div class="d-none d-md-flex">
+                    {{{ output.edit_switch }}}
+                </div>
+            </div>
         </div>
-        {{/output.search_box}}
         {{^bottombar.drawer}}
         <button class="navbar-toggler aabtn d-block d-md-none px-3 my-1 border-0" data-toggler="drawers" data-action="toggle" data-target="theme_boost-drawers-primary">
             <span class="navbar-toggler-icon"></span>
