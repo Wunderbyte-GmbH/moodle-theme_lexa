@@ -40,10 +40,13 @@
 
 // Navbar.
 .navbar {
-    &.fixed-top {
-        padding: 0;
+    //&.fixed-top {
+        align-items: stretch;
+        border-bottom: #dee2e6 1px solid;
+        box-shadow: none;
         height: $navbar-height;
         max-height: $navbar-height;
+        padding: 0;
 
         .navbar-row {
             height: $navbar-height / 2;
@@ -55,7 +58,7 @@
                 max-height: calc(#{$navbar-height / 2} - (#{$primary-nav-padding-y} * 2));
             }
         }
-    }
+    //}
     &.navbar-expand {
         flex-flow: inherit;
     }

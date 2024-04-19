@@ -30,6 +30,17 @@ namespace theme_lexa\output;
  */
 class core_renderer extends \theme_boost_union\output\core_renderer {
     /**
+     * Constructor
+     *
+     * @param moodle_page $page the page we are doing output for.
+     * @param string $target one of rendering target constants
+     */
+    public function __construct(\moodle_page $page, $target) {
+        $page->requires->js_call_amd('theme_lexa/header', 'init', ['theHeaderHeight' => 60]);
+        parent::__construct($page, $target);
+    }
+
+    /**
      * Return the site's logo URL, if any.
      *
      * @param int $maxwidth The maximum width, or null when the maximum width does not matter.
