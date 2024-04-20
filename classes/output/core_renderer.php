@@ -36,6 +36,7 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
      * @param string $target one of rendering target constants
      */
     public function __construct(\moodle_page $page, $target) {
+        // Navbar height divided by two as there are two rows.
         $page->requires->js_call_amd('theme_lexa/header', 'init', ['theHeaderHeight' => 60]);
         parent::__construct($page, $target);
     }

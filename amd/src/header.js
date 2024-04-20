@@ -33,6 +33,13 @@ import log from 'core/log';
 let initialised = false;
 
 /**
+ * Scrolled?
+ *
+ * @type {boolean}
+ */
+let scrolled = false;
+
+/**
  * Header height.
  *
  * @type {int} In pixels.
@@ -46,17 +53,29 @@ let headerHeight = 0;
  */
 let windowScrollY = 0;
 
+/**
+ * Body element.
+ *
+ * @type {element} The body element.
+ */
 const body = document.querySelector('body');
 
 const stickyheader = () => {
     windowScrollY = window.scrollY;
     log.debug("windowScrollY: " + windowScrollY);
     if (windowScrollY > headerHeight) {
-        body.classList.add('lexascrolled');
-        document.documentElement.style.setProperty('--lexa-navbar-pos', headerHeight / 2 + 'px');
+        // Greater than first row.
+        if (!scrolled) {
+            body.classList.add('lexascrolled');
+            document.documentElement.style.setProperty('--lexa-navbar-pos', headerHeight + 'px');
+            scrolled = true;
+        }
     } else {
-        body.classList.remove('lexascrolled');
-        document.documentElement.style.setProperty('--lexa-navbar-pos', headerHeight + 'px');
+        if (scrolled) {
+            body.classList.remove('lexascrolled');
+            scrolled = false;
+        }
+        document.documentElement.style.setProperty('--lexa-navbar-pos', (headerHeight + (headerHeight - windowScrollY)) + 'px');
     }
 };
 

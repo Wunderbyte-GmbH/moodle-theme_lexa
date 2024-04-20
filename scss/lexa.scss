@@ -39,6 +39,10 @@
 }
 
 // Navbar.
+:root {
+    --lexa-navbar-pos: #{$navbar-height};
+}
+
 .navbar {
     align-items: stretch;
     border-bottom: #dee2e6 1px solid;
@@ -72,7 +76,7 @@
     }
 
     .popover-region-container {
-        top: $navbar-height / 2;
+        top: var(--lexa-navbar-pos);
     }
 
     .editmode-switch-form {
@@ -83,10 +87,6 @@
             border-color: $light-borders;
         }
     }
-}
-
-:root {
-    --lexa-navbar-pos: #{$navbar-height};
 }
 
 @media (min-width: 992px) {
@@ -122,7 +122,7 @@
 }
 
 .drawercontent {
-    height: calc(100% - #{$navbar-height / 2});
+    height: calc(100% - var(--lexa-navbar-pos));
 }
 
 // Footer.
