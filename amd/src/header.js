@@ -31,13 +31,6 @@ import log from 'core/log';
  */
 export const init = (theHeaderHeight) => {
     /**
-     * Has this module been initialised?
-     *
-     * @type {boolean}
-     */
-    let initialised = false;
-
-    /**
      * Scrolled?
      *
      * @type {boolean}
@@ -106,11 +99,6 @@ export const init = (theHeaderHeight) => {
     };
 
     log.debug('Lexa theme header JS init: ' + theHeaderHeight);
-    if (initialised) {
-        log.debug('Lexa theme header JS init already initialised');
-        return;
-    }
-    initialised = true;
     headerHeight = theHeaderHeight;
     document.addEventListener('DOMContentLoaded', function() {
         document.addEventListener('scroll', () => {
