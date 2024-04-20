@@ -22,80 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
  */
 
-import jQuery from 'jquery';
 import log from 'core/log';
-
-/**
- * Has this module been initialised?
- *
- * @type {boolean}
- */
-let initialised = false;
-
-/**
- * Scrolled?
- *
- * @type {boolean}
- */
-let scrolled = false;
-
-/**
- * Header height.
- *
- * @type {int} In pixels.
- */
-let headerHeight = 0;
-
-/**
- * Window scroll Y.
- *
- * @type {int} In pixels.
- */
-let windowScrollY = 0;
-
-/**
- * Body element.
- *
- * @type {element} The body element.
- */
-const body = document.querySelector('body');
-
-/**
- * Navbar scrolled.
- *
- * @type {element} The navbar scrolled element.
- */
-const scrolledNavbar = document.querySelector('#lexa-navbar-scrolled');
-
-/**
- * Navbar scrolled only.
- *
- * @type {element} The navbar scrolled only element.
- */
-const scrolledOnlyNavbar = document.querySelector('#lexa-navbar-scrolled-only');
-
-const stickyheader = () => {
-    windowScrollY = window.scrollY;
-    log.debug("windowScrollY: " + windowScrollY);
-    if (windowScrollY > headerHeight) {
-        // Greater than first row.
-        if (!scrolled) {
-            body.classList.add('lexascrolled');
-            document.documentElement.style.setProperty('--lexa-navbar-pos', headerHeight + 'px');
-            scrolledNavbar.classList.add('fixed-top');
-            scrolledOnlyNavbar.classList.remove('d-none');
-            scrolled = true;
-        }
-    } else {
-        if (scrolled) {
-            body.classList.remove('lexascrolled');
-            scrolledNavbar.classList.remove('fixed-top');
-            scrolledOnlyNavbar.classList.add('d-none');
-            scrolled = false;
-        }
-        document.documentElement.style.setProperty('--lexa-navbar-pos', (headerHeight + (headerHeight - windowScrollY)) + 'px');
-    }
-};
 
 /**
  * Function to intialise this module.
@@ -103,6 +30,81 @@ const stickyheader = () => {
  * @param {int} theHeaderHeight The header height.
  */
 export const init = (theHeaderHeight) => {
+    /**
+     * Has this module been initialised?
+     *
+     * @type {boolean}
+     */
+    let initialised = false;
+
+    /**
+     * Scrolled?
+     *
+     * @type {boolean}
+     */
+    let scrolled = false;
+
+    /**
+     * Header height.
+     *
+     * @type {int} In pixels.
+     */
+    let headerHeight = 0;
+
+    /**
+     * Window scroll Y.
+     *
+     * @type {int} In pixels.
+     */
+    let windowScrollY = 0;
+
+    /**
+     * Body element.
+     *
+     * @type {element} The body element.
+     */
+    const body = document.querySelector('body');
+
+    /**
+     * Navbar scrolled.
+     *
+     * @type {element} The navbar scrolled element.
+     */
+    const scrolledNavbar = document.querySelector('#lexa-navbar-scrolled');
+
+    /**
+     * Navbar scrolled only.
+     *
+     * @type {element} The navbar scrolled only element.
+     */
+    const scrolledOnlyNavbar = document.querySelector('#lexa-navbar-scrolled-only');
+
+    /**
+     * Sticky header.
+     */
+    const stickyheader = () => {
+        windowScrollY = window.scrollY;
+        log.debug("windowScrollY: " + windowScrollY);
+        if (windowScrollY > headerHeight) {
+            // Greater than first row.
+            if (!scrolled) {
+                body.classList.add('lexascrolled');
+                document.documentElement.style.setProperty('--lexa-navbar-pos', headerHeight + 'px');
+                scrolledNavbar.classList.add('fixed-top');
+                scrolledOnlyNavbar.classList.remove('d-none');
+                scrolled = true;
+            }
+        } else {
+            if (scrolled) {
+                body.classList.remove('lexascrolled');
+                scrolledNavbar.classList.remove('fixed-top');
+                scrolledOnlyNavbar.classList.add('d-none');
+                scrolled = false;
+            }
+            document.documentElement.style.setProperty('--lexa-navbar-pos', (headerHeight + (headerHeight - windowScrollY)) + 'px');
+        }
+    };
+
     log.debug('Lexa theme header JS init: ' + theHeaderHeight);
     if (initialised) {
         log.debug('Lexa theme header JS init already initialised');
@@ -110,7 +112,7 @@ export const init = (theHeaderHeight) => {
     }
     initialised = true;
     headerHeight = theHeaderHeight;
-    jQuery(document).ready(function() {
+    document.addEventListener('DOMContentLoaded', function() {
         document.addEventListener('scroll', () => {
             stickyheader();
         });

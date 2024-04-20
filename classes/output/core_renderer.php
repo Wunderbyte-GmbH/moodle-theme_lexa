@@ -30,15 +30,14 @@ namespace theme_lexa\output;
  */
 class core_renderer extends \theme_boost_union\output\core_renderer {
     /**
-     * Constructor
+     * Return the height of a single row of the header.
      *
-     * @param moodle_page $page the page we are doing output for.
-     * @param string $target one of rendering target constants
+     * @return int Header row height.
      */
-    public function __construct(\moodle_page $page, $target) {
+    public function get_header_height() {
         // Navbar height divided by two as there are two rows.
-        $page->requires->js_call_amd('theme_lexa/header', 'init', ['theHeaderHeight' => 60]);
-        parent::__construct($page, $target);
+        // Todo, can be a setting if needed etc.
+        return 60;
     }
 
     /**

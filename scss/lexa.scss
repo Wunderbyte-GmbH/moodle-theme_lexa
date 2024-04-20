@@ -95,7 +95,7 @@
     .drawer-left,
     .drawer-right {
         top: var(--lexa-navbar-pos);
-        height: calc(100vh - var(--lexa-navbar-pos));
+        height: calc(100vh - #{$navbar-height / 2});
     }
 }
 
@@ -119,6 +119,15 @@
 }
 
 // Drawer.
+.drawer {
+    &.drawer-right {
+        @include transition(right 0.2s ease, top 0.0s ease, bottom 0.2s ease, visibility 0.2s ease, transform 0.5s ease);
+    }
+    &.drawer-left {
+        @include transition(left 0.2s ease, top 0.0s ease, bottom 0.2s ease, visibility 0.2s ease);
+    }
+}
+
 .drawerheader {
     height: $navbar-height / 2;
 }
