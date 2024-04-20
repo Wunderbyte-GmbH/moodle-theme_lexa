@@ -67,6 +67,13 @@ const body = document.querySelector('body');
  */
 const scrolledNavbar = document.querySelector('#lexa-navbar-scrolled');
 
+/**
+ * Navbar scrolled only.
+ *
+ * @type {element} The navbar scrolled only element.
+ */
+const scrolledOnlyNavbar = document.querySelector('#lexa-navbar-scrolled-only');
+
 const stickyheader = () => {
     windowScrollY = window.scrollY;
     log.debug("windowScrollY: " + windowScrollY);
@@ -75,13 +82,15 @@ const stickyheader = () => {
         if (!scrolled) {
             body.classList.add('lexascrolled');
             document.documentElement.style.setProperty('--lexa-navbar-pos', headerHeight + 'px');
-            scrolledNavbar.classList.remove('d-none');
+            scrolledNavbar.classList.add('fixed-top');
+            scrolledOnlyNavbar.classList.remove('d-none');
             scrolled = true;
         }
     } else {
         if (scrolled) {
             body.classList.remove('lexascrolled');
-            scrolledNavbar.classList.add('d-none');
+            scrolledNavbar.classList.remove('fixed-top');
+            scrolledOnlyNavbar.classList.add('d-none');
             scrolled = false;
         }
         document.documentElement.style.setProperty('--lexa-navbar-pos', (headerHeight + (headerHeight - windowScrollY)) + 'px');
