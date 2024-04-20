@@ -60,6 +60,13 @@ let windowScrollY = 0;
  */
 const body = document.querySelector('body');
 
+/**
+ * Navbar scrolled.
+ *
+ * @type {element} The navbar scrolled element.
+ */
+const scrolledNavbar = document.querySelector('#lexa-navbar-scrolled');
+
 const stickyheader = () => {
     windowScrollY = window.scrollY;
     log.debug("windowScrollY: " + windowScrollY);
@@ -68,11 +75,13 @@ const stickyheader = () => {
         if (!scrolled) {
             body.classList.add('lexascrolled');
             document.documentElement.style.setProperty('--lexa-navbar-pos', headerHeight + 'px');
+            scrolledNavbar.classList.remove('d-none');
             scrolled = true;
         }
     } else {
         if (scrolled) {
             body.classList.remove('lexascrolled');
+            scrolledNavbar.classList.add('d-none');
             scrolled = false;
         }
         document.documentElement.style.setProperty('--lexa-navbar-pos', (headerHeight + (headerHeight - windowScrollY)) + 'px');

@@ -89,7 +89,9 @@
     }
 }
 
-@media (min-width: 992px) {
+
+
+@include media-breakpoint-up(lg) {
     .drawer-left,
     .drawer-right {
         top: var(--lexa-navbar-pos);
