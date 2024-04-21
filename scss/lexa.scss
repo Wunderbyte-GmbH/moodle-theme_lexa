@@ -99,6 +99,16 @@
     }
 }
 
+@include media-breakpoint-down(md) {
+    .navbar {
+        #lexa-navbar-scrolled.fixed-top {
+            .navbar-brand {
+                display: none;
+            }
+        }
+    }
+}
+
 @include media-breakpoint-up(md) {
     .navbar {
         .lexa-nav-second-row {
@@ -132,8 +142,16 @@
     height: $navbar-height / 2;
 }
 
-.drawercontent {
-    height: calc(100% - var(--lexa-navbar-pos));
+@include media-breakpoint-down(md) {
+    .drawercontent {
+        height: 100%;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .drawercontent {
+        height: calc(100% - var(--lexa-navbar-pos));
+    }
 }
 
 // Footer.

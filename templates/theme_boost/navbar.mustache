@@ -141,7 +141,7 @@
 
     </div>
     <div id="lexa-navbar-scrolled" class="navbar-row navbar-light bg-white lexa-nav-second-row">
-        <div class="navbar-brand align-items-center m-0 p-0 aabtn">
+        <div id="lexa-navbar-brand" class="navbar-brand align-items-center m-0 p-0 aabtn">
             <img src="{{output.get_compact_second_logo_url}}" class="logo mr-1" alt="{{sitename}}">
         </div>
 
@@ -151,18 +151,20 @@
         </div>
         {{/primarymoremenu}}
 
-        <div class="d-none d-md-block">
+        <div>
             {{# output.search_box }}
                 {{{ output.search_box }}}
             {{/output.search_box}}
             <div id="lexa-navbar-scrolled-only" class="navbar-nav ml-auto mr-2 d-none">
                 {{{ output.navbar_plugin_output }}}
-                <div class="d-flex align-items-stretch usermenu-container" data-region="usermenu">
+                <div class="d-none d-md-flex align-items-stretch usermenu-container" data-region="usermenu">
                 {{#usermenu}}
                     {{> core/user_menu }}
                 {{/usermenu}}
                 </div>
-                {{{ output.edit_switch }}}
+                <div class="d-none d-md-flex">
+                    {{{ output.edit_switch }}}
+                </div>
             </div>
         </div>
         {{^bottombar.drawer}}
