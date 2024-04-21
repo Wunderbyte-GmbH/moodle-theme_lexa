@@ -128,6 +128,17 @@
     }
 }
 
+// Drawers.
+#page,
+#page.drawers {
+    margin-top: 0;
+    transition: margin-top 0.2s;
+
+    body.lexascrolled & {
+        margin-top: $navbar-height / 2;
+    }
+}
+
 // Drawer.
 .drawer {
     &.drawer-right {
