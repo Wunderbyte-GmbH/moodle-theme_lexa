@@ -85,6 +85,17 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
     }
 
     /**
+     * Allow plugins to provide some content to be rendered in the navbar.
+     * The plugin must define a PLUGIN_render_navbar_output function that returns
+     * the HTML they wish to add to the navbar.
+     *
+     * @return string HTML for the navbar
+     */
+    public function navbar_plugin_output() {
+        return '<span id="lexa-npo" class="d-flex">' . parent::navbar_plugin_output() . '</span>';
+    }
+
+    /**
      * Get the mod booking codes.
      *
      * @return string Markup if any.

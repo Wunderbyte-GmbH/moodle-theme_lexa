@@ -86,7 +86,9 @@
     </ul>
 
     <div id="usernavigation" class="navbar-nav ml-auto mr-2">
-        {{{ output.navbar_plugin_output }}}
+        <div id="lexa-npo-one">
+            {{{ output.navbar_plugin_output }}}
+        </div>
         <div class="d-flex align-items-stretch usermenu-container" data-region="usermenu">
             {{#usermenu}}
                 {{> core/user_menu }}
@@ -156,7 +158,8 @@
                 {{{ output.search_box }}}
             {{/output.search_box}}
             <div id="lexa-navbar-scrolled-only" class="navbar-nav ml-auto mr-2 d-none">
-                {{{ output.navbar_plugin_output }}}
+                <div id="lexa-npo-two">
+                </div>
                 <div class="d-none d-md-flex align-items-stretch usermenu-container" data-region="usermenu">
                 {{#usermenu}}
                     {{> core/user_menu }}

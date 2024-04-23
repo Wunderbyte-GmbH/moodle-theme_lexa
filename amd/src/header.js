@@ -73,6 +73,27 @@ export const init = (theHeaderHeight) => {
     const scrolledOnlyNavbar = document.querySelector('#lexa-navbar-scrolled-only');
 
     /**
+     * Navbar plugin output first row.
+     *
+     * @type {element} The navbar plugin output wrapper.
+     */
+    const npoOne = document.querySelector('#lexa-npo-one');
+
+    /**
+     * Navbar plugin output second row.
+     *
+     * @type {element} The navbar plugin output wrapper.
+     */
+    const npoTwo = document.querySelector('#lexa-npo-two');
+
+    /**
+     * Navbar plugin output.
+     *
+     * @type {element} The navbar plugin output.
+     */
+    const npo = document.querySelector('#lexa-npo');
+
+    /**
      * Sticky header.
      */
     const stickyheader = () => {
@@ -85,6 +106,9 @@ export const init = (theHeaderHeight) => {
                 document.documentElement.style.setProperty('--lexa-navbar-pos', headerHeight + 'px');
                 scrolledNavbar.classList.add('fixed-top');
                 scrolledOnlyNavbar.classList.remove('d-none');
+                if (npo) {
+                    npoTwo.appendChild(npo);
+                }
                 scrolled = true;
             }
         } else {
@@ -92,6 +116,9 @@ export const init = (theHeaderHeight) => {
                 body.classList.remove('lexascrolled');
                 scrolledNavbar.classList.remove('fixed-top');
                 scrolledOnlyNavbar.classList.add('d-none');
+                if (npo) {
+                    npoOne.appendChild(npo);
+                }
                 scrolled = false;
             }
             document.documentElement.style.setProperty('--lexa-navbar-pos', (headerHeight + (headerHeight - windowScrollY)) + 'px');
