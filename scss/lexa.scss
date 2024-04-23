@@ -165,6 +165,13 @@
     }
 }
 
+[data-region=right-hand-drawer] {
+    &.drawer {
+        top: var(--lexa-navbar-pos);
+        height: calc(100% - var(--lexa-navbar-pos));
+    }
+}
+
 // Footer.
 body.limitedwidth #page.drawers .footer-popover {
     max-width: none;
