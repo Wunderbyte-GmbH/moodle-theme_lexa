@@ -127,10 +127,18 @@ export const init = (theHeaderHeight) => {
 
     log.debug('Lexa theme header JS init: ' + theHeaderHeight);
     headerHeight = theHeaderHeight;
-    document.addEventListener('DOMContentLoaded', function() {
+
+    if (document.readyState !== 'loading') {
         document.addEventListener('scroll', () => {
             stickyheader();
         });
         stickyheader();
-    });
+    } else {
+        document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('scroll', () => {
+                stickyheader();
+            });
+            stickyheader();
+        });
+    }
 };
