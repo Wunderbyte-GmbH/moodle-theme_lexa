@@ -104,7 +104,13 @@
     }
 }
 
-
+body.notloggedin {
+    #usernavigation {
+        .usermenu-container {
+            height: 100%;
+        }
+    }
+}
 
 @include media-breakpoint-up(lg) {
     .drawer-left,

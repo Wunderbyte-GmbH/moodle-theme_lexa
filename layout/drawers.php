@@ -147,6 +147,10 @@ $buildregionmainsettings = !$PAGE->include_region_main_settings_in_header_action
 // If the settings menu will be included in the header then don't add it here.
 $regionmainsettingsmenu = $buildregionmainsettings ? $OUTPUT->region_main_settings_menu() : false;
 
+if (!isloggedin() || isguestuser()) {
+    $extraclasses[] = 'notloggedin';
+}
+
 $bodyattributes = $OUTPUT->body_attributes($extraclasses); // In the original layout file, this line is place more above,
                                                            // but we amended $extraclasses and had to move it.
 
