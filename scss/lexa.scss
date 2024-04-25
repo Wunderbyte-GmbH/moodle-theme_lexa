@@ -66,6 +66,21 @@
         flex-flow: inherit;
     }
 
+    .usermenu {
+        display: flex;
+        .login {
+            align-items: center;
+            display: flex;
+        }
+    }
+    #usernavigation {
+        .usermenu {
+            .login {
+                color: $white;
+            }
+        }
+    }
+
     .lexa-nav-second-row {
         display: flex;
         justify-content: space-between;
