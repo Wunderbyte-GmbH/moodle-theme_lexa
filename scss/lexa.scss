@@ -68,6 +68,13 @@
 
     .usermenu {
         display: flex;
+        .lexauserdetails {
+            font-size: 0.8rem;
+            text-align: left;
+            .lexauserrole {
+                opacity: 0.8;
+            }
+        }
         .login {
             align-items: center;
             display: flex;
