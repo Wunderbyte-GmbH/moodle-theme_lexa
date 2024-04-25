@@ -92,7 +92,7 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
      * @return string HTML for the navbar
      */
     public function navbar_plugin_output() {
-        return '<span id="lexa-npo" class="d-flex">' . parent::navbar_plugin_output() . '</span>';
+        return '<span id="lexa-npo" class="d-flex h-100 align-items-center">' . parent::navbar_plugin_output() . '</span>';
     }
 
     /**
