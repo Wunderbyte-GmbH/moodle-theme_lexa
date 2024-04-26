@@ -70,7 +70,7 @@ class primary extends \theme_boost_union\output\navigation\primary {
             global $USER;
             if (!is_siteadmin($USER)) {
                 $context = $this->page->context;
-                $roleassignments = get_user_roles_with_special($context, $USER->id);
+                $roleassignments = get_user_roles($context, $USER->id);
                 if (!empty($roleassignments)) {
                     $rolenames = role_get_names($context);
                     if (!empty($rolenames)) {
