@@ -51,6 +51,9 @@
     max-height: $navbar-height;
     padding: 0;
 
+    // Avoid conflict with drawers.
+    z-index: $zindex-sticky;
+
     .navbar-row {
         height: $navbar-height / 2;
         max-height: $navbar-height / 2;

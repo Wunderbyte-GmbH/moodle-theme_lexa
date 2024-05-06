@@ -3,6 +3,7 @@ Version Information
 
 Version 403.0.3
   1. Adjust scrolled navbar grid.
+  2. Fix navbar dropdown going underneath the drawers.
 
 Version 403.0.2
   1. Depends on Boost Union v4.3-r11.
