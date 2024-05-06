@@ -51,6 +51,9 @@ $string['generalheadingdesc'] = 'Configure the general settings.';
 $string['mod_booking_codes'] = 'Booking module code(s)';
 $string['mod_booking_codesdesc'] = 'Enter the <a href="https://moodle.org/plugins/mod_booking" title="Booking module" target="_blank">Booking module codes</a>';
 
+$string['navbarscrolledlayout'] = 'Scrolled navbar layout';
+$string['navbarscrolledlayoutdesc'] = 'Define the \'grid-template-columns\' CSS attribute value (<a href="https://developer.mozilla.org/Web/CSS/grid-template-columns" target="_blank">mdn web docs</a>) that should be used to define how the three columns are divided up within the space available on the navbar that is used after scrolling down the page.';
+
 // Footer.
 $string['footerheading'] = 'Footer';
 $string['footerheadingsub'] = 'Footer settings';

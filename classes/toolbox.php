@@ -103,6 +103,15 @@ class toolbox {
             $setting = new \admin_setting_configtext($name, $title, $description, $default);
             $settingspages['general']->add($setting);
 
+            // Navbar scrolled layout.
+            $name = 'theme_lexa/navbarscrolledlayout';
+            $title = get_string('navbarscrolledlayout', 'theme_lexa');
+            $description = get_string('navbarscrolledlayoutdesc', 'theme_lexa');
+            $default = 'repeat(3,minmax(0,1fr))';
+            $setting = new \admin_setting_configtext($name, $title, $description, $default);
+            $setting->set_updatedcallback('purge_all_caches');
+            $settingspages['general']->add($setting);
+
             // Footer settings.
             $settingspages['footer']->add(
                 new \admin_setting_heading(
