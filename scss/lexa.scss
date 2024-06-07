@@ -228,6 +228,28 @@ body.notloggedin {
     }
 }
 
+// Landing region.
+#block-region-landing {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .landingblock {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+.editing #block-region-landing {
+    column-gap: 0.5rem;
+    justify-content: start;
+
+    .block {
+        flex: 0 0 calc(25% - 1rem);
+        max-width: 25%;
+    }
+}
+
 // Footer.
 body.limitedwidth #page.drawers .footer-popover {
     max-width: none;

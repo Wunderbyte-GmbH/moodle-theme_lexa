@@ -125,6 +125,9 @@
     {{/userisediting}}
 
     <div id="page" data-region="mainpage" data-usertour="scroller" class="drawers {{#courseindexopen}}show-drawer-left{{/courseindexopen}} {{#blockdraweropen}}show-drawer-right{{/blockdraweropen}} drag-container">
+        {{#haslandingblocks}}
+            {{{landingblocks}}}
+        {{/haslandingblocks}}
         {{#userisediting}}
             <div id="theme-block-region-offcanvas-editing" class="collapse">
                 <div id="theme-block-region-offcanvas-editing-inner">

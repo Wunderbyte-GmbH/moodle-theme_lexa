@@ -112,6 +112,9 @@ if (!$courseindex) {
     $courseindexopen = false;
 }
 
+$landingblockshtml = $OUTPUT->blocks('landing');
+$haslandingblocks = (strpos($landingblockshtml, 'data-block=') !== false || !empty($addblockbutton));
+
 $forceblockdraweropen = $OUTPUT->firstview_fakeblocks();
 
 $secondarynavigation = false;
@@ -162,6 +165,8 @@ $templatecontext = [
     'output' => $OUTPUT,
     'sidepreblocks' => $blockshtml,
     'hasblocks' => $hasblocks,
+    'landingblocks' => $landingblockshtml,
+    'haslandingblocks' => $haslandingblocks,
     'bodyattributes' => $bodyattributes,
     'courseindexopen' => $courseindexopen,
     'blockdraweropen' => $blockdraweropen,

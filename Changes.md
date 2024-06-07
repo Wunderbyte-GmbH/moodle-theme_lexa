@@ -1,6 +1,9 @@
 Version Information
 ===================
 
+Version 403.0.4
+  1. Add 'Landing' region on front page and dashboard pages.
+
 Version 403.0.3
   1. Adjust scrolled navbar grid.
   2. Fix navbar dropdown going underneath the drawers.

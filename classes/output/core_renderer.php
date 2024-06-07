@@ -25,6 +25,11 @@
 
 namespace theme_lexa\output;
 
+use block_contents;
+use block_move_target;
+use coding_exception;
+use html_writer;
+
 /**
  * Core renderer.
  */
@@ -125,6 +130,102 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
             }
         }
         return '';
+    }
+
+    /**
+     * Get the HTML for blocks in the given region.
+     *
+     * @since Moodle 2.5.1 2.6
+     * @param string $region The region to get HTML for.
+     * @param array $classes Wrapping tag classes.
+     * @param string $tag Wrapping tag.
+     * @param boolean $fakeblocksonly Include fake blocks only.
+     * @return string HTML.
+     */
+    public function blocks($region, $classes = array(), $tag = 'aside', $fakeblocksonly = false) {
+        $displayregion = $this->page->apply_theme_region_manipulations($region);
+        $classes = (array)$classes;
+        $classes[] = 'block-region';
+        $attributes = array(
+            'id' => 'block-region-'.preg_replace('#[^a-zA-Z0-9_\-]+#', '-', $displayregion),
+            'class' => join(' ', $classes),
+            'data-blockregion' => $displayregion,
+            'data-droptarget' => '1'
+        );
+        $editing = $this->page->user_is_editing();
+        $content = '';
+
+        if ($editing) {
+            $content .= $this->block_region_title($displayregion);
+        }
+
+        if ($this->page->blocks->region_has_content($displayregion, $this)) {
+            $content .= html_writer::tag('h2', get_string('blocks'), ['class' => 'sr-only']) .
+                $this->blocks_for_region($displayregion, $fakeblocksonly);
+        } else {
+            $content .= html_writer::tag('h2', get_string('blocks'), ['class' => 'sr-only']);
+        }
+        return html_writer::tag($tag, $content, $attributes);
+    }
+
+    /**
+     * Get the HTML for block title in the given region.
+     *
+     * @param string $region The region to get HTML for.
+     *
+     * @return string HTML.
+     */
+    protected function block_region_title($region) {
+        return html_writer::tag(
+            'p',
+            get_string('region-' . $region, 'theme_lexa'),
+            ['class' => 'block-region-title col-12 text-center font-italic font-weight-bold']
+        );
+    }
+
+    /**
+     * Output all the blocks in a particular region.
+     *
+     * @param string $region the name of a region on this page.
+     * @param boolean $fakeblocksonly Output fake block only.
+     * @return string the HTML to be output.
+     */
+    public function blocks_for_region($region, $fakeblocksonly = false) {
+        $blockcontents = $this->page->blocks->get_content_for_region($region, $this);
+        $lastblock = null;
+        $zones = array();
+        foreach ($blockcontents as $bc) {
+            if ($bc instanceof block_contents) {
+                $zones[] = $bc->title;
+            }
+        }
+        $output = '';
+        $notediting = !$this->page->user_is_editing();
+
+        foreach ($blockcontents as $bc) {
+            if ($bc instanceof block_contents) {
+                if ($fakeblocksonly && !$bc->is_fake()) {
+                    // Skip rendering real blocks if we only want to show fake blocks.
+                    continue;
+                }
+                if (!empty($bcadditionalclasses)) {
+                    $bc->attributes['class'] .= ' '.$bcadditionalclasses;
+                }
+                if (($notediting) && ($region == 'landing')) {
+                    $output .= html_writer::tag('div', $this->block($bc, $region), ['class' => 'landingblock']);
+                } else {
+                    $output .= $this->block($bc, $region);
+                }
+                $lastblock = $bc->title;
+            } else if ($bc instanceof block_move_target) {
+                if (!$fakeblocksonly) {
+                    $output .= $this->block_move_target($bc, $zones, $lastblock, $region);
+                }
+            } else {
+                throw new coding_exception('Unexpected type of thing (' . get_class($bc) . ') found in list of block contents.');
+            }
+        }
+        return $output;
     }
 
     /**
