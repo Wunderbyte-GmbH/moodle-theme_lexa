@@ -41,6 +41,22 @@ $string['pluginname'] = 'Lexa';
 $string['region-landing'] = 'Landing';
 $string['region-side-pre'] = 'Right';
 
+// Boost union regions.
+$string['region-none'] = 'None';
+$string['region-outside-left'] = 'Outside (left)';
+$string['region-outside-top'] = 'Outside (top)';
+$string['region-outside-bottom'] = 'Outside (bottom)';
+$string['region-outside-right'] = 'Outside (right)';
+$string['region-content-upper'] = 'Content (upper)';
+$string['region-content-lower'] = 'Content (lower)';
+$string['region-footer-left'] = 'Footer (left)';
+$string['region-footer-right'] = 'Footer (right)';
+$string['region-footer-center'] = 'Footer (center)';
+$string['region-header'] = 'Header';
+$string['region-offcanvas-left'] = 'Off-canvas (left)';
+$string['region-offcanvas-right'] = 'Off-canvas (right)';
+$string['region-offcanvas-center'] = 'Off-canvas (center)';
+
 // Settings.
 $string['configtabtitle'] = 'Settings';
 
