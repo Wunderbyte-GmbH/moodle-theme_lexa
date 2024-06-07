@@ -234,6 +234,11 @@ body.notloggedin {
     flex-direction: row;
     flex-wrap: wrap;
 
+    .block {
+        border-width: 0;
+        margin-bottom: 0 !important;
+    }
+
     .landingblock {
         flex: 0 0 100%;
         max-width: 100%;
@@ -247,6 +252,25 @@ body.notloggedin {
     .block {
         flex: 0 0 calc(25% - 1rem);
         max-width: 25%;
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    body:not(.editing) #page.drawers {
+        #block-region-landing {
+            margin-left: -3rem;
+            margin-right: -3rem;
+        }
+        &.show-drawer-left {
+            #block-region-landing {
+                margin-left: 0;
+            }
+        }
+        &.show-drawer-right {
+            #block-region-landing {
+                margin-right: 0;
+            }
+        }
     }
 }
 

@@ -41,7 +41,7 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
      * @param array $additionalclasses Any additional classes to apply.
      * @return string
      */
-    public function body_css_classes(array $additionalclasses = array()) {
+    public function body_css_classes(array $additionalclasses = []) {
         if ($this->page->pagelayout == 'frontpage') {
             $bodyclasses = str_replace('limitedwidth', '', $this->page->bodyclasses);
         } else {
@@ -142,16 +142,16 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
      * @param boolean $fakeblocksonly Include fake blocks only.
      * @return string HTML.
      */
-    public function blocks($region, $classes = array(), $tag = 'aside', $fakeblocksonly = false) {
+    public function blocks($region, $classes = [], $tag = 'aside', $fakeblocksonly = false) {
         $displayregion = $this->page->apply_theme_region_manipulations($region);
         $classes = (array)$classes;
         $classes[] = 'block-region';
-        $attributes = array(
+        $attributes = [
             'id' => 'block-region-'.preg_replace('#[^a-zA-Z0-9_\-]+#', '-', $displayregion),
             'class' => join(' ', $classes),
             'data-blockregion' => $displayregion,
-            'data-droptarget' => '1'
-        );
+            'data-droptarget' => '1',
+        ];
         $editing = $this->page->user_is_editing();
         $content = '';
 
@@ -193,7 +193,7 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
     public function blocks_for_region($region, $fakeblocksonly = false) {
         $blockcontents = $this->page->blocks->get_content_for_region($region, $this);
         $lastblock = null;
-        $zones = array();
+        $zones = [];
         foreach ($blockcontents as $bc) {
             if ($bc instanceof block_contents) {
                 $zones[] = $bc->title;

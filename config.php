@@ -121,9 +121,9 @@ $THEME->layouts = [
             'activityheader' => [
                 'notitle' => true,
                 'nocompletion' => true,
-                'nodescription' => true
-            ]
-        ]
+                'nodescription' => true,
+            ],
+        ],
     ],
     // No blocks and minimal footer - used for legacy frame layouts only!
     'frametop' => [
@@ -133,8 +133,8 @@ $THEME->layouts = [
             'nofooter' => true,
             'nocoursefooter' => true,
             'activityheader' => [
-                'nocompletion' => true
-            ]
+                'nocompletion' => true,
+            ],
         ],
     ],
     // Embeded pages, like iframe/object embeded in moodleform - it needs as much space as possible.
@@ -171,8 +171,8 @@ $THEME->layouts = [
     'secure' => [
         'file' => 'drawers.php',
         'regions' => ['side-pre'],
-        'defaultregion' => 'side-pre'
-    ]
+        'defaultregion' => 'side-pre',
+    ],
 ];
 
 $THEME->prescsscallback = 'theme_lexa_get_pre_scss';
