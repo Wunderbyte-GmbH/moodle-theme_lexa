@@ -63,7 +63,7 @@ $THEME->layouts = [
     ],
     'coursecategory' => [
         'file' => 'drawers.php',
-        'regions' => theme_boost_union_get_block_regions('coursecategory'),
+        'regions' => array_merge(theme_boost_union_get_block_regions('coursecategory'), ['landing']),
         'defaultregion' => 'side-pre',
     ],
     // Part of course, typical for modules - default page layout if $cm specified in require_login().

@@ -38,6 +38,7 @@ $string['choosereadme'] = '<div class="clearfix"><h2>Lexa</h2>'.
 $string['configtitle'] = 'Lexa';
 $string['pluginname'] = 'Lexa';
 
+$string['region-content'] = 'Content';
 $string['region-landing'] = 'Landing';
 $string['region-side-pre'] = 'Right';
 
