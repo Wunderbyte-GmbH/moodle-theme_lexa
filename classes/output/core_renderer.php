@@ -244,6 +244,18 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
     }
 
     /**
+     * Show the popover?
+     *
+     * @return bool.
+     */
+    public function has_footer_popover() {
+        if ($this->page->pagetype == 'site-index') {
+            return false;
+        }
+        return true;
+    }
+
+    /**
      * Get the footer course offerings.
      *
      * @return string Markup if any.
