@@ -118,10 +118,16 @@ $haslandingblocks = (strpos($landingblockshtml, 'data-block=') !== false || !emp
 $forceblockdraweropen = $OUTPUT->firstview_fakeblocks();
 
 $notcoursecategorypage = ($PAGE->pagetype != 'course-index-category');
+$siteindexsecondarynav = true;
+if ($PAGE->pagetype == 'site-index') {
+    if (!$PAGE->user_is_editing()) {
+        $siteindexsecondarynav = false;
+    }
+}
 
 $secondarynavigation = false;
 $overflow = '';
-if (($notcoursecategorypage) && ($PAGE->has_secondary_navigation())) {
+if (($notcoursecategorypage) && ($siteindexsecondarynav) && ($PAGE->has_secondary_navigation())) {
     $tablistnav = $PAGE->has_tablist_secondary_navigation();
     $moremenu = new \core\navigation\output\more_menu($PAGE->secondarynav, 'nav-tabs', true, $tablistnav);
     $secondarynavigation = $moremenu->export_for_template($OUTPUT);

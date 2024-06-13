@@ -124,7 +124,8 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
      * @return string HTML to display the main header.
      */
     public function full_header() {
-        if ($this->page->pagetype == 'course-index-category') {
+        if (($this->page->pagetype == 'site-index') ||
+            ($this->page->pagetype == 'course-index-category')) {
             return '';
         }
         return parent::full_header();
