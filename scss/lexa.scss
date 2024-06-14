@@ -242,6 +242,14 @@ body.notloggedin {
     .landingblock {
         flex: 0 0 100%;
         max-width: 100%;
+
+        .blockskiptarget {
+            font-size: 0;
+        }
+
+        .card-body {
+            padding: 0;
+        }
     }
 }
 

@@ -29,6 +29,7 @@ use block_contents;
 use block_move_target;
 use coding_exception;
 use html_writer;
+use stdClass;
 
 /**
  * Core renderer.
@@ -227,7 +228,14 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
                     $bc->attributes['class'] .= ' '.$bcadditionalclasses;
                 }
                 if (($notediting) && ($region == 'landing')) {
-                    $output .= html_writer::tag('div', $this->block($bc, $region), ['class' => 'landingblock']);
+                    $output .= html_writer::tag('div',
+                        $this->block(
+                            $bc,
+                            $region,
+                            ['notitle' => true, 'landingblock' => true]
+                        ), 
+                        ['class' => 'landingblock']
+                    );
                 } else {
                     $output .= $this->block($bc, $region);
                 }
@@ -241,6 +249,51 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
             }
         }
         return $output;
+    }
+
+    /**
+     * Prints a nice side block with an optional header.
+     *
+     * @param block_contents $bc HTML for the content
+     * @param string $region the region the block is appearing in.
+     * @return string the HTML to be output.
+     */
+    public function block(block_contents $bc, $region, $blockoptions = []) {
+        $bc = clone($bc); // Avoid messing up the object passed in.
+        if (empty($bc->blockinstanceid) || !strip_tags($bc->title)) {
+            $bc->collapsible = block_contents::NOT_HIDEABLE;
+        }
+
+        $id = !empty($bc->attributes['id']) ? $bc->attributes['id'] : uniqid('block-');
+        $context = new stdClass();
+        $context->skipid = $bc->skipid;
+        $context->blockinstanceid = $bc->blockinstanceid ?: uniqid('fakeid-');
+        $context->dockable = $bc->dockable;
+        $context->id = $id;
+        $context->hidden = $bc->collapsible == block_contents::HIDDEN;
+        $context->skiptitle = strip_tags($bc->title);
+        $context->showskiplink = !empty($context->skiptitle);
+        $context->arialabel = $bc->arialabel;
+        $context->ariarole = !empty($bc->attributes['role']) ? $bc->attributes['role'] : 'complementary';
+        $context->class = $bc->attributes['class'];
+        $context->type = $bc->attributes['data-block'];
+        if (empty($blockoptions['notitle'])) {
+            $context->title = $bc->title;
+        }
+        $context->content = $bc->content;
+        $context->annotation = $bc->annotation;
+        $context->footer = $bc->footer;
+        $context->hascontrols = !empty($bc->controls);
+        if ($context->hascontrols) {
+            $context->controls = $this->block_controls($bc->controls, $id);
+        }
+
+        if (!empty($blockoptions['landingblock'])) {
+            $template = 'theme_lexa/landing_block';
+        } else {
+            $template = 'core/block';
+        }
+        return $this->render_from_template($template, $context);
     }
 
     /**
