@@ -233,7 +233,7 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
                             $bc,
                             $region,
                             ['notitle' => true, 'landingblock' => true]
-                        ), 
+                        ),
                         ['class' => 'landingblock']
                     );
                 } else {
