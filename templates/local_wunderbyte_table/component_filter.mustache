@@ -137,17 +137,11 @@
 }}
 
 {{#filter}}
-    <div class="pl-3 d-flex justify-content-start align-items-center mb-2">
-        <i class="fa-solid fa-filter h4 mb-0"></i>
-        <h4 class="pl-3 mb-0 font-weight-normal">
-            {{#str}} filter_heading, local_wunderbyte_table {{/str}}
-        </h4>
-    </div>
     <div class="wunderbyteTableFilter row">
     {{#categories}}
     <div class="col dropdowncontainer dd">
     <div class="dropdown">
-    <button 
+    <button
         {{#expanded}}
             aria-expanded="true"
         {{/expanded}}
@@ -160,7 +154,7 @@
     <div class="dropdown-menu">
        <div class="mt-2 ml-2 mr-2 {{show}}" id="id_collapse_{{columnname}}">
            <label class="pl-4 labelsearch">
-                <span class="h6 small">{{ columnname }}</span> 
+                <span class="h6 small">{{ columnname }}</span>
             </label>
             <input class="search form-control mb-2 filtersearch" name="filtersearch-{{columnname}}" placeholder="{{#str}}search, core{{/str}}" hidden>
                 {{#default}}
