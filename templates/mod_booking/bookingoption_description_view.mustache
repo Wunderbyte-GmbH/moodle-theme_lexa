@@ -1,0 +1,337 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template mod_booking/bookingoption_description_view
+
+    Classes required for JS:
+    * none
+
+    Data attributes required for JS:
+    * data-region
+
+    Example context (json):
+    {
+        "identifier": "2345",
+        "title": "AERIAL YOGA",
+        "titleprefix": "pf2345",
+        "modalcounter": 1,
+        "invisible": "0",
+        "annotation": "",
+        "userid": "2",
+        "description": "Flow Yoga Multistyle MindestteilnehmerInnen: 6",
+        "statusdescription": "v",
+        "imageurl": "http://localhost:58000/pluginfile.php/22/mod_booking/bookingimages/1/Aerial_yoga.png",
+        "location": "1",
+        "address": "1090 Wien Tendlergasse 11",
+        "institution": "TENDLERGASSE",
+        "duration": "0 days  1 hours  0 minutes",
+        "booknowbutton": null,
+        "dates": [
+            {
+            "datestring": "3 March 2023, 10:30 AM - 11:45 AM",
+            "customfields": []
+            },
+            {
+            "datestring": "10 March 2023, 10:30 AM - 11:45 AM",
+            "customfields": []
+            }
+        ],
+        "teachers": [
+            "Maxima Yoga"
+        ],
+        "price": "79.00",
+        "priceformulaadd": "0.00",
+        "priceformulamultiply": "1.00",
+        "currency": "EUR",
+        "pricecategoryname": "Price",
+        "dayofweektime": "FR, 10:30 - 11:45",
+        "sport": "Aerial Yoga",
+        "customfields": {
+            "sport": [
+            "AERIAL YOGA"
+            ],
+            "botags": [
+            ""
+            ]
+        },
+        "bookinginformation": {
+            "waiting": 0,
+            "booked": 1,
+            "reserved": 0,
+            "onnotifylist": false,
+            "maxanswers": "12",
+            "freeonlist": 11,
+            "fullybooked": false,
+            "showmanageresponses": true,
+            "manageresponsesurl": "http://localhost:58000/mod/booking/report.php?id=7&optionid=1"
+        },
+        "usertobuyfor": {
+            "id": "2",
+            "auth": "manual",
+            "confirmed": "1",
+            "policyagreed": "0",
+            "deleted": "0",
+            "suspended": "0",
+            "mnethostid": "1",
+            "username": "admin",
+            "password": "$2y$10$pAVtIFwAUH\bNSuVXjTgouqEjgxoYMb74bTiF0UEEoHJkKhrK0QdG",
+            "idnumber": "",
+            "firstname": "Admin",
+            "lastname": "User",
+            "email": "install@wunderbyte.at",
+            "emailstop": "0",
+            "phone1": "",
+            "phone2": "",
+            "institution": "",
+            "department": "",
+            "address": "",
+            "city": "",
+            "country": "",
+            "lang": "en",
+            "calendartype": "gregorian",
+            "theme": "",
+            "timezone": "99",
+            "firstaccess": "1669485049",
+            "lastaccess": "1678538409",
+            "lastlogin": "1678350420",
+            "currentlogin": "1678533798",
+            "lastip": "10.0.2.2",
+            "secret": "",
+            "picture": "0",
+            "description": "",
+            "descriptionformat": "1",
+            "mailformat": "1",
+            "maildigest": "0",
+            "maildisplay": "1",
+            "autosubscribe": "1",
+            "trackforums": "0",
+            "timecreated": "0",
+            "timemodified": "1669485103",
+            "trustbitmask": "0",
+            "imagealt": null,
+            "lastnamephonetic": "",
+            "firstnamephonetic": "",
+            "middlename": "",
+            "alternatename": "",
+            "moodlenetprofile": null,
+            "profile": []
+        },
+        "bookitsection": " HTML of Booked button",
+        "unitstring": "Units: 1.3",
+        "showmanageresponses": true,
+        "manageresponsesurl": "http://site/mod/booking/report.php?id=7&optionid=1"
+    }
+}}
+
+
+<div class="container-fluid">
+<div class="col-md-10 m-auto">
+    <div class="row">
+        <div class="col-md-7">
+            <div class="row mb-3">
+            {{> local_berta/col_availableplaces }}
+            </div>
+            <div class="requirements my-6">
+            <h2 class="title font-weight-normal" >{{#titleprefix}}{{.}} - {{/titleprefix}}{{title}}</h2>
+            </div>
+            {{#description}}
+            <div class="requirements my-6">
+            <div class="content"><p>{{{.}}}</p></div>
+            </div>
+            {{/description}}
+            {{#datesexist}}
+            <div class="requirements my-6">
+                <h2 class="font-weight-normal"> {{#str}} optiondates, local_berta {{/str}}</h2>
+                <a class="collapseoptiondatesbutton" data-toggle="collapse" href="#collapseoptiondates" role="button" aria-expanded="false" aria-controls="collapseoptiondates">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;{{#str}} dates, mod_booking {{/str}}...
+                </a>
+                <div id="collapseoptiondates" class="show list-group-item border-0 pl-0 pr-0">
+                    <div class="list-group">
+                        {{#dates}}
+                            <div class="list-group-item">
+                                <div>
+                                    <b>{{{datestring}}}</b>
+                                    {{#entitylink}}
+                                        <div class="entity-for-optiondate-area">
+                                            <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i>&nbsp;{{{.}}}
+                                        </div>
+                                    {{/entitylink}}
+                                </div>
+                                <div {{^customfields}}style="display:none"{{/customfields}}>
+                                    {{#customfields}}
+                                        <div>
+                                            {{name}}{{{value}}}
+                                        </div>
+                                    {{/customfields}}
+                                </div>
+                            </div>
+                        {{/dates}}
+                    </div>
+                </div>
+            </div>
+            {{/datesexist}}
+            {{#vorraussetzungen}}
+            <div class="requirements my-6">
+                <h2 class="font-weight-normal"> {{#str}} requirements, local_berta {{/str}}</h2>
+                {{{.}}}
+            </div>
+             {{/vorraussetzungen}}
+            {{#zielgruppe}}
+            <div class="requirements my-6">
+                <h2 class="font-weight-normal"> {{#str}} targetaud, local_berta {{/str}}</h2>
+                {{{.}}}
+            </div>
+             {{/zielgruppe}}
+             {{#kursziel}}
+            <div class="requirements my-6">
+                <h2 class="font-weight-normal"> {{#str}} goals, local_berta {{/str}}</h2>
+                {{{.}}}
+            </div>
+             {{/kursziel}}
+            {{#inhalte}}
+            <div class="requirements my-6">
+                <h2 class="font-weight-normal"> {{#str}} coursecontent, local_berta {{/str}}</h2>
+                {{{.}}}
+            </div>
+             {{/inhalte}}
+            {{#methoden}}
+            <div class="requirements my-6">
+                <h2 class="font-weight-normal"> {{#str}} coursemethods, local_berta {{/str}}</h2>
+                {{{.}}}
+            </div>
+             {{/methoden}}
+            <div class="requirements my-6">
+            {{> mod_booking/bookingoption_description_teachers }}
+            </div>
+            {{#sonstigeinfos}}
+            <div class="requirements my-6">
+                <h2 class="font-weight-normal"> {{#str}} additionalinfo, local_berta {{/str}}</h2>
+                {{{.}}}
+            </div>
+             {{/sonstigeinfos}}
+        </div>
+        <div class="col-md-5">
+            <div class="card price-card">
+                {{#imageurl}}
+                <img class="w-100 bertaimage" src="{{imageurl}}" alt="{{title}}">
+                {{/imageurl}}
+                <div class="card-body">
+                    <div class="row">
+                    <div class="col-md-11 m-auto">
+                        {{#dayofweektime}}
+                        <div>
+                            <span>
+                                <i class="fa fa-fw fa-clock-o" aria-hidden="true"></i>
+                            </span>
+                            <span class="d-md-none">
+                                {{#str}} dayofweektime, mod_booking {{/str}}
+                            </span>
+                                {{.}}
+                            <span>
+                                {{#unitstring}} ({{.}}) {{/unitstring}}
+                            </span>
+                        </div>
+                        {{/dayofweektime}}
+                        {{#location}}
+                        <div>
+                            <span>
+                                <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i>
+                            </span>
+                            <span class="d-md-none">
+                                {{#str}} location, mod_booking {{/str}}:
+                            </span>
+                            <span>
+                                {{{.}}}
+                            </span>
+                        </div>
+                        {{/location}}
+                        {{#institution}}
+                        <div>
+                            <span>
+                                <i class="fa fa-fw fa-building-o" aria-hidden="true"></i>
+                            </span>
+                            <span class="d-md-none">
+                                {{#str}} institution, mod_booking {{/str}}:
+                            </span>
+                            <span>
+                                {{{.}}}
+                            </span>
+                        </div>
+                        {{/institution}}
+                        {{#responsiblecontactuser}}
+                        <div>
+                            <span>
+                                <i class="fa fa-fw fa-user" aria-hidden="true"></i>
+                            </span>
+                            <span>
+                                {{#str}} responsible, mod_booking {{/str}}: <a href="{{link}}" target="_blank">{{firstname}} {{lastname}}</a>
+                            </span>
+                        </div>
+                        {{/responsiblecontactuser}}
+                        {{#bookingopeningtime}}
+                        <div>
+                            <span>
+                                <i class="fa fa-fw fa-forward" aria-hidden="true"></i>
+                            </span>
+                            <span>
+                                {{#str}} bookingopeningtime, mod_booking {{/str}}: {{{.}}}
+                            </span>
+                        </div>
+                        {{/bookingopeningtime}}
+                        {{#bookingclosingtime}}
+                        <div>
+                            <span>
+                                <i class="fa fa-fw fa-step-forward" aria-hidden="true"></i>
+                            </span>
+                            <span>
+                                {{#str}} bookingclosingtime, mod_booking {{/str}}: {{{.}}}
+                            </span>
+                        </div>
+                        {{/bookingclosingtime}}
+                        {{#bookinginformation}}
+                        <div>
+                            <div class="col-ap-availableplaces">
+                                <span><i class="fa fa-fw fa-ticket" aria-hidden="true"></i></span>
+                                {{> booking/col_availableplaces }}
+                            </div>
+                        </div>
+                        {{#minanswers}}
+                        <div>
+                            <div class="col-ap-minanswers">
+                                <span><i class="fa fa-fw fa-arrow-up" aria-hidden="true"></i></span>
+                                {{#str}} minanswers, mod_booking {{/str}}: {{.}}
+                            </div>
+                        </div>
+                        {{/minanswers}}
+                        {{/bookinginformation}}
+                        <div class="row">
+                        {{{ bookitsection }}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+{{#js}}
+    require(['local_shopping_cart/cart'], function(cart) {
+    cart.buttoninit({{modalcounter}}, "mod_booking");
+    });
+{{/js}}
