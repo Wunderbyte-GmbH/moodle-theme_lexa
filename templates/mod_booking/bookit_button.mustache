@@ -69,6 +69,11 @@
             {{{label}}}
         </div>
     {{/top}}
+    {{#sub}}
+        <div class="booking-button-subarea h5 mb-1 mt-1 p-1 {{class}} mr-auto font-weight-normal d-flex align-items-center" role="{{role}}">
+            {{{label}}}
+        </div>
+    {{/sub}}  
     {{#main}}
         {{#link}}
             <a class="booking-button-mainarea bertabutton p-1 {{class}}" role="{{role}}" href="{{link}}">
@@ -82,11 +87,6 @@
             </div>
         {{/link}}
     {{/main}}
-    {{#sub}}
-        <div class="booking-button-subarea h6 mb-1 mt-1 p-1 {{class}}" role="{{role}}">
-            {{{label}}}
-        </div>
-    {{/sub}}  
 </div>
 
 {{^nojs}}

@@ -362,3 +362,27 @@ body.limitedwidth #page.drawers .footer-popover {
         padding-bottom: 1rem;
     }
 }
+
+#page-mod-booking-optionview {
+    background-color: $primarylightbg;
+    .main-inner, #region-main, #page-header, #topofscroll {
+       background-color: $primarylightbg;
+    }
+
+    .datestring {
+        .date {
+            margin-right:auto;
+            font-weight: bold;
+        }
+    }
+
+    .location {
+        a {
+            color: black;
+            border: 1px solid black;
+            background: white;
+            border-radius: .5rem;
+            padding: .375rem .75rem;
+        }
+    }
+}
