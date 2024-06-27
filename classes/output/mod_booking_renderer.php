@@ -142,10 +142,6 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
             $data['competency'] = $this->prepare_kompetenzen($data['modalcounter'] );
         }
         $data['botags'] = $this->prepare_botags($data['modalcounter']);
-        // $data['dates'] = $this->prepare_dates($data['dates'], $data['modalcounter']);
-        if (!isset($data['location']) || $data['location'] == '') {
-            $data['location'] = get_string('nolocation', 'local_berta');
-        }
         $data['showcollapse'] = $this->prepare_dates($data);
         $settings = singleton_service::get_instance_of_booking_option_settings((int)$data['modalcounter']);
 
