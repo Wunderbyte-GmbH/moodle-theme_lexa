@@ -363,6 +363,53 @@ body.limitedwidth #page.drawers .footer-popover {
     }
 }
 
+.booking-button-area .booking-button-mainarea.bertabutton:not(#page-mod-booking-optionview .booking-button-area .booking-button-mainarea.bertabutton),
+ .booking-button-area .booking-button-area.bertabutton:not(#page-mod-booking-optionview .booking-button-area .booking-button-area.bertabutton) {
+    /* eslint-disable-next-line */
+    width: fit-content !important;
+    /* eslint-disable-next-line */
+    padding: 0 10px !important;
+    /* eslint-disable-next-line */
+    padding: 10px !important;
+    /* eslint-disable-next-line */
+    height: 2.5rem !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.booking-button-area .booking-button-toparea {
+    border-radius: 0.5rem;
+    /* eslint-disable */
+    height: 2.5rem !important;
+    padding: 0 !important;
+    margin: 0 0.25rem !important;
+    font-size: .9375rem !important;
+    font-weight: bold !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* eslint-enable */
+}
+
+
+.booking-button-area .booking-button-area:not(#page-mod-booking-optionview .booking-button-area .booking-button-area), .bertabutton:not(#page-mod-booking-optionview .bertabutton) {
+    background: transparent !important;
+    border: black 2px solid !important;
+    position: relative;
+    color: black !important;
+    font-weight: normal;
+    /* eslint-disable-next-line */
+    /* padding-right: 2rem !important; */
+}
+
+.linkbutton:not(#page-mod-booking-optionview .linkbutton) {
+    border: 2px solid black;
+    border-radius: 8px;
+    color: black;
+    font-weight: normal;
+}
+
 #page-mod-booking-optionview {
     background-color: $primarylightbg;
     .main-inner, #region-main, #page-header, #topofscroll {
