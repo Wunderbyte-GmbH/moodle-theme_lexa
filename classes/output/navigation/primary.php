@@ -58,7 +58,7 @@ class primary extends \theme_boost_union\output\navigation\primary {
      * Get/Generate the user menu.
      *
      * Modifications compared to the original function:
-     * * Add a 'Set preferred language' link to the lang menu if the addpreferredlang setting is enabled in Boost Union.
+     * Add a 'Set preferred language' link to the lang menu if the addpreferredlang setting is enabled in Boost Union.
      *
      * @param renderer_base $output
      * @return array
