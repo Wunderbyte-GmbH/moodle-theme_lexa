@@ -102,14 +102,21 @@ if ($courseindexopen) {
     $extraclasses[] = 'drawer-open-index';
 }
 
-$blockshtml = $OUTPUT->blocks('side-pre');
-$hasblocks = (strpos($blockshtml, 'data-block=') !== false || !empty($addblockbutton));
-if (!$hasblocks) {
-    $blockdraweropen = false;
-}
 $courseindex = core_course_drawer();
 if (!$courseindex) {
     $courseindexopen = false;
+}
+$blockshtml = $OUTPUT->blocks('side-pre');
+$hasblocks = (strpos($blockshtml, 'data-block=') !== false || !empty($addblockbutton));
+if ($hasblocks) {
+    $blocksright = true;
+    if (!$courseindex) {
+        if ($PAGE->pagetype == 'calendar-view') {
+            $blocksright = false;
+        }
+    }
+} else {
+    $blockdraweropen = false;
 }
 
 $landingblockshtml = $OUTPUT->blocks('landing');
@@ -173,6 +180,7 @@ $templatecontext = [
     'output' => $OUTPUT,
     'sidepreblocks' => $blockshtml,
     'hasblocks' => $hasblocks,
+    'blocksright' => $blocksright,
     'landingblocks' => $landingblockshtml,
     'haslandingblocks' => $haslandingblocks,
     'bodyattributes' => $bodyattributes,
