@@ -307,25 +307,13 @@ body.notloggedin {
     }
 }
 
-.calendar-controls {
+.lexa-calendar-view .calendar-controls {
     .current {
         width: 100%;
     }
     .next,
     .previous {
         width: 50%;
-    }
-}
-
-@include media-breakpoint-up(md) {
-    section:not(#region-main) .block.block_calendar_month .maincalendar .calendarwrapper {
-        .current {
-            width: 100%;
-        }
-        .next,
-        .previous {
-            width: 50%;
-        }
     }
 }
 

@@ -40,7 +40,12 @@
     }} data-year="{{date.year}}"{{!
     }} data-view="{{view}}"{{!
     }}>
-    {{> core_calendar/month_only }}
+    {{#viewinginblock}}
+        {{> core_calendar/month_navigation }}
+    {{/viewinginblock}}
+    {{^viewinginblock}}
+        {{> core_calendar/month_only }}
+    {{/viewinginblock}}
     {{> core/overlay_loading}}
     <table id="month-detailed-{{uniqid}}-{{calendarinstanceid}}" class="calendarmonth calendartable mb-0">
         <thead>
@@ -167,7 +172,9 @@
     {{/weeks}}
         </tbody>
     </table>
-    {{> core_calendar/month_navigation }}
+    {{^viewinginblock}}
+        {{> core_calendar/month_navigation_only }}
+    {{/viewinginblock}}
 </div>
 {{#js}}
 require([
