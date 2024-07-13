@@ -241,6 +241,17 @@ body.notloggedin {
     }
 }
 
+@include media-breakpoint-up(lg) {
+    #page.drawers {
+        &.show-drawer-left {
+            padding-left: 3rem;
+        }
+        &.show-drawer-right {
+            padding-right: 3rem;
+        }
+    }
+}
+
 // Landing region.
 #block-region-landing {
     display: flex;
