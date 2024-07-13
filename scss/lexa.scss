@@ -172,6 +172,19 @@ body.notloggedin {
             grid-template-columns: $navbar-scrolled-layout;
         }
     }
+    .pagelayout-standard {
+        #page.drawers {
+            .main-inner {
+                max-width: 100%;
+            }
+            .footer-popover {
+                border-radius: 0;
+                max-width: calc(100% + 6rem);
+                margin: 0 0 0 -3rem;
+                width: calc(100% + 6rem);
+            }
+        }
+    }
 }
 
 // Primary navigation/
