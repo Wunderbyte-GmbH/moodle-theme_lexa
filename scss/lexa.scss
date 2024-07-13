@@ -300,6 +300,13 @@ body.notloggedin {
     margin-bottom: 1rem;
 }
 
+#page-calendar-view #page.drawers .main-inner {
+    background-color: $calendar-bg-color;
+    #region-main {
+        @include border-radius();
+    }
+}
+
 // Footer.
 body.limitedwidth #page.drawers .footer-popover {
     max-width: none;
