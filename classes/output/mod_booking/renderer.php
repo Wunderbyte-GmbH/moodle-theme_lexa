@@ -17,7 +17,7 @@
 /**
  * A custom renderer class that extends the plugin_renderer_base and is used by the booking module.
  *
- * @package mod_booking
+ * @package theme_lexa
  * @copyright 2023 Wunderbyte GmbH <info@wunderbyte.at>
  * @author David Bogner, Andraž Prinčič
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
