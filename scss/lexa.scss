@@ -411,8 +411,8 @@ body.limitedwidth #page.drawers .footer-popover {
     }
 }
 
-.booking-button-area .booking-button-mainarea.bertabutton:not(#page-mod-booking-optionview .booking-button-area .booking-button-mainarea.bertabutton),
- .booking-button-area .booking-button-area.bertabutton:not(#page-mod-booking-optionview .booking-button-area .booking-button-area.bertabutton) {
+.booking-button-area .booking-button-mainarea.urisebutton:not(#page-mod-booking-optionview .booking-button-area .booking-button-mainarea.urisebutton),
+ .booking-button-area .booking-button-area.urisebutton:not(#page-mod-booking-optionview .booking-button-area .booking-button-area.urisebutton) {
     /* eslint-disable-next-line */
     width: fit-content !important;
     /* eslint-disable-next-line */
@@ -441,7 +441,7 @@ body.limitedwidth #page.drawers .footer-popover {
 }
 
 
-.booking-button-area .booking-button-area:not(#page-mod-booking-optionview .booking-button-area .booking-button-area), .bertabutton:not(#page-mod-booking-optionview .bertabutton) {
+.booking-button-area .booking-button-area:not(#page-mod-booking-optionview .booking-button-area .booking-button-area), .urisebutton:not(#page-mod-booking-optionview .urisebutton) {
     background: transparent !important;
     border: black 2px solid !important;
     position: relative;

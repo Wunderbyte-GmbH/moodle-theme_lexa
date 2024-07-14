@@ -159,10 +159,10 @@
             {{/description}}
             {{#datesexist}}
             <div class="my-6">
-                <h2 class="font-weight-normal"> {{#str}} optiondates, local_berta {{/str}}</h2>
+                <h2 class="font-weight-normal"> {{#str}} optiondates, local_urise {{/str}}</h2>
                     {{#showcollapse}}
                     <div class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapseDates"
-                     aria-expanded="false" aria-controls="collapseDates"">{{#str}} showdates, local_berta {{/str}}</div>
+                     aria-expanded="false" aria-controls="collapseDates"">{{#str}} showdates, local_urise {{/str}}</div>
                     {{/showcollapse}}
                      <div class=" {{#showcollapse}}collapse{{/showcollapse}} mt-3" id="collapseDates">
                     {{#dates}}
@@ -199,37 +199,37 @@
             {{/datesexist}}
             {{#vorraussetzungen}}
             <div class="my-6">
-                <h2 class="font-weight-normal"> {{#str}} requirements, local_berta {{/str}}</h2>
+                <h2 class="font-weight-normal"> {{#str}} requirements, local_urise {{/str}}</h2>
                 {{{.}}}
             </div>
              {{/vorraussetzungen}}
             {{#zielgruppe}}
             <div class="my-6">
-                <h2 class="font-weight-normal"> {{#str}} targetaud, local_berta {{/str}}</h2>
+                <h2 class="font-weight-normal"> {{#str}} targetaud, local_urise {{/str}}</h2>
                 {{{.}}}
             </div>
              {{/zielgruppe}}
              {{#kursziel}}
             <div class="my-6">
-                <h2 class="font-weight-normal"> {{#str}} goals, local_berta {{/str}}</h2>
+                <h2 class="font-weight-normal"> {{#str}} goals, local_urise {{/str}}</h2>
                 {{{.}}}
             </div>
              {{/kursziel}}
             {{#inhalte}}
             <div class="my-6">
-                <h2 class="font-weight-normal"> {{#str}} coursecontent, local_berta {{/str}}</h2>
+                <h2 class="font-weight-normal"> {{#str}} coursecontent, local_urise {{/str}}</h2>
                 {{{.}}}
             </div>
              {{/inhalte}}
             {{#methoden}}
             <div class="my-6">
-                <h2 class="font-weight-normal"> {{#str}} coursemethods, local_berta {{/str}}</h2>
+                <h2 class="font-weight-normal"> {{#str}} coursemethods, local_urise {{/str}}</h2>
                 {{{.}}}
             </div>
              {{/methoden}}
              {{{#teachers.length}}}
                <div class="my-6 detailteacher">
-                <h2 class="font-weight-normal"> {{#str}} teachers, local_berta {{/str}}</h2>
+                <h2 class="font-weight-normal"> {{#str}} teachers, local_urise {{/str}}</h2>
                 {{#teachers}}
                  <div class="profile-card d-flex mt-5 align-items-center mb-3">
                     <div class="mr-3">
@@ -244,14 +244,14 @@
                     </div>
                 </div>
                  <a href="{{{teacherurl}}}" class="btn btn-outline-dark bg-white">
-                 {{#str}} gotoprofile, local_berta {{/str}}
+                 {{#str}} gotoprofile, local_urise {{/str}}
                  <i class="fa-solid fa-arrow-right ml-1"></i></a>
                  {{/teachers}}
                 </div>
             {{{/teachers.length}}}
             {{#location}}
             <div class="my-6 location">
-                <h2 class="font-weight-normal"> {{#str}} location, local_berta {{/str}}</h2>
+                <h2 class="font-weight-normal"> {{#str}} location, local_urise {{/str}}</h2>
                 {{#entities}}
                     {{{description}}}
                 {{/entities}}
@@ -261,13 +261,13 @@
              {{/location}}
             {{#sonstigeinfos}}
             <div class="my-6">
-                <h2 class="font-weight-normal"> {{#str}} additionalinfo, local_berta {{/str}}</h2>
+                <h2 class="font-weight-normal"> {{#str}} additionalinfo, local_urise {{/str}}</h2>
                 {{{.}}}
             </div>
              {{/sonstigeinfos}}
             {{#responsiblecontactuser}}
             <div class="my-6">
-                <h2 class="font-weight-normal"> {{#str}} orgacontact, local_berta {{/str}}</h2>
+                <h2 class="font-weight-normal"> {{#str}} orgacontact, local_urise {{/str}}</h2>
                 <div>
                 <p>{{{firstname}}} {{{lastname}}}</p>
                 <p>{{{description}}}</p>
@@ -283,7 +283,7 @@
         <div class="col-md-4">
             <div class="card price-card border-0">
                 {{#imageurl}}
-                   <img class="w-100 bertaimage" src="{{imageurl}}" alt="{{title}}">
+                   <img class="w-100 uriseimage" src="{{imageurl}}" alt="{{title}}">
                 {{/imageurl}}
                 {{^imageurl}}
                         <div class="placeholderimage">
@@ -298,7 +298,7 @@
                 <div class="card-body">
                     <div class="row mod-booking-row">
                     <div class="col-md-11 m-auto">
-                        <p class="mb-1 font-weight-bold">{{#str}} aboutoffer, local_berta {{/str}}</p>
+                        <p class="mb-1 font-weight-bold">{{#str}} aboutoffer, local_urise {{/str}}</p>
                         {{#dayofweektime}}
                         <div class="mb-1">
                             <span>

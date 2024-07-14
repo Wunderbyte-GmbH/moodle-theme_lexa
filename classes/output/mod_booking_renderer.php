@@ -25,7 +25,7 @@
 
 namespace theme_lexa\output;
 
-use local_berta\shortcodes;
+use local_urise\shortcodes;
 use mod_booking;
 use html_writer;
 use mod_booking\output\bookingoption_description;
@@ -71,7 +71,7 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
         $buyforuser = price::return_user_to_buy_for();
 
         $data = new col_availableplaces($values, $settings, $buyforuser);
-        $output = singleton_service::get_renderer('local_berta');
+        $output = singleton_service::get_renderer('local_urise');
         return $output->render_col_availableplaces($data);
     }
 
@@ -99,7 +99,7 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
                 foreach ($botagsarray as $botag) {
                     if (!empty($botag)) {
                         $botagsstring .=
-                            "<span class='berta-table-botag rounded-sm bg-info text-light pl-2 pr-2 pt-1 pb-1 mr-1 d-inline-block text-center'>
+                            "<span class='urise-table-botag rounded-sm bg-info text-light pl-2 pr-2 pt-1 pb-1 mr-1 d-inline-block text-center'>
                             $botag
                             </span>";
                     } else {
