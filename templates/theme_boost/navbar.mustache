@@ -142,9 +142,9 @@
         </div>
     </div>
     <div id="lexa-navbar-scrolled" class="navbar-row navbar-light bg-white lexa-nav-second-row">
-        <div id="lexa-navbar-brand" class="navbar-brand align-items-center m-0 p-0 aabtn">
+        <a href="{{#alternativelogolinkurl}}{{{alternativelogolinkurl}}}{{/alternativelogolinkurl}}{{^alternativelogolinkurl}}{{{ config.homeurl }}}{{/alternativelogolinkurl}}" id="lexa-navbar-brand" class="navbar-brand align-items-center m-0 p-0 aabtn">
             <img src="{{output.get_compact_second_logo_url}}" class="logo mr-1" alt="{{sitename}}">
-        </div>
+        </a>
 
         {{#primarymoremenu}}
         <div class="primary-navigation d-none d-md-flex">
