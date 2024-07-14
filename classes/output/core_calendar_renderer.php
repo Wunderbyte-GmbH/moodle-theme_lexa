@@ -46,6 +46,9 @@ class core_calendar_renderer extends \core_calendar_renderer {
         return $this->render_from_template('core_calendar/add_event_button', $data);
     }
 
+    /**
+     * Returns today as a string to be displayed.  Uses localised language string format.
+     */
     public function today() {
         $data = [
             'today' => userdate(time(), get_string('strftimedayshort', 'core_langconfig')),
