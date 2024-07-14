@@ -287,21 +287,11 @@ body.notloggedin {
     }
 }
 
-@include media-breakpoint-up(sm) {
+@include media-breakpoint-up(md) {
     body:not(.editing) #page.drawers {
         #block-region-landing {
             margin-left: -3rem;
             margin-right: -3rem;
-        }
-        &.show-drawer-left {
-            #block-region-landing {
-                margin-left: 0;
-            }
-        }
-        &.show-drawer-right {
-            #block-region-landing {
-                margin-right: 0;
-            }
         }
     }
 }
