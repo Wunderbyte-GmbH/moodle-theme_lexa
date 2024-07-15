@@ -109,8 +109,8 @@ if (!$courseindex) {
 }
 $blockshtml = $OUTPUT->blocks('side-pre');
 $hasblocks = (strpos($blockshtml, 'data-block=') !== false || !empty($addblockbutton));
+$blocksright = true;
 if ($hasblocks) {
-    $blocksright = true;
     if (!$courseindex) {
         if ($PAGE->pagetype == 'calendar-view') {
             $blocksright = false;
