@@ -98,7 +98,6 @@ export const init = (theHeaderHeight) => {
      */
     const stickyheader = () => {
         windowScrollY = window.scrollY;
-        log.debug("windowScrollY: " + windowScrollY);
         if (windowScrollY > headerHeight) {
             // Greater than first row.
             if (!scrolled) {
