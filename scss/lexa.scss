@@ -420,7 +420,15 @@ body.limitedwidth #page.drawers .footer-popover {
     /* eslint-disable-next-line */
     padding: 10px !important;
     /* eslint-disable-next-line */
-    height: 2.5rem !important;
+    min-height: 2.5rem !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: normal
+    
+}
+
+.booking-button-mainarea.urisebutton {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -429,9 +437,9 @@ body.limitedwidth #page.drawers .footer-popover {
 .booking-button-area .booking-button-toparea {
     border-radius: 0.5rem;
     /* eslint-disable */
-    height: 2.5rem !important;
+    min-height: 2.5rem !important;
     padding: 0 !important;
-    margin: 0 0.25rem !important;
+    // margin: 0 0.25rem !important;
     font-size: .9375rem !important;
     font-weight: bold !important;
     display: flex;
