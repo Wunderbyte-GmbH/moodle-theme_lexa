@@ -185,8 +185,8 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
             if (is_array($settings->customfields['kompetenzen'])) {
 
                 $returnorgas = [];
+                $organisations = shortcodes::get_kompetenzen();
                 foreach ($settings->customfields['kompetenzen'] as $orgaid) {
-                    $organisations = shortcodes::KOMPETENZEN;
 
                     if (isset($organisations[$orgaid])) {
                         $returnorgas[] = html_writer::tag(
