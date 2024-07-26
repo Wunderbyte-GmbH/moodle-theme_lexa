@@ -116,6 +116,17 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
         return '';
     }
 
+    public function render_col_coursestarttime($data) {
+        $o = '';
+        // Check if multiple dates.
+        $data = $data->export_for_template($this);
+        if (!empty($data['datestrings']) && count($data['datestrings']) > 1) {
+            $data['firstDate'] = $data['datestrings'][0]['datestring'];
+        }
+        $o .= $this->render_from_template('mod_booking/col_coursestarttime', $data);
+        return $o;
+    }
+
     /**
      * Renders the booking option description view.
      *
@@ -128,6 +139,7 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
     public function render_bookingoption_description_view(bookingoption_description $data) {
         $o = '';
         $data = $data->export_for_template($this);
+        $data['title'] = strip_tags( $data['title']);
         // Prepare Data for template.
         if (!empty($data['bookinginformation'])) {
             $data['bookings'] = $this->prepare_bookings($data['bookinginformation'], $data['modalcounter']);

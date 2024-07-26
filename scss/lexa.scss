@@ -466,6 +466,42 @@ body.limitedwidth #page.drawers .footer-popover {
     font-weight: normal;
 }
 
+.urisecalendarcard {
+
+    .topspan {
+        position: absolute;
+        top: -8px;
+        background: white;
+        z-index: 99;
+        padding: 0 10px 0 0;
+        font-size: 0.8rem;
+    }
+
+    p { 
+
+        font-size: 1rem;
+        color: var(--primary);
+    }
+    a { 
+        color: var(--primary);
+    }
+    position: relative;
+}
+
+.urisecalendarcard::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 100%;
+    content: '';
+    border-top: 4px solid var(--primary);
+}
+
+.lightcontent {
+    background: var(--lightcontent) !important;
+}
+
 #page-mod-booking-optionview {
     background-color: $primarylightbg;
     .main-inner, #region-main, #page-header, #topofscroll {
