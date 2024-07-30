@@ -114,7 +114,27 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
      * @return string HTML for the navbar
      */
     public function navbar_plugin_output() {
-        return '<span id="lexa-npo" class="d-flex h-100 align-items-center">' . parent::navbar_plugin_output() . '</span>';
+        $output = '<span id="lexa-npo" class="d-flex h-100 align-items-center">';
+
+        if ($pluginsfunction = get_plugins_with_function('render_navbar_output')) {
+            foreach ($pluginsfunction as $plugintype => $plugins) {
+                foreach ($plugins as $pluginfunction) {
+                    $output .= $pluginfunction($this);
+                }
+            }
+        }
+
+        // Give subsystems an opportunity to inject extra html content. The callback
+        // must always return a string containing valid html.
+        foreach (\core_component::get_core_subsystems() as $name => $path) {
+            if ($path) {
+                $output .= component_callback($name, 'render_navbar_output', [$this], '');
+            }
+        }
+
+         $output .= '</span>';
+
+        return $output;
     }
 
     /**
