@@ -1,10 +1,11 @@
 // Colours.
-$blue:  #0063a6 !default;
+$blue_500:  #0063a6 !default;
+$blue_700:  #005c99 !default;
 $red:   #ea3a3d !default;
 $green: #16cc69 !default;
 $light-borders: #e9f0f3 !default;
 
-$primary:   $blue !default;
+$primary:   $blue_500 !default;
 $secondary: #0cb9c5 !default;
 $success:   $green !default;
 $warning:   #f3874a !default;

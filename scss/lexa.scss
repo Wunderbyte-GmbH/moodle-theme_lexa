@@ -187,12 +187,27 @@ body.notloggedin {
     }
 }
 
-// Primary navigation/
+// Primary navigation.
 .primary-navigation {
     .navigation {
         height: $navbar-height / 2;
         .nav-link {
             height: $navbar-height / 2;
+        }
+    }
+}
+
+// Secondary navigation.
+.navbar-light {
+    .moremenu {
+        .navbar-nav {
+            .nav-link {
+                font-weight: 500;
+                &.active {
+                    border-bottom-color: $blue_700;
+                    color: $blue_700;
+                }
+            }
         }
     }
 }
