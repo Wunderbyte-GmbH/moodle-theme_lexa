@@ -187,6 +187,12 @@ body.notloggedin {
     }
 }
 
+// Navigation.
+.nav-link,
+.navbar-expand .navbar-nav .nav-link {
+     padding: 0 20px;
+}
+
 // Primary navigation.
 .primary-navigation {
     .navigation {
@@ -197,21 +203,34 @@ body.notloggedin {
     }
 }
 
-// Secondary navigation.
-.navbar-light {
+.primary-navigation {
     .moremenu {
-        .navbar-nav {
+        .more-nav {
             .nav-link {
                 font-weight: 500;
                 &.active {
-                    border-bottom-color: $blue_700;
-                    color: $blue_700;
+                    border-bottom-color: $primary;
+                    color: $primary;
                 }
             }
         }
     }
 }
 
+// Secondary navigation.
+.secondary-navigation {
+    .moremenu {
+        .more-nav {
+            .nav-link {
+                font-weight: 500;
+                &.active {
+                    border-bottom-color: $darksecondary;
+                    color: $darksecondary;
+                }
+            }
+        }
+    }
+}
 // Drawers.
 #page,
 #page.drawers {

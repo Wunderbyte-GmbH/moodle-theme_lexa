@@ -44,17 +44,20 @@ function theme_lexa_get_pre_scss($theme) {
         $boostuniontheme = theme_config::load('boost_union'); // Needs to be the Boost Union theme so that we get its settings.
     }
 
-    $scss = theme_boost_union_get_pre_scss($boostuniontheme);
-
-    // Pre scss.  Note:  Does not work with themedir.
-    $scss .= file_get_contents($CFG->dirroot . '/theme/lexa/scss/lexapre.scss');
+    $scss = '';
 
     // Prepend pre-scss.
     if (!empty($boostuniontheme->settings->scsspre)) {
         $scss .= $boostuniontheme->settings->scsspre;
     }
 
-    // Navbar scrolled layout.
+    // Pre scss.  Note:  Does not work with themedir.
+    // Load first to override defaults in Bootstrap etc.
+    $scss = file_get_contents($CFG->dirroot . '/theme/lexa/scss/lexapre.scss');
+
+    $scss .= theme_boost_union_get_pre_scss($boostuniontheme);
+
+    // Navbar scrolled layout;
     if (!empty($theme->settings->navbarscrolledlayout)) {
         $scss .= '$navbar-scrolled-layout: ' . $theme->settings->navbarscrolledlayout .';' . PHP_EOL;
     }
