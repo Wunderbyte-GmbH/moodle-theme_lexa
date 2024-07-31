@@ -57,7 +57,7 @@ function theme_lexa_get_pre_scss($theme) {
 
     $scss .= theme_boost_union_get_pre_scss($boostuniontheme);
 
-    // Navbar scrolled layout;
+    // Navbar scrolled layout.
     if (!empty($theme->settings->navbarscrolledlayout)) {
         $scss .= '$navbar-scrolled-layout: ' . $theme->settings->navbarscrolledlayout .';' . PHP_EOL;
     }
