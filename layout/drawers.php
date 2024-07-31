@@ -118,7 +118,7 @@ if ($hasblocks) {
             $calendarrenderer = $PAGE->get_renderer('core_calendar');
             // Todo - Need to figure out the JS for this -> /calendar/amd/src/crud.js registerEventFormModal function ->
             // root.on('click', CalendarSelectors.actions.create, function(e) bit.
-            // $blockcontentpre = $calendarrenderer->add_event_button($COURSE->id);
+            // $blockcontentpre = $calendarrenderer->add_event_button($COURSE->id);.
             $blockcontentpre = $calendarrenderer->today();
         }
     }

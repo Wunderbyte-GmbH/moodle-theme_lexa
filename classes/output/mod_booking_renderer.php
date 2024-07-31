@@ -99,7 +99,8 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
                 foreach ($botagsarray as $botag) {
                     if (!empty($botag)) {
                         $botagsstring .=
-                            "<span class='urise-table-botag rounded-sm bg-info text-light pl-2 pr-2 pt-1 pb-1 mr-1 d-inline-block text-center'>
+                            "<span class='urise-table-botag rounded-sm bg-info text-light
+                             pl-2 pr-2 pt-1 pb-1 mr-1 d-inline-block text-center'>
                             $botag
                             </span>";
                     } else {
@@ -116,6 +117,14 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
         return '';
     }
 
+    /**
+     * This function is called for each data row to allow processing of the
+     * booking option coursestarttime
+     *
+     * @param object $values Contains object with all the values of record.
+     * @return string $sports Returns course start time as a readable string.
+     * @throws coding_exception
+     */
     public function render_col_coursestarttime($data) {
         $o = '';
         // Check if multiple dates.

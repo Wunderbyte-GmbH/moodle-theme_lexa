@@ -38,6 +38,11 @@ class toolbox_test extends \advanced_testcase {
         set_config('theme', 'lexa');
     }
 
+    /**
+     * Test convert text to items.
+     *
+     * @covers ::convert_text_to_items
+     */
     public function test_convert_text_to_items() {
         $toolbox = \theme_lexa\toolbox::get_instance();
 
