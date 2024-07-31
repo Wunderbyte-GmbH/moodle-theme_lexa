@@ -27,8 +27,20 @@ $calendar-bg-color: #edf6fa !default; // Todo: Check if is a named colour scheme
 $footer:        #001f33 !default;
 $footerdivider: #264051 !default;
 
+// Typography
+
+$font-size-base: 1.125rem !default; // B1 of 18px.
+$font-size-sm: 1rem !default; // B2 of 16px.
+
+//Cannot set $line-height-base: 1.625rem !default; // B1 of 26px.  As Boostrap SCSS fails to compile with rem or px units.
+$line-height-base: 1.44 !default; // B1 18px and line 26px = 1.44 bigger, roughly.
+
 // Fonts.
 $font-family-sans-serif: "Roboto", -apple-system, BlinkMacSystemFont, sans-serif !default;
+
+// Navs
+$nav-link-padding-y: 0 !default;
+$nav-link-padding-x: 20px !default;
 
 // Navbar.
 $navbar-height: 120px !default;

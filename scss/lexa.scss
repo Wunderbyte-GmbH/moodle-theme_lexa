@@ -188,9 +188,8 @@ body.notloggedin {
 }
 
 // Navigation.
-.nav-link,
 .navbar-expand .navbar-nav .nav-link {
-     padding: 0 20px;
+     padding: $nav-link-padding-y $nav-link-padding-x;
 }
 
 // Primary navigation.
