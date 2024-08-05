@@ -159,6 +159,12 @@
             <input class="search form-control mb-2 filtersearch" name="filtersearch-{{columnname}}" placeholder="{{#str}}search, core{{/str}}" hidden>
                 {{#default}}
                     <ul class="wunderbyterFilterList pt-2 list-group-flush">
+                    <li>
+                       <input class="filterelement filterouter form-check-input" type="checkbox" value="{{value}}" id="checkall{{columnname}}{{idstring}}" {{checked}} name="checkAll_{{columnname}}" data-action="csshide" data-key="{{key}}" data-targetvalue="{{value}}">
+                                    <label class="form-check-label font-weight-bold" for="{{key}}{{columnname}}{{idstring}}">
+                                        Checkall
+                                    </label>
+                                    </li>
                         {{#values}}
                             <li class="form-check list-group-item dropdown-item">
                                     <input class="filterelement filterouter form-check-input" type="checkbox" value="{{value}}" id="{{key}}{{columnname}}{{idstring}}" {{checked}} name="{{category}}" data-action="csshide" data-key="{{key}}" data-targetvalue="{{value}}">

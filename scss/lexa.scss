@@ -495,7 +495,24 @@ body.limitedwidth #page.drawers .footer-popover {
     font-weight: normal;
     /* eslint-disable-next-line */
     /* padding-right: 2rem !important; */
+    &:disabled {
+        background: red !important;
+
+        .fa-arrow-right {
+            display: none !important;
+        }
+    }
 }
+
+.booking-button-area .booking-button-area:not(#page-mod-booking-optionview .booking-button-area .booking-button-area).disabled, .urisebutton:not(#page-mod-booking-optionview .urisebutton).disabled{
+    opacity: 0.2 !important;
+} 
+
+.booking-button-area .booking-button-area:not(#page-mod-booking-optionview .booking-button-area .booking-button-area).disabled .fa-arrow-right, .urisebutton:not(#page-mod-booking-optionview .urisebutton).disabled  .fa-arrow-right {
+    display: none !important;
+} 
+
+
 
 .linkbutton:not(#page-mod-booking-optionview .linkbutton) {
     border: 2px solid black;
