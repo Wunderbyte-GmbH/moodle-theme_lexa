@@ -73,6 +73,11 @@
         border-right: 1px solid $border-color;
     }
 
+    #lexa-navbar-scrolled-only {
+        height: #{$navbar-height / 2};
+        max-height: #{$navbar-height / 2};
+    }
+
     .count-container {
         border-radius: 90px;
         font-size: 0.55rem;

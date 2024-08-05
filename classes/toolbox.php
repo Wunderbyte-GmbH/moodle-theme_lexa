@@ -107,7 +107,7 @@ class toolbox {
             $name = 'theme_lexa/navbarscrolledlayout';
             $title = get_string('navbarscrolledlayout', 'theme_lexa');
             $description = get_string('navbarscrolledlayoutdesc', 'theme_lexa');
-            $default = 'repeat(3,minmax(0,1fr))';
+            $default = '1fr auto 1fr';
             $setting = new \admin_setting_configtext($name, $title, $description, $default);
             $setting->set_updatedcallback('purge_all_caches');
             $settingspages['general']->add($setting);
