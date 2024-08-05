@@ -54,9 +54,14 @@
     // Avoid conflict with drawers.
     z-index: $zindex-sticky;
 
-    .navbar-row {
+    .navbar-row,
+    #lexa-navbar-scrolled-only {
         height: $navbar-height / 2;
         max-height: $navbar-height / 2;
+    }
+
+    #lexa-navbar-scrolled-only {
+        overflow-y: hidden;
     }
 
     .navbar-brand {
@@ -71,11 +76,6 @@
 
     #lexa-npo > div {
         border-right: 1px solid $border-color;
-    }
-
-    #lexa-navbar-scrolled-only {
-        height: #{$navbar-height / 2};
-        max-height: #{$navbar-height / 2};
     }
 
     .count-container {
