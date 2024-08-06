@@ -54,12 +54,6 @@
     // Avoid conflict with drawers.
     z-index: $zindex-sticky;
 
-    //.navbar-row,
-    //#lexa-navbar-scrolled-only {
-    //    height: $navbar-second-row-height;
-    //    max-height: $navbar-second-row-height;
-    //}
-
     .navbar-brand-first-row {
         .logo {
             max-height: calc(#{$navbar-logo-height} - (#{$primary-nav-padding-y} * 2));
@@ -202,8 +196,16 @@ body.notloggedin {
 }
 
 // Navigation.
-.navbar-expand .navbar-nav .nav-link {
-     padding: $nav-link-padding-y $nav-link-padding-x;
+.navbar {
+    .navbar-nav .nav-link,
+    .usermenu-container,
+    .editmode-switch-form {
+        padding: $nav-link-padding-y $nav-link-padding-x;
+    }
+}
+
+.navbar-dark a .icon {
+    color: inherit !important;
 }
 
 // Primary navigation.
@@ -244,6 +246,20 @@ body.notloggedin {
         }
     }
 }
+
+#lexa-npo {
+    .popover-region-toggle {
+        &::before {
+            bottom: -20px;
+            right: 20px;
+        }
+        &::after {
+            bottom: -21px;
+            right: 21px;
+        }
+    }
+}
+
 // Drawers.
 #page,
 #page.drawers {
