@@ -54,15 +54,21 @@
     // Avoid conflict with drawers.
     z-index: $zindex-sticky;
 
-    .navbar-row,
-    #lexa-navbar-scrolled-only {
-        height: $navbar-height / 2;
-        max-height: $navbar-height / 2;
+    //.navbar-row,
+    //#lexa-navbar-scrolled-only {
+    //    height: $navbar-second-row-height;
+    //    max-height: $navbar-second-row-height;
+    //}
+
+    .navbar-brand-first-row {
+        .logo {
+            max-height: calc(#{$navbar-logo-height} - (#{$primary-nav-padding-y} * 2));
+        }
     }
 
-    .navbar-brand {
+    .navbar-brand-second-row {
         .logo {
-            max-height: calc(#{$navbar-height / 2} - (#{$primary-nav-padding-y} * 2));
+            max-height: calc(#{$navbar-logo-height} - (#{$primary-nav-padding-y} * 2));
         }
     }
 
@@ -117,9 +123,16 @@
         }
     }
 
+    .lexa-nav-first-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 30px;
+    }
+
     .lexa-nav-second-row {
         display: flex;
         justify-content: space-between;
+        padding: 20px 30px;
     }
 
     .primary-navigation {
@@ -152,7 +165,7 @@ body.notloggedin {
     .drawer-left,
     .drawer-right {
         top: var(--lexa-navbar-pos);
-        height: calc(100vh - #{$navbar-height / 2});
+        height: calc(100vh - #{$navbar-second-row-height});
     }
 }
 
@@ -196,9 +209,9 @@ body.notloggedin {
 // Primary navigation.
 .primary-navigation {
     .navigation {
-        height: $navbar-height / 2;
+        height: $navbar-second-row-height - ($navbar-second-row-padding-x * 2);
         .nav-link {
-            height: $navbar-height / 2;
+            height: $navbar-second-row-height - ($navbar-second-row-padding-x * 2);
         }
     }
 }
@@ -253,7 +266,7 @@ body.notloggedin {
 }
 
 .drawerheader {
-    height: $navbar-height / 2;
+    height: $navbar-second-row-height;
 }
 
 @include media-breakpoint-down(md) {

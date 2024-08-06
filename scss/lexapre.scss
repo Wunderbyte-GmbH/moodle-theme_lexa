@@ -43,6 +43,10 @@ $nav-link-padding-y: 0 !default;
 $nav-link-padding-x: 20px !default;
 
 // Navbar.
-$navbar-height: 120px !default;
+$navbar-first-row-height: 72px !default;
+$navbar-second-row-height: 100px !default;
+$navbar-height: $navbar-first-row-height + $navbar-second-row-height;
+$navbar-logo-height: 60px;
+$navbar-second-row-padding-x: 20px;
 $nav-link-padding-y: .75rem !default;
 $navbar-scrolled-layout: repeat(3,minmax(0,1fr)) !default;
