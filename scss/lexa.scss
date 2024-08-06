@@ -47,8 +47,8 @@
     align-items: stretch;
     border-bottom: #dee2e6 1px solid;
     box-shadow: none;
-    height: $navbar-height;
-    max-height: $navbar-height;
+    height: $navbar-height + 1; // For bottom border.
+    max-height: $navbar-height + 1;
     padding: 0;
 
     // Avoid conflict with drawers.

@@ -23,6 +23,7 @@
  */
 
 import log from 'core/log';
+import adjustMenu from 'theme_lexa/primarymoremenu';
 
 /**
  * Function to intialise this module.
@@ -94,9 +95,18 @@ export const init = (theHeaderHeight) => {
     const npo = document.querySelector('#lexa-npo');
 
     /**
-     * Sticky header.
+     * Navbar primary navigation.
+     *
+     * @type {element} The navbar primary navigation.
      */
-    const stickyheader = () => {
+    const npn = document.querySelector('#lexa-navbar-primary-navigation ul');
+
+    /**
+     * Sticky header.
+     *
+     * @param {bool} notfirst True if not the first time called.
+     */
+    const stickyheader = notfirst => {
         windowScrollY = window.scrollY;
         if (windowScrollY > headerHeight) {
             // Greater than first row.
@@ -108,6 +118,9 @@ export const init = (theHeaderHeight) => {
                 if (npo) {
                     npoTwo.appendChild(npo);
                 }
+                if (notfirst && npn) {
+                    adjustMenu(npn);
+                }
                 scrolled = true;
             }
         } else {
@@ -117,6 +130,9 @@ export const init = (theHeaderHeight) => {
                 scrolledOnlyNavbar.classList.add('d-none');
                 if (npo) {
                     npoOne.appendChild(npo);
+                }
+                if (notfirst && npn) {
+                    adjustMenu(npn);
                 }
                 scrolled = false;
             }
@@ -129,15 +145,15 @@ export const init = (theHeaderHeight) => {
 
     if (document.readyState !== 'loading') {
         document.addEventListener('scroll', () => {
-            stickyheader();
+            stickyheader(true);
         });
-        stickyheader();
+        stickyheader(false);
     } else {
         document.addEventListener('DOMContentLoaded', function() {
             document.addEventListener('scroll', () => {
-                stickyheader();
+                stickyheader(true);
             });
-            stickyheader();
+            stickyheader(false);
         });
     }
 };

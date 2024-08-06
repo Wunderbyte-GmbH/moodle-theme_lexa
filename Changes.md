@@ -1,6 +1,10 @@
 Version Information
 ===================
 
+Version 403.0.6
+---------------
+1. Added primary menu adjustment when page is scrolled JS.
+
 Version 403.0.5
 ---------------
 1. Remove search and tidy navbar.
