@@ -245,7 +245,7 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
 
         if (isset($settings->customfieldsfortemplates) && isset($settings->customfieldsfortemplates['format'])) {
             $value = $settings->customfieldsfortemplates['format']['value'];
-            return $value;
+            return format_string($value);
         }
     }
 
