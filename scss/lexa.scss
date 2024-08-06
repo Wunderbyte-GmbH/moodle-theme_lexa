@@ -60,10 +60,6 @@
         max-height: $navbar-height / 2;
     }
 
-    #lexa-navbar-scrolled-only {
-        overflow-y: hidden;
-    }
-
     .navbar-brand {
         .logo {
             max-height: calc(#{$navbar-height / 2} - (#{$primary-nav-padding-y} * 2));
