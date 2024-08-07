@@ -45,7 +45,6 @@
 
 .navbar {
     align-items: stretch;
-    border-bottom: #dee2e6 1px solid;
     box-shadow: none;
     height: $navbar-height + 1; // For bottom border.
     max-height: $navbar-height + 1;
@@ -124,6 +123,7 @@
     }
 
     .lexa-nav-second-row {
+        border-bottom: #dee2e6 1px solid;
         display: flex;
         justify-content: space-between;
         padding: 20px 30px;
