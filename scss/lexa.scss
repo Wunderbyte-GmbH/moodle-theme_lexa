@@ -539,11 +539,12 @@ body.limitedwidth #page.drawers .footer-popover {
 
 
 
-.linkbutton:not(#page-mod-booking-optionview .linkbutton) {
+.bookinglinkbutton:not(#page-mod-booking-optionview .bookinglinkbutton) {
     border: 2px solid black;
     border-radius: 8px;
     color: black;
     font-weight: normal;
+    text-shadow: none;
 }
 
 .urisecalendarcard {
