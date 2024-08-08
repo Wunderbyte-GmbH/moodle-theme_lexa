@@ -487,9 +487,17 @@ body.limitedwidth #page.drawers .footer-popover {
     display: flex;
     justify-content: center;
     align-items: center;
-    line-height: normal
-    
+    line-height: normal;
 }
+
+.booking-button-area .booking-button-mainarea.urisebutton:not(#page-mod-booking-optionview .booking-button-area .booking-button-mainarea.urisebutton).alert-success,
+ .booking-button-area .booking-button-area.urisebutton:not(#page-mod-booking-optionview .booking-button-area .booking-button-area.urisebutton).alert-success {
+    /* eslint-disable */
+    background: $lightcontent !important;
+    border: none !important;
+    color: $light_secondary !important;
+    /* eslint-enable */
+ }
 
 .booking-button-mainarea.urisebutton {
     display: flex;
@@ -521,8 +529,6 @@ body.limitedwidth #page.drawers .footer-popover {
     /* eslint-disable-next-line */
     /* padding-right: 2rem !important; */
     &:disabled {
-        background: red !important;
-
         .fa-arrow-right {
             display: none !important;
         }
