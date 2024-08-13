@@ -334,7 +334,7 @@ body.notloggedin {
             font-size: 0;
         }
 
-        .card-body {
+        .card-body:nth-child(1) {
             padding: 0;
         }
     }
@@ -537,11 +537,11 @@ body.limitedwidth #page.drawers .footer-popover {
 
 .booking-button-area .booking-button-area:not(#page-mod-booking-optionview .booking-button-area .booking-button-area).disabled, .urisebutton:not(#page-mod-booking-optionview .urisebutton).disabled{
     opacity: 0.2 !important;
-} 
+}
 
 .booking-button-area .booking-button-area:not(#page-mod-booking-optionview .booking-button-area .booking-button-area).disabled .fa-arrow-right, .urisebutton:not(#page-mod-booking-optionview .urisebutton).disabled  .fa-arrow-right {
     display: none !important;
-} 
+}
 
 
 
@@ -564,12 +564,12 @@ body.limitedwidth #page.drawers .footer-popover {
         font-size: 0.8rem;
     }
 
-    p { 
+    p {
 
         font-size: 1rem;
         color: var(--primary);
     }
-    a { 
+    a {
         color: var(--primary);
     }
     position: relative;
