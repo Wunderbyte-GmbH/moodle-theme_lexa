@@ -4,6 +4,8 @@ Version Information
 Version 403.0.6
 ---------------
 1. Added primary menu adjustment when page is scrolled JS.
+2. Show only a footer list if it has content.
+3. Use theme lang string for 'Social' in the footer.
 
 Version 403.0.5
 ---------------

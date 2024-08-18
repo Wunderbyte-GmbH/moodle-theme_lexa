@@ -95,6 +95,7 @@
                     <img src="{{output.get_logo_url_plain}}" class="logo img-fluid" alt="{{sitename}}">
                 </div>
             </div>
+            {{#output.has_footercourseofferings}}
             <div class="card">
                 <div class="card-header">
                     <div class="card-title">
@@ -103,10 +104,12 @@
                 </div>
                 <div class="card-body">
                     <ul class="list-unstyled">
-                        {{{output.render_footercourseofferings}}}
+                        {{{output.get_footercourseofferings}}}
                     </ul>
                 </div>
             </div>
+            {{/output.has_footercourseofferings}}
+            {{#output.has_footercommunities}}
             <div class="card">
                 <div class="card-header">
                     <div class="card-title">
@@ -115,10 +118,12 @@
                 </div>
                 <div class="card-body">
                     <ul class="list-unstyled">
-                        {{{output.render_footercommunities}}}
+                        {{{output.get_footercommunities}}}
                     </ul>
                 </div>
             </div>
+            {{/output.has_footercommunities}}
+            {{#output.has_footercontactus}}
             <div class="card">
                 <div class="card-header">
                     <div class="card-title">
@@ -127,22 +132,25 @@
                 </div>
                 <div class="card-body">
                     <ul class="list-unstyled">
-                        {{{output.render_footercontactus}}}
+                        {{{output.get_footercontactus}}}
                     </ul>
                 </div>
             </div>
+            {{/output.has_footercontactus}}
+            {{#output.has_footersocial}}
             <div class="card">
                 <div class="card-header">
                     <div class="card-title">
-                        <h2>Social</h2>
+                        <h2>{{#str}} footersocial, theme_lexa {{/str}}</h2>
                     </div>
                 </div>
                 <div class="card-body">
                     <ul class="footer-social list-unstyled d-flex">
-                        {{{output.render_footersocial}}}
+                        {{{output.get_footersocial}}}
                     </ul>
                 </div>
             </div>
+            {{/output.has_footersocial}}
         </div>
         <hr>
         <div class="copyright text-center"><span class="fa-regular fa-copyright mr-1"></span>2024 Universität Wien</div>

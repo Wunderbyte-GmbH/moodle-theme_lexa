@@ -328,17 +328,33 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
         return true;
     }
 
+    // Note: Done this way such that the 'footer' context does not need to be created by the theme, and
+    //       thus every layout overridden.  Rather that the 'footer' is overridden in a Mustache way only.
+    /**
+     * Has footer course offerings?
+     *
+     * @return bool List has a value.
+     */
+    public function has_footercourseofferings() {
+        return $this->has_footerlist('footercourseofferings');
+    }
+
     /**
      * Get the footer course offerings.
      *
      * @return string Markup if any.
      */
-    public function render_footercourseofferings() {
-        $toolbox = \theme_lexa\toolbox::get_instance();
-        $courseofferings = $toolbox->get_setting('footercourseofferings');
-        if (!empty($courseofferings)) {
-            return $this->render_footerlist($courseofferings, $toolbox);
-        }
+    public function get_footercourseofferings() {
+        return $this->render_footerlist('footercourseofferings');
+    }
+
+    /**
+     * Has footer communities?
+     *
+     * @return bool List has a value.
+     */
+    public function has_footercommunities() {
+        return $this->has_footerlist('footercommunities');
     }
 
     /**
@@ -346,12 +362,17 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
      *
      * @return string Markup if any.
      */
-    public function render_footercommunities() {
-        $toolbox = \theme_lexa\toolbox::get_instance();
-        $communities = $toolbox->get_setting('footercommunities');
-        if (!empty($communities)) {
-            return $this->render_footerlist($communities, $toolbox);
-        }
+    public function get_footercommunities() {
+        return $this->render_footerlist('footercommunities');
+    }
+
+    /**
+     * Has footer contact us?
+     *
+     * @return bool List has a value.
+     */
+    public function has_footercontactus() {
+        return $this->has_footerlist('footercontactus');
     }
 
     /**
@@ -359,12 +380,17 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
      *
      * @return string Markup if any.
      */
-    public function render_footercontactus() {
-        $toolbox = \theme_lexa\toolbox::get_instance();
-        $contactus = $toolbox->get_setting('footercontactus');
-        if (!empty($contactus)) {
-            return $this->render_footerlist($contactus, $toolbox);
-        }
+    public function get_footercontactus() {
+        return $this->render_footerlist('footercontactus');
+    }
+
+    /**
+     * Has a footer social?
+     *
+     * @return bool List has a value.
+     */
+    public function has_footersocial() {
+        return $this->has_footerlist('footersocial');
     }
 
     /**
@@ -372,27 +398,54 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
      *
      * @return string Markup if any.
      */
-    public function render_footersocial() {
-        $toolbox = \theme_lexa\toolbox::get_instance();
-        $contactus = $toolbox->get_setting('footersocial');
-        if (!empty($contactus)) {
-            return $this->render_footerlist($contactus, $toolbox, true);
-        }
+    public function get_footersocial() {
+        return $this->render_footerlist('footersocial', true);
     }
 
     /**
-     * Get the footer list.
+     * Has the given footer list?
+     *
+     * @param string $listname Name of the list, the setting name.
+     *
+     * @return bool Setting has a value.
+     */
+    private function has_footerlist($listname) {
+        return (!empty($this->get_footerlist($listname)));
+    }
+
+    /**
+     * Get the given footer list.
+     *
+     * @param string $listname Name of the list, the setting name.
+     *
+     * @return string Setting value if any.
+     */
+    private function get_footerlist($listname) {
+        $toolbox = \theme_lexa\toolbox::get_instance();
+        return $toolbox->get_setting($listname);
+    }
+
+    /**
+     * Render the given footer list.
+     *
+     * @param string $listname Name of the list, the setting name.
+     * @param bool $targetblank If the links should open in a new tab / page.
      *
      * @return string Markup if any.
      */
-    private function render_footerlist($text, $toolbox, $targetblank = false) {
-        $items = $toolbox->convert_text_to_items($text, current_language());
-        if (!empty($items)) {
-            $context = [
-                'items' => $items,
-                'targetblank' => $targetblank,
-            ];
-            return $this->render_from_template('theme_lexa/footerlist', $context);
+    private function render_footerlist($listname, $targetblank = false) {
+        $list = $this->get_footerlist($listname);
+        if (!empty($list)) {
+            $toolbox = \theme_lexa\toolbox::get_instance();
+            $items = $toolbox->convert_text_to_items($list, current_language());
+            if (!empty($items)) {
+                $context = [
+                    'items' => $items,
+                    'targetblank' => $targetblank,
+                ];
+                return $this->render_from_template('theme_lexa/footerlist', $context);
+            }
         }
+        return '';
     }
 }
