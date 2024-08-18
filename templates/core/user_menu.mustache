@@ -85,9 +85,11 @@
                     <div class="lexausername">
                         {{userfullname}}
                     </div>
+                    {{^output.hideusersrole}}
                     <div class="lexauserrole">
                         {{userrole}}
                     </div>
+                    {{/output.hideusersrole}}
                 </span>
             </a>
             <div id="user-action-menu" class="dropdown-menu dropdown-menu-right">

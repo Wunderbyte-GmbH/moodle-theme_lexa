@@ -4,6 +4,7 @@ Version Information
 Version 403.0.7
 ---------------
 1. Tidied selection of theme settings in 'Appearance'.
+2. Add 'hideuseruserrole' general setting to show / not show the user's role in the navbar.
 
 Version 403.0.6
 ---------------

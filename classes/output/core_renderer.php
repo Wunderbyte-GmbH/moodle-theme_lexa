@@ -317,6 +317,16 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
     }
 
     /**
+     * Hide user's role?
+     *
+     * @return bool Hide the role.
+     */
+    public function hideusersrole() {
+        $toolbox = \theme_lexa\toolbox::get_instance();
+        return $toolbox->get_setting('hideuseruserrole');
+    }
+
+    /**
      * Show the popover?
      *
      * @return bool.

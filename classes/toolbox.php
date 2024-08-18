@@ -105,6 +105,13 @@ class toolbox {
         $setting->set_updatedcallback('purge_all_caches');
         $settingspages['general']->add($setting);
 
+        // Hide user role in the user menu.
+        $name = 'theme_lexa/hideuseruserrole';
+        $title = get_string('hideuseruserrole', 'theme_lexa');
+        $description = get_string('hideuseruserroledesc', 'theme_lexa');
+        $setting = new \admin_setting_configcheckbox($name, $title, $description, false, true, false);
+        $settingspages['general']->add($setting);
+
         // Footer settings.
         $settingspages['footer']->add(
             new \admin_setting_heading(
