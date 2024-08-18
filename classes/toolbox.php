@@ -62,112 +62,105 @@ class toolbox {
     /**
      * Add the settings to the theme.
      *
-     * @param admin_settingpage $settings The core settings page reference.
+     * @return theme_boost_admin_settingspage_tabs The theme settings.
      */
-    public function add_settings(\admin_settingpage &$settings) {
-        global $ADMIN;
+    public function add_settings() {
+        $settings = new \theme_boost_admin_settingspage_tabs('themesettinglexa', get_string('configtabtitle', 'theme_lexa'));
+        // The settings pages we create.
+        $settingspages = [
+            'general' => new \admin_settingpage(
+                'theme_lexa_general',
+                get_string('generalheading', 'theme_lexa')
+            ),
+            'footer' => new \admin_settingpage(
+                'theme_lexa_footer',
+                get_string('footerheading', 'theme_lexa')
+            ),
+        ];
 
-        $settings = null;
+        // General settings.
+        $settingspages['general']->add(
+            new \admin_setting_heading(
+                'theme_lexa_generalheading',
+                get_string('generalheadingsub', 'theme_lexa'),
+                format_text(get_string('generalheadingdesc', 'theme_lexa'), FORMAT_MARKDOWN) . PHP_EOL .
+                format_text(get_string('privacynote', 'theme_lexa'), FORMAT_MARKDOWN)
+            )
+        );
 
-        $ADMIN->add('themes', new \admin_category('theme_lexa', get_string('configtitle', 'theme_lexa')));
-        $lsettings = new \theme_boost_admin_settingspage_tabs('themesettingslexa', get_string('configtabtitle', 'theme_lexa'));
+        // Booking module code(s).
+        $name = 'theme_lexa/mod_booking_codes';
+        $title = get_string('mod_booking_codes', 'theme_lexa');
+        $description = get_string('mod_booking_codesdesc', 'theme_lexa');
+        $default = '';
+        $setting = new \admin_setting_configtext($name, $title, $description, $default);
+        $settingspages['general']->add($setting);
 
-        if ($ADMIN->fulltree) {
-            // The settings pages we create.
-            $settingspages = [
-                'general' => new \admin_settingpage(
-                    'theme_lexa_general',
-                    get_string('generalheading', 'theme_lexa')
-                ),
-                'footer' => new \admin_settingpage(
-                    'theme_lexa_footer',
-                    get_string('footerheading', 'theme_lexa')
-                ),
-            ];
+        // Navbar scrolled layout.
+        $name = 'theme_lexa/navbarscrolledlayout';
+        $title = get_string('navbarscrolledlayout', 'theme_lexa');
+        $description = get_string('navbarscrolledlayoutdesc', 'theme_lexa');
+        $default = '1fr auto 1fr';
+        $setting = new \admin_setting_configtext($name, $title, $description, $default);
+        $setting->set_updatedcallback('purge_all_caches');
+        $settingspages['general']->add($setting);
 
-            // General settings.
-            $settingspages['general']->add(
-                new \admin_setting_heading(
-                    'theme_lexa_generalheading',
-                    get_string('generalheadingsub', 'theme_lexa'),
-                    format_text(get_string('generalheadingdesc', 'theme_lexa'), FORMAT_MARKDOWN) . PHP_EOL .
-                    format_text(get_string('privacynote', 'theme_lexa'), FORMAT_MARKDOWN)
-                )
-            );
+        // Footer settings.
+        $settingspages['footer']->add(
+            new \admin_setting_heading(
+                'theme_lexa_footerheading',
+                get_string('footerheadingsub', 'theme_lexa'),
+                format_text(get_string('footerheadingdesc', 'theme_lexa'), FORMAT_MARKDOWN) . PHP_EOL .
+                format_text(get_string('privacynote', 'theme_lexa'), FORMAT_MARKDOWN)
+            )
+        );
 
-            // Booking module code(s).
-            $name = 'theme_lexa/mod_booking_codes';
-            $title = get_string('mod_booking_codes', 'theme_lexa');
-            $description = get_string('mod_booking_codesdesc', 'theme_lexa');
-            $default = '';
-            $setting = new \admin_setting_configtext($name, $title, $description, $default);
-            $settingspages['general']->add($setting);
+        // Course offerings.
+        $name = 'theme_lexa/footercourseofferings';
+        $title = get_string('footercourseofferings', 'theme_lexa');
+        $description = get_string('footercourseofferingsdesc', 'theme_lexa').
+            PHP_EOL.get_string('footerformat', 'theme_lexa').
+            PHP_EOL.get_string('footerfontawesomenote', 'theme_lexa');
+        $default = '';
+        $setting = new \admin_setting_configtextarea($name, $title, $description, $default);
+        $settingspages['footer']->add($setting);
 
-            // Navbar scrolled layout.
-            $name = 'theme_lexa/navbarscrolledlayout';
-            $title = get_string('navbarscrolledlayout', 'theme_lexa');
-            $description = get_string('navbarscrolledlayoutdesc', 'theme_lexa');
-            $default = '1fr auto 1fr';
-            $setting = new \admin_setting_configtext($name, $title, $description, $default);
-            $setting->set_updatedcallback('purge_all_caches');
-            $settingspages['general']->add($setting);
+        // Communites.
+        $name = 'theme_lexa/footercommunities';
+        $title = get_string('footercommunities', 'theme_lexa');
+        $description = get_string('footercommunitiesdesc', 'theme_lexa').
+            PHP_EOL.get_string('footerformat', 'theme_lexa').
+            PHP_EOL.get_string('footerfontawesomenote', 'theme_lexa');
+        $default = '';
+        $setting = new \admin_setting_configtextarea($name, $title, $description, $default);
+        $settingspages['footer']->add($setting);
 
-            // Footer settings.
-            $settingspages['footer']->add(
-                new \admin_setting_heading(
-                    'theme_lexa_footerheading',
-                    get_string('footerheadingsub', 'theme_lexa'),
-                    format_text(get_string('footerheadingdesc', 'theme_lexa'), FORMAT_MARKDOWN) . PHP_EOL .
-                    format_text(get_string('privacynote', 'theme_lexa'), FORMAT_MARKDOWN)
-                )
-            );
+        // Contact us.
+        $name = 'theme_lexa/footercontactus';
+        $title = get_string('footercontactus', 'theme_lexa');
+        $description = get_string('footercontactusdesc', 'theme_lexa').
+            PHP_EOL.get_string('footerformat', 'theme_lexa').
+            PHP_EOL.get_string('footerfontawesomenote', 'theme_lexa');
+        $default = '';
+        $setting = new \admin_setting_configtextarea($name, $title, $description, $default);
+        $settingspages['footer']->add($setting);
 
-            // Course offerings.
-            $name = 'theme_lexa/footercourseofferings';
-            $title = get_string('footercourseofferings', 'theme_lexa');
-            $description = get_string('footercourseofferingsdesc', 'theme_lexa').
-                PHP_EOL.get_string('footerformat', 'theme_lexa').
-                PHP_EOL.get_string('footerfontawesomenote', 'theme_lexa');
-            $default = '';
-            $setting = new \admin_setting_configtextarea($name, $title, $description, $default);
-            $settingspages['footer']->add($setting);
+        // Social.
+        $name = 'theme_lexa/footersocial';
+        $title = get_string('footersocial', 'theme_lexa');
+        $description = get_string('footersocialdesc', 'theme_lexa').
+            PHP_EOL.get_string('footerformat', 'theme_lexa').
+            PHP_EOL.get_string('footerfontawesomenote', 'theme_lexa');
+        $default = '';
+        $setting = new \admin_setting_configtextarea($name, $title, $description, $default);
+        $settingspages['footer']->add($setting);
 
-            // Communites.
-            $name = 'theme_lexa/footercommunities';
-            $title = get_string('footercommunities', 'theme_lexa');
-            $description = get_string('footercommunitiesdesc', 'theme_lexa').
-                PHP_EOL.get_string('footerformat', 'theme_lexa').
-                PHP_EOL.get_string('footerfontawesomenote', 'theme_lexa');
-            $default = '';
-            $setting = new \admin_setting_configtextarea($name, $title, $description, $default);
-            $settingspages['footer']->add($setting);
-
-            // Contact us.
-            $name = 'theme_lexa/footercontactus';
-            $title = get_string('footercontactus', 'theme_lexa');
-            $description = get_string('footercontactusdesc', 'theme_lexa').
-                PHP_EOL.get_string('footerformat', 'theme_lexa').
-                PHP_EOL.get_string('footerfontawesomenote', 'theme_lexa');
-            $default = '';
-            $setting = new \admin_setting_configtextarea($name, $title, $description, $default);
-            $settingspages['footer']->add($setting);
-
-            // Social.
-            $name = 'theme_lexa/footersocial';
-            $title = get_string('footersocial', 'theme_lexa');
-            $description = get_string('footersocialdesc', 'theme_lexa').
-                PHP_EOL.get_string('footerformat', 'theme_lexa').
-                PHP_EOL.get_string('footerfontawesomenote', 'theme_lexa');
-            $default = '';
-            $setting = new \admin_setting_configtextarea($name, $title, $description, $default);
-            $settingspages['footer']->add($setting);
-
-            // Add the settings pages if they have more than just the settings page heading.
-            foreach (array_values($settingspages) as $settingspage) {
-                $lsettings->add($settingspage);
-            }
+        // Add the settings pages if they have more than just the settings page heading.
+        foreach (array_values($settingspages) as $settingspage) {
+            $settings->add($settingspage);
         }
-        $ADMIN->add('theme_lexa', $lsettings);
+
+        return $settings;
     }
 
     /**

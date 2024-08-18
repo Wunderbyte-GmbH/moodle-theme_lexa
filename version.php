@@ -25,12 +25,12 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version   = 2024081300;
+$plugin->version   = 2024081301;
 $plugin->requires = 2023100900.00;
 $plugin->supported = [403, 403];
 $plugin->component = 'theme_lexa';
 $plugin->maturity = MATURITY_ALPHA;
-$plugin->release = '403.0.6';
+$plugin->release = '403.0.7';
 $plugin->dependencies = [
     'theme_boost'  => 2023100900,
     'theme_boost_union'  => 2023102033,

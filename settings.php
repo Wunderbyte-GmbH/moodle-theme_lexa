@@ -25,5 +25,7 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$toolbox = \theme_lexa\toolbox::get_instance();
-$toolbox->add_settings($settings);
+if ($ADMIN->fulltree) {
+    $toolbox = \theme_lexa\toolbox::get_instance();
+    $settings = $toolbox->add_settings();
+}

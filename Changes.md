@@ -1,6 +1,10 @@
 Version Information
 ===================
 
+Version 403.0.7
+---------------
+1. Tidied selection of theme settings in 'Appearance'.
+
 Version 403.0.6
 ---------------
 1. Added primary menu adjustment when page is scrolled JS.
