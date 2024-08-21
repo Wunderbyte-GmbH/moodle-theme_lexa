@@ -28,9 +28,10 @@ import adjustMenu from 'theme_lexa/primarymoremenu';
 /**
  * Function to intialise this module.
  *
- * @param {int} theHeaderHeight The header height.
+ * @param {int} theFirstHeaderHeight The first header height.
+ * @param {int} theSecondHeaderHeight The second header height.
  */
-export const init = (theHeaderHeight) => {
+export const init = (theFirstHeaderHeight, theSecondHeaderHeight) => {
     /**
      * Scrolled?
      *
@@ -39,11 +40,18 @@ export const init = (theHeaderHeight) => {
     let scrolled = false;
 
     /**
-     * Header height.
+     * First header height.
      *
      * @type {int} In pixels.
      */
-    let headerHeight = 0;
+    let firstHeaderHeight = 0;
+
+    /**
+     * Second header height.
+     *
+     * @type {int} In pixels.
+     */
+    let secondHeaderHeight = 0;
 
     /**
      * Window scroll Y.
@@ -108,11 +116,11 @@ export const init = (theHeaderHeight) => {
      */
     const stickyheader = notfirst => {
         windowScrollY = window.scrollY;
-        if (windowScrollY > headerHeight) {
+        if (windowScrollY > secondHeaderHeight) {
             // Greater than first row.
             if (!scrolled) {
                 body.classList.add('lexascrolled');
-                document.documentElement.style.setProperty('--lexa-navbar-pos', headerHeight + 'px');
+                document.documentElement.style.setProperty('--lexa-navbar-pos', secondHeaderHeight + 'px');
                 scrolledNavbar.classList.add('fixed-top');
                 scrolledOnlyNavbar.classList.remove('d-none');
                 if (npo) {
@@ -136,12 +144,14 @@ export const init = (theHeaderHeight) => {
                 }
                 scrolled = false;
             }
-            document.documentElement.style.setProperty('--lexa-navbar-pos', (headerHeight + (headerHeight - windowScrollY)) + 'px');
+            document.documentElement.style.setProperty('--lexa-navbar-pos',
+                (secondHeaderHeight + (firstHeaderHeight - windowScrollY)) + 'px');
         }
     };
 
-    log.debug('Lexa theme header JS init: ' + theHeaderHeight);
-    headerHeight = theHeaderHeight;
+    log.debug('Lexa theme header JS init: ' + theFirstHeaderHeight + ' & ' + theSecondHeaderHeight);
+    firstHeaderHeight = theFirstHeaderHeight;
+    secondHeaderHeight = theSecondHeaderHeight;
 
     if (document.readyState !== 'loading') {
         document.addEventListener('scroll', () => {

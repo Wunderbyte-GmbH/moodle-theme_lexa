@@ -52,12 +52,21 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
     }
 
     /**
-     * Return the height of a second row of the header.
+     * Return the height of the first row of the header.
      *
-     * @return int Header sectond row height.
+     * @return int Header first row height.
+     */
+    public function get_header_first_row_height() {
+        // Todo, can be a setting if needed etc.
+        return 57;
+    }
+
+    /**
+     * Return the height of the second row of the header.
+     *
+     * @return int Header second row height.
      */
     public function get_header_second_row_height() {
-        // Navbar height divided by two as there are two rows.
         // Todo, can be a setting if needed etc.
         return 95;
     }

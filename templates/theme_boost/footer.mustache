@@ -165,7 +165,7 @@
 </footer>
 {{#js}}
 require(['theme_lexa/header'], function(Header) {
-    Header.init({{output.get_header_second_row_height}});
+    Header.init({{output.get_header_first_row_height}}, {{output.get_header_second_row_height}});
 });
 require(['theme_boost/footer-popover'], function(FooterPopover) {
     FooterPopover.init();
