@@ -56,14 +56,14 @@
     .navbar-brand-first-row {
         .logo {
             max-height: calc(#{$navbar-logo-height} - (#{$primary-nav-padding-y} * 2));
-            margin: $navbar-first-row-nav-link-padding-y $navbar-first-row-nav-link-padding-x;
+            margin: $navbar-first-row-nav-padding-y $navbar-first-row-nav-padding-x;
         }
     }
 
     .navbar-brand-second-row {
         .logo {
             max-height: calc(#{$navbar-logo-height} - (#{$primary-nav-padding-y} * 2));
-            margin: $navbar-second-row-nav-link-padding-y $navbar-second-row-nav-link-padding-x;
+            margin: $navbar-second-row-nav-padding-y $navbar-second-row-nav-padding-x;
         }
     }
 
@@ -111,6 +111,7 @@
             display: flex;
         }
     }
+
     #usernavigation {
         .usermenu {
             .login {
@@ -136,10 +137,6 @@
 
     .primary-navigation {
         margin: auto;
-    }
-
-    .popover-region-container {
-        top: 46px;
     }
 
     .editmode-switch-form {
@@ -206,14 +203,14 @@ body.notloggedin {
         .navbar-nav .nav-link,
         .usermenu-container,
         .editmode-switch-form {
-            padding: $navbar-first-row-nav-link-padding-y $navbar-first-row-nav-link-padding-x;
+            padding: $navbar-first-row-nav-padding-y $navbar-first-row-nav-padding-x;
         }
     }
     .lexa-nav-second-row {
-        //.navbar-nav .nav-link,
+        .navbar-nav .nav-link,
         .usermenu-container,
         .editmode-switch-form {
-            padding: $navbar-second-row-nav-link-padding-y $navbar-second-row-nav-link-padding-x;
+            padding: $navbar-second-row-nav-padding-y $navbar-second-row-nav-padding-x;
         }
     }
 }
@@ -237,7 +234,7 @@ body.notloggedin {
         .more-nav {
             .nav-link {
                 font-weight: 500;
-                padding: $navbar-second-row-nav-link-padding-y $navbar-second-row-nav-link-padding-x;
+                padding: $navbar-second-row-primary-menu-padding-y $navbar-second-row-primary-menu-padding-x;
                 &.active {
                     border-bottom-color: $primary;
                     color: $primary;
@@ -262,15 +259,38 @@ body.notloggedin {
     }
 }
 
-#lexa-npo {
-    .popover-region-toggle {
-        &::before {
-            bottom: -20px;
-            right: 20px;
+#lexa-npo-one {
+    #lexa-npo {
+        .popover-region-container {
+            top: $navbar-first-row-height - 12px;
         }
-        &::after {
-            bottom: -21px;
-            right: 21px;
+        .popover-region-toggle {
+            &::before {
+                bottom: 0;
+                 right: $navbar-first-row-nav-padding-x;
+            }
+            &::after {
+                bottom: -1px;
+                right:  $navbar-first-row-nav-padding-x + 1px;
+            }
+        }
+    }
+}
+
+#lexa-npo-two {
+    #lexa-npo {
+        .popover-region-container {
+            top: $navbar-second-row-height - 12px;
+        }
+        .popover-region-toggle {
+            &::before {
+                bottom: -($navbar-second-row-nav-padding-y - 1px);
+                right: $navbar-second-row-nav-padding-x;
+            }
+            &::after {
+                bottom: -($navbar-second-row-nav-padding-y - 1px);
+                right:  $navbar-second-row-nav-padding-x + 1px;
+            }
         }
     }
 }
