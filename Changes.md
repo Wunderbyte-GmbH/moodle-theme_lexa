@@ -1,6 +1,10 @@
 Version Information
 ===================
 
+Version 403.0.8
+---------------
+1. Tidied navbar and added SCSS variables in lexapre.scss to aid changes / customisation.
+
 Version 403.0.7
 ---------------
 1. Tidied selection of theme settings in 'Appearance'.

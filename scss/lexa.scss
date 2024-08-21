@@ -56,14 +56,14 @@
     .navbar-brand-first-row {
         .logo {
             max-height: calc(#{$navbar-logo-height} - (#{$primary-nav-padding-y} * 2));
-            margin: $navbar-first-row-nav-padding-y $navbar-first-row-nav-padding-x;
+            margin: $navbar-first-row-nav-padding-y $navbar-first-row-logo-padding-x;
         }
     }
 
     .navbar-brand-second-row {
         .logo {
             max-height: calc(#{$navbar-logo-height} - (#{$primary-nav-padding-y} * 2));
-            margin: $navbar-second-row-nav-padding-y $navbar-second-row-nav-padding-x;
+            margin: $navbar-second-row-nav-padding-y $navbar-second-row-logo-padding-x;
         }
     }
 
