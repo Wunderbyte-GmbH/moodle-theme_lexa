@@ -56,12 +56,14 @@
     .navbar-brand-first-row {
         .logo {
             max-height: calc(#{$navbar-logo-height} - (#{$primary-nav-padding-y} * 2));
+            margin: $navbar-first-row-nav-link-padding-y $navbar-first-row-nav-link-padding-x;
         }
     }
 
     .navbar-brand-second-row {
         .logo {
             max-height: calc(#{$navbar-logo-height} - (#{$primary-nav-padding-y} * 2));
+            margin: $navbar-second-row-nav-link-padding-y $navbar-second-row-nav-link-padding-x;
         }
     }
 
@@ -85,6 +87,7 @@
 
     .usermenu {
         display: flex;
+
         #user-menu-toggle {
             padding-left: 0.25rem;
             padding-right: 0.25rem;
@@ -118,15 +121,17 @@
 
     .lexa-nav-first-row {
         display: flex;
+        height: $navbar-first-row-height;
         justify-content: space-between;
-        padding: 10px 30px;
+        padding: $navbar-first-row-padding-y $navbar-first-row-padding-x;
     }
 
     .lexa-nav-second-row {
         border-bottom: #dee2e6 1px solid;
         display: flex;
+        height: $navbar-second-row-height;
         justify-content: space-between;
-        padding: 20px 30px;
+        padding: $navbar-second-row-padding-y $navbar-second-row-padding-x;
     }
 
     .primary-navigation {
@@ -197,10 +202,19 @@ body.notloggedin {
 
 // Navigation.
 .navbar {
-    .navbar-nav .nav-link,
-    .usermenu-container,
-    .editmode-switch-form {
-        padding: $nav-link-padding-y $nav-link-padding-x;
+    .lexa-nav-first-row {
+        .navbar-nav .nav-link,
+        .usermenu-container,
+        .editmode-switch-form {
+            padding: $navbar-first-row-nav-link-padding-y $navbar-first-row-nav-link-padding-x;
+        }
+    }
+    .lexa-nav-second-row {
+        //.navbar-nav .nav-link,
+        .usermenu-container,
+        .editmode-switch-form {
+            padding: $navbar-second-row-nav-link-padding-y $navbar-second-row-nav-link-padding-x;
+        }
     }
 }
 
@@ -223,6 +237,7 @@ body.notloggedin {
         .more-nav {
             .nav-link {
                 font-weight: 500;
+                padding: $navbar-second-row-nav-link-padding-y $navbar-second-row-nav-link-padding-x;
                 &.active {
                     border-bottom-color: $primary;
                     color: $primary;

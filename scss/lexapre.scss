@@ -39,16 +39,22 @@ $line-height-base: 1.44 !default; // B1 18px and line 26px = 1.44 bigger, roughl
 // Fonts.
 $font-family-sans-serif: "Roboto", -apple-system, BlinkMacSystemFont, sans-serif !default;
 
-// Navs
-$nav-link-padding-y: 0 !default;
 $nav-link-padding-x: 20px !default;
+$nav-link-padding-y: 0 !default;
 
 // Navbar.
-$navbar-first-row-height: 72px !default;
-$navbar-second-row-height: 100px !default;
+$navbar-first-row-height: 57px !default;
+$navbar-second-row-height: 95px !default;
 $navbar-height: $navbar-first-row-height + $navbar-second-row-height;
-$navbar-logo-height: 60px;
-$navbar-second-row-padding-x: 20px;
+$navbar-logo-height: 60px !default;
+$navbar-first-row-padding-x: 0 !default;
+$navbar-first-row-padding-y: 0 !default;
+$navbar-first-row-nav-link-padding-x: 30px !default;
+$navbar-first-row-nav-link-padding-y: 10px !default;
+$navbar-second-row-padding-x: 0 !default;
+$navbar-second-row-padding-y: 0 !default;
+$navbar-second-row-nav-link-padding-x: 30px !default;
+$navbar-second-row-nav-link-padding-y: 20px !default;
 $nav-link-padding-y: .75rem !default;
 $navbar-scrolled-layout: repeat(3,minmax(0,1fr)) !default;
 

@@ -59,7 +59,7 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
     public function get_header_second_row_height() {
         // Navbar height divided by two as there are two rows.
         // Todo, can be a setting if needed etc.
-        return 100;
+        return 95;
     }
 
     /**
