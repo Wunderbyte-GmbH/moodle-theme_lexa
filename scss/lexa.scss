@@ -420,6 +420,10 @@ body.notloggedin {
     }
 }
 
+.drawerheader {
+    height: $navbar-first-row-height;
+}
+
 .drawer-primary .drawerheader {
     flex-flow: row-reverse nowrap;
     height: $navbar-second-row-height;
