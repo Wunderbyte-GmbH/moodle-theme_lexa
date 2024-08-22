@@ -56,14 +56,12 @@
     .navbar-brand-first-row {
         .logo {
             max-height: calc(#{$navbar-logo-height} - (#{$primary-nav-padding-y} * 2));
-            margin: $navbar-first-row-nav-padding-y $navbar-first-row-logo-padding-x;
         }
     }
 
     .navbar-brand-second-row {
         .logo {
             max-height: calc(#{$navbar-logo-height} - (#{$primary-nav-padding-y} * 2));
-            margin: $navbar-second-row-nav-padding-y $navbar-second-row-logo-padding-x;
         }
     }
 
@@ -124,7 +122,6 @@
         display: flex;
         height: $navbar-first-row-height;
         justify-content: space-between;
-        padding: $navbar-first-row-padding-y $navbar-first-row-padding-x;
     }
 
     .lexa-nav-second-row {
@@ -132,7 +129,6 @@
         display: flex;
         height: $navbar-second-row-height;
         justify-content: space-between;
-        padding: $navbar-second-row-padding-y $navbar-second-row-padding-x;
     }
 
     .primary-navigation {
@@ -167,6 +163,26 @@ body.notloggedin {
 
 @include media-breakpoint-down(md) {
     .navbar {
+        .lexa-nav-first-row {
+            padding: $navbar-first-row-mobile-padding-y $navbar-first-row-mobile-padding-x;
+        }
+
+        .lexa-nav-second-row {
+            padding: $navbar-second-row-mobile-padding-y $navbar-second-row-mobile-padding-x;
+        }
+
+        .navbar-brand-first-row {
+            .logo {
+                margin: $navbar-first-row-logo-mobile-padding-y $navbar-first-row-logo-mobile-padding-x;
+            }
+        }
+
+        .navbar-brand-second-row {
+            .logo {
+                margin: $navbar-second-row-logo-mobile-padding-y $navbar-second-row-logo-mobile-padding-x;
+            }
+        }
+
         #lexa-navbar-scrolled.fixed-top {
             .navbar-brand {
                 display: none;
@@ -177,11 +193,32 @@ body.notloggedin {
 
 @include media-breakpoint-up(md) {
     .navbar {
+        .lexa-nav-first-row {
+            padding: $navbar-first-row-padding-y $navbar-first-row-padding-x;
+        }
+
+        .lexa-nav-second-row {
+            padding: $navbar-second-row-padding-y $navbar-second-row-padding-x;
+        }
+
+        .navbar-brand-first-row {
+            .logo {
+                margin: $navbar-first-row-logo-padding-y $navbar-first-row-logo-padding-x;
+            }
+        }
+
+        .navbar-brand-second-row {
+            .logo {
+                margin: $navbar-second-row-logo-padding-y $navbar-second-row-logo-padding-x;
+            }
+        }
+
         .lexa-nav-second-row {
             display: grid;
             grid-template-columns: $navbar-scrolled-layout;
         }
     }
+
     .pagelayout-standard {
         #page.drawers {
             .main-inner {
@@ -198,6 +235,25 @@ body.notloggedin {
 }
 
 // Navigation.
+@include media-breakpoint-down(md) {
+    .navbar {
+        .lexa-nav-first-row {
+            .navbar-nav .nav-link,
+            .usermenu-container,
+            .editmode-switch-form {
+                padding: $navbar-first-row-nav-mobile-padding-y $navbar-first-row-nav-mobile-padding-x;
+            }
+        }
+        .lexa-nav-second-row {
+            .navbar-nav .nav-link,
+            .usermenu-container,
+            .editmode-switch-form {
+                padding: $navbar-second-row-nav-mobile-padding-y $navbar-second-row-nav-mobile-padding-x;
+            }
+        }
+    }
+}
+
 @include media-breakpoint-up(md) {
     .navbar {
         .lexa-nav-first-row {
@@ -255,6 +311,50 @@ body.notloggedin {
                 &.active {
                     border-bottom-color: $darksecondary;
                     color: $darksecondary;
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    #lexa-npo-one {
+        #lexa-npo {
+            .popover-region-container {
+                left: 0;
+                position: fixed;
+                right: auto;
+                top: $navbar-first-row-height;
+            }
+            .popover-region-toggle {
+                &::before {
+                    bottom: -9px;
+                    right: 8px;
+                }
+                &::after {
+                    bottom: -10px;
+                    right:  9px;
+                }
+            }
+        }
+    }
+
+    #lexa-npo-two {
+        #lexa-npo {
+            .popover-region-container {
+                left: 0;
+                position: fixed;
+                right: auto;
+                top: $navbar-second-row-height - 12px;
+            }
+            .popover-region-toggle {
+                &::before {
+                    bottom: -17px;
+                    right: 4px;
+                }
+                &::after {
+                    bottom: -18px;
+                    right:  5px;
                 }
             }
         }
@@ -320,9 +420,10 @@ body.notloggedin {
     }
 }
 
-.drawer .drawerheader {
+.drawer-primary .drawerheader {
     flex-flow: row-reverse nowrap;
     height: $navbar-second-row-height;
+    padding: $navbar-drawer-primary-padding-y $navbar-drawer-primary-padding-x;
 
     .drawertoggle {
         margin: auto;

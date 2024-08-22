@@ -347,8 +347,8 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
         return true;
     }
 
-    // Note: Done this way such that the 'footer' context does not need to be created by the theme, and
-    //       thus every layout overridden.  Rather that the 'footer' is overridden in a Mustache way only.
+    /* Note: Done this way such that the 'footer' context does not need to be created by the theme, and
+             thus every layout overridden.  Rather that the 'footer' is overridden in a Mustache way only. */
     /**
      * Has footer course offerings?
      *
