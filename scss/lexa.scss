@@ -349,12 +349,12 @@ body.notloggedin {
             }
             .popover-region-toggle {
                 &::before {
-                    bottom: -17px;
-                    right: 4px;
+                    bottom: -18px;
+                    right: 8px;
                 }
                 &::after {
                     bottom: -18px;
-                    right:  5px;
+                    right:  9px;
                 }
             }
         }
@@ -365,11 +365,14 @@ body.notloggedin {
     #lexa-npo-one {
         #lexa-npo {
             .popover-region-container {
-                top: $navbar-first-row-height - 12px;
+                left: auto;
+                position: fixed;
+                right: auto;
+                top: $navbar-first-row-height - 6px;
             }
             .popover-region-toggle {
                 &::before {
-                    bottom: 0;
+                    bottom: -1px;
                     right: $navbar-first-row-nav-padding-x;
                 }
                 &::after {
@@ -383,15 +386,18 @@ body.notloggedin {
     #lexa-npo-two {
         #lexa-npo {
             .popover-region-container {
+                left: auto;
+                position: fixed;
+                right: auto;
                 top: $navbar-second-row-height - 12px;
             }
             .popover-region-toggle {
                 &::before {
-                    bottom: -($navbar-second-row-nav-padding-y - 1px);
+                    bottom: -4px;
                     right: $navbar-second-row-nav-padding-x;
                 }
                 &::after {
-                    bottom: -($navbar-second-row-nav-padding-y - 1px);
+                    bottom: -4px;
                     right:  $navbar-second-row-nav-padding-x + 1px;
                 }
             }
