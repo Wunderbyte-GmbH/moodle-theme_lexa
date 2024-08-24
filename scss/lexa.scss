@@ -161,7 +161,7 @@ body.notloggedin {
     }
 }
 
-@include media-breakpoint-down(md) {
+@include media-breakpoint-down(sm) {
     .navbar {
         .lexa-nav-first-row {
             padding: $navbar-first-row-mobile-padding-y $navbar-first-row-mobile-padding-x;
@@ -182,11 +182,10 @@ body.notloggedin {
                 margin: $navbar-second-row-logo-mobile-padding-y $navbar-second-row-logo-mobile-padding-x;
             }
         }
-
-        #lexa-navbar-scrolled.fixed-top {
-            .navbar-brand {
-                display: none;
-            }
+    }
+    body.lexascrolled {
+        #lexa-navbar-brand-second-row {
+            display: none !important;
         }
     }
 }
@@ -235,7 +234,7 @@ body.notloggedin {
 }
 
 // Navigation.
-@include media-breakpoint-down(md) {
+@include media-breakpoint-down(sm) {
     .navbar {
         .lexa-nav-first-row {
             .navbar-nav .nav-link,
@@ -317,7 +316,7 @@ body.notloggedin {
     }
 }
 
-@include media-breakpoint-down(md) {
+@include media-breakpoint-down(sm) {
     #lexa-npo-one {
         #lexa-npo {
             .popover-region-container {
@@ -432,22 +431,19 @@ body.notloggedin {
 
 .drawer-primary .drawerheader {
     flex-flow: row-reverse nowrap;
-    height: $navbar-second-row-height;
+    height: $navbar-first-row-height;
+    justify-content: space-between;
     padding: $navbar-drawer-primary-padding-y $navbar-drawer-primary-padding-x;
 
     .drawertoggle {
-        margin: auto;
+        margin-left: 0;
+        margin-right: 0;
     }
 }
 
-@include media-breakpoint-down(md) {
+@include media-breakpoint-down(sm) {
     .drawercontent {
         height: 100%;
-    }
-    body.lexascrolled {
-        #lexa-navbar-brand-second-row {
-            display: none !important;
-        }
     }
 }
 
