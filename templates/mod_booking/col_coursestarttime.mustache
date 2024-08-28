@@ -39,18 +39,15 @@
     }
 }}
 
-<div class='booking-showdates-collapse mt-1'>
-    {{#firstDate}}
-         {{#str}}fromdate, local_urise{{/str}}{{firstDate}}
-    {{/firstDate}}
-    {{^firstDate}}
-    {{#datestrings}}
-            <div>{{{datestring}}}</div>
-    {{/datestrings}}
-    {{/firstDate}}
+{{#datestrings.0}}
+    <div class='booking-showdates-collapse mt-1'>
+        {{#firstDate}}
+            {{#str}}fromdate, local_urise{{/str}}{{firstDate}}
+        {{/firstDate}}
+        {{^firstDate}}
+        {{#datestrings}}
+                <div>{{{datestring}}}</div>
+        {{/datestrings}}
+        {{/firstDate}}
     </div>
-{{^datestrings}}
-    <p class="m-0">
-    {{#str}}datenotset, mod_booking{{/str}}
-    </p>
-{{/datestrings}}
+{{/datestrings.0}}
