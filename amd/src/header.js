@@ -126,7 +126,7 @@ export const init = (theFirstHeaderHeight, theSecondHeaderHeight) => {
                 if (npo) {
                     npoTwo.appendChild(npo);
                 }
-                if (notfirst && npn) {
+                if (npn) {
                     adjustMenu(npn);
                 }
                 scrolled = true;
