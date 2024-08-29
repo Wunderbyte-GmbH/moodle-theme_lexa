@@ -162,6 +162,9 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
         if (!empty($data['kompetenzen'])) {
             $data['competency'] = $this->prepare_kompetenzen($data['modalcounter'] );
         }
+        if (!empty($data['organisation'])) {
+            $data['organisation'] = $this->prepare_organisation($data['modalcounter'] );
+        }
         $data['botags'] = $this->prepare_botags($data['modalcounter']);
         $data['showcollapse'] = $this->prepare_dates($data);
         $settings = singleton_service::get_instance_of_booking_option_settings((int)$data['modalcounter']);
@@ -198,20 +201,14 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
                 foreach ($settings->customfields['kompetenzen'] as $orgaid) {
 
                     if (isset($organisations[$orgaid])) {
-                        $returnorgas[] = html_writer::tag(
-                            'span',
-                            $organisations[$orgaid]['localizedname'],
-                            ['class' => 'bg-secondary pl-1 pr-1 mr-1 rounded category']
-                        );
-
+                        $returnorgas[] = $organisations[$orgaid]['localizedname'];
                     }
                 }
 
-                return implode(", ", $returnorgas);
+                return $returnorgas;
             } else {
                 $value = $settings->customfields['kompetenzen'];
-                $message = "<span class='bg-secondary orga'>$value</span>";
-                return $message;
+                return [$value];
             }
         }
     }
@@ -230,6 +227,38 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
             $value = $settings->customfieldsfortemplates['kurssprache']['value'];
             return format_string($value);
         }
+    }
+
+    /**
+     * Prepare Organisation.
+     *
+     * @param mixed $id
+     *
+     * @return array
+     *
+     */
+    public function prepare_organisation($id) {
+
+        $settings = singleton_service::get_instance_of_booking_option_settings((int)$id);
+        if (isset($settings->customfields) && isset($settings->customfields['organisation'])) {
+            if (is_array($settings->customfields['organisation'])) {
+
+                $returnorgas = [];
+                foreach ($settings->customfields['organisation'] as $orgaid) {
+                    $organisations = shortcodes::organisations();
+
+                    if (isset($organisations[$orgaid])) {
+                        $returnorgas[] = $organisations[$orgaid]['localizedname'];
+                    }
+                }
+                return $returnorgas;
+            } else {
+                $value = $settings->customfields['organisation'];
+                return [$value];
+            }
+        }
+
+        return [];
     }
 
 

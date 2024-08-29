@@ -151,9 +151,6 @@
             {{#description}}
             <div class="mb-6">
             <div class="content"><p>{{{.}}}</p></div>
-            <span class="badge bg-gray badge-pill">
-                {{ organisation }}
-            </span>
             </div>
             {{/description}}
             {{#datesexist}}
@@ -350,6 +347,11 @@
                             </span>
                         </div>
                         {{/competency}}
+                        {{#organisation }}
+                            <span class="badge bg-gray badge-pill">
+                                {{ . }}
+                            </span>
+                        {{/organisation }}
                         {{#bookingopeningtime}}
                         <div>
                             <span>
