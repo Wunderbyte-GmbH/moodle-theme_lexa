@@ -257,6 +257,10 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
                     $bc->attributes['class'] .= ' '.$bcadditionalclasses;
                 }
                 if (($notediting) && ($region == 'landing')) {
+                    preg_match('/\[(.*?)\]/', $bc->title, $matches);
+                    if (isset($matches[1])) {
+                        $bc->attributes['class'] .= ' '.$matches[1];
+                    }
                     $output .= html_writer::tag('div',
                         $this->block(
                             $bc,
