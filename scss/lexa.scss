@@ -623,13 +623,42 @@ body.limitedwidth #page.drawers .footer-popover {
     right: 5px;
 }
 
-#page-footer {
-    .copyright {
+// Boost union override.
+#footnote {
+    p {
         margin-bottom: 0;
-        padding-bottom: 1rem;
     }
 }
 
+@media (max-width: 575.98px) {
+    #footnote {
+        border-top: none;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    #footnote {
+        border-top: none;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    body:not(.backgroundimage):not(.loginbackgroundimage) #footnote {
+        border-top: none;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+// Other.
 .booking-button-area .booking-button-mainarea.urisebutton:not(#page-mod-booking-optionview .booking-button-area .booking-button-mainarea.urisebutton),
  .booking-button-area .booking-button-area.urisebutton:not(#page-mod-booking-optionview .booking-button-area .booking-button-area.urisebutton) {
     /* eslint-disable-next-line */

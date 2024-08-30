@@ -153,8 +153,15 @@
             {{/output.has_footersocial}}
         </div>
         <hr>
-        <div class="copyright text-center"><span class="fa-regular fa-copyright mr-1"></span>2024 Universität Wien</div>
-        {{{ output.standard_end_of_body_html }}}
+        <div class="py-2">
+            <div class="copyright text-center py-2">
+                <span class="fa-regular fa-copyright mr-1"></span>2024 Universität Wien
+            </div>
+            {{> theme_boost_union/footnote }}
+            <div class="py-2">
+                {{{ output.standard_end_of_body_html }}}
+            </div>
+        </div>
     </div>
 
     <div class="footer-content-debugging bg-footer">
