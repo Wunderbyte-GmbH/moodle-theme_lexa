@@ -157,12 +157,22 @@ export const init = (theFirstHeaderHeight, theSecondHeaderHeight) => {
         document.addEventListener('scroll', () => {
             stickyheader(true);
         });
+        // Initial reverse logic such that the correct state is set.
+        windowScrollY = window.scrollY;
+        if (windowScrollY <= secondHeaderHeight) {
+            scrolled = true;
+        }
         stickyheader(false);
     } else {
         document.addEventListener('DOMContentLoaded', function() {
             document.addEventListener('scroll', () => {
                 stickyheader(true);
             });
+            // Initial reverse logic such that the correct state is set.
+            windowScrollY = window.scrollY;
+            if (windowScrollY <= secondHeaderHeight) {
+                scrolled = true;
+            }
             stickyheader(false);
         });
     }
