@@ -38,6 +38,26 @@
     }
 }
 
+// Alerts.
+.alert-danger,
+.environmenttable .error {
+    color: $system_error_600;
+}
+
+.alert-info {
+    color: $primary;
+}
+
+.alert-success,
+.environmenttable .ok {
+    color: $system_positive_800;
+}
+
+.alert-warning,
+.environmenttable .warn {
+    color: $system_warning_600;
+}
+
 // Navbar.
 :root {
     --lexa-navbar-pos: #{$navbar-height};

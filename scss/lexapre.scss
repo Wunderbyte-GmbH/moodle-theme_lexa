@@ -7,8 +7,11 @@ $green: #16cc69 !default;
 $light-borders: #e9f0f3 !default;
 $red: #ea3a3d !default;
 $system_error_50: #fde8e8 !default;
+$system_error_600: #b81416 !default;
 $system_positive_100: #d1fae3 !default;
+$system_positive_800: #0a5c2f !default;
 $system_warning_50: #fdefe7 !default;
+$system_warning_600: #bf4e0d !default;
 
 $primary:   $blue !default;
 $primary_100: #ccebff !default;
@@ -17,6 +20,7 @@ $darkprimary: #0b131f !default;
 $secondary: #0cb9c5 !default;
 $darksecondary: #242a3a !default;
 $success: $system_positive_100 !default;
+$info: $primary_100 !default;
 $warning: $system_warning_50 !default;
 $danger: $system_error_50 !default;
 
@@ -36,8 +40,12 @@ $footerdivider: $white !default;
 
 $hr-margin-y: 0 !default;
 
-// Typography
+// Alert
+$alert-bg-level: 0 !default;
+$alert-border-level: 0 !default;
+$alert-border-radius: .625rem !default; // 10 px.
 
+// Typography
 $font-size-base: 1.125rem !default; // B1 of 18px.
 $font-size-sm: 1rem !default; // B2 of 16px.
 
