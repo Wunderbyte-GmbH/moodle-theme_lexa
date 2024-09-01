@@ -1,18 +1,24 @@
 // Colours.
 $blue: #0063a6 !default; // Blue 500.
-$blue_700:  #005c99 !default;
+$blue_700: #005c99 !default;
+$white: #fff !default;
 
-$red:   #ea3a3d !default;
 $green: #16cc69 !default;
 $light-borders: #e9f0f3 !default;
+$red: #ea3a3d !default;
+$system_error_50: #fde8e8 !default;
+$system_positive_100: #d1fae3 !default;
+$system_warning_50: #fdefe7 !default;
 
 $primary:   $blue !default;
+$primary_100: #ccebff !default;
+$primary_900: #001f33 !default;
 $darkprimary: #0b131f !default;
 $secondary: #0cb9c5 !default;
 $darksecondary: #242a3a !default;
-$success:   $green !default;
-$warning:   #f3874a !default;
-$danger:    $red !default;
+$success: $system_positive_100 !default;
+$warning: $system_warning_50 !default;
+$danger: $system_error_50 !default;
 
 $headings-color: $darkprimary !default;
 
@@ -25,8 +31,10 @@ $drawer-bg-color: #e9f0f3 !default;
 
 $calendar-bg-color: #edf6fa !default; // Todo: Check if is a named colour scheme value to be used elsewhere.
 
-$footer:        #001f33 !default;
-$footerdivider: #264051 !default;
+$footer: $primary_900 !default;
+$footerdivider: $white !default;
+
+$hr-margin-y: 0 !default;
 
 // Typography
 
@@ -84,3 +92,7 @@ $container-max-widths: (
   lg: 960px,
   xl: 1600px
 ) !default;
+
+// Breadcrumb.
+$breadcrumb-divider: quote(">") !default;
+$breadcrumb-item-padding: 2.5rem !default;
