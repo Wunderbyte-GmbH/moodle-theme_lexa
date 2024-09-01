@@ -41,20 +41,28 @@
 // Alerts.
 .alert-danger,
 .environmenttable .error {
+    background-color: $danger;
+    border-color: $danger;
     color: $system_error_600;
 }
 
 .alert-info {
+    background-color: $info;
+    border-color: $info;
     color: $primary;
 }
 
 .alert-success,
 .environmenttable .ok {
+    background-color: $success;
+    border-color: $success;
     color: $system_positive_800;
 }
 
 .alert-warning,
 .environmenttable .warn {
+    background-color: $warning;
+    border-color: $warning;
     color: $system_warning_600;
 }
 

@@ -19,6 +19,7 @@ $primary_900: #001f33 !default;
 $darkprimary: #0b131f !default;
 $secondary: #0cb9c5 !default;
 $darksecondary: #242a3a !default;
+
 $success: $system_positive_100 !default;
 $info: $primary_100 !default;
 $warning: $system_warning_50 !default;
@@ -41,8 +42,6 @@ $footerdivider: $white !default;
 $hr-margin-y: 0 !default;
 
 // Alert
-$alert-bg-level: 0 !default;
-$alert-border-level: 0 !default;
 $alert-border-radius: .625rem !default; // 10 px.
 
 // Typography
