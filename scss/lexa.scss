@@ -1,9 +1,32 @@
 // Font.
+// From https://www.fontsquirrel.com/fonts/roboto.
+// Define all fonts for use if required.
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 100;
+    src: unquote("url('[[font:theme|Roboto-Thin-webfont.woff]]') format('woff')");
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 100;
+    src: unquote("url('[[font:theme|Roboto-ThinItalic-webfont.woff]]') format('woff')");
+}
+
 @font-face {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 300;
     src: unquote("url('[[font:theme|Roboto-Light-webfont.woff]]') format('woff')");
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 300;
+    src: unquote("url('[[font:theme|Roboto-LightItalic-webfont.woff]]') format('woff')");
 }
 
 @font-face {
@@ -15,6 +38,13 @@
 
 @font-face {
     font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 400;
+    src: unquote("url('[[font:theme|Roboto-Italic-webfont.woff]]') format('woff')");
+}
+
+@font-face {
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
     src: unquote("url('[[font:theme|Roboto-Medium-webfont.woff]]') format('woff')");
@@ -22,9 +52,37 @@
 
 @font-face {
     font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 500;
+    src: unquote("url('[[font:theme|Roboto-MediumItalic-webfont.woff]]') format('woff')");
+}
+
+@font-face {
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
     src: unquote("url('[[font:theme|Roboto-Black-webfont.woff]]') format('woff')");
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 700;
+    src: unquote("url('[[font:theme|Roboto-BlackItalic-webfont.woff]]') format('woff')");
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    src: unquote("url('[[font:theme|Roboto-Bold-webfont.woff]]') format('woff')");
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 900;
+    src: unquote("url('[[font:theme|Roboto-BoldItalic-webfont.woff]]') format('woff')");
 }
 
 // Colour - general.
