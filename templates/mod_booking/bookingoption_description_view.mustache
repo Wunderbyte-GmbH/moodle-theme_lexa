@@ -135,253 +135,263 @@
         "manageresponsesurl": "http://site/mod/booking/report.php?id=7&optionid=1"
     }
 }}
-
-
+<div class="container">
+    <div class="d-flex justify-content-between row">
+        <!-- Left Button -->
+        {{#returnurl}}
+            <a href="{{returnurl}}" role="button" class="btn btn-nolabel">{{#str}} back, core {{/str}}</button>
+        {{/returnurl}}
+        <!-- Right Button -->
+        {{#editurl}}
+            <a href="{{editurl}}" role="button" class="btn btn-nolabel">{{#str}} edit, core {{/str}}</button>
+        {{/editurl}}
+    </div>
+</div>
 <div class="container-fluid">
-<div class="col-md-9 m-auto">
-    <div class="row mod-booking-row">
-        <div class="col-md-7">
-            <div class="d-flex mb-3 align-items-center justify-content-start">
-            <span class="mr-2">{{{ bookings }}}</span>
-             <span class="mr-2">{{{ botags }}}</span>
-            </div>
-            <div class="mb-2">
-            <h2 class="title font-weight-normal" >{{title}}</h2>
-            </div>
-            {{#description}}
-            <div class="mb-6">
-            <div class="content"><p>{{{.}}}</p></div>
-            </div>
-            {{/description}}
-            {{#datesexist}}
-            <div class="my-6">
-                <h2 class="font-weight-normal"> {{#str}} optiondates, local_urise {{/str}}</h2>
-                    {{#showcollapse}}
-                    <div class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapseDates"
-                     aria-expanded="false" aria-controls="collapseDates"">{{#str}} showdates, local_urise {{/str}}</div>
-                    {{/showcollapse}}
-                     <div class=" {{#showcollapse}}collapse{{/showcollapse}} mt-3" id="collapseDates">
-                    {{#dates}}
-                            <div class="card w-100 bg-white rounded mb-4 border-0">
-                                <div class="card-body p-2">
-                                    <div class="row">
-                                        <div class="col-md-12 datestring d-flex">
-                                            {{{ htmlstring }}}
+    <div class="col-md-9 m-auto">
+        <div class="row mod-booking-row">
+            <div class="col-md-7">
+                <div class="d-flex mb-3 align-items-center justify-content-start">
+                <span class="mr-2">{{{ bookings }}}</span>
+                <span class="mr-2">{{{ botags }}}</span>
+                </div>
+                <div class="mb-2">
+                <h2 class="title font-weight-normal" >{{title}}</h2>
+                </div>
+                {{#description}}
+                <div class="mb-6">
+                <div class="content"><p>{{{.}}}</p></div>
+                </div>
+                {{/description}}
+                {{#datesexist}}
+                <div class="my-6">
+                    <h2 class="font-weight-normal"> {{#str}} optiondates, local_urise {{/str}}</h2>
+                        {{#showcollapse}}
+                        <div class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapseDates"
+                        aria-expanded="false" aria-controls="collapseDates"">{{#str}} showdates, local_urise {{/str}}</div>
+                        {{/showcollapse}}
+                        <div class=" {{#showcollapse}}collapse{{/showcollapse}} mt-3" id="collapseDates">
+                        {{#dates}}
+                                <div class="card w-100 bg-white rounded mb-4 border-0">
+                                    <div class="card-body p-2">
+                                        <div class="row">
+                                            <div class="col-md-12 datestring d-flex">
+                                                {{{ htmlstring }}}
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            {{#entitylink}}
-                                                <div class="entity-for-optiondate-area">
-                                                    <i class="fa fa-fw fa-map-marker text-primary" aria-hidden="true"></i>&nbsp;{{{.}}}
-                                                </div>
-                                            {{/entitylink}}
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                {{#entitylink}}
+                                                    <div class="entity-for-optiondate-area">
+                                                        <i class="fa fa-fw fa-map-marker text-primary" aria-hidden="true"></i>&nbsp;{{{.}}}
+                                                    </div>
+                                                {{/entitylink}}
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row" {{^customfields}}style="display:none"{{/customfields}}>
-                                        <div class="col-md-12">
-                                            {{#customfields}}
-                                                <div>
-                                                    {{name}}{{{value}}}
-                                                </div>
-                                            {{/customfields}}
+                                        <div class="row" {{^customfields}}style="display:none"{{/customfields}}>
+                                            <div class="col-md-12">
+                                                {{#customfields}}
+                                                    <div>
+                                                        {{name}}{{{value}}}
+                                                    </div>
+                                                {{/customfields}}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                        {{/dates}}
+                        </div>
+                </div>
+                {{/datesexist}}
+                {{#voraussetzungen}}
+                <div class="my-6">
+                    <h2 class="font-weight-normal"> {{#str}} requirements, local_urise {{/str}}</h2>
+                    {{{.}}}
+                </div>
+                {{/voraussetzungen}}
+                {{#zielgruppe}}
+                <div class="my-6">
+                    <h2 class="font-weight-normal"> {{#str}} targetaud, local_urise {{/str}}</h2>
+                    {{{.}}}
+                </div>
+                {{/zielgruppe}}
+                {{#kursziel}}
+                <div class="my-6">
+                    <h2 class="font-weight-normal"> {{#str}} goals, local_urise {{/str}}</h2>
+                    {{{.}}}
+                </div>
+                {{/kursziel}}
+                {{#inhalte}}
+                <div class="my-6">
+                    <h2 class="font-weight-normal"> {{#str}} coursecontent, local_urise {{/str}}</h2>
+                    {{{.}}}
+                </div>
+                {{/inhalte}}
+                {{#methoden}}
+                <div class="my-6">
+                    <h2 class="font-weight-normal"> {{#str}} coursemethods, local_urise {{/str}}</h2>
+                    {{{.}}}
+                </div>
+                {{/methoden}}
+                {{#teachers.0}}
+                <div class="my-6 detailteacher">
+                    <h2 class="font-weight-normal"> {{#str}} teachers, local_urise {{/str}}</h2>
+                    {{#teachers}}
+                    <div class="profile-card d-flex mt-5 align-items-center mb-3">
+                        <div class="mr-3">
+                            <div class="profile-icon-wrapper">
+                            <i class="fas fa-user"></i>
                             </div>
-                    {{/dates}}
-                    </div>
-            </div>
-            {{/datesexist}}
-            {{#voraussetzungen}}
-            <div class="my-6">
-                <h2 class="font-weight-normal"> {{#str}} requirements, local_urise {{/str}}</h2>
-                {{{.}}}
-            </div>
-             {{/voraussetzungen}}
-            {{#zielgruppe}}
-            <div class="my-6">
-                <h2 class="font-weight-normal"> {{#str}} targetaud, local_urise {{/str}}</h2>
-                {{{.}}}
-            </div>
-             {{/zielgruppe}}
-             {{#kursziel}}
-            <div class="my-6">
-                <h2 class="font-weight-normal"> {{#str}} goals, local_urise {{/str}}</h2>
-                {{{.}}}
-            </div>
-             {{/kursziel}}
-            {{#inhalte}}
-            <div class="my-6">
-                <h2 class="font-weight-normal"> {{#str}} coursecontent, local_urise {{/str}}</h2>
-                {{{.}}}
-            </div>
-             {{/inhalte}}
-            {{#methoden}}
-            <div class="my-6">
-                <h2 class="font-weight-normal"> {{#str}} coursemethods, local_urise {{/str}}</h2>
-                {{{.}}}
-            </div>
-             {{/methoden}}
-             {{#teachers.0}}
-               <div class="my-6 detailteacher">
-                <h2 class="font-weight-normal"> {{#str}} teachers, local_urise {{/str}}</h2>
-                {{#teachers}}
-                 <div class="profile-card d-flex mt-5 align-items-center mb-3">
-                    <div class="mr-3">
-                        <div class="profile-icon-wrapper">
-                        <i class="fas fa-user"></i>
+                        </div>
+                        <!-- Placeholder for profile icon -->
+                        <div class="profile-info">
+                        <h5>{{{firstname}}} {{{lastname}}}</h5>
+                        <p>{{{description}}}</p>
                         </div>
                     </div>
-                    <!-- Placeholder for profile icon -->
-                    <div class="profile-info">
-                    <h5>{{{firstname}}} {{{lastname}}}</h5>
+                    <a href="{{{teacherurl}}}" class="btn btn-outline-dark bg-white">
+                    {{#str}} gotoprofile, local_urise {{/str}}
+                    <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    {{/teachers}}
+                    </div>
+                {{/teachers.0}}
+                {{#location}}
+                <div class="my-6 location">
+                    <h2 class="font-weight-normal"> {{#str}} location, local_urise {{/str}}</h2>
+                    {{#entities}}
+                        {{{description}}}
+                    {{/entities}}
+                    {{{.}}}
+                    </a>
+                </div>
+                {{/location}}
+                {{#sonstigeinfos}}
+                <div class="my-6">
+                    <h2 class="font-weight-normal"> {{#str}} additionalinfo, local_urise {{/str}}</h2>
+                    {{{.}}}
+                </div>
+                {{/sonstigeinfos}}
+                {{#responsiblecontactuser}}
+                <div class="my-6">
+                    <h2 class="font-weight-normal"> {{#str}} orgacontact, local_urise {{/str}}</h2>
+                    <div>
+                    <p>{{{firstname}}} {{{lastname}}}</p>
                     <p>{{{description}}}</p>
+                    <p>
+                <i class="fa-solid fa-fw fa-envelope"></i>
+                <a href="mailto:{{{email}}}">{{{email}}}</a>
+                    </p>
                     </div>
                 </div>
-                 <a href="{{{teacherurl}}}" class="btn btn-outline-dark bg-white">
-                 {{#str}} gotoprofile, local_urise {{/str}}
-                 <i class="fa-solid fa-arrow-right ml-1"></i></a>
-                 {{/teachers}}
-                </div>
-            {{/teachers.0}}
-            {{#location}}
-            <div class="my-6 location">
-                <h2 class="font-weight-normal"> {{#str}} location, local_urise {{/str}}</h2>
-                {{#entities}}
-                    {{{description}}}
-                {{/entities}}
-                 {{{.}}}
-                 </a>
+                {{/responsiblecontactuser}}
             </div>
-             {{/location}}
-            {{#sonstigeinfos}}
-            <div class="my-6">
-                <h2 class="font-weight-normal"> {{#str}} additionalinfo, local_urise {{/str}}</h2>
-                {{{.}}}
-            </div>
-             {{/sonstigeinfos}}
-            {{#responsiblecontactuser}}
-            <div class="my-6">
-                <h2 class="font-weight-normal"> {{#str}} orgacontact, local_urise {{/str}}</h2>
-                <div>
-                <p>{{{firstname}}} {{{lastname}}}</p>
-                <p>{{{description}}}</p>
-                <p>
-               <i class="fa-solid fa-fw fa-envelope"></i>
-               <a href="mailto:{{{email}}}">{{{email}}}</a>
-                </p>
-                </div>
-            </div>
-             {{/responsiblecontactuser}}
-        </div>
-        <div class="col-md-5">
-            <div class="card price-card border-0">
-                {{#imageurl}}
-                   <img class="w-100 uriseimage" src="{{imageurl}}" alt="{{title}}">
-                {{/imageurl}}
-                {{^imageurl}}
-                        <div class="placeholderimage">
-                        <div class="m-3 d-flex justify-conten-center align-items-center flex-column">
-                        <i class="fa-regular fa-image placeholdericon"></i>
-                        <h4 class="pt-2" >
-                            {{#str}} optionnoimage, mod_booking {{/str}}
-                        </h4>
-                        </div>
-                        </div>
-                {{/imageurl}}
-                <div class="card-body">
-                    <div class="row mod-booking-row">
-                    <div class="col-md-11 m-auto">
-                        <p class="mb-1 font-weight-bold">{{#str}} aboutoffer, local_urise {{/str}}</p>
-                        {{#dayofweektime}}
-                        <div class="mb-1">
-                            <span>
-                                <i class="fa fa-fw fa-clock-o text-primary" aria-hidden="true"></i>
-                            </span>
-                            <span class="d-md-none">
-                                {{#str}} dayofweektime, mod_booking {{/str}}
-                            </span>
-                                {{.}}
-                            <span>
-                                {{#unitstring}} ({{.}}) {{/unitstring}}
-                            </span>
-                        </div>
-                        {{/dayofweektime}}
-                        {{#kurssprache}}
-                        <div class="mb-1">
-                            <span>
-                                <i class="fa-regular fa-message fa-fw text-primary" aria-hidden="true"></i>
-                            </span>
-                            <span class="d-md-none">
-                                {{#str}} institution, mod_booking {{/str}}:
-                            </span>
-                            <span>
-                                {{{.}}}
-                            </span>
-                        </div>
-                        {{/kurssprache}}
-                        {{#format}}
-                        <div class="mb-1">
-                            <span>
-                                <i class="fa-regular fa-solid fa-fw text-primary fa-desktop text-primary" aria-hidden="true"></i>
-                            </span>
-                            <span class="d-md-none">
-                                {{#str}} institution, mod_booking {{/str}}:
-                            </span>
-                            <span>
-                                {{{.}}}
-                            </span>
-                        </div>
-                        {{/format}}
-                        {{#competency}}
-                        <div class="mb-1">
-                            <span>
-                                <i class="fa-regular fa-solid fa-fw text-primary fa-hashtag text-primary" aria-hidden="true"></i>
-                            </span>
-                            <span class="d-md-none">
-                                {{#str}} institution, mod_booking {{/str}}:
-                            </span>
-                            <span>
-                                {{{.}}}
-                            </span>
-                        </div>
-                        {{/competency}}
-                        {{#organisation }}
-                            <span class="badge bg-gray badge-pill">
-                                {{ . }}
-                            </span>
-                        {{/organisation }}
-                        {{#bookingopeningtime}}
-                        <div>
-                            <span>
-                                <i class="fa fa-fw fa-forward" aria-hidden="true"></i>
-                            </span>
-                            <span>
-                                {{#str}} bookingopeningtime, mod_booking {{/str}}: {{{.}}}
-                            </span>
-                        </div>
-                        {{/bookingopeningtime}}
-                        {{#bookingclosingtime}}
-                        <div>
-                            <span>
-                                <i class="fa fa-fw fa-step-forward" aria-hidden="true"></i>
-                            </span>
-                            <span>
-                                {{#str}} bookingclosingtime, mod_booking {{/str}}: {{{.}}}
-                            </span>
-                        </div>
-                        {{/bookingclosingtime}}
+            <div class="col-md-5">
+                <div class="card price-card border-0">
+                    {{#imageurl}}
+                    <img class="w-100 uriseimage" src="{{imageurl}}" alt="{{title}}">
+                    {{/imageurl}}
+                    {{^imageurl}}
+                            <div class="placeholderimage">
+                            <div class="m-3 d-flex justify-conten-center align-items-center flex-column">
+                            <i class="fa-regular fa-image placeholdericon"></i>
+                            <h4 class="pt-2" >
+                                {{#str}} optionnoimage, mod_booking {{/str}}
+                            </h4>
+                            </div>
+                            </div>
+                    {{/imageurl}}
+                    <div class="card-body">
+                        <div class="row mod-booking-row">
+                        <div class="col-md-11 m-auto">
+                            <p class="mb-1 font-weight-bold">{{#str}} aboutoffer, local_urise {{/str}}</p>
+                            {{#dayofweektime}}
+                            <div class="mb-1">
+                                <span>
+                                    <i class="fa fa-fw fa-clock-o text-primary" aria-hidden="true"></i>
+                                </span>
+                                <span class="d-md-none">
+                                    {{#str}} dayofweektime, mod_booking {{/str}}
+                                </span>
+                                    {{.}}
+                                <span>
+                                    {{#unitstring}} ({{.}}) {{/unitstring}}
+                                </span>
+                            </div>
+                            {{/dayofweektime}}
+                            {{#kurssprache}}
+                            <div class="mb-1">
+                                <span>
+                                    <i class="fa-regular fa-message fa-fw text-primary" aria-hidden="true"></i>
+                                </span>
+                                <span class="d-md-none">
+                                    {{#str}} institution, mod_booking {{/str}}:
+                                </span>
+                                <span>
+                                    {{{.}}}
+                                </span>
+                            </div>
+                            {{/kurssprache}}
+                            {{#format}}
+                            <div class="mb-1">
+                                <span>
+                                    <i class="fa-regular fa-solid fa-fw text-primary fa-desktop text-primary" aria-hidden="true"></i>
+                                </span>
+                                <span class="d-md-none">
+                                    {{#str}} institution, mod_booking {{/str}}:
+                                </span>
+                                <span>
+                                    {{{.}}}
+                                </span>
+                            </div>
+                            {{/format}}
+                            {{#competency}}
+                            <div class="mb-1">
+                                <span>
+                                    <i class="fa-regular fa-solid fa-fw text-primary fa-hashtag text-primary" aria-hidden="true"></i>
+                                </span>
+                                <span class="d-md-none">
+                                    {{#str}} institution, mod_booking {{/str}}:
+                                </span>
+                                <span>
+                                    {{{.}}}
+                                </span>
+                            </div>
+                            {{/competency}}
+                            {{#organisation }}
+                                <span class="badge bg-gray badge-pill">
+                                    {{ . }}
+                                </span>
+                            {{/organisation }}
+                            {{#bookingopeningtime}}
+                            <div>
+                                <span>
+                                    <i class="fa fa-fw fa-forward" aria-hidden="true"></i>
+                                </span>
+                                <span>
+                                    {{#str}} bookingopeningtime, mod_booking {{/str}}: {{{.}}}
+                                </span>
+                            </div>
+                            {{/bookingopeningtime}}
+                            {{#bookingclosingtime}}
+                            <div>
+                                <span>
+                                    <i class="fa fa-fw fa-step-forward" aria-hidden="true"></i>
+                                </span>
+                                <span>
+                                    {{#str}} bookingclosingtime, mod_booking {{/str}}: {{{.}}}
+                                </span>
+                            </div>
+                            {{/bookingclosingtime}}
 
-                        <div class="row mt-3">
-                        {{{ bookitsection }}}
+                            <div class="row mt-3">
+                            {{{ bookitsection }}}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+                </div>
             </div>
         </div>
-    </div>
     </div>
 </div>
 
