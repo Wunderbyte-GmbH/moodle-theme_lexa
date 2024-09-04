@@ -135,20 +135,21 @@
         "manageresponsesurl": "http://site/mod/booking/report.php?id=7&optionid=1"
     }
 }}
-<div class="container">
-    <div class="d-flex justify-content-between row">
+
+<div class="container-fluid">
+    <div class="col-md-9 m-auto">
+            <div class="row">
+            <div class="col-md-12 d-flex mb-3">
         <!-- Left Button -->
         {{#returnurl}}
-            <a href="{{returnurl}}" role="button" class="btn btn-nolabel">{{#str}} back, core {{/str}}</button>
+            <button href="{{returnurl}}" role="button" class="btn btn-nolabel mr-auto">{{#str}} back, core {{/str}}</button>
         {{/returnurl}}
         <!-- Right Button -->
         {{#editurl}}
-            <a href="{{editurl}}" role="button" class="btn btn-nolabel">{{#str}} edit, core {{/str}}</button>
+            <button href="{{editurl}}" role="button" class="btn btn-outline-dark bg-white ml-auto gradienthover">{{#str}} edit, core {{/str}}</button>
         {{/editurl}}
+        </div>
     </div>
-</div>
-<div class="container-fluid">
-    <div class="col-md-9 m-auto">
         <div class="row mod-booking-row">
             <div class="col-md-7">
                 <div class="d-flex mb-3 align-items-center justify-content-start">
@@ -249,7 +250,7 @@
                         <p>{{{description}}}</p>
                         </div>
                     </div>
-                    <a href="{{{teacherurl}}}" class="btn btn-outline-dark bg-white">
+                    <a href="{{{teacherurl}}}" class="btn btn-outline-dark bg-white gradienthover">
                     {{#str}} gotoprofile, local_urise {{/str}}
                     <i class="fa-solid fa-arrow-right ml-1"></i></a>
                     {{/teachers}}

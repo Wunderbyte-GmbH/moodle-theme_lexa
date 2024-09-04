@@ -860,6 +860,13 @@ body.limitedwidth #page.drawers .footer-popover {
     background: var(--lightcontent) !important;
 }
 
+.gradienthover:hover {
+    color: black;
+    border: 1px solid transparent !important;
+    background: linear-gradient(90deg, rgba(0,99,166,1) 0%, rgba(12,186,197,1) 101%);
+    background-repeat: no-repeat;
+}
+
 #page-mod-booking-optionview {
     background-color: $primarylightbg;
     .main-inner, #region-main, #page-header, #topofscroll {
