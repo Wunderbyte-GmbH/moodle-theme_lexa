@@ -891,10 +891,33 @@ body.limitedwidth #page.drawers .footer-popover {
     }
 }
 
+
 .rpbutton {
     background-color: #d9e1e7 !important;
 }
 
 .rpbutton:hover {
     background-color: #9fc6e4 !important;
+}
+
+.pagination .page-item .page-link {
+    border: none;
+    color: #99B2C6;
+}
+
+.pagination .page-item .page-link.pagbutton {
+    color: #99B2C6;
+    border: 2px solid #99B2C6;
+    border-radius: 10px;
+}
+
+.page-item.disabled .page-link.pagbutton {
+    color: #99b2c640;
+    border: 2px solid #99b2c640;
+    border-radius: 10px;
+}
+
+.page-item.active .page-link {
+    color: white;
+    background: #99B2C6;
 }
