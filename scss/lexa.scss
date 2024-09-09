@@ -932,3 +932,524 @@ body.limitedwidth #page.drawers .footer-popover {
     color: white;
     background: #99B2C6;
 }
+
+@media (min-width: 1600px) {
+    .mxl-200 {
+      margin-left: 200px;
+    }
+  }
+  
+  
+  .bookinglinkbutton:not(#page-mod-booking-optionview .bookinglinkbutton):hover {
+    color: white !important;
+    background: var(--primary) !important;
+    border-color: var(--primary) !important;
+  }
+  
+  .bookinglinkbutton:not(#page-mod-booking-optionview .bookinglinkbutton):hover :before {
+    filter: brightness(0) invert(1);
+  }
+  .infolist>li {
+    margin-bottom: 17px;
+    margin-top: 0px;
+  }
+  .organisation > span.bg-secondary{
+    background-color: #CCEBFF;
+    padding: 7px;
+    border-radius: 100px;
+    font-size: 14px;
+  }
+  
+  .bg-secondary.rounded {
+    padding: 7px;
+    border-radius: 100px !important;
+    font-size: 14px;  
+    margin-bottom: 17px;
+    display: inline-block;
+  }
+  .lexa-btn-link:hover {
+        background: linear-gradient(90deg, #0063A6, #0CBAC5);
+      color: #000;
+      text-decoration: none;
+  }
+          .lexa-custom-collapse {
+              background-color: #e6f2f5; 
+              padding: 15px;
+              border-radius: 5px;
+          }
+          .lexa-custom-collapse a {
+              text-decoration: none;
+              font-weight: bold;
+              display: inline-block;
+              margin-bottom: 10px;
+              padding: 12px 20px;
+              border-radius: 10px;
+              max-width: auto;
+          }
+          .lexa-custom-collapse a:hover {
+              text-decoration: none;
+          }
+          .lexa-custom-collapse .lexa-btn-link {
+              color: var(--brand-color);
+              text-decoration: none;
+          }
+          .lexa-custom-collapse .lexa-btn-link:hover {
+              text-decoration: none;
+          }
+          .lexa-collapse-btn {
+              color: var(--brand-color);
+              text-decoration: none;
+              font-weight: bold;
+          }
+          .lexa-collapse-btn:hover {
+              text-decoration: none;
+          }
+          .lexa-custom-icon {
+              margin-right: 5px;
+          }
+  
+  
+  
+  
+  .pl-4.labelsearch {
+     padding-left: 4px !important; 
+  
+  }
+  .dropdown-menu .labelsearch span {
+     color: #0063A6;
+     font-size: 12px;
+  
+  }
+  
+  .dropdown-menu .labelsearch {
+      position: absolute;
+      height: 46px;
+      top: -62px;
+      z-index: 9999;
+  }
+  
+  .form-control:focus {
+  box-shadow: none;
+  border-color: #0063A6;
+  }
+  
+  .dropdown-menu .labelsearch span::after {
+      position: absolute;
+      width: 106%;
+      height: 10px;
+      top: 6px;
+      border-top: 2px solid #fff;
+      background: #fff;
+      content: '';
+      left: -3%;
+      z-index: -100;
+      border-radius: 0px;
+  }
+  
+  .footer-content-information {
+    padding-top: 100px;
+  }
+  .local_urise-meinekurse #topofscroll, .local_urise-meinekurse [role="main"], .local_urise-meinekurse #page {
+    margin: 0px 0px 100px !important;
+    padding: 0px !important;;
+  }
+  .local_urise-meinekurse
+  .background {
+    margin: 0;
+  } 
+  .local_urise-meinekurse #page-header {
+    display: none;
+  }
+  
+  #lexa-navbar-scrolled .fa-shopping-cart{
+    filter:  brightness(1) invert(1);
+  }
+  .mod-booking-card-content {
+    padding-bottom: 20px !important;
+  }
+  .rpbutton {
+    border-radius: 20px !important;
+    padding: 12px 20px !important;
+  }
+  
+  .bookings {
+    padding-right: 20px !important
+  }
+  .mod-booking-card-body,
+  .mod-booking-card-infos,
+  .mod-booking-card-footer {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  [data-content="cangebote"] i {
+    padding-right: 15px
+  }
+  /*iconsstart*/
+  .fa-arrow-right::before {
+    content: "";
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    background-image: url('https://berta.univie.ac.at/pluginfile.php/1/theme_boost_union/additionalresources/0/icon_stroke.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+  }
+  
+  .btn-primary:not(.urisebutton) .fa-arrow-right::before,.btn-dark  .fa-arrow-right::before {
+    filter:  brightness(0) invert(1);;
+  }
+  .icon-all {
+    padding-right: 15px;
+  }
+  .icon-all::before {
+  
+      content: "";
+      width: 22px;
+      height: 22px;
+      display: inline-block;
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMiIgaGVpZ2h0PSIyMiIgdmlld0JveD0iMCAwIDIyIDIyIiBmaWxsPSJub25lIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0wIDMuODM3MjFDMCAxLjcxNzk4IDEuNzE3OTggMCAzLjgzNzIxIDBINi40Njg0NUM4LjU4NzY4IDAgMTAuMzA1NyAxLjcxNzk4IDEwLjMwNTcgMy44MzcyMVY2LjQ2ODQ1QzEwLjMwNTcgOC41ODc2OCA4LjU4NzY4IDEwLjMwNTcgNi40Njg0NSAxMC4zMDU3SDMuODM3MjFDMS43MTc5OCAxMC4zMDU3IDAgOC41ODc2OCAwIDYuNDY4NDVWMy44MzcyMVpNMy44MzcyMSAxLjUzNDg5QzIuNTY1NjcgMS41MzQ4OSAxLjUzNDg5IDIuNTY1NjcgMS41MzQ4OSAzLjgzNzIxVjYuNDY4NDVDMS41MzQ4OSA3LjczOTk5IDIuNTY1NjcgOC43NzA3NyAzLjgzNzIxIDguNzcwNzdINi40Njg0NUM3LjczOTk5IDguNzcwNzcgOC43NzA3NyA3LjczOTk5IDguNzcwNzcgNi40Njg0NVYzLjgzNzIxQzguNzcwNzcgMi41NjU2NyA3LjczOTk5IDEuNTM0ODkgNi40Njg0NSAxLjUzNDg5SDMuODM3MjFaIiBmaWxsPSIjMDAxRjMzIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTEuNjk0MyAzLjgzNzIxQzExLjY5NDMgMS43MTc5OCAxMy40MTIzIDAgMTUuNTMxNiAwSDE4LjE2MjhDMjAuMjgyIDAgMjIgMS43MTc5OCAyMiAzLjgzNzIxVjYuNDY4NDVDMjIgOC41ODc2OCAyMC4yODIgMTAuMzA1NyAxOC4xNjI4IDEwLjMwNTdIMTUuNTMxNUMxMy40MTIzIDEwLjMwNTcgMTEuNjk0MyA4LjU4NzY4IDExLjY5NDMgNi40Njg0NVYzLjgzNzIxWk0xNS41MzE2IDEuNTM0ODlDMTQuMjYgMS41MzQ4OSAxMy4yMjkyIDIuNTY1NjcgMTMuMjI5MiAzLjgzNzIxVjYuNDY4NDVDMTMuMjI5MiA3LjczOTk5IDE0LjI2IDguNzcwNzcgMTUuNTMxNSA4Ljc3MDc3SDE4LjE2MjhDMTkuNDM0MyA4Ljc3MDc3IDIwLjQ2NTEgNy43Mzk5OSAyMC40NjUxIDYuNDY4NDVWMy44MzcyMUMyMC40NjUxIDIuNTY1NjcgMTkuNDM0MyAxLjUzNDg5IDE4LjE2MjggMS41MzQ4OUgxNS41MzE2WiIgZmlsbD0iIzAwMUYzMyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTExLjY5NDMgMTUuNTMxM0MxMS42OTQzIDEzLjQxMjEgMTMuNDEyMyAxMS42OTQxIDE1LjUzMTYgMTEuNjk0MUgxOC4xNjI4QzIwLjI4MiAxMS42OTQxIDIyIDEzLjQxMjEgMjIgMTUuNTMxM1YxOC4xNjI1QzIyIDIwLjI4MTggMjAuMjgyIDIxLjk5OTggMTguMTYyOCAyMS45OTk4SDE1LjUzMTVDMTMuNDEyMyAyMS45OTk4IDExLjY5NDMgMjAuMjgxOCAxMS42OTQzIDE4LjE2MjVWMTUuNTMxM1pNMTUuNTMxNiAxMy4yMjlDMTQuMjYgMTMuMjI5IDEzLjIyOTIgMTQuMjU5OCAxMy4yMjkyIDE1LjUzMTNWMTguMTYyNUMxMy4yMjkyIDE5LjQzNDEgMTQuMjYgMjAuNDY0OSAxNS41MzE1IDIwLjQ2NDlIMTguMTYyOEMxOS40MzQzIDIwLjQ2NDkgMjAuNDY1MSAxOS40MzQxIDIwLjQ2NTEgMTguMTYyNVYxNS41MzEzQzIwLjQ2NTEgMTQuMjU5OCAxOS40MzQzIDEzLjIyOSAxOC4xNjI4IDEzLjIyOUgxNS41MzE2WiIgZmlsbD0iIzAwMUYzMyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTAgMTUuNTMxM0MwIDEzLjQxMjEgMS43MTc5OCAxMS42OTQxIDMuODM3MjEgMTEuNjk0MUg2LjQ2ODQ1QzguNTg3NjggMTEuNjk0MSAxMC4zMDU3IDEzLjQxMjEgMTAuMzA1NyAxNS41MzEzVjE4LjE2MjVDMTAuMzA1NyAyMC4yODE4IDguNTg3NjggMjEuOTk5OCA2LjQ2ODQ1IDIxLjk5OThIMy44MzcyMUMxLjcxNzk4IDIxLjk5OTggMCAyMC4yODE4IDAgMTguMTYyNVYxNS41MzEzWk0zLjgzNzIxIDEzLjIyOUMyLjU2NTY3IDEzLjIyOSAxLjUzNDg5IDE0LjI1OTggMS41MzQ4OSAxNS41MzEzVjE4LjE2MjVDMS41MzQ4OSAxOS40MzQxIDIuNTY1NjcgMjAuNDY0OSAzLjgzNzIxIDIwLjQ2NDlINi40Njg0NUM3LjczOTk5IDIwLjQ2NDkgOC43NzA3NyAxOS40MzQxIDguNzcwNzcgMTguMTYyNVYxNS41MzEzQzguNzcwNzcgMTQuMjU5OCA3LjczOTk5IDEzLjIyOSA2LjQ2ODQ1IDEzLjIyOUgzLjgzNzIxWiIgZmlsbD0iIzAwMUYzMyIvPgo8L3N2Zz4=');
+      background-size: contain;
+      background-repeat: no-repeat;
+      vertical-align: bottom;
+      }
+  .fa-solid.fa-arrow-right::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background-image: url('https://berta.univie.ac.at/pluginfile.php/1/theme_boost_union/additionalresources/0/icon_stroke.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+  }
+  
+  .btn-primary .fa-solid.fa-arrow-right::before,
+  .btn-dark  .fa-solid.fa-arrow-right::before,
+  {
+    filter:  brightness(0) invert(1);;
+  }
+  
+  #lexa-navbar-scrolled .fa-shopping-cart, #lexa-navbar-scrolled .fa-bell-o{
+    filter:  brightness(1) invert(1);
+  
+  }
+  .fa.fa-bell-o::before {
+      content: "";
+      width: 21.012px;
+      height: 26px;
+      display: inline-block;
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMiIgaGVpZ2h0PSIyNyIgdmlld0JveD0iMCAwIDIyIDI3IiBmaWxsPSJub25lIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik03LjU5NDU2IDI1LjYxNjhDNy4xMDAwNSAyNS4xMTk2IDYuNzI3OTggMjQuNTE0NCA2LjUwNzQgMjMuODQ4OEM1LjE2MDExIDIzLjYyNzEgMy44MzI5NiAyMy4yOTc3IDIuNTM4NDEgMjIuODYzOEMxLjU2OTkgMjIuNTU4IDAuNzkzMjg5IDIxLjgyNzggMC40Mjg1NDMgMjAuODc5OEMwLjA4NjAxMzUgMTkuOTI4IDAuMjA1NjQyIDE4Ljg3MDkgMC43NTI1MTcgMTguMDE5OEwyLjEzMDU3IDE1LjcxOThDMi40NTY5OSAxNS4wOTggMi42NDUzNCAxNC40MTMxIDIuNjgyNTcgMTMuNzExOFYxMC4yNDE4QzIuNjg0ODkgNi44NzcyIDQuNzU5MTEgMy44NjE5MiA3Ljg5OTk4IDIuNjU2NjhDOC40NzQzMiAxLjU5NTU4IDkuNTg0NzkgMC45MzU0ODkgMTAuNzkxMyAwLjkzODAyNkMxMS45OTggMC45NDA1NTkgMTMuMTA1NyAxLjYwNTMyIDEzLjY3NTYgMi42Njg4MkMxNi43OTk1IDMuODgyODIgMTguODU4MiA2Ljg4OTM1IDE4Ljg2MDcgMTAuMjQwOFYxMy43MTQ4QzE4LjkwMTEgMTQuNDE5NCAxOS4wODkxIDE1LjEwNzYgMTkuNDEyNyAxNS43MzQ4TDIwLjc3ODYgMTguMDE4OEMyMS4yOTM0IDE4Ljg4MzYgMjEuMzkwNSAxOS45MzQ0IDIxLjA0MjcgMjAuODc4OEMyMC42OTk4IDIxLjgxOTIgMTkuOTQ0NyAyMi41NTA0IDE4Ljk5MzcgMjIuODYyOEMxNy43MDQxIDIzLjI5NjYgMTYuMzgxNCAyMy42MjU3IDE1LjAzODggMjMuODQ2OEMxNC41NTM3IDI1LjMzMDcgMTMuMzMxNyAyNi40NTU2IDExLjgxMjkgMjYuODE2NkMxMC4yOTQgMjcuMTc3NiA4LjY5NjczIDI2LjcyMjggNy41OTU3OCAyNS42MTU4TDcuNTk0NTYgMjUuNjE2OFpNOC44NjU1NSAyNC4zNDI4QzkuNDA3NTUgMjQuODg4MSAxMC4xNTcyIDI1LjE3NSAxMC45MjQ4IDI1LjEzMUMxMS42OTIzIDI1LjA4NyAxMi40MDQzIDI0LjcxNjQgMTIuODgwNiAyNC4xMTI4QzEyLjE3OTMgMjQuMTY5NSAxMS40NzU5IDI0LjE5NzggMTAuNzcwNiAyNC4xOTc4QzEwLjA2NTMgMjQuMTk3OCA5LjM2MjI2IDI0LjE2OTUgOC42NjE1OCAyNC4xMTI4QzguNzI1MTcgMjQuMTkzIDguNzkzMjkgMjQuMjY5NSA4Ljg2NTU1IDI0LjM0MThWMjQuMzQyOFpNNC40Nzk1NyAxMC4yNDI4VjEzLjcxNjhDNC40Mzc0NSAxNC43NDIzIDQuMTYzODkgMTUuNzQ1IDMuNjc5NTIgMTYuNjQ5OEwyLjMwMTQ3IDE4Ljk0OThDMi4wNDE3IDE5LjMzNSAxLjk3NTMgMTkuODE4OCAyLjEyMTI5IDIwLjI1OThDMi4yOTgwNSAyMC42OTM5IDIuNjY1MzYgMjEuMDIyIDMuMTE2NDEgMjEuMTQ4OEM4LjA4Njk5IDIyLjgzMTQgMTMuNDczIDIyLjgzMTQgMTguNDQzNiAyMS4xNDg4QzE4Ljg3MzQgMjEuMDA3MyAxOS4yMTM2IDIwLjY3NTEgMTkuMzY1NCAyMC4yNDg4QzE5LjUyNTggMTkuODE5OSAxOS40ODE2IDE5LjM0MTEgMTkuMjQ1MyAxOC45NDg4TDE3Ljg2NzQgMTYuNjQ4OEMxNy4zODAxIDE1Ljc0MDggMTcuMTA2NCAxNC43MzM2IDE3LjA2NzMgMTMuNzAzOFYxMC4yNDE4QzE3LjA3MTQgNy4xMDg0MiAxNC43NzM4IDQuNDQ3NTIgMTEuNjczMiAzLjk5NDgxQzExLjA1NTEgMy45MTc5OCAxMC40Mjk2IDMuOTIxMzQgOS44MTIzMyA0LjAwNDgxQzYuNzQxOSA0LjQ4Nzg0IDQuNDc5NjkgNy4xMzM2MiA0LjQ3OTU3IDEwLjI0MThWMTAuMjQyOFoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPg==');
+      background-size: contain;
+      background-repeat: no-repeat;
+      vertical-align: middle;
+  }
+  .fa.fa-shopping-cart::before {
+  content: "";
+  width: 26px;
+  height: 26px;
+  display: inline-block;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNiIgaGVpZ2h0PSIyNiIgdmlld0JveD0iMCAwIDI2IDI2IiBmaWxsPSJub25lIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzI4NTNfMzM1OSkiPgo8cGF0aCBkPSJNMTkuNzM5NiAyMS4zNjY4SDguOTcyOTNDOC4xNzg2IDIxLjM2NjcgNy41MDAyNSAyMC43OTM1IDcuMzY3ODggMjAuMDEwMkw0LjUwNjA5IDMuMTg5MUM0LjM3MjI3IDIuNDA3MTMgMy42OTQzMyAxLjgzNTUgMi45MDEwNSAxLjgzNTgySDEuODMzMTYiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0xNy43MDQ4IDI0LjYyMjVDMTguMDE4MSAyNC42MjI1IDE4LjIxMzkgMjQuMjgzNCAxOC4wNTczIDI0LjAxMjFDMTcuOTg0NSAyMy44ODYxIDE3Ljg1MDIgMjMuODA4NiAxNy43MDQ4IDIzLjgwODYiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIvPgo8cGF0aCBkPSJNMTcuNzA0OCAyNC42MjI1QzE3LjM5MTUgMjQuNjIyNSAxNy4xOTU3IDI0LjI4MzQgMTcuMzUyNCAyNC4wMTIxQzE3LjQyNTEgMjMuODg2MSAxNy41NTk1IDIzLjgwODYgMTcuNzA0OCAyMy44MDg2IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz4KPHBhdGggZD0iTTkuNTY1NTQgMjQuNjIyNUM5Ljg3ODg2IDI0LjYyMjUgMTAuMDc0NyAyNC4yODM0IDkuOTE4IDI0LjAxMjFDOS44NDUzMyAyMy44ODYxIDkuNzEwOTkgMjMuODA4NiA5LjU2NTU0IDIzLjgwODYiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIvPgo8cGF0aCBkPSJNOS41NjU0MyAyNC42MjI1QzkuMjUyMjEgMjQuNjIyNSA5LjA1NjQgMjQuMjgzNCA5LjIxMzA3IDI0LjAxMjFDOS4yODU3NCAyMy44ODYxIDkuNDIwMDggMjMuODA4NiA5LjU2NTQzIDIzLjgwODYiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIvPgo8cGF0aCBkPSJNNi43Njc2OSAxNi40ODMzSDE5Ljg2NzZDMjEuMzYxMyAxNi40ODMxIDIyLjY2MzIgMTUuNDY2NiAyMy4wMjU3IDE0LjAxNzZMMjQuNTk5MyA3LjcyMzJDMjQuNzI3OCA3LjIwOTI5IDI0LjMzODkgNi43MTE0OCAyMy44MDkyIDYuNzExNzlINS4xMDYyNyIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF8yODUzXzMzNTkiPgo8cmVjdCB3aWR0aD0iMjQuOTE2NyIgaGVpZ2h0PSIyNC45MTY3IiBmaWxsPSJ3aGl0ZSIgdHJhbnNmb3JtPSJtYXRyaXgoLTEgMCAwIDEgMjUuNjg2OCAwLjc3MDg0NCkiLz4KPC9jbGlwUGF0aD4KPC9kZWZzPgo8L3N2Zz4=');
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  }
+  
+  .fa.fa-clock-o::before {
+  content: "";
+  width: 19.5px;
+  height: 19.5px;
+  display: inline-block;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M17.9483 10.05C17.9483 14.5534 14.2934 18.2083 9.78999 18.2083C5.28659 18.2083 1.63165 14.5534 1.63165 10.05C1.63165 5.5466 5.28659 1.89166 9.78999 1.89166C14.2934 1.89166 17.9483 5.5466 17.9483 10.05Z" stroke="%230063A6" stroke-width="1.335" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.8168 12.6442L10.2877 11.1349C9.84713 10.8738 9.48816 10.2456 9.48816 9.73163V6.38672" stroke="%230063A6" stroke-width="1.335" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  }
+  
+  
+  .fa-message::before {
+  content: "";
+  width: 19.5px;
+  height: 19.5px;
+  display: inline-block;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIiBmaWxsPSJub25lIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzI4NTNfNTU0MikiPgo8cGF0aCBkPSJNMTcuNTg2NCAxNS41NDE3SDkuNDA5NTRMNC43MzcwNCAxOS4wNDZWMTUuNTQxN0gyLjQwMDc5QzIuMDkwOTkgMTUuNTQxNyAxLjc5Mzg3IDE1LjQxODYgMS41NzQ4IDE1LjE5OTVDMS4zNTU3NCAxNC45ODA1IDEuMjMyNjcgMTQuNjgzNCAxLjIzMjY3IDE0LjM3MzVWMi42OTIyOUMxLjIzMjY3IDIuMzgyNDkgMS4zNTU3NCAyLjA4NTM3IDEuNTc0OCAxLjg2NjMxQzEuNzkzODcgMS42NDcyNCAyLjA5MDk5IDEuNTI0MTcgMi40MDA3OSAxLjUyNDE3SDE3LjU4NjRDMTcuODk2MiAxLjUyNDE3IDE4LjE5MzMgMS42NDcyNCAxOC40MTI0IDEuODY2MzFDMTguNjMxNSAyLjA4NTM3IDE4Ljc1NDUgMi4zODI0OSAxOC43NTQ1IDIuNjkyMjlWMTQuMzczNUMxOC43NTQ1IDE0LjY4MzQgMTguNjMxNSAxNC45ODA1IDE4LjQxMjQgMTUuMTk5NUMxOC4xOTMzIDE1LjQxODYgMTcuODk2MiAxNS41NDE3IDE3LjU4NjQgMTUuNTQxN1oiIHN0cm9rZT0iIzAwNjNBNiIgc3Ryb2tlLXdpZHRoPSIxLjE2ODEzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTQuNzM2OTQgNi43ODA3NkgxNS4yNTAxIiBzdHJva2U9IiMwMDYzQTYiIHN0cm9rZS13aWR0aD0iMS4xNjgxMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik00LjczNjk0IDEwLjI4NTJIMTIuOTEzOCIgc3Ryb2tlPSIjMDA2M0E2IiBzdHJva2Utd2lkdGg9IjEuMTY4MTMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L2c+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwXzI4NTNfNTU0MiI+CjxyZWN0IHdpZHRoPSIxOC42OSIgaGVpZ2h0PSIxOC42OSIgZmlsbD0id2hpdGUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuNjQ4NTYgMC45NDAxODYpIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+');
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  }
+  
+  .fa-computer::before {
+      content: "";
+      width: 19.5px;
+      height: 19.5px;
+      display: inline-block;
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMSIgdmlld0JveD0iMCAwIDIwIDIxIiBmaWxsPSJub25lIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzI4NTNfNzcyMikiPgo8cGF0aCBkPSJNMS4wOTk5OCAxOS4zMlYxMi45OTExIiBzdHJva2U9IiMwMDYzQTYiIHN0cm9rZS13aWR0aD0iMS4xODY2NyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48L3BhdGg+CjxwYXRoIGQ9Ik0xMS43OCAxMi45OTExSDE4LjlWMTguOTI0NEMxOC45IDE5LjAyOTMgMTguODU4MyAxOS4xMjk5IDE4Ljc4NDEgMTkuMjA0MUMxOC43MDk5IDE5LjI3ODMgMTguNjA5MyAxOS4zMiAxOC41MDQ0IDE5LjMySDEyLjE3NTVDMTIuMDcwNiAxOS4zMiAxMS45NyAxOS4yNzgzIDExLjg5NTggMTkuMjA0MUMxMS44MjE2IDE5LjEyOTkgMTEuNzggMTkuMDI5MyAxMS43OCAxOC45MjQ0VjEyLjk5MTFaIiBzdHJva2U9IiMwMDYzQTYiIHN0cm9rZS13aWR0aD0iMS4xODY2NyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48L3BhdGg+CjxwYXRoIGQ9Ik0xLjQ5NTUzIDkuODI2NkgxOC41MDQ0QzE4LjYwOTMgOS44MjY2IDE4LjcwOTkgOS44NjgyNyAxOC43ODQxIDkuOTQyNDVDMTguODU4MyAxMC4wMTY2IDE4LjkgMTAuMTE3MiAxOC45IDEwLjIyMjJWMTIuOTkxSDEuMDk5OThWMTAuMjIyMkMxLjA5OTk4IDEwLjExNzIgMS4xNDE2NSAxMC4wMTY2IDEuMjE1ODMgOS45NDI0NUMxLjI5MDAxIDkuODY4MjcgMS4zOTA2MiA5LjgyNjYgMS40OTU1MyA5LjgyNjZaIiBzdHJva2U9IiMwMDYzQTYiIHN0cm9rZS13aWR0aD0iMS4xODY2NyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48L3BhdGg+CjxwYXRoIGQ9Ik0xMS43OCAxNi4xNTU2SDE4LjkiIHN0cm9rZT0iIzAwNjNBNiIgc3Ryb2tlLXdpZHRoPSIxLjE4NjY3IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjwvcGF0aD4KPHBhdGggZD0iTTQuNjU5OTkgMS41MjAwOEgxMS43OEMxMS43OCAxLjUyMDA4IDEyLjk2NjcgMS41MjAwOCAxMi45NjY3IDIuNzA2NzVWNi4yNjY3NUMxMi45NjY3IDYuMjY2NzUgMTIuOTY2NyA3LjQ1MzQxIDExLjc4IDcuNDUzNDFINC42NTk5OUM0LjY1OTk5IDcuNDUzNDEgMy40NzMzMyA3LjQ1MzQxIDMuNDczMzMgNi4yNjY3NVYyLjcwNjc1QzMuNDczMzMgMi43MDY3NSAzLjQ3MzMzIDEuNTIwMDggNC42NTk5OSAxLjUyMDA4WiIgc3Ryb2tlPSIjMDA2M0E2IiBzdHJva2Utd2lkdGg9IjEuMTg2NjciIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PC9wYXRoPgo8cGF0aCBkPSJNOC4yMTk5NyA3LjQ1MzU1VjkuODI2ODkiIHN0cm9rZT0iIzAwNjNBNiIgc3Ryb2tlLXdpZHRoPSIxLjE4NjY3IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjwvcGF0aD4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF8yODUzXzc3MjIiPgo8cmVjdCB3aWR0aD0iMTkuNTgiIGhlaWdodD0iMTkuNTgiIGZpbGw9IndoaXRlIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjIwOTk5MSAwLjYzMDA2NikiPjwvcmVjdD4KPC9jbGlwUGF0aD4KPC9kZWZzPgo8L3N2Zz4=');
+      background-size: contain;
+      background-repeat: no-repeat;
+      vertical-align: middle;
+      }
+  
+  .fa-hashtag::before {
+  content:"";
+  width: 19.5px;
+  height: 19.5px;
+  display: inline-block;
+   background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMSIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDIxIDE4IiBmaWxsPSJub25lIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzI4NTNfNTU1OSkiPgo8cGF0aCBkPSJNNC41NjQ0NSA2LjE4NDU3SDE3Ljc4MSIgc3Ryb2tlPSIjMDA2M0E2IiBzdHJva2Utd2lkdGg9IjEuNzgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMy4wOTU5NSAxMy4wMzY5SDE2LjMxMjQiIHN0cm9rZT0iIzAwNjNBNiIgc3Ryb2tlLXdpZHRoPSIxLjc4IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTguOTY5OTUgMi43NTc1N0w1LjA1Mzk2IDE2LjQ2MzYiIHN0cm9rZT0iIzAwNjNBNiIgc3Ryb2tlLXdpZHRoPSIxLjc4IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTE1LjgyMyAyLjc1NzU3TDExLjkwNyAxNi40NjM2IiBzdHJva2U9IiMwMDYzQTYiIHN0cm9rZS13aWR0aD0iMS43OCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjwvZz4KPGRlZnM+CjxjbGlwUGF0aCBpZD0iY2xpcDBfMjg1M181NTU5Ij4KPHJlY3Qgd2lkdGg9IjE5LjU4IiBoZWlnaHQ9IjE3LjYyMiIgZmlsbD0id2hpdGUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuNjQ4NDM4IDAuMzEwMDU5KSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPg==');
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  }
+  
+  
+  
+  
+  /*iconsende*/
+  
+  @media (max-width:768px) {
+    .mod-booking-card-content.d-flex  {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr auto 1fr auto auto 20px;
+      grid-column-gap: 20px;
+  }
+  
+  
+  
+  .mod-booking-card-body {
+    grid-area: 2/1/3/5
+  }  
+  .mod-booking-card-infos {
+          grid-area: 3 / 1 / 4 / 6;
+  }
+  .mod-booking-card-footer {
+   grid-area: 4 / 1 / 5 / 6
+  
+  }
+  .mod-booking-card.p-0 {
+      padding-bottom: 20px;
+  }
+  .mod-booking-card-header,
+  .mod-booking-card-body,
+  .mod-booking-card-infos,
+  .mod-booking-card-footer {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  
+  .mod-booking-card-infos {
+     padding-bottom: 20px;
+  }
+  .mod-booking-card-footer {
+    margin-bottom: 24px;
+  .padding-bottom:20px;
+  }
+  
+  .mod-booking-card-body p {
+    margin-bottom: 0px;
+  }
+  }
+  
+  
+  .mod-booking-card 
+  .d-flex.flex-column.flex-grow-1 {
+    flex-grow: inherit !important;
+  }
+  
+  .background {
+    margin-left: auto;
+    margin-right:auto;
+    max-width: 100vw;
+  }
+  
+  .dropdown-item:hover .form-check-label {
+    color: white;
+  }
+  
+  
+  /* moove to  theme*/
+  #page-course-index-category
+  .price-card {
+    border-radius: 20px;
+  }
+  
+  .container-xl {
+    overflow: visible;
+  }
+  .price-card .uriseimage, .price-card .placeholderimage {
+    border-radius: 20px 20px 0 0 !important
+  }
+  
+  .card.w-100.rounded {
+    padding: 20px;
+    margin-top: 40px;
+    transition: background 0.3s ease; 
+  
+  }
+  .card.w-100.rounded:hover {
+    border-radius: 20px;
+    background: #BFD8E3;
+  }
+  
+  .urisebutton, .btn-secondary {
+    transition: background 0.3s ease; 
+    color: #000;
+    text-decoration: none;
+    padding: 12px 20px;
+  }
+  
+  [data-action="bookondetail"]:hover, .urisebutton:hover, .btn-secondary:hover {
+    background: linear-gradient(90deg, #0063A6, #0CBAC5);
+    color: #000;
+    text-decoration: none;
+    padding: 12px 20px;
+  }
+  
+  .mod-booking-card:hover {
+    box-shadow: 0px 26px 30px 0px rgba(0, 0, 0, 0.14), 10px 0px 10px 0px rgba(0, 0, 0, 0.04), -10px 0px 10px 0px rgba(0, 0, 0, 0.04);
+  }
+  .mod-booking-card {
+    box-shadow: 0px 12px 30px 0px rgba(0, 0, 0, 0.05), 5px 0px 10px 0px rgba(0, 0, 0, 0.02), -5px 0px 10px 0px rgba(0, 0, 0, 0.02);
+  }
+  
+  #instance-2 .wb_news_card_blog {
+    box-shadow: 0px 12px 30px 0px rgba(0, 0, 0, 0.05), 5px 0px 10px 0px rgba(0, 0, 0, 0.02), -5px 0px 10px 0px rgba(0, 0, 0, 0.02);
+  }
+  
+  .wunderbyte-table-grid {
+    padding-bottom: 100px;
+  }
+  
+  h2 {
+    leading-trim: both;
+    text-edge: cap;
+    font-family: Roboto;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 46px
+  }
+  
+  .my-6 {
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
+  
+  .col-md-7 {
+    padding-right: 100px;
+  }
+  
+  .showontop .wunderbyteTableFilter.row {
+    justify-content: unset;
+  }
+  
+  @media (min-width: 1200px) {
+      .urise-courses-container .row, .urise-courses-container .rows-container, .wunderbyte_table_container.showontop .filterheader .wunderbyte_table_components {
+          max-width: 1600px;
+          margin:auto;
+      }
+  }
+  
+  /* moove to  theme*/
+  .detailteacher  .btn-outline-dark:hover {
+    color: #343a40;
+  
+  }
+  .detailteacher .btn-outline-dark {
+    margin-top: 20px;
+    padding: 12px 20px 12px 20px;
+  }
+    
+  .detailteacher .fa-arrow-right::before {
+    margin-left: 17px;
+  }
+  
+  .wb_news .card-body {
+    padding: 0 20px;
+  } 
+  .wb_news-userinfo {
+    font-size: 11px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+  
+  .wb-news .card-footer btn {
+    font-size: 14px;
+  }
+  
+  .wb_news_card_blog .card-body {
+    overflow: hidden
+  }
+  
+  .card-title {
+    font-size: 26px;
+  }
+  
+  .mod-booking-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  } 
+  
+  .d-flex.flex-column.flex-grow-1 {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .mod-booking-card-footer {
+    margin-top: auto;
+    margin-bottom: 30px;
+  }
+  
+  .mod-booking-card-infos {
+    margin-bottom: 30px;
+  }
+  
+  .mod-booking-card-body {
+    flex-grow: 1;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: start; 
+  }
+  
+  .mod-booking-card-header, .mod-booking-body {
+     margin-bottom: unset !important;
+   }
+  
+  /* Community Header styles */
+  
+  header.uskils-community-header {
+  position: relative;
+  background: url('https://berta.univie.ac.at/pluginfile.php/1/local_wb_news/bgimage/7/Bildschirmfoto%202024-06-19%20um%2015.34.14.png') no-repeat center center;
+              background-size: cover;
+              height: 100px;
+              color: white;
+  }
+  uskils-community-header .title {
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              background-color: rgba(0, 100, 175, 0.9); /* Adjusted for opacity effect */
+              padding: 10px 20px;
+              border-radius: 0 5px 0 0; /* Rounded top right corner */
+              font-size: 24px;
+          }
+  h2 {
+    color: #050505;
+    leading-trim: both;
+    text-edge: cap;
+    /* h2 */
+    font-family: Roboto;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 46px; 
+  }
+
+
+
