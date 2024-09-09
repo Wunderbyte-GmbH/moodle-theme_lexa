@@ -212,6 +212,7 @@ class toolbox {
                         case 1: // URL.
                             try {
                                 $item['itemurl'] = new moodle_url($setting);
+                                $item['itemurl'] = $item['itemurl']->out(false);
                             } catch (moodle_exception $exception) {
                                 // We're not actually worried about this, we don't want to mess up the display
                                 // just for a wrongly entered URL.
