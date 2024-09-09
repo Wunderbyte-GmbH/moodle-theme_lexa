@@ -736,6 +736,14 @@ body.limitedwidth #page.drawers .footer-popover {
     }
 }
 
+@media (max-width: 767.98px) {
+    .col-ap-availableplaces { 
+        display: block;
+    }
+}
+
+
+
 @media (min-width: 768px) {
     body:not(.backgroundimage):not(.loginbackgroundimage) #footnote {
         border-top: none;
