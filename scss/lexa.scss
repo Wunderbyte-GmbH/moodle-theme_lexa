@@ -1451,5 +1451,32 @@ body.limitedwidth #page.drawers .footer-popover {
     line-height: 46px; 
   }
 
+.lexa-b1 {
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26px; 
+}
+
+.wb-news-image-row .btn.btn-primary.lexa-b1 {
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26px;
+  }
+
+  .wb_news_card_blog {
+    border-radius: 15px;
+    background: #FFF;
+    /* Shadow cards light */
+    box-shadow: 0px 12px 30px 0px rgba(0, 0, 0, 0.05), 5px 0px 10px 0px rgba(0, 0, 0, 0.02), -5px 0px 10px 0px rgba(0, 0, 0, 0.02);
+  }
+  .wb_news_card_blog img { 
+    border-top-left-radius: 15px;  
+    border-top-right-radius: 15px;
+  }
+
 
 
