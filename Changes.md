@@ -1,6 +1,10 @@
 Version Information
 ===================
 
+Version 404.0.1
+---------------
+1. Update to Moodle 4.4, requires Boost Union v4.4-r1 (2024060100) - https://moodle.org/plugins/theme_boost_union/v4.4-r1/32585
+
 Version 403.0.8
 ---------------
 1. Tidied navbar and added SCSS variables in lexapre.scss to aid changes / customisation.
