@@ -1504,3 +1504,56 @@ body.limitedwidth #page.drawers .footer-popover {
     margin-right: unset !important;
     margin-left: unset !important;
 }
+
+@media (max-width: 768px) {
+    .mod-booking-card-content.d-flex {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 20px;
+        border-bottom: 1px solid #D9E1E7;
+    }
+   
+    .wunderbyte-table-grid {
+      padding: 0px;
+    }
+    .mod-booking-card {
+      box-shadow: none;
+      padding: 20px 25px;
+      border-bottom: 1px solid #D9E1E7;
+    } 
+    .wunderbyte-table-grid .mod-booking-card.list-group-item {
+      box-shadow: none;
+    }
+    .block_html.block {
+      max-width: 100%;
+    }
+    .mod-booking-card-infos {
+      font-size: 14px;
+      font-weight: 400;
+    }
+    .landingblock {
+      overflow: hidden;
+    }
+
+    .overflow-hidden-sm {
+      overflow:hidden;
+
+    }
+    .infolist > li.mt-2 {
+      margin-bottom: 10px;
+      margin-top: 0px !important;
+    }
+     .infolist {
+       margin: 0 20px;
+     }
+    .urise-avail {
+     display: block;
+   }
+   .wunderbyte-table-grid .list-group-item .imagecontainer img, .wunderbyte-table-grid .list-group-item .placeholderimage {
+     height: 150px;
+   }
+   .univie-padding-bottom {
+     padding-bottom: 100px;
+   }
+}
