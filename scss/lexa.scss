@@ -1557,3 +1557,13 @@ body.limitedwidth #page.drawers .footer-popover {
      padding-bottom: 100px;
    }
 }
+
+@media (max-width: 768px) {
+    .mod-booking-card-footer {
+        grid-area: 5 / 1 / 5 / 5;
+        grid-row-start: 5;
+        grid-column-start: 1;
+        grid-row-end: 5;
+        grid-column-end: 5;
+    }
+}
