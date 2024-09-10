@@ -99,29 +99,29 @@
 // Alerts.
 .alert-danger,
 .environmenttable .error {
-    background-color: $danger;
+    // background-color: $danger;
     border-color: $danger;
-    color: $system_error_600;
+    color: $danger;
 }
 
 .alert-info {
-    background-color: $info;
+    // background-color: $info;
     border-color: $info;
-    color: $primary;
+    color: $info;
 }
 
 .alert-success,
 .environmenttable .ok {
-    background-color: $success;
+    // background-color: $success;
     border-color: $success;
-    color: $system_positive_800;
+    color: $success;
 }
 
 .alert-warning,
 .environmenttable .warn {
-    background-color: $warning;
+    // background-color: $warning;
     border-color: $warning;
-    color: $system_warning_600;
+    color: $warning;
 }
 
 // Navbar.
@@ -1474,3 +1474,5 @@ body.limitedwidth #page.drawers .footer-popover {
 .navbar .lexa-nav-second-row {
     box-shadow: 0px 0px 1px 0px rgba(23, 15, 73, 0.03), 0px 1px 1px 0px rgba(23, 15, 73, 0.04), 0px 5px 14px 0px rgba(8, 15, 52, 0.04);
 }
+
+
