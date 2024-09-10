@@ -211,10 +211,10 @@
     }
 
     .lexa-nav-second-row {
-        border-bottom: #dee2e6 1px solid;
         display: flex;
         height: $navbar-second-row-height;
         justify-content: space-between;
+        box-shadow: 0px 0px 1px 0px rgba(23, 15, 73, 0.03), 0px 1px 1px 0px rgba(23, 15, 73, 0.04), 0px 5px 14px 0px rgba(8, 15, 52, 0.04);
     }
 
     .primary-navigation {
@@ -737,7 +737,7 @@ body.limitedwidth #page.drawers .footer-popover {
 }
 
 @media (max-width: 767.98px) {
-    .col-ap-availableplaces { 
+    .col-ap-availableplaces {
         display: block;
     }
 }
@@ -938,14 +938,14 @@ body.limitedwidth #page.drawers .footer-popover {
       margin-left: 200px;
     }
   }
-  
-  
+
+
   .bookinglinkbutton:not(#page-mod-booking-optionview .bookinglinkbutton):hover {
     color: white !important;
     background: var(--primary) !important;
     border-color: var(--primary) !important;
   }
-  
+
   .bookinglinkbutton:not(#page-mod-booking-optionview .bookinglinkbutton):hover :before {
     filter: brightness(0) invert(1);
   }
@@ -959,11 +959,11 @@ body.limitedwidth #page.drawers .footer-popover {
     border-radius: 100px;
     font-size: 14px;
   }
-  
+
   .bg-secondary.rounded {
     padding: 7px;
     border-radius: 100px !important;
-    font-size: 14px;  
+    font-size: 14px;
     margin-bottom: 17px;
     display: inline-block;
   }
@@ -973,7 +973,7 @@ body.limitedwidth #page.drawers .footer-popover {
       text-decoration: none;
   }
           .lexa-custom-collapse {
-              background-color: #e6f2f5; 
+              background-color: #e6f2f5;
               padding: 15px;
               border-radius: 5px;
           }
@@ -1007,32 +1007,32 @@ body.limitedwidth #page.drawers .footer-popover {
           .lexa-custom-icon {
               margin-right: 5px;
           }
-  
-  
-  
-  
+
+
+
+
   .pl-4.labelsearch {
-     padding-left: 4px !important; 
-  
+     padding-left: 4px !important;
+
   }
   .dropdown-menu .labelsearch span {
      color: #0063A6;
      font-size: 12px;
-  
+
   }
-  
+
   .dropdown-menu .labelsearch {
       position: absolute;
       height: 46px;
       top: -62px;
       z-index: 9999;
   }
-  
+
   .form-control:focus {
   box-shadow: none;
   border-color: #0063A6;
   }
-  
+
   .dropdown-menu .labelsearch span::after {
       position: absolute;
       width: 106%;
@@ -1045,7 +1045,7 @@ body.limitedwidth #page.drawers .footer-popover {
       z-index: -100;
       border-radius: 0px;
   }
-  
+
   .footer-content-information {
     padding-top: 100px;
   }
@@ -1056,11 +1056,11 @@ body.limitedwidth #page.drawers .footer-popover {
   .local_urise-meinekurse
   .background {
     margin: 0;
-  } 
+  }
   .local_urise-meinekurse #page-header {
     display: none;
   }
-  
+
   #lexa-navbar-scrolled .fa-shopping-cart{
     filter:  brightness(1) invert(1);
   }
@@ -1071,7 +1071,7 @@ body.limitedwidth #page.drawers .footer-popover {
     border-radius: 20px !important;
     padding: 12px 20px !important;
   }
-  
+
   .bookings {
     padding-right: 20px !important
   }
@@ -1095,7 +1095,7 @@ body.limitedwidth #page.drawers .footer-popover {
     background-repeat: no-repeat;
     vertical-align: middle;
   }
-  
+
   .btn-primary:not(.urisebutton) .fa-arrow-right::before,.btn-dark  .fa-arrow-right::before {
     filter:  brightness(0) invert(1);;
   }
@@ -1103,7 +1103,7 @@ body.limitedwidth #page.drawers .footer-popover {
     padding-right: 15px;
   }
   .icon-all::before {
-  
+
       content: "";
       width: 22px;
       height: 22px;
@@ -1123,16 +1123,16 @@ body.limitedwidth #page.drawers .footer-popover {
     background-repeat: no-repeat;
     vertical-align: middle;
   }
-  
+
   .btn-primary .fa-solid.fa-arrow-right::before,
   .btn-dark  .fa-solid.fa-arrow-right::before,
   {
     filter:  brightness(0) invert(1);;
   }
-  
+
   #lexa-navbar-scrolled .fa-shopping-cart, #lexa-navbar-scrolled .fa-bell-o{
     filter:  brightness(1) invert(1);
-  
+
   }
   .fa.fa-bell-o::before {
       content: "";
@@ -1154,7 +1154,7 @@ body.limitedwidth #page.drawers .footer-popover {
   background-repeat: no-repeat;
   vertical-align: middle;
   }
-  
+
   .fa.fa-clock-o::before {
   content: "";
   width: 19.5px;
@@ -1165,8 +1165,8 @@ body.limitedwidth #page.drawers .footer-popover {
   background-repeat: no-repeat;
   vertical-align: middle;
   }
-  
-  
+
+
   .fa-message::before {
   content: "";
   width: 19.5px;
@@ -1177,7 +1177,7 @@ body.limitedwidth #page.drawers .footer-popover {
   background-repeat: no-repeat;
   vertical-align: middle;
   }
-  
+
   .fa-computer::before {
       content: "";
       width: 19.5px;
@@ -1188,7 +1188,7 @@ body.limitedwidth #page.drawers .footer-popover {
       background-repeat: no-repeat;
       vertical-align: middle;
       }
-  
+
   .fa-hashtag::before {
   content:"";
   width: 19.5px;
@@ -1199,12 +1199,12 @@ body.limitedwidth #page.drawers .footer-popover {
   background-repeat: no-repeat;
   vertical-align: middle;
   }
-  
-  
-  
-  
+
+
+
+
   /*iconsende*/
-  
+
   @media (max-width:768px) {
     .mod-booking-card-content.d-flex  {
       display: grid !important;
@@ -1212,18 +1212,18 @@ body.limitedwidth #page.drawers .footer-popover {
   grid-template-rows: 1fr auto 1fr auto auto 20px;
       grid-column-gap: 20px;
   }
-  
-  
-  
+
+
+
   .mod-booking-card-body {
     grid-area: 2/1/3/5
-  }  
+  }
   .mod-booking-card-infos {
           grid-area: 3 / 1 / 4 / 6;
   }
   .mod-booking-card-footer {
    grid-area: 4 / 1 / 5 / 6
-  
+
   }
   .mod-booking-card.p-0 {
       padding-bottom: 20px;
@@ -1235,7 +1235,7 @@ body.limitedwidth #page.drawers .footer-popover {
     padding-left: 24px;
     padding-right: 24px;
   }
-  
+
   .mod-booking-card-infos {
      padding-bottom: 20px;
   }
@@ -1243,82 +1243,82 @@ body.limitedwidth #page.drawers .footer-popover {
     margin-bottom: 24px;
   .padding-bottom:20px;
   }
-  
+
   .mod-booking-card-body p {
     margin-bottom: 0px;
   }
   }
-  
-  
-  .mod-booking-card 
+
+
+  .mod-booking-card
   .d-flex.flex-column.flex-grow-1 {
     flex-grow: inherit !important;
   }
-  
+
   .background {
     margin-left: auto;
     margin-right:auto;
     max-width: 100vw;
   }
-  
+
   .dropdown-item:hover .form-check-label {
     color: white;
   }
-  
-  
+
+
   /* moove to  theme*/
   #page-course-index-category
   .price-card {
     border-radius: 20px;
   }
-  
+
   .container-xl {
     overflow: visible;
   }
   .price-card .uriseimage, .price-card .placeholderimage {
     border-radius: 20px 20px 0 0 !important
   }
-  
+
   .card.w-100.rounded {
     padding: 20px;
     margin-top: 40px;
-    transition: background 0.3s ease; 
-  
+    transition: background 0.3s ease;
+
   }
   .card.w-100.rounded:hover {
     border-radius: 20px;
     background: #BFD8E3;
   }
-  
+
   .urisebutton, .btn-secondary {
-    transition: background 0.3s ease; 
+    transition: background 0.3s ease;
     color: #000;
     text-decoration: none;
     padding: 12px 20px;
   }
-  
+
   [data-action="bookondetail"]:hover, .urisebutton:hover, .btn-secondary:hover {
     background: linear-gradient(90deg, #0063A6, #0CBAC5);
     color: #000;
     text-decoration: none;
     padding: 12px 20px;
   }
-  
+
   .mod-booking-card:hover {
     box-shadow: 0px 26px 30px 0px rgba(0, 0, 0, 0.14), 10px 0px 10px 0px rgba(0, 0, 0, 0.04), -10px 0px 10px 0px rgba(0, 0, 0, 0.04);
   }
   .mod-booking-card {
     box-shadow: 0px 12px 30px 0px rgba(0, 0, 0, 0.05), 5px 0px 10px 0px rgba(0, 0, 0, 0.02), -5px 0px 10px 0px rgba(0, 0, 0, 0.02);
   }
-  
+
   #instance-2 .wb_news_card_blog {
     box-shadow: 0px 12px 30px 0px rgba(0, 0, 0, 0.05), 5px 0px 10px 0px rgba(0, 0, 0, 0.02), -5px 0px 10px 0px rgba(0, 0, 0, 0.02);
   }
-  
+
   .wunderbyte-table-grid {
     padding-bottom: 100px;
   }
-  
+
   h2 {
     leading-trim: both;
     text-edge: cap;
@@ -1328,101 +1328,101 @@ body.limitedwidth #page.drawers .footer-popover {
     font-weight: 400;
     line-height: 46px
   }
-  
+
   .my-6 {
     margin-bottom: 50px;
     margin-top: 50px;
   }
-  
+
   .col-md-7 {
     padding-right: 100px;
   }
-  
+
   .showontop .wunderbyteTableFilter.row {
     justify-content: unset;
   }
-  
+
   @media (min-width: 1200px) {
       .urise-courses-container .row, .urise-courses-container .rows-container, .wunderbyte_table_container.showontop .filterheader .wunderbyte_table_components {
           max-width: 1600px;
           margin:auto;
       }
   }
-  
+
   /* moove to  theme*/
   .detailteacher  .btn-outline-dark:hover {
     color: #343a40;
-  
+
   }
   .detailteacher .btn-outline-dark {
     margin-top: 20px;
     padding: 12px 20px 12px 20px;
   }
-    
+
   .detailteacher .fa-arrow-right::before {
     margin-left: 17px;
   }
-  
+
   .wb_news .card-body {
     padding: 0 20px;
-  } 
+  }
   .wb_news-userinfo {
     font-size: 11px;
     justify-content: center;
     align-items: center;
     align-content: center;
   }
-  
+
   .wb-news .card-footer btn {
     font-size: 14px;
   }
-  
+
   .wb_news_card_blog .card-body {
     overflow: hidden
   }
-  
+
   .card-title {
     font-size: 26px;
   }
-  
+
   .mod-booking-card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-  } 
-  
+  }
+
   .d-flex.flex-column.flex-grow-1 {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
-  
+
   .mod-booking-card-footer {
     margin-top: auto;
     margin-bottom: 30px;
   }
-  
+
   .mod-booking-card-infos {
     margin-bottom: 30px;
   }
-  
+
   .mod-booking-card-body {
     flex-grow: 1;
     padding: 10px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: start; 
+    justify-content: start;
   }
-  
+
   .mod-booking-card-header, .mod-booking-body {
      margin-bottom: unset !important;
    }
-  
+
   /* Community Header styles */
-  
+
   header.uskils-community-header {
   position: relative;
   background: url('https://berta.univie.ac.at/pluginfile.php/1/local_wb_news/bgimage/7/Bildschirmfoto%202024-06-19%20um%2015.34.14.png') no-repeat center center;
@@ -1441,14 +1441,12 @@ body.limitedwidth #page.drawers .footer-popover {
           }
   h2 {
     color: #050505;
-    leading-trim: both;
-    text-edge: cap;
     /* h2 */
     font-family: Roboto;
     font-size: 36px;
     font-style: normal;
     font-weight: 400;
-    line-height: 46px; 
+    line-height: 46px;
   }
 
 .lexa-b1 {
@@ -1456,7 +1454,7 @@ body.limitedwidth #page.drawers .footer-popover {
     font-size: 18px;
     font-style: normal;
     font-weight: 600;
-    line-height: 26px; 
+    line-height: 26px;
 }
 
 .wb-news-image-row .btn.btn-primary.lexa-b1 {
@@ -1465,18 +1463,22 @@ body.limitedwidth #page.drawers .footer-popover {
     font-style: normal;
     font-weight: 600;
     line-height: 26px;
-  }
+}
 
-  .wb_news_card_blog {
+.wb_news_card_blog {
     border-radius: 15px;
     background: #FFF;
     /* Shadow cards light */
     box-shadow: 0px 12px 30px 0px rgba(0, 0, 0, 0.05), 5px 0px 10px 0px rgba(0, 0, 0, 0.02), -5px 0px 10px 0px rgba(0, 0, 0, 0.02);
-  }
-  .wb_news_card_blog img { 
-    border-top-left-radius: 15px;  
+}
+.wb_news_card_blog img {
+    border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-  }
+}
 
+/* some paddings */
+.plx-40 {
+    padding: 40px;
+}
 
-
+.navbar .lexa-nav-second-row

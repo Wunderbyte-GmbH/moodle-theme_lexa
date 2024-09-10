@@ -182,6 +182,26 @@ $bodyattributes = $OUTPUT->body_attributes($extraclasses); // In the original la
 $header = $PAGE->activityheader;
 $headercontent = $header->export_for_template($renderer);
 
+foreach ($primarymenu['moremenu']['nodearray'] as $nodearray) {
+    if (is_object($nodearray) && $nodearray->text == "Communities") {
+        $nodearray->text = "Communities";
+        $nodearray->isshortcode = "true";
+        unset($nodearray->children);
+        $nodearray->haschildren = "true";
+        $nodearray->shortcode = format_text("[navbarhtml category=communities]");
+    }
+}
+
+foreach ($primarymenu['moremenu']['nodearray'] as $nodearray) {
+    if (is_object($nodearray) && $nodearray->text == "Support") {
+        $nodearray->text = "Support";
+        $nodearray->isshortcode = "true";
+        unset($nodearray->children);
+        $nodearray->haschildren = "true";
+        $nodearray->shortcode = format_text("[navbar category=support]");
+    }
+}
+
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
