@@ -141,6 +141,7 @@ if ($PAGE->pagetype == 'site-index') {
 
 $secondarynavigation = false;
 $overflow = '';
+
 if (($notcoursecategorypage) && ($siteindexsecondarynav) && ($PAGE->has_secondary_navigation())) {
     $tablistnav = $PAGE->has_tablist_secondary_navigation();
     $moremenu = new \core\navigation\output\more_menu($PAGE->secondarynav, 'nav-tabs', true, $tablistnav);
@@ -150,6 +151,7 @@ if (($notcoursecategorypage) && ($siteindexsecondarynav) && ($PAGE->has_secondar
         $overflow = $overflowdata->export_for_template($OUTPUT);
     }
 }
+
 
 // Load the navigation from boost_union primary navigation, the extended version of core primary navigation.
 // It includes the smart menus and menu items, for multiple locations.

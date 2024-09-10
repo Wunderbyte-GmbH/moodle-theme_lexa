@@ -253,6 +253,11 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
                     // Skip rendering real blocks if we only want to show fake blocks.
                     continue;
                 }
+                preg_match('/\[(.*?)\]/', $bc->title, $matches);
+
+                if (isset($matches[1])) {
+                    $bc->attributes['class'] .= $matches[1];
+                }
                 if (!empty($bcadditionalclasses)) {
                     $bc->attributes['class'] .= ' '.$bcadditionalclasses;
                 }
@@ -304,11 +309,18 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
         $context->dockable = $bc->dockable;
         $context->id = $id;
         $context->hidden = $bc->collapsible == block_contents::HIDDEN;
+        $context->class = $bc->attributes['class'];
+
         $context->skiptitle = strip_tags($bc->title);
         $context->showskiplink = !empty($context->skiptitle);
         $context->arialabel = $bc->arialabel;
         $context->ariarole = !empty($bc->attributes['role']) ? $bc->attributes['role'] : 'complementary';
-        $context->class = $bc->attributes['class'];
+        preg_match('/\[(.*?)\]/', $bc->title, $matches);
+
+        if (isset($matches[1])) {
+            $bc->attributes['class'] .= $matches[1];
+        }
+        $context->class .= " ".$bc->attributes['class'];
         $context->type = $bc->attributes['data-block'];
         if (empty($blockoptions['notitle'])) {
             $context->title = $bc->title;
