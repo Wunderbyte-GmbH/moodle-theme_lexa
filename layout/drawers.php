@@ -186,7 +186,9 @@ $headercontent = $header->export_for_template($renderer);
 
 foreach ($primarymenu['moremenu']['nodearray'] as $nodearray) {
     if (is_object($nodearray) && $nodearray->text == "Communities") {
-        $nodearray->text = "Communities";
+        $title = get_string_manager()->string_exists('communities', 'theme_lexa') ? get_string('communities', 'theme_lexa') : $nodearray->text;
+
+        $nodearray->text = $title;
         $nodearray->isshortcode = "true";
         unset($nodearray->children);
         $nodearray->haschildren = "true";
@@ -196,11 +198,13 @@ foreach ($primarymenu['moremenu']['nodearray'] as $nodearray) {
 
 foreach ($primarymenu['moremenu']['nodearray'] as $nodearray) {
     if (is_object($nodearray) && $nodearray->text == "Support") {
-        $nodearray->text = "Support";
+        $title = get_string_manager()->string_exists('support', 'theme_lexa') ? get_string('support', 'theme_lexa') : $nodearray->text;
+
+        $nodearray->text = $title;
         $nodearray->isshortcode = "true";
         unset($nodearray->children);
         $nodearray->haschildren = "true";
-        $nodearray->shortcode = format_text("[navbar category=support]");
+        $nodearray->shortcode = format_text("[navbarhtml category=support]");
     }
 }
 
