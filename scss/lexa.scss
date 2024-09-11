@@ -1329,7 +1329,7 @@ body.limitedwidth #page.drawers .footer-popover {
   }
 
   .showontop .wunderbyteTableFilter.row {
-    justify-content: unset;
+    justify-content: center;
   }
 
   @media (min-width: 1200px) {
@@ -1661,5 +1661,15 @@ border-radius: 10px !important;
     font-weight: 600;
     line-height: 18px;
     word-wrap: break-word
+}
+
+.filternameurise {
+    align-items: center;
+    display: flex;
+    margin: 0; font-family: Roboto;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
 }
 
