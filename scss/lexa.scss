@@ -1208,13 +1208,13 @@ body.limitedwidth #page.drawers .footer-popover {
 
 
   .mod-booking-card-body {
-    grid-area: 2/1/3/5
+    grid-area: 2 / 1 / 3 / 5 ;
   }
   .mod-booking-card-infos {
           grid-area: 3 / 1 / 4 / 6;
   }
   .mod-booking-card-footer {
-   grid-area: 4 / 1 / 5 / 6
+   grid-area: 4 / 1 / 5 / 6;
 
   }
   .mod-booking-card.p-0 {
@@ -1577,9 +1577,8 @@ body.limitedwidth #page.drawers .footer-popover {
         height: unset !important;
     }
     .mod-booking-card-header {
-        grid-area: 1/4/1/6 !important;
+        grid-area: 1 / 4 / 1 / 6 !important;
         margin-left: -20px !important;
-
     }
     .mod-booking-card-body, .mod-booking-card-infos, .mod-booking-card-footer   {
         height: unset !important;
@@ -1605,48 +1604,48 @@ body.limitedwidth #page.drawers .footer-popover {
    padding: 12px;
    background-color: #001F33 !important;
  }
- #back-to-top:hover {
-   background: linear-gradient(90deg, #0063a6 0%, #0cbac5 101%);
- }
+#back-to-top:hover {
+    background: linear-gradient(90deg, #0063a6 0%, #0cbac5 101%);
+}
 
- .lexa-addnav li {
+.lexa-addnav li {
     margin-bottom: 10px;
     display: block;
     padding: 10px;
     border-radius: 10px;
-  }
+}
 
-  .lexa-addnav .iconcontainer {
-    margin-right: 20px !important;
-    padding: 10px !important;
-    border-radius: 10px !important;
-  }
+.lexa-addnav .iconcontainer {
+margin-right: 20px !important;
+padding: 10px !important;
+border-radius: 10px !important;
+}
 
-  .lexa-addnav a {
+.lexa-addnav a {
     color: var(--interface-dark_secondary, #242A3A);
     font-family: Roboto;
     font-size: 18px;
     font-style: normal;
     line-height: 26px;
-  }
-  .lexa-addnav a:hover {
+}
+.lexa-addnav a:hover {
     text-decoration: none;
-  }
-  .lexa-addnav li:hover {
+}
+.lexa-addnav li:hover {
     background: #f8f9fa
-  }
-  .lexa-addnav .iconcontainer{
+}
+.lexa-addnav .iconcontainer{
     background: var(--warning)
-  }
+}
 
-  .dropdown-menu.show[data-parentname="Support"], .dropdown-menu.show[data-parentname="Communities"] {
+.dropdown-menu.show[data-parentname="Support"], .dropdown-menu.show[data-parentname="Communities"] {
     width: 402px;
     padding: 40px;
     align-items: center;
     gap: 20px;
     flex-shrink: 0;
     align-self: stretch;
-  }
+}
 
 .btn-dark {
     display: inline-flex;
