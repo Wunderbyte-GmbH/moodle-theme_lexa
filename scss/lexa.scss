@@ -1567,3 +1567,21 @@ body.limitedwidth #page.drawers .footer-popover {
         grid-column-end: 5;
     }
 }
+
+@media (max-width: 768px) {
+    #lexa-navbar-brand-first-row, .nav-area-cashier, #nav-notification-popover-container, .lexausername,
+.popover-region.nav-link.icon-no-margin.dropdown {
+        display: none;
+    }
+    .wunderbyte-table-grid .imagecontainer {
+        height: unset !important;
+    }
+    .mod-booking-card-header {
+        grid-area: 1/4/1/6 !important;
+        margin-left: -20px !important;
+
+    }
+    .mod-booking-card-body, .mod-booking-card-infos, .mod-booking-card-footer   {
+        height: unset !important;
+    }
+}
