@@ -1585,3 +1585,26 @@ body.limitedwidth #page.drawers .footer-popover {
         height: unset !important;
     }
 }
+
+.btn-footer-popover {
+    display: none !important;
+ }
+ #back-to-top .fa.fa-chevron-up::before{  content: "" !important;
+   width: 22px;
+   height: 22px;
+   display: inline-block;
+   background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMiIgaGVpZ2h0PSIyMyIgdmlld0JveD0iMCAwIDIyIDIzIiBmaWxsPSJub25lIj4KPHBhdGggZD0iTTQgOC42NDk5TDExIDEuNjQ5OUwxOCA4LjY0OTkiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0xMSAyMkwxMSAyIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4=');
+   background-size: contain;
+   background-repeat: no-repeat;
+   vertical-align: middle;
+   translate: rotate(90deg);
+ }
+ #back-to-top {
+   width: 46px;
+   height: 46px;
+   padding: 12px;
+   background-color: #001F33 !important;
+ }
+ #back-to-top:hover {
+   background: linear-gradient(90deg, #0063a6 0%, #0cbac5 101%);
+ }
