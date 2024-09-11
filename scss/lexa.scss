@@ -1494,15 +1494,15 @@ body.limitedwidth #page.drawers .footer-popover {
 }
 
 
-.infolist > li 
+.infolist > li
 {
     margin-bottom: 8px !important;
     margin-top: 0px;
 }
 
 .wb-news-container .card-deck {
-    margin-right: unset !important;
-    margin-left: unset !important;
+    margin-right: -15px !important;
+    margin-left: -15px !important;
 }
 
 @media (max-width: 768px) {
@@ -1513,7 +1513,7 @@ body.limitedwidth #page.drawers .footer-popover {
         grid-column-gap: 20px;
         border-bottom: 1px solid #D9E1E7;
     }
-   
+
     .wunderbyte-table-grid {
       padding: 0px;
     }
@@ -1521,7 +1521,7 @@ body.limitedwidth #page.drawers .footer-popover {
       box-shadow: none;
       padding: 20px 25px;
       border-bottom: 1px solid #D9E1E7;
-    } 
+    }
     .wunderbyte-table-grid .mod-booking-card.list-group-item {
       box-shadow: none;
     }
