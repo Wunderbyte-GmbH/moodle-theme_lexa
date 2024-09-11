@@ -1608,3 +1608,59 @@ body.limitedwidth #page.drawers .footer-popover {
  #back-to-top:hover {
    background: linear-gradient(90deg, #0063a6 0%, #0cbac5 101%);
  }
+
+ .lexa-addnav li {
+    margin-bottom: 10px;
+    display: block;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .lexa-addnav .iconcontainer {
+    margin-right: 20px !important;
+    padding: 10px !important;
+    border-radius: 10px !important;
+  }
+
+  .lexa-addnav a {
+    color: var(--interface-dark_secondary, #242A3A);
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    line-height: 26px;
+  }
+  .lexa-addnav a:hover {
+    text-decoration: none;
+  }
+  .lexa-addnav li:hover {
+    background: #f8f9fa
+  }
+  .lexa-addnav .iconcontainer{
+    background: var(--warning)
+  }
+
+  .dropdown-menu.show[data-parentname="Support"], .dropdown-menu.show[data-parentname="Communities"] {
+    width: 402px;
+    padding: 40px;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+    align-self: stretch;
+  }
+
+.btn-dark {
+    display: inline-flex;
+    padding: 10px;
+    justify-content: center;        align-items: center;
+    gap: 8px;
+    border-radius: 10px;
+    background: var(--interface-dark_primary, #0B131F);
+    border-color: #0B131F;
+    color: white;
+    font-size: 14px;
+    font-family: Roboto;
+    font-weight: 600;
+    line-height: 18px;
+    word-wrap: break-word
+}
+
