@@ -132,3 +132,4 @@ $string['privacy:request:preference:draweropenblock'] = 'The user preference "{$
 
 $string['communities'] = 'Communities';
 $string['support'] = 'Support';
+$string['sortby'] = 'Sort by';
