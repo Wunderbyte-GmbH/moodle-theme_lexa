@@ -915,6 +915,10 @@ body.limitedwidth #page.drawers .footer-popover {
     filter: invert(100) brightness(100)
 }
 
+.gradienthover:hover .fa-arrow-right {
+    filter: invert(100) brightness(100)
+}
+
 .pagination .page-item .page-link {
     border: none;
     color: #99B2C6;
