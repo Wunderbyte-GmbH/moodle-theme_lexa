@@ -303,12 +303,18 @@
                     {{/imageurl}}
                     <div class="card-body">
                         <div class="row mod-booking-row">
-                        <div class="col-md-11 m-auto">
-                            <p class="mb-1 font-weight-bold">{{#str}} aboutoffer, local_urise {{/str}}</p>
+                        <div class="col-md-11 m-auto detailview">
+                            <p class="mb-3 font-weight-bold">{{#str}} aboutoffer, local_urise {{/str}}</p>
                             {{#dayofweektime}}
                             <div class="mb-1">
                                 <span>
-                                    <i class="fa fa-fw fa-clock-o text-primary" aria-hidden="true"></i>
+                                    <span class="icon-container">
+                                      <!-- Original <i> tag replaced with SVG -->
+                                      <svg xmlns="http://www.w3.org/2000/svg"  width="100%" height="100%"  viewBox="0 0 25 26" fill="none">
+                                        <path d="M22.4354 12.9492C22.4354 18.5785 17.8667 23.1472 12.2375 23.1472C6.60822 23.1472 2.03955 18.5785 2.03955 12.9492C2.03955 7.31999 6.60822 2.75132 12.2375 2.75132C17.8667 2.75132 22.4354 7.31999 22.4354 12.9492Z" stroke="#0063A6" stroke-width="1.66875" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M16.0206 16.1919L12.8593 14.3053C12.3086 13.979 11.8599 13.1937 11.8599 12.5513V8.37012" stroke="#0063A6" stroke-width="1.66875" stroke-linecap="round" stroke-linejoin="round"/>
+                                      </svg>
+                                    </span>
                                 </span>
                                 <span class="d-md-none">
                                     {{#str}} dayofweektime, mod_booking {{/str}}
@@ -321,9 +327,21 @@
                             {{/dayofweektime}}
                             {{#kurssprache}}
                             <div class="mb-1">
-                                <span>
-                                    <i class="fa-regular fa-message fa-fw text-primary" aria-hidden="true"></i>
-                                </span>
+                                    <span class="icon-container">
+                                      <!-- Original <i> tag replaced with SVG -->
+                                      <svg xmlns="http://www.w3.org/2000/svg"  width="100%" height="100%"  viewBox="0 0 24 24" fill="none">
+                                        <g clip-path="url(#clip0_3680_13685)">
+                                          <path d="M21.4832 18.3137H11.2621L5.42148 22.6942V18.3137H2.50117C2.11391 18.3137 1.74252 18.1598 1.46869 17.886C1.19485 17.6122 1.04102 17.2408 1.04102 16.8535V2.25197C1.04102 1.86471 1.19485 1.49331 1.46869 1.21948C1.74252 0.945647 2.11391 0.791809 2.50117 0.791809H21.4832C21.8705 0.791809 22.2419 0.945647 22.5157 1.21948C22.7895 1.49331 22.9434 1.86471 22.9434 2.25197V16.8535C22.9434 17.2408 22.7895 17.6122 22.5157 17.886C22.2419 18.1598 21.8705 18.3137 21.4832 18.3137Z" stroke="#0063A6" stroke-width="1.46016" stroke-linecap="round" stroke-linejoin="round"/>
+                                          <path d="M5.42139 7.36252H18.5628" stroke="#0063A6" stroke-width="1.46016" stroke-linecap="round" stroke-linejoin="round"/>
+                                          <path d="M5.42139 11.743H15.6425" stroke="#0063A6" stroke-width="1.46016" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </g>
+                                        <defs>
+                                          <clipPath id="clip0_3680_13685">
+                                            <rect width="23.3625" height="23.3625" fill="white" transform="translate(0.310547 0.0617371)"/>
+                                          </clipPath>
+                                        </defs>
+                                      </svg>
+                                    </span>
                                 <span class="d-md-none">
                                     {{#str}} institution, mod_booking {{/str}}:
                                 </span>
@@ -334,9 +352,24 @@
                             {{/kurssprache}}
                             {{#format}}
                             <div class="mb-1">
-                                <span>
-                                    <i class="fa-regular fa-solid fa-fw text-primary fa-desktop text-primary" aria-hidden="true"></i>
-                                </span>
+                            <span class="icon-container">
+                              <!-- Original <i> tag replaced with SVG -->
+                              <svg xmlns="http://www.w3.org/2000/svg"  width="100%" height="100%"  viewBox="0 0 26 25" fill="none">
+                                <g clip-path="url(#clip0_3680_5680)">
+                                  <path d="M1.875 23.7866V15.8755" stroke="#0063A6" stroke-width="1.48333" stroke-linecap="round" stroke-linejoin="round"/>
+                                  <path d="M15.2251 15.8755H24.1251V23.2922C24.1251 23.4233 24.073 23.5491 23.9803 23.6418C23.8876 23.7345 23.7618 23.7866 23.6307 23.7866H15.7195C15.5884 23.7866 15.4626 23.7345 15.3699 23.6418C15.2772 23.5491 15.2251 23.4233 15.2251 23.2922V15.8755Z" stroke="#0063A6" stroke-width="1.48333" stroke-linecap="round" stroke-linejoin="round"/>
+                                  <path d="M2.36944 11.9199H23.6306C23.7617 11.9199 23.8875 11.972 23.9802 12.0647C24.0729 12.1574 24.125 12.2832 24.125 12.4143V15.8754H1.875V12.4143C1.875 12.2832 1.92709 12.1574 2.01982 12.0647C2.11255 11.972 2.23831 11.9199 2.36944 11.9199Z" stroke="#0063A6" stroke-width="1.48333" stroke-linecap="round" stroke-linejoin="round"/>
+                                  <path d="M15.2251 19.8311H24.1251" stroke="#0063A6" stroke-width="1.48333" stroke-linecap="round" stroke-linejoin="round"/>
+                                  <path d="M6.32513 1.53673H15.2251C15.2251 1.53673 16.7085 1.53673 16.7085 3.02006V7.47006C16.7085 7.47006 16.7085 8.95339 15.2251 8.95339H6.32513C6.32513 8.95339 4.8418 8.95339 4.8418 7.47006V3.02006C4.8418 3.02006 4.8418 1.53673 6.32513 1.53673Z" stroke="#0063A6" stroke-width="1.48333" stroke-linecap="round" stroke-linejoin="round"/>
+                                  <path d="M10.7749 8.95357V11.9202" stroke="#0063A6" stroke-width="1.48333" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                <defs>
+                                  <clipPath id="clip0_3680_5680">
+                                    <rect width="24.475" height="24.475" fill="white" transform="translate(0.762695 0.424225)"/>
+                                  </clipPath>
+                                </defs>
+                              </svg>
+                            </span>
                                 <span class="d-md-none">
                                     {{#str}} institution, mod_booking {{/str}}:
                                 </span>
@@ -347,8 +380,13 @@
                             {{/format}}
                             {{#competency}}
                             <div class="mb-1">
-                                <span>
-                                    <i class="fa-regular fa-solid fa-fw text-primary fa-hashtag text-primary" aria-hidden="true"></i>
+                                <span class="icon-container">
+                                     <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 25 23" fill="none">
+                                       <path d="M5.20557 7.86726H21.7262" stroke="#0063A6" stroke-width="2.225" stroke-linecap="round" stroke-linejoin="round"/>
+                                       <path d="M3.37012 16.4326H19.8907" stroke="#0063A6" stroke-width="2.225" stroke-linecap="round" stroke-linejoin="round"/>
+                                       <path d="M10.7129 3.58372L5.81787 20.7162" stroke="#0063A6" stroke-width="2.225" stroke-linecap="round" stroke-linejoin="round"/>
+                                       <path d="M19.2788 3.58372L14.3838 20.7162" stroke="#0063A6" stroke-width="2.225" stroke-linecap="round" stroke-linejoin="round"/>
+                                     </svg>
                                 </span>
                                 <span class="d-md-none">
                                     {{#str}} institution, mod_booking {{/str}}:
