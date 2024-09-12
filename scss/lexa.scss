@@ -57,6 +57,15 @@
     src: unquote("url('[[font:theme|Roboto-MediumItalic-webfont.woff]]') format('woff')");
 }
 
+// Font weight 600 only exists in Figma.
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    src: unquote("url('[[font:theme|Roboto-Medium-webfont.woff]]') format('woff')");
+}
+
+
 @font-face {
     font-family: 'Roboto';
     font-style: normal;
