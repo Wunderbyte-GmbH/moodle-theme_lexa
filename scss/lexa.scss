@@ -1081,7 +1081,7 @@ body.limitedwidth #page.drawers .footer-popover {
     padding-right: 15px
   }
   /*iconsstart*/
-  .fa-arrow-right::before {
+  .fa-arrow-right:not(.paginationicon)::before {
     content: "";
     width: 22px;
     height: 22px;
@@ -1671,5 +1671,42 @@ border-radius: 10px !important;
     font-style: normal;
     font-weight: 600;
     line-height: 30px;
+}
+
+.wb-records-count-label {
+    font-size: 26px;
+}
+
+.wunderbyteTableSelect {
+    border: 1px solid $primary_900;
+    padding: 10px; 
+    border-radius: 10px;
+}
+
+.wunderbyteTableSelect a i
+{
+    color: $primary_900 !important;
+}
+
+.wunderbyteTableSelect select option {
+    color: $primary_900 !important;
+}
+
+.wunderbyteTableSelect .sortcolumn.urisesort {
+    appearance: none;
+    padding-left: 0;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+    height: fit-content;
+}
+
+.wunderbyteTableSelect .sortbytext {
+    color: $primary_900 !important;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
 }
 
