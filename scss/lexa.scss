@@ -1780,3 +1780,17 @@ border-radius: 10px !important;
 .gradienthover:hover:not(.dontreverse) .fa-arrow-right {
     filter: invert(100) brightness(100)
 }
+
+.wb_news_card_infoslides .card-title {
+    font-size: 26px; 
+    font-style: normal; 
+    font-weight: 700; 
+    line-height: 38px;
+}
+
+.wb_news_card_infoslides .card-subtitle {
+    font-size: 16px;
+    font-style: normal; 
+    font-weight: 400 !important; 
+    line-height: 22px;
+}
