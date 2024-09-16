@@ -1808,3 +1808,89 @@ border-radius: 10px !important;
     font-weight: 400 !important; 
     line-height: 22px;
 }
+
+.filtercategorykeylabel {
+    overflow: auto;
+    word-wrap: break-word;
+}
+
+.wunderbyte_table_container .hierarchybutton.dropdown-item.active,.wunderbyte_table_container .hierarchybutton.dropdown-item:active,.wunderbyte_table_container .dropdown-item:hover,.wunderbyte_table_container .dropdown-item:focus,.wunderbyte_table_container .dropdown-item:focus-within {
+    outline: 0;
+    // border-top: 1px solid var(--interface-light_content, #D9E1E7);
+    background: rgba(233, 240, 243, 0.279);
+    color: #0063a6;
+}
+
+.wunderbyte_table_container .hierarchybutton.dropdown-item:focus, .wunderbyte_table_container .hierarchybutton.dropdown-item.focus {
+    box-shadow: none;
+  }
+
+.wunderbyte_table_container .dropdown-menu {
+    padding: 0;
+}
+
+.wunderbyte_table_container .dropdown-item.hierarchybutton {
+    margin: 0;
+}
+
+.wunderbyterFilterList .dropdown-item:not(.hierarchybutton) {
+    margin: 0;
+    // border-top: 1px solid #D9E1E7;
+    background: transparent;
+    padding-left: 8px;
+}
+
+.wunderbyterFilterList .form-check input,
+.wunderbyterFilterList .form-check label {
+    position: relative;
+    vertical-align: middle !important
+}
+
+.wunderbyterFilterList .form-check {
+    padding: 8px;
+    border: none;
+    border-top: 1px solid #D9E1E7;
+}
+
+.wunderbyterFilterList .dropdown-item:not(.hierarchybutton):hover, .wunderbyterFilterList .dropdown-item:not(.hierarchybutton):focus {
+    background: rgba(233, 240, 243, 0.7);
+    color: #0063a6;
+}
+
+.wunderbyterFilterList .dropdown-item:not(.hierarchybutton):hover > label, .wunderbyterFilterList .dropdown-item:not(.hierarchybutton):focus > label {
+    color: #0063a6;
+}
+
+
+// .wunderbyterFilterList .dropdown-item:not(.hierarchybutton) {
+//     border: none;
+// }
+
+.wunderbyte_table_container .collapse .card {
+    border: none;
+    border-radius: 0;
+    background: rgba(233, 240, 243, 0.50);
+}
+
+.wunderbyte_table_container .collapse .card .form-check:hover, .wunderbyte_table_container .collapse .card .form-check:focus  {
+    background: rgba(233, 240, 243, 0.7);
+    color: #0063a6;
+}
+
+.wunderbyte_table_container .collapse .card li:hover > label, .wunderbyte_table_container .collapse .card li:focus > label {
+    color: #0063a6;
+}
+
+
+.wunderbyte_table_container .collapse .card li{
+    margin: 0px;
+}
+
+.wunderbyteTableFilter :checked ~ .form-check-label::before {
+    border-color: #0063a6;
+}
+
+.wunderbyteTableFilter :checked ~ .form-check-label::after {
+    background-color: #0063a6;
+}
+
