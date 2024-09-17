@@ -759,6 +759,22 @@ body.limitedwidth #page.drawers .footer-popover {
         margin-left: 0;
         margin-right: 0;
     }
+
+    .lexa-sticky-column {
+        position: sticky;
+        vertical-align: top; top: 120px;
+        max-width: 40%;
+    }
+
+    .lexa-ib {
+        display: inline-block;
+    }
+
+    .lexa-block {
+        display: block;
+    }
+
+
     // .wb-records-count-label {
     //     margin-top: -25px;
     // }
