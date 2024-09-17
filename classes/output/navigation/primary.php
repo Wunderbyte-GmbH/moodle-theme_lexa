@@ -55,6 +55,27 @@ class primary extends \theme_boost_union\output\navigation\primary {
     }
 
     /**
+     * Combine the various menus into a standardized output.
+     *
+     * Modifications compared to the original function:
+     * * Build the smart menus and its items as navigation nodes.
+     * * Generate the nodes for different locations based on the menus locations.
+     * * Combine the smart menus nodes with core primary menus.
+     *
+     * @param renderer_base|null $output
+     * @return array
+     */
+    public function export_for_template(?renderer_base $output = null): array {
+        $retr = parent::export_for_template($output);
+
+        // Use our lang.
+        $languagemenu = new \theme_lexa\output\core\output\language_menu($this->page);
+        $retr['lang'] = !isloggedin() || isguestuser() ? $languagemenu->export_for_template($output) : [];
+
+        return $retr;
+    }
+
+    /**
      * Get/Generate the user menu.
      *
      * Modifications compared to the original function:
