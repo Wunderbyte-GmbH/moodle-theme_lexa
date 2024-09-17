@@ -161,7 +161,7 @@
                 </div>
                 {{#description}}
                 <div class="mb-6">
-                <div class="content"><p>{{{.}}}</p></div>
+                <div class="content"><span class="lexa-input">{{{.}}}</span></div>
                 </div>
                 {{/description}}
                 {{#datesexist}}
@@ -207,31 +207,31 @@
                 {{#voraussetzungen}}
                 <div class="my-7">
                     <h2 class="font-weight-normal"> {{#str}} requirements, local_urise {{/str}}</h2>
-                    {{{.}}}
+                     <span class="lexa-input">{{{.}}}</span>
                 </div>
                 {{/voraussetzungen}}
                 {{#zielgruppe}}
                 <div class="my-7">
                     <h2 class="font-weight-normal"> {{#str}} targetaud, local_urise {{/str}}</h2>
-                    {{{.}}}
+                    <span class="lexa-input">{{{.}}}</span>
                 </div>
                 {{/zielgruppe}}
                 {{#kursziel}}
                 <div class="my-7">
                     <h2 class="font-weight-normal"> {{#str}} goals, local_urise {{/str}}</h2>
-                    {{{.}}}
+                    <span class="lexa-input">{{{.}}}</span>
                 </div>
                 {{/kursziel}}
                 {{#inhalte}}
                 <div class="my-7">
                     <h2 class="font-weight-normal"> {{#str}} coursecontent, local_urise {{/str}}</h2>
-                    {{{.}}}
+                    <span class="lexa-input">{{{.}}}</span>
                 </div>
                 {{/inhalte}}
                 {{#methoden}}
                 <div class="my-7">
                     <h2 class="font-weight-normal"> {{#str}} coursemethods, local_urise {{/str}}</h2>
-                    {{{.}}}
+                    <span class="lexa-input">{{{.}}}</span>
                 </div>
                 {{/methoden}}
                 {{#teachers.0}}
@@ -247,7 +247,7 @@
                         <!-- Placeholder for profile icon -->
                         <div class="profile-info">
                         <h5>{{{firstname}}} {{{lastname}}}</h5>
-                        <p>{{{description}}}</p>
+                        <p class="lexa-input">{{{description}}}</p>
                         </div>
                     </div>
                     <a href="{{{teacherurl}}}" class="btn btn-outline-dark bg-white gradienthover">
@@ -262,22 +262,22 @@
                     {{#entities}}
                         {{{description}}}
                     {{/entities}}
-                    {{{.}}}
+                    <span class="lexa-input">{{{.}}}</span>
                     </a>
                 </div>
                 {{/location}}
                 {{#sonstigeinfos}}
                 <div class="my-7">
                     <h2 class="font-weight-normal"> {{#str}} additionalinfo, local_urise {{/str}}</h2>
-                    {{{.}}}
+                    <span class="lexa-input">{{{.}}}</span>
                 </div>
                 {{/sonstigeinfos}}
                 {{#responsiblecontactuser}}
                 <div class="my-7">
                     <h2 class="font-weight-normal"> {{#str}} orgacontact, local_urise {{/str}}</h2>
                     <div>
-                    <p>{{{firstname}}} {{{lastname}}}</p>
-                    <p>{{{description}}}</p>
+                    <p class="lexa-input">{{{firstname}}} {{{lastname}}}</p>
+                    <p class="lexa-input">{{{description}}}</p>
                     <p>
                 <i class="fa-solid fa-fw fa-envelope"></i>
                 <a href="mailto:{{{email}}}">{{{email}}}</a>
