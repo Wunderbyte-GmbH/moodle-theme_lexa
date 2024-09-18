@@ -70,7 +70,7 @@ class primary extends \theme_boost_union\output\navigation\primary {
 
         // Use our lang.
         $languagemenu = new \theme_lexa\output\core\output\language_menu($this->page);
-        $retr['lang'] = !isloggedin() || isguestuser() ? $languagemenu->export_for_template($output) : [];
+        $retr['lang'] = $languagemenu->export_for_template($output);
 
         return $retr;
     }
