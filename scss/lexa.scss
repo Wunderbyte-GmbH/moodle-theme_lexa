@@ -828,8 +828,8 @@ body.limitedwidth #page.drawers .footer-popover {
 
 
 .booking-button-area .booking-button-area:not(#page-mod-booking-optionview .booking-button-area .booking-button-area), .urisebutton:not(#page-mod-booking-optionview .urisebutton) {
-    background: transparent !important;
-    border: black 2px solid !important;
+    background: transparent;
+    border: black 2px solid;
     position: relative;
     color: black !important;
     font-weight: normal;
@@ -894,13 +894,6 @@ body.limitedwidth #page.drawers .footer-popover {
 
 .lightcontent {
     background: var(--lightcontent) !important;
-}
-
-.gradienthover:hover {
-    color: black;
-    border: 1px solid transparent !important;
-    background: linear-gradient(90deg, rgba(0,99,166,1) 0%, rgba(12,186,197,1) 101%);
-    background-repeat: no-repeat;
 }
 
 #page-mod-booking-optionview {
@@ -969,15 +962,15 @@ body.limitedwidth #page.drawers .footer-popover {
 }
 
 
-    .bookinglinkbutton:not(#page-mod-booking-optionview .bookinglinkbutton):hover {
-        color: white !important;
-        background: var(--primary) !important;
-        border-color: var(--primary) !important;
-    }
+    // .bookinglinkbutton:not(#page-mod-booking-optionview .bookinglinkbutton):hover {
+    //     color: white !important;
+    //     background: var(--primary) !important;
+    //     border-color: var(--primary) !important;
+    // }
 
-    .bookinglinkbutton:not(#page-mod-booking-optionview .bookinglinkbutton):hover :before {
-        filter: brightness(0) invert(1);
-    }
+    // .bookinglinkbutton:not(#page-mod-booking-optionview .bookinglinkbutton):hover :before {
+    //     filter: brightness(0) invert(1);
+    // }
     .infolist>li {
         margin-bottom: 17px;
         margin-top: 0px;
@@ -1918,3 +1911,14 @@ border-radius: 10px !important;
     background-color: #0063a6;
 }
 
+
+.gradienthover:hover {
+    color: black;
+    border: 1px solid transparent !important;
+    background: linear-gradient(90deg, rgba(0,99,166,1) 0%, rgba(12,186,197,1) 101%) !important;
+    background-repeat: no-repeat !important;
+}
+
+.gradienthover.urisebuton:hover {
+    border: 2px solid transparent !important;
+}
