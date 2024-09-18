@@ -134,7 +134,7 @@ class primary extends \theme_boost_union\output\navigation\primary {
         // Gather all the avatar data to be displayed in the user menu.
         $usermenudata['avatardata'][] = [
             'content' => $info->metadata['useravatar'],
-            'classes' => 'current'
+            'classes' => 'current',
         ];
         $usermenudata['userfullname'] = $info->metadata['realuserfullname'] ?? $info->metadata['userfullname'];
 
@@ -142,11 +142,11 @@ class primary extends \theme_boost_union\output\navigation\primary {
         if ($info->metadata['asotheruser']) {
             $usermenudata['avatardata'][] = [
                 'content' => $info->metadata['realuseravatar'],
-                'classes' => 'realuser'
+                'classes' => 'realuser',
             ];
             $usermenudata['metadata'][] = [
                 'content' => get_string('loggedinas', 'moodle', $info->metadata['userfullname']),
-                'classes' => 'viewingas'
+                'classes' => 'viewingas',
             ];
         }
 
@@ -172,7 +172,7 @@ class primary extends \theme_boost_union\output\navigation\primary {
                 $customclass = str_replace('##GENERATEDCLASS##', $generatedclass, ($value['class'] ?? ''));
                 $usermenudata['metadata'][] = [
                     'content' => $content,
-                    'classes' => $customclass
+                    'classes' => $customclass,
                 ];
             }
         }
