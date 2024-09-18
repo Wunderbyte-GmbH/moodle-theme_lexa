@@ -1110,7 +1110,7 @@ body.limitedwidth #page.drawers .footer-popover {
     padding-right: 15px
   }
   /*iconsstart*/
-  .fa-arrow-right:not(.paginationicon)::before {
+  .fa-arrow-right:not(.paginationicon, .dashboardicon)::before {
     content: "";
     width: 22px;
     height: 22px;
