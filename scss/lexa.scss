@@ -681,6 +681,15 @@ body.limitedwidth #page.drawers .footer-popover {
     }
 }
 
+.footer-content-information li a,
+.footer-content-information li  {
+    line-height: 30px;
+}
+
+.footer-content-information img {
+    height: 46px;
+}
+
 .footer-content-information {
     padding-left: 3rem;
     padding-right: 3rem;
@@ -1847,16 +1856,16 @@ border-radius: 10px !important;
 // }
 
 .wb_news_card_infoslides .card-title {
-    font-size: 26px; 
-    font-style: normal; 
-    font-weight: 700; 
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
     line-height: 38px;
 }
 
 .wb_news_card_infoslides .card-subtitle {
     font-size: 16px;
-    font-style: normal; 
-    font-weight: 400 !important; 
+    font-style: normal;
+    font-weight: 400 !important;
     line-height: 22px;
 }
 

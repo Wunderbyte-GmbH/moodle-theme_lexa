@@ -89,81 +89,82 @@
     {{/output.has_footer_popover}}
 
     <div class="footer-content-information bg-footer">
-        <div class="card-group">
-            <div class="card">
-                <div class="card-header">
-                    <img src="{{output.get_logo_url_plain}}" class="logo img-fluid" alt="{{sitename}}">
-                </div>
-            </div>
-            {{#output.has_footercourseofferings}}
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">
-                        <h2 class="lexa-b1">{{#str}} footercourseofferings, theme_lexa {{/str}}</h2>
+        <div class="container-xl">
+            <div class="card-group">
+                <div class="card">
+                    <div class="card-header">
+                        <img src="{{output.get_logo_url_plain}}" class="logo img-fluid" alt="{{sitename}}">
                     </div>
                 </div>
-                <div class="card-body">
-                    <ul class="list-unstyled lexa-caption">
-                        {{{output.get_footercourseofferings}}}
-                    </ul>
-                </div>
-            </div>
-            {{/output.has_footercourseofferings}}
-            {{#output.has_footercommunities}}
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">
-                        <h2 class="lexa-b1">{{#str}} footercommunities, theme_lexa {{/str}}</h2>
+                {{#output.has_footercourseofferings}}
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h2 class="lexa-b1">{{#str}} footercourseofferings, theme_lexa {{/str}}</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled lexa-caption">
+                            {{{output.get_footercourseofferings}}}
+                        </ul>
                     </div>
                 </div>
-                <div class="card-body">
-                    <ul class="list-unstyled lexa-caption">
-                        {{{output.get_footercommunities}}}
-                    </ul>
-                </div>
-            </div>
-            {{/output.has_footercommunities}}
-            {{#output.has_footercontactus}}
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">
-                        <h2 class="lexa-b1">{{#str}} footercontactus, theme_lexa {{/str}}</h2>
+                {{/output.has_footercourseofferings}}
+                {{#output.has_footercommunities}}
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h2 class="lexa-b1">{{#str}} footercommunities, theme_lexa {{/str}}</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled lexa-caption">
+                            {{{output.get_footercommunities}}}
+                        </ul>
                     </div>
                 </div>
-                <div class="card-body">
-                    <ul class="list-unstyled lexa-caption">
-                        {{{output.get_footercontactus}}}
-                    </ul>
-                </div>
-            </div>
-            {{/output.has_footercontactus}}
-            {{#output.has_footersocial}}
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">
-                        <h2 class="lexa-b1">{{#str}} footersocial, theme_lexa {{/str}}</h2>
+                {{/output.has_footercommunities}}
+                {{#output.has_footercontactus}}
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h2 class="lexa-b1">{{#str}} footercontactus, theme_lexa {{/str}}</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled lexa-caption">
+                            {{{output.get_footercontactus}}}
+                        </ul>
                     </div>
                 </div>
-                <div class="card-body">
-                    <ul class="footer-social list-unstyled d-flex">
-                        {{{output.get_footersocial}}}
-                    </ul>
+                {{/output.has_footercontactus}}
+                {{#output.has_footersocial}}
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h2 class="lexa-b1">{{#str}} footersocial, theme_lexa {{/str}}</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <ul class="footer-social list-unstyled d-flex">
+                            {{{output.get_footersocial}}}
+                        </ul>
+                    </div>
                 </div>
+                {{/output.has_footersocial}}
             </div>
-            {{/output.has_footersocial}}
-        </div>
-        <hr>
-        <div class="pt-5 pb-2">
-            <div class="copyright text-center py-2">
-                <span class="fa-regular fa-copyright mr-1"></span>2024 Universität Wien
-            </div>
-            {{> theme_boost_union/footnote }}
-            <div class="py-2">
-                {{{ output.standard_end_of_body_html }}}
+            <hr>
+            <div class="pt-5 pb-2">
+                <div class="copyright text-center py-2">
+                    <span class="fa-regular fa-copyright mr-1"></span>2024 Universität Wien
+                </div>
+                {{> theme_boost_union/footnote }}
+                <div class="py-2">
+                    {{{ output.standard_end_of_body_html }}}
+                </div>
             </div>
         </div>
     </div>
-
     <div class="footer-content-debugging bg-footer">
         <div class="container-fluid footer-dark-inner">
             {{{ output.debug_footer_html }}}
