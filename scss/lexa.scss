@@ -1313,18 +1313,17 @@ body.limitedwidth #page.drawers .footer-popover {
     background: #BFD8E3;
   }
 
-  .urisebutton, .btn-secondary {
-    transition: background 0.3s ease;
-    color: #000;
-    text-decoration: none;
-    padding: 12px 20px;
-  }
+//   .wunderbyte_table_container .urisebutton, .btn-secondary {
+//     transition: background 0.3s ease;
+//     color: #000;
+//     text-decoration: none;
+//     padding: 12px 20px;
+//   }
 
   [data-action="bookondetail"]:hover, .urisebutton:hover, .btn-secondary:hover {
     background: linear-gradient(90deg, #0063A6, #0CBAC5);
     color: #000;
     text-decoration: none;
-    padding: 12px 20px;
   }
 
   .mod-booking-card:hover {
@@ -1692,6 +1691,7 @@ body.limitedwidth #page.drawers .footer-popover {
  }
 #back-to-top:hover {
     background: linear-gradient(90deg, #0063a6 0%, #0cbac5 101%);
+    border: none;
 }
 
 .lexa-addnav li {
@@ -1958,8 +1958,8 @@ border-radius: 10px !important;
 .gradienthover:hover {
     color: white;
     border: 1px solid transparent !important;
-    background: linear-gradient(90deg, rgba(0,99,166,1) 0%, rgba(12,186,197,1) 101%) !important;
-    background-repeat: no-repeat !important;
+    background: linear-gradient(90deg, rgba(0,99,166,1) 0%, rgba(12,186,197,1) 100%) !important;
+    background-size: 110% !important;
 }
 
 .hovertextwhite:hover {
