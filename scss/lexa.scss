@@ -816,13 +816,17 @@ body.limitedwidth #page.drawers .footer-popover {
     /* eslint-disable-next-line */
     padding: 0 10px !important;
     /* eslint-disable-next-line */
-    padding: 10px !important;
-    /* eslint-disable-next-line */
-    min-height: 2.5rem !important;
+    min-height: 2.25rem !important;
     display: flex;
     justify-content: center;
     align-items: center;
     line-height: normal;
+    border-radius: 0.625rem;
+    font-family: Roboto;
+    font-size: 0.875rem; /* 14px / 16px */
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.125rem; /* 18px / 16px */
 }
 
 .booking-button-area .booking-button-mainarea.urisebutton:not(#page-mod-booking-optionview .booking-button-area .booking-button-mainarea.urisebutton).alert-success,
@@ -841,13 +845,16 @@ body.limitedwidth #page.drawers .footer-popover {
 }
 
 .booking-button-area .booking-button-toparea {
-    border-radius: 0.5rem;
+    border-radius: 0.625rem;
     /* eslint-disable */
-    min-height: 2.5rem !important;
+    min-height: 2.25rem !important;
     padding: 0 !important;
     // margin: 0 0.25rem !important;
-    font-size: .9375rem !important;
-    font-weight: bold !important;
+    font-family: Roboto;
+    font-size: 0.875rem; /* 14px / 16px */
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.125rem; /* 18px / 16px */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -857,9 +864,9 @@ body.limitedwidth #page.drawers .footer-popover {
 
 .booking-button-area .booking-button-area:not(#page-mod-booking-optionview .booking-button-area .booking-button-area), .urisebutton:not(#page-mod-booking-optionview .urisebutton) {
     background: transparent;
-    border: black 2px solid;
+    border: black 1px solid;
     position: relative;
-    color: black !important;
+    color: black;
     font-weight: normal;
     /* eslint-disable-next-line */
     /* padding-right: 2rem !important; */
@@ -881,7 +888,7 @@ body.limitedwidth #page.drawers .footer-popover {
 
 
 .bookinglinkbutton:not(#page-mod-booking-optionview .bookinglinkbutton) {
-    border: 2px solid black;
+    border: 1px solid black;
     border-radius: 8px;
     color: black;
     font-weight: normal;
@@ -1017,11 +1024,11 @@ body.limitedwidth #page.drawers .footer-popover {
         margin-bottom: 17px;
         display: inline-block;
     }
-    .lexa-btn-link:hover {
-        background: linear-gradient(90deg, #0063A6, #0CBAC5);
-        color: #000;
-        text-decoration: none;
-    }
+    // .lexa-btn-link:hover {
+    //     background: linear-gradient(90deg, #0063A6, #0CBAC5);
+    //     color: #000;
+    //     text-decoration: none;
+    // }
     .lexa-custom-collapse {
         background-color: #e6f2f5;
         padding: 15px;
@@ -1339,11 +1346,11 @@ body.limitedwidth #page.drawers .footer-popover {
 //     padding: 12px 20px;
 //   }
 
-  [data-action="bookondetail"]:hover, .urisebutton:hover, .btn-secondary:hover {
-    background: linear-gradient(90deg, #0063A6, #0CBAC5);
-    color: #000;
-    text-decoration: none;
-  }
+//   [data-action="bookondetail"]:hover, .urisebutton:hover, .btn-secondary:hover {
+//     background: linear-gradient(90deg, #0063A6, #0CBAC5);
+//     color: #000;
+//     text-decoration: none;
+//   }
 
   .mod-booking-card:hover {
     box-shadow: 0px 26px 30px 0px rgba(0, 0, 0, 0.14), 10px 0px 10px 0px rgba(0, 0, 0, 0.04), -10px 0px 10px 0px rgba(0, 0, 0, 0.04);
@@ -1566,6 +1573,14 @@ body.limitedwidth #page.drawers .footer-popover {
     font-style: normal;
     font-weight: 400;
     line-height: 1.125rem; /* 18px / 16px */
+}
+
+.lexa-copy {
+    font-family: Roboto;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.125rem;
 }
 
 
@@ -1994,7 +2009,7 @@ border-radius: 10px !important;
 
 
 .gradienthover:hover {
-    color: white;
+    color: white !important;
     border: 1px solid transparent !important;
     background: linear-gradient(90deg, rgba(0,99,166,1) 0%, rgba(12,186,197,1) 100%) !important;
     background-size: 110% !important;
@@ -2005,15 +2020,15 @@ border-radius: 10px !important;
 }
 
 .gradienthover.urisebuton:hover {
-    border: 2px solid transparent !important;
+    border: 1px solid transparent !important;
 }
 
 .urisepricebutton {
     width: fit-content !important;
     padding: 0 10px !important;
-    padding: 10px !important;
-    min-height: 2.5rem !important;
+    min-height: 2.25rem !important;
     line-height: normal;
+    border-radius: 0.625rem;
 }
 
 .wrapfilter {
