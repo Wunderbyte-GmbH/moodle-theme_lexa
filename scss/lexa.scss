@@ -1620,16 +1620,19 @@ body.limitedwidth #page.drawers .footer-popover {
     margin-bottom: 0px !important;
 }
 .kompetenzen> span.bg-secondary {
-    padding-right: 17px !important;
-    padding-left: 17px !important;
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+    padding-top: 4px;
+    padding-bottom: 4px;
     border-radius: 100px;
     font-size: 14px;
 }
 .organisation > span.bg-secondary {
     background-color: #CCEBFF !important;
-    padding: 7px !important;
     padding-right: 10px !important;
     padding-left: 10px !important;
+    padding-top: 4px;
+    padding-bottom: 4px;
     border-radius: 100px;
     font-size: 14px;
 }
