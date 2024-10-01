@@ -30,6 +30,7 @@ use mod_booking;
 use html_writer;
 use mod_booking\output\bookingoption_description;
 use mod_booking\output\col_availableplaces;
+use mod_booking\output\col_coursestarttime;
 use mod_booking\price;
 use mod_booking\singleton_service;
 
@@ -173,6 +174,24 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
             $data['entities'] = $settings->entity;
         }
 
+        $optionid = $data['modalcounter'] ?? 0;
+        // Use the renderer to output this column.
+        $lang = current_language();
+
+        $cachekey = "sessiondates$optionid$lang";
+        $cache = \cache::make('mod_booking', 'bookingoptionstable');
+
+        $booking = singleton_service::get_instance_of_booking_by_cmid($settings->cmid);
+
+        if (!$ret = $cache->get($cachekey)) {
+            $showdatesdata = new col_coursestarttime($optionid, $booking);
+            $output = singleton_service::get_renderer('mod_booking');
+            $ret = $output->render_col_coursestarttime($showdatesdata);
+            $cache->set($cachekey, $ret);
+        };
+
+        $data['showdates'] = $ret;
+
         $o .= $this->render_from_template('mod_booking/bookingoption_description_view', $data);
         return $o;
     }
@@ -185,8 +204,7 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
      * competencies, each wrapped in a span tag with specific classes for styling.
      *
      * @param int $id The unique identifier for the booking option settings.
-     * @return string|null A string containing formatted HTML elements for each competency,
-     *                     or null if no competencies are found.
+     * @return array
      * @throws InvalidArgumentException When the ID is not a valid integer.
      */
     public function prepare_kompetenzen($id) {
@@ -199,7 +217,6 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
                 $returnorgas = [];
                 $organisations = shortcodes::get_kompetenzen();
                 foreach ($settings->customfields['kompetenzen'] as $orgaid) {
-
                     if (isset($organisations[$orgaid])) {
                         $returnorgas[] = $organisations[$orgaid]['localizedname'];
                     }
