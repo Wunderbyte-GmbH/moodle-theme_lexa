@@ -2033,3 +2033,61 @@ border-radius: 10px !important;
 #infoslidebutton {
     height: 36px;
 }
+
+/* Navbar small */
+@media (min-width: 768px) {
+    .navbar .lexa-nav-first-row .navbar-nav #lexa-npo .nav-link:not([data-id="urise-popover-region" ]) {
+        padding: 5px 20px;
+        height: 37px;
+    }
+}
+
+.nav-link[data-id="urise-popover-region"] {
+  padding: 5px 20px;
+  border-right: none;
+}
+.nav-link-cashier .icon{
+  font-size: 22px;;
+}
+.lexascrolled #lexa-navbar-scrolled,
+.lexascrolled #lexa-navbar-scrolled
+#lexa-navbar-primary-navigation,
+.lexascrolled #lexa-navbar-scrolled.primary-navigation .navigation,
+.lexascrolled #lexa-navbar-scrolled .primary-navigation .navigation .nav-link,
+.lexascrolled #lexa-navbar-scrolled
+#lexa-navbar-brand-second-row,
+.lexascrolled #lexa-navbar-scrolled
+#lexa-navbar-scrolled-only,
+.lexascrolled {
+    height: 69px;
+}
+.lexascrolled #lexa-navbar-scrolled
+ .logo  {
+    margin-left: 30px;
+    width: 102.289px;
+    height: 32.457px;
+}
+
+.lexascrolled .lexa-navbar-scrolled-only .navbar-brand, .navbar-brand .logo,
+.lexascrolled .lexa-navbar-scrolled-only {
+    height: 69px;
+}
+
+#lexa-navbar-scrolled-only
+.usermenu-container {
+    padding: 15px 30px
+}
+
+.avatar.current .userinitials  {
+    background: #ccebff;
+    color: #0063A6;
+    margin-right: 18px
+}
+
+@media (min-width: 768px) {
+.lexascrolled .navbar .lexa-nav-second-row .navbar-nav .nav-link, .navbar .lexa-nav-second-row .navbar-nav .nav-link .btn-secondary,
+.navbar .lexa-nav-second-row .navbar-nav .nav-link .btn-secondary:hover  {
+        padding: 5px 20px !important;
+        height: 37px !important;
+    }
+}
