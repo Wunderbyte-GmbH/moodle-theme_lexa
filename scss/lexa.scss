@@ -729,6 +729,30 @@ body.limitedwidth #page.drawers .footer-popover {
     }
 }
 
+[data-parentname="Support"], [data-parentname="Communities"] {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top: 0px;
+    top: calc(100% - 2px);
+}
+
+.font-small {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+}
+
+.font-darker {
+    color: var(--light_primary-darker, #547086);
+}
+
+.aalink.focus, a.focus.autolink, .aalink:focus, a.autolink:focus, #page-footer a:not([class]).focus, #page-footer a:not([class]):focus, .arrow_link.focus, .arrow_link:focus, a:not([class]).focus, a:not([class]):focus, .activityinstance > a.focus, .activityinstance > a:focus {
+    outline: unset;
+    color: unset;
+    background-color: unset;
+    box-shadow: unset;
+}
+
 @media (max-width: 575.98px) {
     #footnote {
         border-top: none;
@@ -1349,6 +1373,14 @@ body.limitedwidth #page.drawers .footer-popover {
   }
   .my-6 {
     margin-bottom: 50px;
+    margin-top: 50px;
+  }
+
+  .mb-6 {
+    margin-bottom: 50px;
+  }
+
+  .mt-6 {
     margin-top: 50px;
   }
 
