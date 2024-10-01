@@ -391,6 +391,16 @@
                                     {{ . }}
                                 </span>
                             {{/organisation }}
+                            {{#showdates}}
+                                <div class="row">
+                                    <span>
+                                        <i class="fa fa-clock-o text-primary fa-fw  showdatesicon mr-2" aria-hidden="true"></i>
+                                    </span>
+                                    <span class=" showdates">
+                                        {{{.}}}
+                                    </span>
+                                </div>
+                            {{/showdates}}
                             {{#bookingopeningtime}}
                             <div>
                                 <span>
