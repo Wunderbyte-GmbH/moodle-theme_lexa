@@ -728,6 +728,9 @@ body.limitedwidth #page.drawers .footer-popover {
         margin-bottom: 0;
     }
 }
+.wunderbyte-table-grid .list-group-item {
+    border-radius: 7px !important;
+}
 
 [data-parentname="Support"], [data-parentname="Communities"] {
     border-top-left-radius: 0;
@@ -968,7 +971,7 @@ body.limitedwidth #page.drawers .footer-popover {
 
 
 .rpbutton:hover .fa-arrow-right:not(.paginationicon)::before, .rpbutton:hover .icon-all {
-    filter: invert(100) brightness(100)
+    // invert.
 }
 
 .pagination .page-item .page-link {
@@ -1118,7 +1121,7 @@ body.limitedwidth #page.drawers .footer-popover {
   }
 
   #lexa-navbar-scrolled .fa-shopping-cart{
-    filter:  brightness(1) invert(1);
+        // invert.
   }
   .mod-booking-card-content {
     padding-bottom: 20px !important;
@@ -1153,7 +1156,7 @@ body.limitedwidth #page.drawers .footer-popover {
   }
 
   .btn-primary:not(.urisebutton) .fa-arrow-right::before,.btn-dark  .fa-arrow-right::before {
-    filter:  brightness(0) invert(1);;
+        // invert.
   }
   .icon-all {
     padding-right: 15px;
@@ -1181,13 +1184,13 @@ body.limitedwidth #page.drawers .footer-popover {
 
   .btn-primary .fa-solid.fa-arrow-right::before,
   .btn-dark  .fa-solid.fa-arrow-right::before{
-    filter:  brightness(0) invert(1);
+        // invert.
   }
 
   #lexa-navbar-scrolled .fa-shopping-cart, #lexa-navbar-scrolled .fa-bell-o{
-    filter:  brightness(1) invert(1);
-
+        // invert.
   }
+
   .fa.fa-bell-o::before {
     content: "";
     width: 21.012px;
@@ -1198,6 +1201,7 @@ body.limitedwidth #page.drawers .footer-popover {
     background-repeat: no-repeat;
     vertical-align: middle;
   }
+
   .fa.fa-shopping-cart::before {
     content: "";
     width: 26px;
@@ -1259,10 +1263,10 @@ body.limitedwidth #page.drawers .footer-popover {
 
   @media (max-width:768px) {
     .mod-booking-card-content.d-flex  {
-      display: grid !important;
-      grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr auto 1fr auto auto 20px;
-      grid-column-gap: 20px;
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr auto 1fr auto auto 20px;
+        grid-column-gap: 20px;
   }
 
 
