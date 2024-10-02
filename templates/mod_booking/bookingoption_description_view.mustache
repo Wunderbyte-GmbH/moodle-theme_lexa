@@ -157,7 +157,7 @@
                 <span class="mr-2">{{{ botags }}}</span>
                 </div>
                 <div class="mb-2">
-                <h2 class="font-weight-normal" >{{title}}</h2>
+                <h2 class="font-weight-normal" >{{{title}}}</h2>
                 </div>
                 {{#description}}
                 <div class="mb-6">
@@ -295,8 +295,18 @@
                         <div class="row mod-booking-row">
                         <div class="col-md-11 m-auto detailview">
                             <p class="mb-3 font-weight-bold">{{#str}} aboutoffer, local_urise {{/str}}</p>
+                            {{#showdates}}
+                                <div class="row">
+                                    <span>
+                                        <i class="fa fa-clock-o text-primary fa-fw  showdatesicon mr-2" aria-hidden="true"></i>
+                                    </span>
+                                    <span class=" showdates">
+                                        {{{.}}}
+                                    </span>
+                                </div>
+                            {{/showdates}}
                             {{#dayofweektime}}
-                            <div class="mb-1">
+                            <div class="mb-1-lexa">
                                 <span>
                                     <span class="icon-container">
                                       <!-- Original <i> tag replaced with SVG -->
@@ -385,16 +395,6 @@
                                     {{ . }}
                                 </span>
                             {{/organisation }}
-                            {{#showdates}}
-                                <div class="row">
-                                    <span>
-                                        <i class="fa fa-clock-o text-primary fa-fw  showdatesicon mr-2" aria-hidden="true"></i>
-                                    </span>
-                                    <span class=" showdates">
-                                        {{{.}}}
-                                    </span>
-                                </div>
-                            {{/showdates}}
                             {{#bookingopeningtime}}
                             <div>
                                 <span>
