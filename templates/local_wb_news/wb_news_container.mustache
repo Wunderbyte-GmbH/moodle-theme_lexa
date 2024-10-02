@@ -1,0 +1,152 @@
+ {{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_wb_news/wb_news_grid
+
+    Classes required for JS:
+    * none
+
+    Example context (json):
+    {
+        "id": "wbTabs",
+        "groupednews": [
+            {
+                "firstitem": 1,
+                "news": [
+                    {
+                        "bgimage": "/local/wb_news/img/wb.jpg",
+                        "icon": "/local/wb_news/img/icon.png",
+                        "headline": "News 1",
+                        "subheadline": "Image and Icon",
+                        "description": "Image and Icon",
+                        "btnlink": "https://link1.com",
+                        "btntext": "Read More",
+                        "headerimage": 1
+                    }
+                ]
+            }
+        ]
+    }
+}}
+<div data-id="wb-news-all-instances-container">
+{{#editmode}}
+    <div class="text-center">
+        <div class="wb-news-addeditbutton btn btn-primary"
+            data-action="add"
+            data-isinstance="true">
+            {{#str}} addinstance, local_wb_news {{/str}}
+        </div>
+    </div>
+{{/editmode}}
+{{#instances}}
+    {{#instancenameonindex}}
+    <div class="my-4">
+
+    <button class="btn btn-primary btn-collapse mr-2" type="button" data-toggle="collapse" data-target="#instance-{{instanceid}}" aria-expanded="false">
+    <i class="fa fa-chevron-down"></i>
+    <i class="fa fa-chevron-up"></i>
+    </button>
+    <div class="wb-news-addeditbutton btn btn-secondary fa-plus fa"
+    data-action="add"
+    data-instanceid="{{instanceid}}">
+    </div>
+    <div class="wb-news-addeditbutton btn btn-secondary fa-edit fa"
+        data-action="edit"
+        data-id="{{instanceid}}"
+        data-isinstance="true">
+    </div>
+    <div class="wb-news-copybutton btn btn-secondary fa-copy fa"
+        data-action="copy"
+        data-id="{{instanceid}}"
+        data-isinstance="true">
+    </div>
+        <div class="wb-news-deletebutton btn btn-secondary fa-trash fa"
+        data-action="delete"
+        data-id="{{instanceid}}"
+        data-isinstance="true">
+    </div>
+    <span class="h4 ml-2">{{instancenameonindex}}</span> <span>{{shortcode}}</span>
+    </div>
+    {{/instancenameonindex}}
+    <div id="instance-{{instanceid}}" class="card-body {{#instancenameonindex}}collapse{{/instancenameonindex}}">
+    {{#masonrytemplate}}
+        {{> local_wb_news/wb_news_masonry}}
+    {{/masonrytemplate}}
+    {{#gridtemplate}}
+        {{> local_wb_news/wb_news_grid}}
+    {{/gridtemplate}}
+    {{#slidertemplate}}
+        {{> local_wb_news/wb_news_slider}}
+    {{/slidertemplate}}
+    {{#tabstemplate}}
+        {{> local_wb_news/wb_news_tabs}}
+    {{/tabstemplate}}
+    {{#blogtemplate}}
+        {{> local_wb_news/wb_news_blog}}
+    {{/blogtemplate}}
+    {{#verticalblogtemplate}}
+         {{> local_wb_news/wb_news_vertical_blog}}
+    {{/verticalblogtemplate}}
+    {{#imagetemplate}}
+         {{> local_wb_news/wb_news_image_row}}
+    {{/imagetemplate}}
+    {{#infoslidestemplate}}
+         {{> local_wb_news/wb_news_infoslides}}
+    {{/infoslidestemplate}}
+    {{#crosslinkstemplate}}
+        {{> local_wb_news/wb_news_crosslinks}}
+    {{/crosslinkstemplate}}
+    {{#timelinetemplate}}
+        {{> local_wb_news/wb_news_timeline}}
+    {{/timelinetemplate}}
+    {{#pdfgallery}}
+        {{> local_wb_news/wb_news_pdfgallery}}
+    {{/pdfgallery}}
+    {{#timelinetemplate2}}
+        {{> local_wb_news/wb_news_timeline2}}
+    {{/timelinetemplate2}}
+    {{#imageseparator}}
+        {{> local_wb_news/wb_news_imgseparator}}
+    {{/imageseparator}}
+    </div>
+{{/instances}}
+</div>
+
+<script>
+    var style = document.createElement('style');
+    style.innerHTML = `
+    .btn-collapse[aria-expanded="true"] .fa-chevron-down {
+        display: none;
+    }
+    .btn-collapse[aria-expanded="true"] .fa-chevron-up {
+        display: inline;
+    }
+    .btn-collapse[aria-expanded="false"] .fa-chevron-down {
+        display: inline;
+    }
+    .btn-collapse[aria-expanded="false"] .fa-chevron-up {
+        display: none;
+    }
+    `;
+    document.head.appendChild(style);
+</script>
+
+{{#js}}
+    require(['local_wb_news/editnews'], function(fn) {
+        fn.init({{instanceid}});
+    });
+{{/js}}
