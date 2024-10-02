@@ -184,6 +184,11 @@
   vertical-align: middle;
 }
 
+.fa-arrow-right:not(.paginationicon,.dashboardicon).smallericon::before {
+  width: 16px;
+  height: 16px;
+}
+
 .fa-arrow-left:not(.paginationicon,.dashboardicon).smallericon::before {
   width: 16px;
   height: 16px;
