@@ -106,6 +106,15 @@ $container-max-widths: (
   xl: 1600px
 ) !default;
 
+// Maybe use this in the future?
+// $spacers: (
+//   0: 0,
+//   1: 10px,  // Override mt-1
+//   2: 15px,  // Override mt-2
+//   3: 20px   // Override mt-3
+// );
+
+
 // Breadcrumb.
 $breadcrumb-divider: quote(">") !default;
 $breadcrumb-item-padding: 2.5rem !default;
