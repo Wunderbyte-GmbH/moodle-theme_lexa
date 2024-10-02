@@ -298,35 +298,23 @@
                         <div class="col-md-11 m-auto detailview">
                             <p class="mb-3 font-weight-bold">{{#str}} aboutoffer, local_urise {{/str}}</p>
                             {{#showdates}}
-                                <div class="row">
+                            <div class="mb-1-lexa dinforow">
                                     <span>
-                                        <i class="fa fa-clock-o text-primary fa-fw  showdatesicon mr-2" aria-hidden="true"></i>
-                                    </span>
-                                    <span class=" showdates">
-                                        {{{.}}}
-                                    </span>
-                                </div>
-                            {{/showdates}}
-                            {{#dayofweektime}}
-                            <div class="mb-1-lexa">
-                                <span>
-                                    <span class="icon-container">
+                                         <span class="icon-container">
                                       <!-- Original <i> tag replaced with SVG -->
                                       <svg xmlns="http://www.w3.org/2000/svg"  width="100%" height="100%"  viewBox="0 0 25 26" fill="none">
                                         <path d="M22.4354 12.9492C22.4354 18.5785 17.8667 23.1472 12.2375 23.1472C6.60822 23.1472 2.03955 18.5785 2.03955 12.9492C2.03955 7.31999 6.60822 2.75132 12.2375 2.75132C17.8667 2.75132 22.4354 7.31999 22.4354 12.9492Z" stroke="#0063A6" stroke-width="1.66875" stroke-linecap="round" stroke-linejoin="round"/>
                                         <path d="M16.0206 16.1919L12.8593 14.3053C12.3086 13.979 11.8599 13.1937 11.8599 12.5513V8.37012" stroke="#0063A6" stroke-width="1.66875" stroke-linecap="round" stroke-linejoin="round"/>
                                       </svg>
                                     </span>
-                                </span>
-                                <span class="d-md-none">
-                                    {{#str}} dayofweektime, mod_booking {{/str}}
-                                </span>
-                                    {{.}}
-                                <span>{{#unitstring}} ({{.}}) {{/unitstring}}</span>
-                            </div>
-                            {{/dayofweektime}}
+                                    </span>
+                                    <span class=" showdates">
+                                        {{{.}}}
+                                    </span>
+                                </div>
+                            {{/showdates}}
                             {{#kurssprache}}
-                            <div class="mb-1-lexa">
+                            <div class="mb-1-lexa dinforow">
                                     <span class="icon-container">
                                       <!-- Original <i> tag replaced with SVG -->
                                       <svg xmlns="http://www.w3.org/2000/svg"  width="100%" height="100%"  viewBox="0 0 24 24" fill="none">
@@ -349,7 +337,7 @@
                             </div>
                             {{/kurssprache}}
                             {{#format}}
-                            <div class="mb-1-lexa">
+                            <div class="mb-1-lexa dinforow">
                             <span class="icon-container">
                               <!-- Original <i> tag replaced with SVG -->
                               <svg xmlns="http://www.w3.org/2000/svg"  width="100%" height="100%"  viewBox="0 0 26 25" fill="none">
