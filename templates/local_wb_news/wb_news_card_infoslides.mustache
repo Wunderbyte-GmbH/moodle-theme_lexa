@@ -1,0 +1,70 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_wb_news/wb_news_card_bgimage
+
+    Classes required for JS:
+    * none
+
+    Example context (json):
+    {
+        "bgimage": "/local/wb_news/img/wb.jpg",
+        "icon": "/local/wb_news/img/icon.png",
+        "headline": "News 1",
+        "subheadline": "Image and Icon",
+        "description": "Image and Icon",
+        "btnlink": "https://link1.com",
+        "btntext": "Read More"
+    }
+}}
+
+<div class="card h-100 wb_news_card_infoslides{{#lightmode}} wb_news-light{{/lightmode}}{{#cssclasses}} {{cssclasses}}{{/cssclasses}} text-center justify-content-center infoslide" style="background-color: {{{bgcolor}}}; border: none;">
+<div class="infoslideimg d-flex align-items-start justify-content-center" style="height: 260px">
+    {{#headerimage}}
+    <img class="w-100 img-fluid wb_news-headerimage" style="object-fit: contain; max-height: 60%;
+    z-index: 99;" src="{{headerimage}}" alt="{{headerimagetext}}">
+    {{/headerimage}}
+    {{#bgimage}}
+    <img class="w-100 img-fluid wb_news-headerimage" style="object-fit: contain; max-height: 60%;
+    z-index: 99;"  src="{{bgimage}}" alt="{{bgimagetext}}">
+    {{/bgimage}}
+</div>
+
+
+    <div class="card-body pt-0">
+        <div     {{#tags.0}}class="mb-2" {{/tags.0}}>
+    {{#tags}} <span class="text-primary mr-1 rounded-sm p-1 px-2 small mb-2" style="border: 1px solid #D9E1E7; font-size: 0.75rem;">{{.}}</span>{{/tags}}
+    </div>
+    {{#icon}}
+    <div class="text-center">
+        <img src="{{icon}}" class="card-icon mb-2 text-center" alt="{{icontext}}">
+    </div>
+    {{/icon}}
+    <h5 class="card-title">{{{headline}}}</h5>
+    <h6 class="card-subtitle mb-2 font-weight-light">{{{subheadline}}}</h6>
+    </div>
+    <div class="card-footer">
+    {{#btntext}}
+        <a href="{{btnlink}}" class="btn btn-dark mt-auto gradienthover">{{btntext}}
+           <i class="fa-solid fa-arrow-right ml-2"></i>
+        </a>
+    {{/btntext}}
+    </div>
+    {{#editmode}}
+        {{> local_wb_news/editsinglenews}}
+    {{/editmode}}
+</div>

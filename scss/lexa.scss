@@ -1831,6 +1831,7 @@ border-radius: 10px !important;
   margin-right: 18px
 }
 
+<<<<<<< HEAD
 .btn.gradienthover {
     transition: none;
 }
@@ -1849,5 +1850,27 @@ border-radius: 10px !important;
     .icon-container {
         margin-right: 8px;
     }
+=======
+h4 {
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 500;
+>>>>>>> dc96e2c (css error)
 }
 
+.mb-3-lexa {
+    margin-bottom: 32px;
+}
+
+
+.wbnews-sm   .wb-news-image-row .btn.btn-primary.lexa-b1 {
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    padding: 12px 20px;
+}
+.wb-news-image-row .btn.btn-primary.lexa-b1 i.ml-2 {
+    margin-left: 17px;
+}
