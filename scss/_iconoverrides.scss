@@ -259,5 +259,26 @@
   transform: rotate(-90deg);
 }
 
+// Booking.
 
+.fa-solid.fa-people-group.avail::before, .fa-solid.fa-people-group.lowavail::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background-image: url('/theme/lexa/pix/i/sl_family_heart_sc.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
 
+.fa-solid.fa-people-group.fullavail::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background-image: url('/theme/lexa/pix/i/sl_family_heart_er.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
