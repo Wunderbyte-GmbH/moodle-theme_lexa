@@ -212,8 +212,14 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
         $settings = singleton_service::get_instance_of_booking_option_settings((int)$id);
 
         if (isset($settings->customfields) && isset($settings->customfields['kompetenzen'])) {
-            if (is_array($settings->customfields['kompetenzen'])) {
 
+            if (is_array($settings->customfields['kompetenzen'])) {
+                $competencies = $settings->customfields['kompetenzen'];
+            } else {
+                $competencies = explode(',', $settings->customfields['kompetenzen']);
+            }
+
+            if (count($competencies) > 1) {
                 $returnorgas = [];
                 $organisations = shortcodes::get_kompetenzen();
                 foreach ($settings->customfields['kompetenzen'] as $orgaid) {
@@ -224,7 +230,7 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
 
                 return $returnorgas;
             } else {
-                $value = $settings->customfields['kompetenzen'];
+                $value = reset($competencies);
                 return [$value];
             }
         }
