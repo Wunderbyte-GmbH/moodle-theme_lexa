@@ -184,6 +184,23 @@
   vertical-align: middle;
 }
 
+.fa-arrow-left:not(.paginationicon,.dashboardicon).smallericon::before {
+  width: 16px;
+  height: 16px;
+}
+
+.fa-arrow-left:not(.paginationicon, .dashboardicon)::before {
+  content: "";
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  background-image: url('/theme/lexa/pix/i/sl_arrow_right_black.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  transform: rotate(180deg);
+}
+
 .rpbutton:hover .fa-arrow-right:not(.paginationicon)::before {
   background-image: url('/theme/lexa/pix/i/sl_arrow_right_white.svg');
 }

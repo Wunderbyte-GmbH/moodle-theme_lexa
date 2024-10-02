@@ -142,7 +142,9 @@
             <div class="col-md-12 d-flex mb-3">
         <!-- Left Button -->
         {{#returnurl}}
-            <a href="{{returnurl}}" role="button" class="btn btn-nolabel mr-auto">{{#str}} back, core {{/str}}</a>
+            <a href="{{returnurl}}" role="button" class="btn btn-nolabel mr-auto lexa-caption">
+            <i class="fa-solid fa-arrow-left lexa-caption smallericon"></i>
+            {{#str}} backtooverview, theme_lexa {{/str}}</a>
         {{/returnurl}}
         <!-- Right Button -->
         {{#editurl}}
@@ -250,7 +252,7 @@
                         <p class="lexa-input">{{{description}}}</p>
                         </div>
                     </div>
-                    <a href="{{{teacherurl}}}" class="btn btn-outline-dark bg-white gradienthover">
+                    <a href="{{{teacherurl}}}" class="btn btn-outline-dark bg-white gradienthover invertarrow">
                     {{#str}} gotoprofile, local_urise {{/str}}
                     <i class="fa-solid fa-arrow-right ml-1"></i></a>
                     {{/teachers}}

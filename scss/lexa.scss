@@ -1597,9 +1597,9 @@ border-radius: 10px !important;
     display: inline-block;
 }
 
-// .gradienthover:hover:not(.dontreverse) .fa-arrow-right {
-//     filter: invert(100) brightness(100)
-// }
+.gradienthover.invertarrow:hover .fa-arrow-right {
+        filter: invert(1);
+}
 
 .wb_news_card_infoslides .card-title {
     font-size: 26px;
@@ -1831,4 +1831,7 @@ border-radius: 10px !important;
   margin-right: 18px
 }
 
+.btn.gradienthover {
+    transition: none;
+}
 
