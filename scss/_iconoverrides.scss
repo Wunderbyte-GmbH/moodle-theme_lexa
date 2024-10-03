@@ -293,3 +293,14 @@
   background-repeat: no-repeat;
   vertical-align: middle;
 }
+
+.gradienthover:hover .fa-arrow-right:not(.paginationicon, .dashboardicon)::before {
+  content: "";
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  background-image: url(/theme/lexa/pix/i/sl_arrow_right_white.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
