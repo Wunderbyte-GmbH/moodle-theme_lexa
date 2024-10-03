@@ -23,10 +23,10 @@
     vertical-align: middle;
   }
 
-  .fa.fa-comment-o::before::before {
+  .fa.fa-comment-o::before {
     content: "";
-    width: 19.5px;
-    height: 19.5px;
+    width: 26px;
+    height: 26px;
     display: inline-block;
     background-image: url('/theme/lexa/pix/i/sl_msg_white.svg');
     background-size: contain;
@@ -59,23 +59,12 @@
     vertical-align: middle;
   }
 
-  .fa.fa-comment-o::before::before {
+  .fa.fa-comment-o::before {
     content: "";
     width: 19.5px;
     height: 19.5px;
     display: inline-block;
     background-image: url('/theme/lexa/pix/i/sl_msg_dark.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    vertical-align: middle;
-  }
-
-  .fa.fa-comment-o::before  {
-    content: "";
-    width: 21.012px;
-    height: 26px;
-    display: inline-block;
-    background-image: url('/theme/lexa/pix/i/sl_noti_dark.svg');
     background-size: contain;
     background-repeat: no-repeat;
     vertical-align: middle;
