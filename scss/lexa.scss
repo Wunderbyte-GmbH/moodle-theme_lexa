@@ -1893,3 +1893,21 @@ h4 {
     padding: 8px;
     gap: 0;
 }
+
+.wunderbyteTableFilter .dropdown-item .form-check-label {
+    white-space: normal;
+    word-break: break-word;
+}
+
+
+.hierarchy .card.card-body {
+  padding: 0 0 2px 0;
+}
+
+.hierarchy .card.card-body .form-check {
+  display: inline-flex;
+}
+
+.wunderbyteTableFilter .form-check-input {
+  margin-left: 10px;
+}
