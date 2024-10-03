@@ -1535,7 +1535,7 @@ border-radius: 10px !important;
 
 .wunderbyteTableSelect {
     border: 1px solid $primary_900;
-    padding: 10px;
+    padding: 4px;
     border-radius: 10px;
 }
 
@@ -1553,9 +1553,12 @@ border-radius: 10px !important;
     padding-left: 0;
     font-size: 14px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 18px;
     height: fit-content;
+    border: none;
+    padding: 4px 0;
+    text-align: center;
 }
 
 .wunderbyteTableSelect .sortbytext {
