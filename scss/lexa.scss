@@ -1504,8 +1504,9 @@ border-radius: 10px !important;
 
 .btn-dark {
     display: inline-flex;
-    padding: 10px;
-    justify-content: center;        align-items: center;
+    padding: 6px 10px;
+    justify-content: center;        
+    align-items: center;
     gap: 8px;
     border-radius: 10px;
     background: var(--interface-dark_primary, #0B131F);
@@ -1860,8 +1861,12 @@ h4 {
     margin-bottom: 32px;
 }
 
+.btn.btn-primary.btn-lg.lexa-b1 {
+    padding: 16px 20px;
+    font-weight: 500;
+  }
 
-.wbnews-sm   .wb-news-image-row .btn.btn-primary.lexa-b1 {
+.wbnews-sm   .wb-news-image-row .btn.btn-primary.btn-lg.lexa-b1 {
     font-family: Roboto;
     font-size: 14px;
     font-style: normal;
