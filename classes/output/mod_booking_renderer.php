@@ -119,25 +119,6 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
     }
 
     /**
-     * This function is called for each data row to allow processing of the
-     * booking option coursestarttime
-     *
-     * @param object $values Contains object with all the values of record.
-     * @return string $sports Returns course start time as a readable string.
-     * @throws coding_exception
-     */
-    public function render_col_coursestarttime($data) {
-        $o = '';
-        // Check if multiple dates.
-        $data = $data->export_for_template($this);
-        if (!empty($data['datestrings']) && count($data['datestrings']) > 1) {
-            $data['firstDate'] = $data['datestrings'][0]['datestring'];
-        }
-        $o .= $this->render_from_template('mod_booking/col_coursestarttime', $data);
-        return $o;
-    }
-
-    /**
      * Renders the booking option description view.
      *
      * This function processes the booking option description data, prepares necessary
@@ -178,14 +159,14 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
         // Use the renderer to output this column.
         $lang = current_language();
 
-        $cachekey = "sessiondates$optionid$lang";
+        $cachekey = "ursessiondates$optionid$lang";
         $cache = \cache::make('mod_booking', 'bookingoptionstable');
 
         $booking = singleton_service::get_instance_of_booking_by_cmid($settings->cmid);
 
         if (!$ret = $cache->get($cachekey)) {
             $showdatesdata = new col_coursestarttime($optionid, $booking);
-            $output = singleton_service::get_renderer('mod_booking');
+            $output = singleton_service::get_renderer('local_urise');
             $ret = $output->render_col_coursestarttime($showdatesdata);
             $cache->set($cachekey, $ret);
         };
