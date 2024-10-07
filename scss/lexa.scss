@@ -1787,43 +1787,41 @@ border-radius: 10px !important;
         padding: 5px 20px;
         height: 37px;
     }
-}
+    .nav-link[data-id="urise-popover-region"] {
+    padding: 5px 20px;
+    border-right: none;
+    }
+    .nav-link-cashier .icon{
+    font-size: 22px;;
+    }
+    .lexascrolled #lexa-navbar-scrolled,
+    .lexascrolled #lexa-navbar-scrolled
+    #lexa-navbar-primary-navigation,
+    .lexascrolled #lexa-navbar-scrolled.primary-navigation .navigation,
+    .lexascrolled #lexa-navbar-scrolled .primary-navigation .navigation .nav-link,
+    .lexascrolled #lexa-navbar-scrolled
+    #lexa-navbar-brand-second-row,
+    .lexascrolled #lexa-navbar-scrolled
+    #lexa-navbar-scrolled-only {
+    height: 69px;
+    }
+    .lexascrolled #lexa-navbar-scrolled
+    .logo  {
+    margin-left: 30px;
+    width: 102.289px;
+    height: 32.457px;
+    }
 
-.nav-link[data-id="urise-popover-region"] {
-  padding: 5px 20px;
-  border-right: none;
-}
-.nav-link-cashier .icon{
-  font-size: 22px;;
-}
-.lexascrolled #lexa-navbar-scrolled,
-.lexascrolled #lexa-navbar-scrolled
-#lexa-navbar-primary-navigation,
-.lexascrolled #lexa-navbar-scrolled.primary-navigation .navigation,
-.lexascrolled #lexa-navbar-scrolled .primary-navigation .navigation .nav-link,
-.lexascrolled #lexa-navbar-scrolled
-#lexa-navbar-brand-second-row,
-.lexascrolled #lexa-navbar-scrolled
-#lexa-navbar-scrolled-only {
-   height: 69px;
-}
-.lexascrolled #lexa-navbar-scrolled
- .logo  {
-   margin-left: 30px;
-   width: 102.289px;
-  height: 32.457px;
-}
+    .lexascrolled .lexa-navbar-scrolled-only .navbar-brand, .navbar-brand .logo,
+    .lexascrolled .lexa-navbar-scrolled-only {
+    height: 69px;
+    }
 
-.lexascrolled .lexa-navbar-scrolled-only .navbar-brand, .navbar-brand .logo,
-.lexascrolled .lexa-navbar-scrolled-only {
-  height: 69px;
+    #lexa-navbar-scrolled-only
+    .usermenu-container {
+    padding: 15px 30px
+    }
 }
-
-#lexa-navbar-scrolled-only
-.usermenu-container {
-  padding: 15px 30px
-}
-
 .avatar.current .userinitials  {
   background: #ccebff;
   color: #0063A6;
@@ -1919,9 +1917,9 @@ h4 {
 
 .infoslideimg {
     margin-bottom: 40px;
-    
+
   }
-  
+
 .infoslideimg .wb_news-headerimage {
     height: 100%;
     width: auto;
@@ -1944,7 +1942,7 @@ h4 {
         width: 10px;            /* Width of the bullet */
         height: 10px;           /* Height of the bullet */
       }
-      
+
       .carousel-indicators .active {
         background-color: #007bff; /* Active bullet color, change to suit your design */
       }
@@ -1958,7 +1956,7 @@ h4 {
     .infoslidermobile {
         display: block;
     }
-    
+
     .infosliderdesktop {
         display: none;
     }
