@@ -12,32 +12,31 @@
     }
 }
 
-// Alerts.
 .alert-danger,
 .environmenttable .error {
-    // background-color: $danger;
-    border-color: $danger;
-    color: $danger;
+    background-color: $alertdangerbg;
+    border-color: $alertdangerbg;
+    color: $alertdangercolor;
 }
 
 .alert-info {
-    // background-color: $info;
-    border-color: $info;
-    color: $info;
+    background-color: $alertinfobg;
+    border-color: $alertinfobg;
+    color: $alertinfocolor;
 }
 
 .alert-success,
 .environmenttable .ok {
-    // background-color: $success;
-    border-color: $success;
-    color: $success;
+    background-color: $alertsucessbg;
+    border-color: $alertsucessbg;
+    color: $alertsuccesscolor;
 }
 
 .alert-warning,
 .environmenttable .warn {
-    // background-color: $warning;
-    border-color: $warning;
-    color: $warning;
+    background-color: $alertwarningbg;
+    border-color: $alertwarningbg;
+    color: $alertwarningcolor;
 }
 
 // Navbar.
