@@ -1912,6 +1912,7 @@ h4 {
     width: 21px;
     height: 21px;
 }
+
 .col-ap-availableplaces {
     padding: 4px 8px;
 }
@@ -1928,4 +1929,37 @@ h4 {
 
 #lexa-navbar-brand-first-row .logo {
     padding: 5px 0;
+}
+
+.infoslidermobile {
+    display: none;
+
+    .carousel-indicators {
+        position: relative;
+    }
+
+    .carousel-indicators li {
+        background-color: #ddd; /* Default bullet color */
+        border-radius: 50%;     /* Make them circular */
+        width: 10px;            /* Width of the bullet */
+        height: 10px;           /* Height of the bullet */
+      }
+      
+      .carousel-indicators .active {
+        background-color: #007bff; /* Active bullet color, change to suit your design */
+      }
+}
+
+.infosliderdesktop {
+    display: block;
+}
+
+@include media-breakpoint-down(sm) {
+    .infoslidermobile {
+        display: block;
+    }
+    
+    .infosliderdesktop {
+        display: none;
+    }
 }
