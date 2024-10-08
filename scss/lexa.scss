@@ -1960,4 +1960,26 @@ h4 {
     .infosliderdesktop {
         display: none;
     }
+
+    .mod-booking-card-header .bookings > a {
+        width: max-content;
+        display: block;
+    }
+
+    .mod-booking-card-header .botags {
+        margin-right: 0 !important;
+    }
+
+    .mod-booking-card-header {
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+        flex-direction: column-reverse;
+        justify-content: start;
+        align-items: end !important;
+
+        .bookings {
+            padding-right: 0!important;
+        }
+    }
+
 }
