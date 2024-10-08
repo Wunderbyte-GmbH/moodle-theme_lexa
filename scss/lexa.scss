@@ -1205,12 +1205,12 @@ body.limitedwidth #page.drawers .footer-popover {
     justify-content: center;
   }
 
-  @media (min-width: 1200px) {
-      .urise-courses-container .row, .urise-courses-container .rows-container, .wunderbyte_table_container.showontop .filterheader .wunderbyte_table_components {
-          max-width: 1600px;
-          margin:auto;
-      }
-  }
+//   @media (min-width: 1200px) {
+//       .urise-courses-container .row, .urise-courses-container .rows-container, .wunderbyte_table_container.showontop .filterheader .wunderbyte_table_components {
+//           max-width: 1600px;
+//           margin:auto;
+//       }
+//   }
 
   /* moove to  theme*/
   .detailteacher  .btn-outline-dark:hover {
@@ -1948,11 +1948,53 @@ h4 {
       }
 }
 
+.filtermobile {
+    display: none;
+}
+
+.filterdesktop {
+    display: block;
+}
+
 .infosliderdesktop {
     display: block;
 }
 
+.filtermobilebutton {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 25px auto;
+    background: transparent;
+    border: 1px solid black;
+    color: black;
+    border-radius: 12px;
+    text-decoration: none;
+    position: relative;
+
+    i {
+        position: absolute;
+        left: 20px;
+    }
+}
+
+.filtermobilebutton:hover {
+    text-decoration: none;
+}
+
 @include media-breakpoint-down(sm) {
+
+    .filtermobile {
+        display: block;
+    }
+    
+    .filterdesktop {
+        display: none !important;
+    }
+    
+
     .infoslidermobile {
         display: block;
     }
