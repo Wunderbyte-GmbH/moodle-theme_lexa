@@ -1988,7 +1988,28 @@ h4 {
     margin-left: 10px;
 }
 
+.wunderbyteTableClass {
+    max-width: 1600px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+
+@include media-breakpoint-up(sm) {
+
+    .showfilterdesktop {
+        display: block !important;
+    }
+
+}
+
 @include media-breakpoint-down(sm) {
+
+    .filterheader .collapsemobile {
+        display: block;
+    }
 
     .filtermobile {
         display: block;
@@ -1997,7 +2018,9 @@ h4 {
     .filterdesktop {
         display: none !important;
     }
-    
+}
+
+    @include media-breakpoint-down(sm) {
 
     .infoslidermobile {
         display: block;
@@ -2005,6 +2028,10 @@ h4 {
 
     .infosliderdesktop {
         display: none;
+    }
+
+    .blockmobile {
+        display: block !important;
     }
 
     .mod-booking-card-header .bookings > a {
@@ -2031,5 +2058,4 @@ h4 {
     .singlehierarchy .category-item > h4 {
         max-width: 70%;
     }
-
-}
+    }
