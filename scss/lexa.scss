@@ -1995,7 +1995,9 @@ h4 {
     margin-left: auto;
 }
 
-
+.moremenu .nav-link:hover, .moremenu .nav-link:focus {
+    border-bottom: 3px solid var(--primary);
+}
 
 @include media-breakpoint-up(sm) {
 
@@ -2020,7 +2022,7 @@ h4 {
     }
 }
 
-    @include media-breakpoint-down(sm) {
+@include media-breakpoint-down(sm) {
 
     .infoslidermobile {
         display: block;
@@ -2032,6 +2034,10 @@ h4 {
 
     .blockmobile {
         display: block !important;
+    }
+
+    .spanhidemobile {
+        display: none;
     }
 
     .mod-booking-card-header .bookings > a {
