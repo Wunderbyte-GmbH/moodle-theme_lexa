@@ -94,6 +94,17 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
     }
 
     /**
+     * Return the site's logo URL, if any.
+     *
+     * @param int $maxwidth The maximum width, or null when the maximum width does not matter.
+     * @param int $maxheight The maximum height, or null when the maximum height does not matter.
+     * @return moodle_url|false
+     */
+    public function get_logo_url_footer($maxwidth = null, $maxheight = 200) {
+        return $this->image_url('UniVie_Logo_footer', 'theme_lexa');
+    }
+
+    /**
      * Return the site's compact logo URL, if any.
      *
      * @param int $maxwidth The maximum width, or null when the maximum width does not matter.
