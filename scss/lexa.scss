@@ -2100,8 +2100,45 @@ h4 {
 
 @include media-breakpoint-down(sm) {
 
+    .filtermobilebutton {
+        margin: 0;
+      width: 100%;
+  }
+  
+  .filterheader .wunderbyte_table_components {
+    padding: 0!important;
+    padding-top: 10px !important;
+    
+  }
+  
+  .wunderbyteTableFilter .dd {
+    padding: 10px 0 !important;
+  }
 
-    .wb-news-image-row .lexa-h1 {
+    .filterheader.blockmobile {
+        padding: 20px !important;
+       background: transparent !important;
+   }
+   
+   .filterheader .wunderbyte_table_components {
+     background: transparent !important;
+   }
+    
+
+    .wunderbyteTableSearch .searchbutton {
+        padding: 12px 20px;
+        margin-left: 0 !important;
+    }
+
+    .wunderbyteTableSearch.urise {
+        width: 100% !important;
+        
+        input {
+            margin-right: -10px;
+        }
+    }
+
+    .lexa-h1 {
         font-size: 33.18px;
         font-weight: 300;
         line-height: 41.48px;
@@ -2122,7 +2159,7 @@ h4 {
     }
 
     .spanhidemobile {
-        display: none;
+        display: none !important;
     }
 
     .mod-booking-card-header .bookings > a {
