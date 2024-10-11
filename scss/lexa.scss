@@ -1654,6 +1654,9 @@ border-radius: 10px !important;
 .wunderbyterFilterList .form-check {
     padding: 8px;
     border: none;
+}
+
+.wunderbyterFilterList .form-check:nth-child(n+2) {
     border-top: 1px solid #D9E1E7;
 }
 
@@ -2005,6 +2008,19 @@ h4 {
         display: block !important;
     }
 
+    .lexamenu{
+        min-width: 100%;
+        width: max-content;
+        background: white;
+        border-radius: 0.5rem;
+        border: 1px solid rgba(0, 0, 0, .15);
+      }
+      
+      .wunderbyteTableFilter
+      .dropdowncontainer .dropdown-menu {
+        border: none;
+      }
+
 }
 
 @include media-breakpoint-down(sm) {
@@ -2023,6 +2039,7 @@ h4 {
 }
 
 @include media-breakpoint-down(sm) {
+    
 
     .wb-news-image-row .lexa-h1 {
         font-size: 33.18px;
