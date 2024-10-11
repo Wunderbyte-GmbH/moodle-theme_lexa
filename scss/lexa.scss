@@ -1220,7 +1220,7 @@ body.limitedwidth #page.drawers .footer-popover {
     margin-top: 100px;
   }
 
-  @media (max-width: 968px) {
+  @media (max-width: 767.98px) {
     .my-6 {
         margin-bottom: 50px;
         margin-top: 50px;
@@ -1246,6 +1246,15 @@ body.limitedwidth #page.drawers .footer-popover {
       .mt-7 {
         margin-top: 80px;
       }
+    .footer-content-information .card .card-body,.footer-content-information .card .card-header {
+      padding: 0.625rem 0px;
+    }
+    .footer-content-information {
+      padding-left: 0px;
+      padding-top: 30px;
+      padding-right: 0px;
+    }
+
   }
 
   .col-md-7 {
