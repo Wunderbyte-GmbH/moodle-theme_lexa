@@ -1220,6 +1220,34 @@ body.limitedwidth #page.drawers .footer-popover {
     margin-top: 100px;
   }
 
+  @media (max-width: 968px) {
+    .my-6 {
+        margin-bottom: 50px;
+        margin-top: 50px;
+      }
+
+      .mb-6 {
+        margin-bottom: 50px;
+      }
+
+      .mt-6 {
+        margin-top: 50px;
+      }
+
+      .my-7 {
+        margin-bottom: 80px;
+        margin-top: 80px;
+      }
+
+      .mb-7 {
+        margin-bottom: 80px;
+      }
+
+      .mt-7 {
+        margin-top: 80px;
+      }
+  }
+
   .col-md-7 {
     padding-right: 100px;
   }
