@@ -580,7 +580,6 @@ body.limitedwidth #page.drawers .footer-popover {
     }
 
     a {
-        color: $gray-100;
         @include hover-focus() {
             color: $white;
         }
@@ -622,10 +621,6 @@ body.limitedwidth #page.drawers .footer-popover {
         ul.footer-social li {
             margin-right: 0.5rem;
         }
-    }
-
-    hr {
-        border-top: 1px solid $footerdivider;
     }
 }
 
@@ -1013,7 +1008,32 @@ body.limitedwidth #page.drawers .footer-popover {
 
   .footer-content-information {
     padding-top: 100px;
+    padding-bottom: 60px;
   }
+
+.list-unstyled.lexa-caption a,
+.list-unstyled.lexa-caption li {
+  color: #CCD2D6
+}
+
+#footnote p {
+  font-size: 13px
+}
+.footer-content-information hr {
+  border-top: 1px solid #fff;
+  opacity: 0.15;
+}
+
+.copyright {
+  display: none;
+}
+.footer-content-information .card-header {
+    padding-bottom: 0
+}
+
+.footer-content-information .card-body {
+    padding-top: 0;
+}
   .local_urise-meinekurse #topofscroll, .local_urise-meinekurse [role="main"], .local_urise-meinekurse #page {
     margin: 0px 0px 100px !important;
     padding: 0px !important;;
@@ -2032,7 +2052,7 @@ h4 {
     .filtermobile {
         display: block;
     }
-    
+
     .filterdesktop {
         display: none !important;
     }
