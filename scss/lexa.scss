@@ -1028,9 +1028,12 @@ body.limitedwidth #page.drawers .footer-popover {
   display: none;
 }
 .footer-content-information .card-header {
-    padding-bottom: 0
+    padding-bottom: 0;
 }
 
+.footer-content-information.copyright {
+    display: none;
+}
 .footer-content-information .card-body {
     padding-top: 0;
 }
@@ -2035,7 +2038,7 @@ h4 {
         border-radius: 0.5rem;
         border: 1px solid rgba(0, 0, 0, .15);
       }
-      
+
       .wunderbyteTableFilter
       .dropdowncontainer .dropdown-menu {
         border: none;
@@ -2059,7 +2062,7 @@ h4 {
 }
 
 @include media-breakpoint-down(sm) {
-    
+
 
     .wb-news-image-row .lexa-h1 {
         font-size: 33.18px;
