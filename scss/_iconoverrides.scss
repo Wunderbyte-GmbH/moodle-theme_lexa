@@ -185,13 +185,13 @@
 }
 
 .fa-arrow-right:not(.paginationicon,.dashboardicon).smallericon::before {
-  width: 16px;
-  height: 16px;
+  width: 16px !important;
+  height: 16px !important;
 }
 
 .fa-arrow-left:not(.paginationicon,.dashboardicon).smallericon::before {
-  width: 16px;
-  height: 16px;
+  width: 16px !important;
+  height: 16px !important;
 }
 
 .fa-arrow-left:not(.paginationicon, .dashboardicon)::before {

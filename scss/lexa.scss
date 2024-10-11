@@ -2024,6 +2024,14 @@ h4 {
 
 @include media-breakpoint-down(sm) {
 
+    .wb-news-image-row .lexa-h1 {
+        font-size: 33.18px;
+        font-weight: 300;
+        line-height: 41.48px;
+        text-align: left;
+
+    }
+
     .infoslidermobile {
         display: block;
     }
