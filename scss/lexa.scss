@@ -2062,6 +2062,14 @@ h4 {
     border-bottom: 3px solid var(--primary);
 }
 
+.event-count.lexa-info {
+    margin-right: 35px;
+  }
+  
+.filterviewlist li {
+    margin-bottom: 3px;
+}
+
 @include media-breakpoint-up(sm) {
 
     .showfilterdesktop {
@@ -2099,6 +2107,8 @@ h4 {
 }
 
 @include media-breakpoint-down(sm) {
+
+    
 
     .filtermobilebutton {
         margin: 0;
