@@ -137,7 +137,7 @@
 }}
 
 <div class="container-fluid">
-    <div class="col-md-9 m-auto">
+    <div class="col-md-9 col-12 m-auto">
             <div class="row">
             <div class="col-md-12 d-flex mb-3">
         <!-- Left Button -->
@@ -153,40 +153,50 @@
         </div>
     </div>
         <div class="row mod-booking-row lexa-block">
-            <div class="col-md-7 lexa-ib">
-                <div class="d-flex mb-3 align-items-center justify-content-start">
+            <div class="col-md-7 col-12 lexa-ib md7urise">
+                <div class="d-flex mb-3 align-items-center justify-content-start spanhidemobile">
                 <span class="mr-2">{{{ bookings }}}</span>
                 <span class="mr-2">{{{ botags }}}</span>
                 </div>
+                <span class="spanhidemobile">
                 <div class="mb-2">
-                <h2 class="font-weight-normal" >{{{title}}}</h2>
+                <h2 class="lexa-h2" >{{{title}}}</h2>
                 </div>
+                </span>
+                 <span class="spanhidemobile">
                 {{#description}}
                 <div class="mb-6">
                 <div class="content"><span class="lexa-input">{{{.}}}</span></div>
                 </div>
                 {{/description}}
+                 </span>
                 {{#datesexist}}
                 <div class="my-7">
-                    <h2 class="font-weight-normal"> {{#str}} optiondates, local_urise {{/str}}</h2>
+                    <h2 class="lexa-h2"> {{#str}} optiondates, local_urise {{/str}}</h2>
                         {{#showcollapse}}
                         <div class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapseDates"
                         aria-expanded="false" aria-controls="collapseDates">{{#str}} showdates, local_urise {{/str}}</div>
                         {{/showcollapse}}
                         <div class=" {{#showcollapse}}collapse{{/showcollapse}} mt-3" id="collapseDates">
                         {{#dates}}
-                                <div class="card w-100 bg-white rounded mb-4 border-0">
+                                <div class="card w-100 bg-white mb-4 border-0 datecard">
                                     <div class="card-body p-2">
                                         <div class="row">
-                                            <div class="col-md-12 datestring d-flex">
+                                            <div class="col-md-12 datestring d-flex lexa-h4">
                                                 {{{ htmlstring }}}
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-12">
                                                 {{#entitylink}}
-                                                    <div class="entity-for-optiondate-area">
-                                                        <i class="fa fa-fw fa-map-marker text-primary" aria-hidden="true"></i>&nbsp;{{{.}}}
+                                                    <div class="entity-for-optiondate-area lexa-b2">
+                                                       <svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                           <g id="Pin-1--Streamline-Streamline--3.0">
+                                                               <path id="Vector" d="M14.2812 8.71729C14.2812 12.4107 11.7149 14.5352 9.79163 16.5923C8.64013 17.8243 7.71875 21.8423 7.71875 21.8423C7.71875 21.8423 6.8 17.8269 5.65113 16.5984C3.72613 14.5422 1.15625 12.4142 1.15625 8.71729C1.15625 6.9768 1.84765 5.3076 3.07836 4.0769C4.30907 2.84619 5.97827 2.15479 7.71875 2.15479C9.45923 2.15479 11.1284 2.84619 12.3591 4.0769C13.5898 5.3076 14.2812 6.9768 14.2812 8.71729Z" stroke="#0063A6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                               <path id="Vector_2" d="M5.09375 8.71729C5.09375 9.41348 5.37031 10.0812 5.86259 10.5734C6.35488 11.0657 7.02256 11.3423 7.71875 11.3423C8.41494 11.3423 9.08262 11.0657 9.57491 10.5734C10.0672 10.0812 10.3438 9.41348 10.3438 8.71729C10.3438 8.02109 10.0672 7.35341 9.57491 6.86113C9.08262 6.36885 8.41494 6.09229 7.71875 6.09229C7.02256 6.09229 6.35488 6.36885 5.86259 6.86113C5.37031 7.35341 5.09375 8.02109 5.09375 8.71729Z" stroke="#0063A6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                           </g>
+                                                       </svg>&nbsp;{{{.}}}
+                                                       
                                                     </div>
                                                 {{/entitylink}}
                                             </div>
@@ -208,37 +218,37 @@
                 {{/datesexist}}
                 {{#voraussetzungen}}
                 <div class="my-7">
-                    <h2 class="font-weight-normal"> {{#str}} requirements, local_urise {{/str}}</h2>
+                    <h2 class="lexa-h2"> {{#str}} requirements, local_urise {{/str}}</h2>
                      <span class="lexa-input">{{{.}}}</span>
                 </div>
                 {{/voraussetzungen}}
                 {{#zielgruppe}}
                 <div class="my-7">
-                    <h2 class="font-weight-normal"> {{#str}} targetaud, local_urise {{/str}}</h2>
+                    <h2 class="lexa-h2"> {{#str}} targetaud, local_urise {{/str}}</h2>
                     <span class="lexa-input">{{{.}}}</span>
                 </div>
                 {{/zielgruppe}}
                 {{#kursziel}}
                 <div class="my-7">
-                    <h2 class="font-weight-normal"> {{#str}} goals, local_urise {{/str}}</h2>
+                    <h2 class="lexa-h2"> {{#str}} goals, local_urise {{/str}}</h2>
                     <span class="lexa-input">{{{.}}}</span>
                 </div>
                 {{/kursziel}}
                 {{#inhalte}}
                 <div class="my-7">
-                    <h2 class="font-weight-normal"> {{#str}} coursecontent, local_urise {{/str}}</h2>
+                    <h2 class="lexa-h2"> {{#str}} coursecontent, local_urise {{/str}}</h2>
                     <span class="lexa-input">{{{.}}}</span>
                 </div>
                 {{/inhalte}}
                 {{#methoden}}
                 <div class="my-7">
-                    <h2 class="font-weight-normal"> {{#str}} coursemethods, local_urise {{/str}}</h2>
+                    <h2 class="lexa-h2"> {{#str}} coursemethods, local_urise {{/str}}</h2>
                     <span class="lexa-input">{{{.}}}</span>
                 </div>
                 {{/methoden}}
                 {{#teachers.0}}
                 <div class="my-7 detailteacher">
-                    <h2 class="font-weight-normal"> {{#str}} teachers, local_urise {{/str}}</h2>
+                    <h2 class="lexa-h2"> {{#str}} teachers, local_urise {{/str}}</h2>
                     {{#teachers}}
                     <div class="profile-card d-flex mt-5 align-items-center mb-3">
                         <div class="mr-3">
@@ -252,7 +262,7 @@
                         <p class="lexa-input">{{{description}}}</p>
                         </div>
                     </div>
-                    <a href="{{{teacherurl}}}" class="btn btn-outline-dark bg-white gradienthover invertarrow">
+                    <a href="{{{teacherurl}}}" class="btn btn-outline-dark bg-white gradienthover invertarrow urisebuttonmb">
                     {{#str}} gotoprofile, local_urise {{/str}}
                     <i class="fa-solid fa-arrow-right ml-1"></i></a>
                     {{/teachers}}
@@ -260,13 +270,13 @@
                 {{/teachers.0}}
                 {{#sonstigeinfos}}
                 <div class="my-7">
-                    <h2 class="font-weight-normal"> {{#str}} additionalinfo, local_urise {{/str}}</h2>
+                    <h2 class="lexa-h2"> {{#str}} additionalinfo, local_urise {{/str}}</h2>
                     <span class="lexa-input">{{{.}}}</span>
                 </div>
                 {{/sonstigeinfos}}
                 {{#responsiblecontactuser}}
                 <div class="my-7">
-                    <h2 class="font-weight-normal"> {{#str}} orgacontact, local_urise {{/str}}</h2>
+                    <h2 class="lexa-h2"> {{#str}} orgacontact, local_urise {{/str}}</h2>
                     <div>
                     <p class="lexa-input">{{{firstname}}} {{{lastname}}}</p>
                     <p class="lexa-input">{{{description}}}</p>
@@ -278,8 +288,33 @@
                 </div>
                 {{/responsiblecontactuser}}
             </div>
-            <div class="col-md-5 lexa-ib lexa-sticky-column" >
+            <div class="col-md-5 col-12 lexa-ib lexa-sticky-column" >
+            <div>
+                <span class="showmobile">
+                   {{#imageurl}}
+                    <img class="w-100 uriseimage" src="{{imageurl}}" alt="{{title}}">
+                    {{/imageurl}}
+                    {{^imageurl}}
+                            <div class="placeholderimage">
+                            <div class="m-3 d-flex justify-conten-center align-items-center flex-column">
+                            <i class="fa-regular fa-image placeholdericon"></i>
+                            <h4 class="pt-2" >
+                                {{#str}} optionnoimage, mod_booking {{/str}}
+                            </h4>
+                            </div>
+                            </div>
+                    {{/imageurl}}
+                         <div class="d-flex mb-3 align-items-center justify-content-start showmobile" style="margin: 20px 0;">
+                <span class="mr-2">{{{ bookings }}}</span>
+                <span class="mr-2">{{{ botags }}}</span>
+                </div>
+                <h2 class="lexa-h2" >{{{title}}}</h2>
+                {{#description}}
+                <div class="content"><span class="lexa-input">{{{.}}}</span></div>
+                 {{/description}}
+                 </span>
                 <div class="card price-card border-0">
+                <span class="spanhidemobile ">
                     {{#imageurl}}
                     <img class="w-100 uriseimage" src="{{imageurl}}" alt="{{title}}">
                     {{/imageurl}}
@@ -293,10 +328,11 @@
                             </div>
                             </div>
                     {{/imageurl}}
+                    </span>
                     <div class="card-body">
                         <div class="row mod-booking-row">
                         <div class="col-md-11 m-auto detailview">
-                            <p class="mb-3 font-weight-bold">{{#str}} aboutoffer, local_urise {{/str}}</p>
+                            <p class="mb-3 mt-2 font-weight-bold">{{#str}} aboutoffer, local_urise {{/str}}</p>
                             {{#showdates}}
                             <div class="mb-1-lexa dinforow">
                                     <span>
@@ -330,9 +366,6 @@
                                         </defs>
                                       </svg>
                                     </span>
-                                <span class="d-md-none">
-                                    {{#str}} institution, mod_booking {{/str}}:
-                                </span>
                                 <span>{{{.}}}</span>
                             </div>
                             {{/kurssprache}}
@@ -356,15 +389,10 @@
                                 </defs>
                               </svg>
                             </span>
-                                <span class="d-md-none">
-                                    {{#str}} institution, mod_booking {{/str}}:
-                                </span>
                                 <span>{{{.}}}</span>
                             </div>
                             {{/format}}
-                            {{#competency}}
-                            <div class="mb-1-lexa">
-                                <span class="icon-container">
+                            {{#competency.0}}                       <span class="icon-container" >
                                      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 25 23" fill="none">
                                        <path d="M5.20557 7.86726H21.7262" stroke="#0063A6" stroke-width="2.225" stroke-linecap="round" stroke-linejoin="round"/>
                                        <path d="M3.37012 16.4326H19.8907" stroke="#0063A6" stroke-width="2.225" stroke-linecap="round" stroke-linejoin="round"/>
@@ -372,19 +400,25 @@
                                        <path d="M19.2788 3.58372L14.3838 20.7162" stroke="#0063A6" stroke-width="2.225" stroke-linecap="round" stroke-linejoin="round"/>
                                      </svg>
                                 </span>
-                                <span class="d-md-none">
-                                    {{#str}} institution, mod_booking {{/str}}:
-                                </span>
+                            {{/competency.0}}
+                            {{#competency}}
+                            <div class="d-inline-block urise-pill-gray dinforow" style="margin-bottom: 10px">     
                                 <span>
                                     {{{.}}}
                                 </span>
                             </div>
                             {{/competency}}
+                            {{#organisation.0}}
+                            <div class="" style="margin-top: 10px">
+                            {{/organisation.0}}
                             {{#organisation }}
-                                <span class="badge bg-gray badge-pill" style="white-space: normal;">
+                                <div class="urise-pill-gray pill-blue d-inline-block dinforow" style="white-space: normal;">
                                     {{ . }}
-                                </span>
+                                </div>
                             {{/organisation }}
+                             {{#organisation.0}}
+                            </div>
+                            {{/organisation.0}}
                             {{#bookingopeningtime}}
                             <div>
                                 <span>
@@ -406,18 +440,31 @@
                             </div>
                             {{/bookingclosingtime}}
 
-                            <div class="row mt-3">
+                            <div class="row mt-3 bookitsection">
                             {{{ bookitsection }}}
                             </div>
                         </div>
                     </div>
                 </div>
                 </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="footer-bar fixed-bottom d-flex align-items-center">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col text-center d-flex">
+                <a  href="{{returnurl}}" role="button" class="footer-back-button mr-auto d-flex justify-content-center">
+                <i class="fa-solid fa-arrow-left lexa-caption smallericon"></i>
+                </a>
+                 {{{ bookitsection }}}
             </div>
         </div>
     </div>
 </div>
 
+</div>
 {{#js}}
     require(['local_shopping_cart/cart'], function(cart) {
     cart.buttoninit({{modalcounter}}, "mod_booking");
