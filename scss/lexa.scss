@@ -2108,10 +2108,27 @@ h4 {
 
 @include media-breakpoint-down(sm) {
 
-    
+    .mod-booking-card-body, .mod-booking-card-infos,
+.mod-booking-card-footer{
+  padding: 0 !important
+}
 
-    .filtermobilebutton {
-        margin: 0;
+.wunderbyte-table-grid.rows-container {
+  padding: 20px !important
+    
+}
+
+.col-ap-availableplaces.urise-avail{
+  font-size: 12px;
+  padding: 4px
+}
+
+.mod-booking-card-header {
+  padding: 0 !important;
+}
+
+  .filtermobilebutton {
+      margin: 0;
       width: 100%;
   }
   
