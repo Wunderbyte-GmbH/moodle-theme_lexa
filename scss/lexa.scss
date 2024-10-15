@@ -2170,6 +2170,14 @@ h4 {
 @include media-breakpoint-down(sm) {
 
 
+    .timelineproject {
+        flex-direction: column-reverse !important;
+      }
+      
+      .timelineproject .col-md-5:nth-of-type(2) {
+        margin-bottom: 20px !important;
+      }
+
 .bookitsection .pricecontainer * {
     display: none
      
