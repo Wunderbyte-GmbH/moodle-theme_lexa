@@ -2128,6 +2128,20 @@ h4 {
     background: #CCEBFF;
 }
 
+.lexamenu .filterelement.datepicker-input[type="time"] {
+    display: none;
+  }
+  
+  .lexamenu 
+  .datepicker-label {
+  color: var(--primary);
+  }
+  
+  .lexamenu
+  .filteroperationselect {
+    display: none;
+  }
+
 @include media-breakpoint-up(sm) {
 
     #page-mod-booking-optionview {

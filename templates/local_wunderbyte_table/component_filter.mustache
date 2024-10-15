@@ -220,7 +220,7 @@
                                     <input class="filterelement datepicker-input" type="date" id="enddate_date_{{endcolumn}}{{label}}{{columnname}}{{idstring}}" value="{{enddatereadable}}" data-timestamp="{{endtimestamp}}" name="date-{{endcolumn}}" data-dateelement = "dateelement" data-filtername="{{label}}" data-columnname="{{columnname}}" data-applytocolumn="{{endcolumn}}">
                                     <input class="filterelement datepicker-input" type="time" id="enddate_time_{{endcolumn}}{{label}}{{columnname}}{{idstring}}" name="time-{{endcolumn}}" value="{{endtimereadable}}" data-dateelement = "dateelement" data-filtername="{{label}}" data-columnname="{{columnname}}" data-applytocolumn="{{endcolumn}}">
                                 </div>
-                                <div>
+                                <div class="filteroperationselect">
                                     <label for="filteroperationselect_{{label}}{{columnname}}{{idstring}}" class="datepicker-label">{{#str}} displayrecords, local_wunderbyte_table {{/str}}</label>
                                     <select class="form-control filterelement" id="filteroperationselect_{{label}}{{columnname}}{{idstring}}" name="{{columnname}}" data-dateelement = "dateelement" data-filtername="{{label}}" data-columnname="{{columnname}}">
                                         {{#possibleoperations}}
