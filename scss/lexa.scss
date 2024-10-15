@@ -2168,7 +2168,13 @@ h4 {
 }
 
 @include media-breakpoint-down(sm) {
+    .infoslidermobile .carousel-indicators .active {
+        background-color:  #809FB8;  
+        }
 
+    .reverseonmobile {
+        text-align: center;
+    }
 
     .timelineproject {
         flex-direction: column-reverse !important;
