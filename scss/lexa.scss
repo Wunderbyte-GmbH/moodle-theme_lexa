@@ -2153,6 +2153,25 @@ h4 {
 }
 
 @include media-breakpoint-down(sm) {
+    .navbar .lexa-nav-second-row {
+        padding: 0px;
+    }
+    .drawer-primary .drawerheader {
+        height: 75px;
+    }
+
+    .drawer-primary {
+        max-width: 100vw !important;
+        width: 100vw !important;
+    }
+    #lexa-drawer-logo {
+        height: 25px;
+        padding-left: 15px;
+        width: 77px !important;
+    }
+    .drawer-primary .list-group {
+        padding-left: 20px;
+    }
 
     .filterheader .collapsemobile {
         display: block;
@@ -2423,26 +2442,4 @@ h4 {
     .singlehierarchy .category-item > h4 {
         max-width: 70%;
     }
-    }
-
-    @media (max-width: 767.98px) {
-        .navbar .lexa-nav-second-row {
-            padding: 0px;
-        }
-        .drawer-primary .drawerheader {
-            height: 75px;
-        }
-
-        .drawer-primary {
-            max-width: 100vw;
-            width: 100vw;
-        }
-        #lexa-drawer-logo {
-            height: 25px;
-            padding-left: 15px;
-            width: 77px !important;
-        }
-        .drawer-primary .list-group {
-            padding-left: 20px;
-        }
     }
