@@ -2443,3 +2443,10 @@ h4 {
         max-width: 70%;
     }
     }
+
+    .wunderbyte-table-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        padding: 0px !important;
+        gap: 20px;
+    }
