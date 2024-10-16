@@ -2206,6 +2206,14 @@ h4 {
     .filterdesktop {
         display: none !important;
     }
+    .navbar .navbar-brand-second-row .logo {
+        height: 37px !important;
+    }
+    .navbar-light .navbar-toggler-icon {
+        background-image: url('/theme/lexa/pix/i/sl_burger.svg') !important;
+        height: 31px !important;
+        width: 31px !important;
+    }
 }
 
 @include media-breakpoint-down(sm) {
