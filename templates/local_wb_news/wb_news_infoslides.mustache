@@ -60,21 +60,22 @@
 
 <div id="newsCarousel" class="slide mt-5 wb_news container-xl infoslidermobile" data-id="{{id}}" >
 <div id="carouseluriseIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
-  <div class="carousel-inner" style="height: 500px; max-height: min-content;">
-    {{#news}}
-    <div class="carousel-item {{#slideactive}} active {{/slideactive}} h-100">
-        {{#headerimage}}
-          {{> local_wb_news/wb_news_card_infoslides}}
-        {{/headerimage}}
-        {{^headerimage}}
-          {{> local_wb_news/wb_news_card_infoslides}}
-        {{/headerimage}}
+    <div class="carousel-inner" style="height: 500px; max-height: min-content;">
+        {{#news}}
+        <div class="carousel-item {{#slideactive}} active {{/slideactive}} h-100">
+            {{#headerimage}}
+            {{> local_wb_news/wb_news_card_infoslides}}
+            {{/headerimage}}
+            {{^headerimage}}
+            {{> local_wb_news/wb_news_card_infoslides}}
+            {{/headerimage}}
+        </div>
+        {{/news}}
     </div>
-    {{/news}}
-</div>
    <ol class="carousel-indicators">
-  {{#news}}
-    <li  {{#slideactive}}class="active" {{/slideactive}} data-target="#carouseluriseIndicators" data-slide-to="{{sliderindex}}"></li>
-    {{/news}}
-  </ol>
+        {{#news}}
+        <li  {{#slideactive}}class="active" {{/slideactive}} data-target="#carouseluriseIndicators" data-slide-to="{{sliderindex}}"></li>
+        {{/news}}
+    </ol>
+</div>
 </div>
