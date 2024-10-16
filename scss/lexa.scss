@@ -2224,7 +2224,40 @@ h4 {
     }
 }
 
+.btn-lg {
+font-family: Roboto;
+  font-size: 14px !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  line-height: 18px !important;
+  padding: 12px 20px !important;
+}
+.reverseonmobile .d-flex
+.row .col-md-10 {
+text-align: start;
+}
+.alleveranstaltungen {
+    border-radius: 10px;
+    border: 1px solid #001F33;
+    display: inline-flex;
+    height: 60px;
+    padding: 12px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 17px;
+    flex-shrink: 0;
+}
+
 @include media-breakpoint-down(sm) {
+    .alleveranstaltungen {
+        height: auto !important;
+           font-size: 14px !important;
+       font-style: normal !important;
+       font-weight: 500 !important;
+       line-height: 18px !important;
+       padding: 12px 20px !important;
+     }
+
     .infoslidermobile .carousel-indicators .active {
         background-color:  #809FB8;
         }
