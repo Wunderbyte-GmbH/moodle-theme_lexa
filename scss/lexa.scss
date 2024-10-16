@@ -2131,12 +2131,12 @@ h4 {
 .lexamenu .filterelement.datepicker-input[type="time"] {
     display: none;
   }
-  
-  .lexamenu 
+
+  .lexamenu
   .datepicker-label {
   color: var(--primary);
   }
-  
+
   .lexamenu
   .filteroperationselect {
     display: none;
@@ -2192,11 +2192,11 @@ h4 {
     }
     #lexa-drawer-logo {
         height: 25px;
-        padding-left: 15px;
+        padding-left: calc(1.25rem - 10px);
         width: 77px !important;
     }
     .drawer-primary .list-group {
-        padding-left: 20px;
+        padding-left: 0px;
     }
 
     .filterheader .collapsemobile {
@@ -2217,6 +2217,10 @@ h4 {
         background-image: url('/theme/lexa/pix/i/sl_burger.svg') !important;
         height: 31px !important;
         width: 31px !important;
+    }
+
+    .block.container, .block.container-xl {
+        padding: 0 !important;
     }
 }
 
