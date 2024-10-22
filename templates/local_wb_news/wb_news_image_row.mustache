@@ -39,7 +39,7 @@
     }
 }}
 
-<div class="wb-news-container wb-news-image-row mt-5 wb_news" style="" data-id="{{id}}">
+<div class="wb-news-container wb-news-image-row mt-5 wb_news {{#cssclasses}} {{cssclasses}}{{/cssclasses}}" style="" data-id="{{id}}">
     {{#editmode}}
         {{> local_wb_news/edit}}
     {{/editmode}}
