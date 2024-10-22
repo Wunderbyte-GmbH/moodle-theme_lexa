@@ -1,0 +1,64 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template mod_mooduell/viewpage
+    Template which defines a mooduell view page.
+    Classes required for JS:
+    * none
+    Data attributes required for JS:
+    * none
+    Context variables required for this template:
+    Example context (json):
+    {
+        "categories" : [
+            [
+               {
+                  "catid":"7",
+                  "contextid":"1",
+                  "catname":"MooDuell Pr\u00e4sentation",
+                  "courseid":"50"
+               }
+            ]
+        ]
+    }
+}}
+
+<div class="row mb-2 w-100 d-flex justify-content-center flex-column background">
+  <div class="container mw-90 d-flex justify-content-center">
+    <div class="row mb-2 w-100 d-flex justify-content-center flex-column">
+      <h1 class="lexa-h1 text-center mb-4 text-light">
+      FAQ
+      </h1>
+      <div class="urise text-center align-bottom d-flex justify-content-center" style="display:flex;">
+          <input class='my-2 w-auto form-control searchfaq-{{uid}}' type='text' id='searchfaq-{{uid}}' placeholder='{{#str}} searchfaq, local_wb_faq {{/str}}'>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="wb_faq_searchbox" class="wb_faq_searchbox-{{uid}}"></div>
+
+<script>
+  if (typeof require == 'function') {
+    require(['local_wb_faq/searchinput'], function(search) {
+      search.init('input.searchfaq-{{uid}}', '.wb_faq_searchbox-{{uid}}', '.wb_faq_searchbox-{{uid}} .accordion-item','.wb_faq_searchbox-{{uid}} .accordion-body', {{{json}}});
+    });
+  }
+</script>
+
+{{#js}}
+  require(['local_wb_faq/searchinput'], function(search) {
+    search.init('input.searchfaq-{{uid}}', '.wb_faq_searchbox-{{uid}}', '.wb_faq_searchbox-{{uid}} .accordion-item','.wb_faq_searchbox-{{uid}} .accordion-body', {{{json}}});
+  });
+{{/js}}
