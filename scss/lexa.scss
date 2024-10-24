@@ -719,6 +719,7 @@ body.limitedwidth #page.drawers .footer-popover {
 
 // Other.
 .booking-button-area .booking-button-mainarea.urisebutton:not(#page-mod-booking-optionview .booking-button-area .booking-button-mainarea.urisebutton),
+.booking-button-area .booking-button-toparea.urisebutton:not(#page-mod-booking-optionview .booking-button-area .booking-button-toparea.urisebutton),
  .booking-button-area .booking-button-area.urisebutton:not(#page-mod-booking-optionview .booking-button-area .booking-button-area.urisebutton) {
     /* eslint-disable-next-line */
     width: fit-content !important;
