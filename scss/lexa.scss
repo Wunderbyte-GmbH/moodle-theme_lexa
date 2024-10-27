@@ -1,5 +1,49 @@
 // Lexa.
 
+// Landing region.
+#block-region-landing {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .block {
+        border-width: 0;
+        margin-bottom: 0 !important;
+    }
+
+    .landingblock {
+        flex: 0 0 100%;
+        max-width: 100%;
+
+        .blockskiptarget {
+            font-size: 0;
+        }
+
+        .card-body:nth-child(1) {
+            padding: 0;
+        }
+    }
+}
+
+.editing #block-region-landing {
+    column-gap: 0.5rem;
+    justify-content: start;
+
+    .block {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    body:not(.editing) #page.drawers {
+        #block-region-landing {
+            margin-left: -3rem;
+            margin-right: -3rem;
+        }
+    }
+}
+
 // Footer.
 body.limitedwidth #page.drawers .footer-popover {
     max-width: none;

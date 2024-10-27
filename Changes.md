@@ -1,6 +1,10 @@
 Version Information
 ===================
 
+Version 404.0.1
+---------------
+1. Minimal theme with the parent of Boost Union.
+
 Version 403.0.8
 ---------------
 1. Tidied navbar and added SCSS variables in lexapre.scss to aid changes / customisation.
