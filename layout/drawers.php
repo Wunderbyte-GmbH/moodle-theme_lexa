@@ -102,28 +102,14 @@ if ($courseindexopen) {
     $extraclasses[] = 'drawer-open-index';
 }
 
-$blockcontentpre = '';
+$blockshtml = $OUTPUT->blocks('side-pre');
+$hasblocks = (strpos($blockshtml, 'data-block=') !== false || !empty($addblockbutton));
+if (!$hasblocks) {
+    $blockdraweropen = false;
+}
 $courseindex = core_course_drawer();
 if (!$courseindex) {
     $courseindexopen = false;
-}
-$blockshtml = $OUTPUT->blocks('side-pre');
-$hasblocks = (strpos($blockshtml, 'data-block=') !== false || !empty($addblockbutton));
-$blocksright = true;
-if ($hasblocks) {
-    if (!$courseindex) {
-        if ($PAGE->pagetype == 'calendar-view') {
-            $blocksright = false;
-            // Extra calendar bits....
-            $calendarrenderer = $PAGE->get_renderer('core_calendar');
-            // Todo - Need to figure out the JS for this -> /calendar/amd/src/crud.js registerEventFormModal function ->
-            // root.on('click', CalendarSelectors.actions.create, function(e) bit.
-            // $blockcontentpre = $calendarrenderer->add_event_button($COURSE->id);.
-            $blockcontentpre = $calendarrenderer->today();
-        }
-    }
-} else {
-    $blockdraweropen = false;
 }
 
 $landingblockshtml = $OUTPUT->blocks('landing');
@@ -131,18 +117,9 @@ $haslandingblocks = (strpos($landingblockshtml, 'data-block=') !== false || !emp
 
 $forceblockdraweropen = $OUTPUT->firstview_fakeblocks();
 
-$notcoursecategorypage = ($PAGE->pagetype != 'course-index-category');
-$siteindexsecondarynav = true;
-if ($PAGE->pagetype == 'site-index') {
-    if (!$PAGE->user_is_editing()) {
-        $siteindexsecondarynav = false;
-    }
-}
-
 $secondarynavigation = false;
 $overflow = '';
-
-if (($notcoursecategorypage) && ($siteindexsecondarynav) && ($PAGE->has_secondary_navigation())) {
+if ($PAGE->has_secondary_navigation()) {
     $tablistnav = $PAGE->has_tablist_secondary_navigation();
     $moremenu = new \core\navigation\output\more_menu($PAGE->secondarynav, 'nav-tabs', true, $tablistnav);
     $secondarynavigation = $moremenu->export_for_template($OUTPUT);
@@ -152,10 +129,9 @@ if (($notcoursecategorypage) && ($siteindexsecondarynav) && ($PAGE->has_secondar
     }
 }
 
-
 // Load the navigation from boost_union primary navigation, the extended version of core primary navigation.
 // It includes the smart menus and menu items, for multiple locations.
-$primary = new theme_lexa\output\navigation\primary($PAGE);
+$primary = new theme_boost_union\output\navigation\primary($PAGE);
 $renderer = $PAGE->get_renderer('core');
 $primarymenu = $primary->export_for_template($renderer);
 
@@ -184,37 +160,11 @@ $bodyattributes = $OUTPUT->body_attributes($extraclasses); // In the original la
 $header = $PAGE->activityheader;
 $headercontent = $header->export_for_template($renderer);
 
-foreach ($primarymenu['moremenu']['nodearray'] as $nodearray) {
-    if (is_object($nodearray) && $nodearray->text == "Communities") {
-        $title = get_string_manager()->string_exists('communities', 'theme_lexa') ? get_string('communities', 'theme_lexa') : $nodearray->text;
-
-        $nodearray->text = $title;
-        $nodearray->isshortcode = "true";
-        unset($nodearray->children);
-        $nodearray->haschildren = "true";
-        $nodearray->shortcode = format_text("[navbarhtml category=communities]");
-    }
-}
-
-foreach ($primarymenu['moremenu']['nodearray'] as $nodearray) {
-    if (is_object($nodearray) && $nodearray->text == "Support") {
-        $title = get_string_manager()->string_exists('support', 'theme_lexa') ? get_string('support', 'theme_lexa') : $nodearray->text;
-
-        $nodearray->text = $title;
-        $nodearray->isshortcode = "true";
-        unset($nodearray->children);
-        $nodearray->haschildren = "true";
-        $nodearray->shortcode = format_text("[navbarhtml category=support]");
-    }
-}
-
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
     'sidepreblocks' => $blockshtml,
     'hasblocks' => $hasblocks,
-    'blocksright' => $blocksright,
-    'blockcontentpre' => $blockcontentpre,
     'landingblocks' => $landingblockshtml,
     'haslandingblocks' => $haslandingblocks,
     'bodyattributes' => $bodyattributes,
@@ -232,7 +182,6 @@ $templatecontext = [
     'overflow' => $overflow,
     'headercontent' => $headercontent,
     'addblockbutton' => $addblockbutton,
-    'modbookingcodes' => $OUTPUT->get_modbookingcodes(),
 ];
 
 // Include the template content for the course related hints.

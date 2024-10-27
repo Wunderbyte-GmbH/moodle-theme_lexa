@@ -34,13 +34,8 @@ $THEME->parents = ['boost', 'boost_union'];
 $THEME->sheets = [''];
 $THEME->editor_sheets = [];
 $THEME->usefallback = true;
-$THEME->precompiledcsscallback = 'theme_boost_union_get_precompiled_css';
-$THEME->enable_dock = false;
 
 $THEME->supportscssoptimisation = false;
-$THEME->yuicssmodules = [];
-
-$THEME->rendererfactory = 'theme_overridden_renderer_factory';
 
 $THEME->layouts = [
     // Most backwards compatible layout without the blocks.
@@ -169,18 +164,21 @@ $THEME->layouts = [
     ],
     // The pagelayout used for safebrowser and securewindow.
     'secure' => [
-        'file' => 'drawers.php',
+        'file' => 'secure.php',
         'regions' => ['side-pre'],
         'defaultregion' => 'side-pre',
     ],
 ];
 
+$THEME->enable_dock = false;
 $THEME->prescsscallback = 'theme_lexa_get_pre_scss';
 $THEME->scss = function(theme_config $theme) {
     return theme_lexa_get_main_scss_content($theme);
 };
 $THEME->extrascsscallback = 'theme_lexa_get_extra_scss';
-
+$THEME->precompiledcsscallback = 'theme_boost_union_get_precompiled_css';
+$THEME->yuicssmodules = [];
+$THEME->rendererfactory = 'theme_overridden_renderer_factory';
 $THEME->requiredblocks = '';
 $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
 $THEME->iconsystem = \core\output\icon_system::FONTAWESOME;

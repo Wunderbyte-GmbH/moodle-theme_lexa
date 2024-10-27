@@ -20,15 +20,16 @@
     Lexa drawer template.
 
     Context variables required for this template:
-    * sitename - The name of the site.
-    * output - The core renderer for the page.
-    * bodyattributes - attributes for the body tag as a string of html attributes.
-    * sidepreblocks - HTML for the blocks.
-    * hasblocks - true if there are blocks on this page.
-    * blocksright - false if the blocks are on the left.
-    * courseindexopen - true if the nav drawer should be open on page load.
-    * regionmainsettingsmenu - HTML for the region main settings menu.
+    * sitename - The name of the site
+    * output - The core renderer for the page
+    * bodyattributes - attributes for the body tag as a string of html attributes
+    * sidepreblocks - HTML for the blocks
+    * hasblocks - true if there are blocks on this page
+    * courseindexopen - true if the nav drawer should be open on page load
+    * regionmainsettingsmenu - HTML for the region main settings menu
     * hasregionmainsettingsmenu - There is a region main settings menu on this page.
+    * haslandingblocks - If there are landing blocks.
+    * landingblocks - Landing block markup.
 
     Example context (json):
     {
@@ -42,12 +43,13 @@
         "bodyattributes":"",
         "sidepreblocks": "<h2>Blocks html goes here</h2>",
         "hasblocks":true,
-        "blocksright": false,
         "courseindexopen": true,
         "navdraweropen": false,
         "blockdraweropen": true,
         "regionmainsettingsmenu": "",
         "hasregionmainsettingsmenu": false,
+        "haslandingblocks": false,
+        "landingblocks": "",
         "addblockbutton": ""
     }
 }}
@@ -93,9 +95,8 @@
     {{#hasblocks}}
         {{< theme_boost/drawer }}
             {{$id}}theme_boost-drawers-blocks{{/id}}
-            {{$drawerclasses}}drawer drawer-{{#blocksright}}right{{/blocksright}}{{^blocksright}}left{{/blocksright}}{{#blockdraweropen}} show{{/blockdraweropen}}{{/drawerclasses}}
+            {{$drawerclasses}}drawer drawer-right{{#blockdraweropen}} show{{/blockdraweropen}}{{/drawerclasses}}
             {{$drawercontent}}
-                {{{blockcontentpre}}}
                 <section class="d-print-none" aria-label="{{#str}}blocks{{/str}}">
                     {{{ addblockbutton }}}
                     {{{ sidepreblocks }}}
@@ -103,8 +104,8 @@
             {{/drawercontent}}
             {{$drawerpreferencename}}drawer-open-block{{/drawerpreferencename}}
             {{$forceopen}}{{#forceblockdraweropen}}1{{/forceblockdraweropen}}{{/forceopen}}
-            {{$drawerstate}}show-drawer-{{#blocksright}}right{{/blocksright}}{{^blocksright}}left{{/blocksright}}{{/drawerstate}}
-            {{$tooltipplacement}}{{#blocksright}}left{{/blocksright}}{{^blocksright}}right{{/blocksright}}{{/tooltipplacement}}
+            {{$drawerstate}}show-drawer-right{{/drawerstate}}
+            {{$tooltipplacement}}left{{/tooltipplacement}}
             {{$drawercloseonresize}}1{{/drawercloseonresize}}
             {{$closebuttontext}}{{#str}}closeblockdrawer, core{{/str}}{{/closebuttontext}}
         {{/ theme_boost/drawer}}
@@ -127,7 +128,7 @@
         {{/regions.offcanvas.hasblocks}}
     {{/userisediting}}
 
-    <div id="page" data-region="mainpage" data-usertour="scroller" class="drawers {{#courseindexopen}}show-drawer-left{{/courseindexopen}} {{#blockdraweropen}}show-drawer-{{#blocksright}}right{{/blocksright}}{{^blocksright}}left{{/blocksright}}{{/blockdraweropen}} drag-container">
+    <div id="page" data-region="mainpage" data-usertour="scroller" class="drawers {{#courseindexopen}}show-drawer-left{{/courseindexopen}} {{#blockdraweropen}}show-drawer-right{{/blockdraweropen}} drag-container">
         {{#haslandingblocks}}
             {{{landingblocks}}}
         {{/haslandingblocks}}
@@ -162,7 +163,6 @@
             {{/regions.outsideleft.hasblocks}}
 
         <div id="topofscroll" class="main-inner">
-            {{#modbookingcodes}}<span id="modbookingcodes" class="d-none">{{modbookingcodes}}</span>{{/modbookingcodes}}
             <div class="drawer-toggles d-flex">
                 {{#courseindex}}
                     <div class="drawer-toggler drawer-left-toggle open-nav d-print-none">
@@ -172,7 +172,7 @@
                             data-action="toggle"
                             data-target="theme_boost-drawers-courseindex"
                             data-toggle="tooltip"
-                            data-placement="left"
+                            data-placement="right"
                             title="{{#str}}opendrawerindex, core{{/str}}"
                         >
                             <span class="sr-only">{{#str}}opendrawerindex, core{{/str}}</span>
@@ -181,25 +181,19 @@
                     </div>
                 {{/courseindex}}
                 {{#hasblocks}}
-                    <div class="drawer-toggler drawer-{{#blocksright}}right{{/blocksright}}{{^blocksright}}left{{/blocksright}}-toggle ml-auto d-print-none">
+                    <div class="drawer-toggler drawer-right-toggle ml-auto d-print-none">
                         <button
                             class="btn icon-no-margin"
                             data-toggler="drawers"
                             data-action="toggle"
                             data-target="theme_boost-drawers-blocks"
                             data-toggle="tooltip"
-                            data-placement="{{#blocksright}}right{{/blocksright}}{{^blocksright}}left{{/blocksright}}"
+                            data-placement="right"
                             title="{{#str}}opendrawerblocks, core{{/str}}"
                         >
                             <span class="sr-only">{{#str}}opendrawerblocks, core{{/str}}</span>
-                            {{#blocksright}}
                             <span class="dir-rtl-hide">{{#pix}}t/blocks_drawer, core{{/pix}}</span>
                             <span class="dir-ltr-hide">{{#pix}}t/blocks_drawer_rtl, core{{/pix}}</span>
-                            {{/blocksright}}
-                            {{^blocksright}}
-                            <span class="dir-rtl-hide">{{#pix}}t/blocks_drawer_rtl, core{{/pix}}</span>
-                            <span class="dir-ltr-hide">{{#pix}}t/blocks_drawer, core{{/pix}}</span>
-                            {{/blocksright}}
                         </button>
                     </div>
                 {{/hasblocks}}
@@ -316,6 +310,7 @@
         {{/regions.footer.hasblocks}}
 
         {{> theme_boost/footer }}
+        {{> theme_boost_union/footnote }}
     </div>
     {{{ output.standard_after_main_region_html }}}
 </div>

@@ -156,7 +156,7 @@
             <hr>
             <div class="pt-5 pb-2">
                 <div class="copyright text-center py-2">
-                    <span class="fa-regular fa-copyright mr-1"></span>2024 Universität Wien
+                    <span class="fa-regular fa-copyright mr-1"></span>2024 Wunderbyte GmbH
                 </div>
                 {{> theme_boost_union/footnote }}
                 <div class="py-2">
@@ -172,9 +172,6 @@
     </div>
 </footer>
 {{#js}}
-require(['theme_lexa/header'], function(Header) {
-    Header.init({{output.get_header_first_row_height}}, {{output.get_header_second_row_height}});
-});
 require(['theme_boost/footer-popover'], function(FooterPopover) {
     FooterPopover.init();
 });

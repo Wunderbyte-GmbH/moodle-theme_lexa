@@ -52,26 +52,6 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
     }
 
     /**
-     * Return the height of the first row of the header.
-     *
-     * @return int Header first row height.
-     */
-    public function get_header_first_row_height() {
-        // Todo, can be a setting if needed etc.
-        return 57;
-    }
-
-    /**
-     * Return the height of the second row of the header.
-     *
-     * @return int Header second row height.
-     */
-    public function get_header_second_row_height() {
-        // Todo, can be a setting if needed etc.
-        return 95;
-    }
-
-    /**
      * Return the site's logo URL, if any.
      *
      * @param int $maxwidth The maximum width, or null when the maximum width does not matter.
@@ -79,29 +59,7 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
      * @return moodle_url|false
      */
     public function get_logo_url($maxwidth = null, $maxheight = 200) {
-        return $this->image_url('UniVie_Logo_blue', 'theme_lexa');
-    }
-
-    /**
-     * Return the site's logo URL, if any.
-     *
-     * @param int $maxwidth The maximum width, or null when the maximum width does not matter.
-     * @param int $maxheight The maximum height, or null when the maximum height does not matter.
-     * @return moodle_url|false
-     */
-    public function get_logo_url_plain($maxwidth = null, $maxheight = 200) {
-        return $this->image_url('UniVie_Logo_white', 'theme_lexa');
-    }
-
-    /**
-     * Return the site's logo URL, if any.
-     *
-     * @param int $maxwidth The maximum width, or null when the maximum width does not matter.
-     * @param int $maxheight The maximum height, or null when the maximum height does not matter.
-     * @return moodle_url|false
-     */
-    public function get_logo_url_footer($maxwidth = null, $maxheight = 200) {
-        return $this->image_url('UniVie_Logo_footer', 'theme_lexa');
+        return $this->image_url('Lexa_logo', 'theme_lexa');
     }
 
     /**
@@ -112,80 +70,18 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
      * @return moodle_url|false
      */
     public function get_compact_logo_url($maxwidth = 300, $maxheight = 300) {
-        return $this->image_url('UniVie_Logo_blue', 'theme_lexa');
+        return $this->image_url('Lexa_logo', 'theme_lexa');
     }
 
     /**
-     * Return the site's second compact logo URL, if any.
+     * Return the site's logo URL, if any.
      *
      * @param int $maxwidth The maximum width, or null when the maximum width does not matter.
      * @param int $maxheight The maximum height, or null when the maximum height does not matter.
      * @return moodle_url|false
      */
-    public function get_compact_second_logo_url($maxwidth = 300, $maxheight = 300) {
-        return $this->image_url('LeXA_Logo_blue_one_line', 'theme_lexa');
-    }
-
-    /**
-     * Allow plugins to provide some content to be rendered in the navbar.
-     * The plugin must define a PLUGIN_render_navbar_output function that returns
-     * the HTML they wish to add to the navbar.
-     *
-     * @return string HTML for the navbar
-     */
-    public function navbar_plugin_output() {
-        $output = '<span id="lexa-npo" class="d-flex h-100 align-items-center">';
-
-        if ($pluginsfunction = get_plugins_with_function('render_navbar_output')) {
-            foreach ($pluginsfunction as $plugintype => $plugins) {
-                foreach ($plugins as $pluginfunction) {
-                    $output .= $pluginfunction($this);
-                }
-            }
-        }
-
-        // Give subsystems an opportunity to inject extra html content. The callback
-        // must always return a string containing valid html.
-        foreach (\core_component::get_core_subsystems() as $name => $path) {
-            if ($path) {
-                $output .= component_callback($name, 'render_navbar_output', [$this], '');
-            }
-        }
-
-         $output .= '</span>';
-
-        return $output;
-    }
-
-    /**
-     * Wrapper for header elements.
-     *
-     * This renderer function is copied and modified from /lib/outputrenderers.php
-     *
-     * @return string HTML to display the main header.
-     */
-    public function full_header() {
-        if (($this->page->pagetype == 'site-index') ||
-            ($this->page->pagetype == 'course-index-category')) {
-            return '';
-        }
-        return parent::full_header();
-    }
-
-    /**
-     * Get the mod booking codes.
-     *
-     * @return string Markup if any.
-     */
-    public function get_modbookingcodes() {
-        if ($this->page->pagelayout == 'mycourses') {
-            $toolbox = \theme_lexa\toolbox::get_instance();
-            $modbookingcodes = $toolbox->get_setting('mod_booking_codes');
-            if (!empty($modbookingcodes)) {
-                return format_text($modbookingcodes, FORMAT_PLAIN);
-            }
-        }
-        return '';
+    public function get_logo_url_footer($maxwidth = null, $maxheight = 200) {
+        return $this->image_url('Lexa_logo', 'theme_lexa');
     }
 
     /**
@@ -338,16 +234,6 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
             $template = 'core/block';
         }
         return $this->render_from_template($template, $context);
-    }
-
-    /**
-     * Hide user's role?
-     *
-     * @return bool Hide the role.
-     */
-    public function hideusersrole() {
-        $toolbox = \theme_lexa\toolbox::get_instance();
-        return $toolbox->get_setting('hideuseruserrole');
     }
 
     /**

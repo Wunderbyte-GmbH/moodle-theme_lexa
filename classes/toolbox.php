@@ -88,30 +88,6 @@ class toolbox {
             )
         );
 
-        // Booking module code(s).
-        $name = 'theme_lexa/mod_booking_codes';
-        $title = get_string('mod_booking_codes', 'theme_lexa');
-        $description = get_string('mod_booking_codesdesc', 'theme_lexa');
-        $default = '';
-        $setting = new \admin_setting_configtext($name, $title, $description, $default);
-        $settingspages['general']->add($setting);
-
-        // Navbar scrolled layout.
-        $name = 'theme_lexa/navbarscrolledlayout';
-        $title = get_string('navbarscrolledlayout', 'theme_lexa');
-        $description = get_string('navbarscrolledlayoutdesc', 'theme_lexa');
-        $default = '1fr auto 1fr';
-        $setting = new \admin_setting_configtext($name, $title, $description, $default);
-        $setting->set_updatedcallback('purge_all_caches');
-        $settingspages['general']->add($setting);
-
-        // Hide user role in the user menu.
-        $name = 'theme_lexa/hideuseruserrole';
-        $title = get_string('hideuseruserrole', 'theme_lexa');
-        $description = get_string('hideuseruserroledesc', 'theme_lexa');
-        $setting = new \admin_setting_configcheckbox($name, $title, $description, false, true, false);
-        $settingspages['general']->add($setting);
-
         // Footer settings.
         $settingspages['footer']->add(
             new \admin_setting_heading(
