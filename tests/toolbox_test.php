@@ -31,7 +31,7 @@ namespace theme_lexa;
  * Toolbox unit tests for the Lexa theme.
  * @group theme_lexa
  */
-class toolbox_test extends \advanced_testcase {
+final class toolbox_test extends \advanced_testcase {
     protected function setUp(): void {
         $this->resetAfterTest(true);
 
@@ -43,7 +43,7 @@ class toolbox_test extends \advanced_testcase {
      *
      * @covers ::convert_text_to_items
      */
-    public function test_convert_text_to_items() {
+    public function test_convert_text_to_items(): void {
         $toolbox = \theme_lexa\toolbox::get_instance();
 
         $testitems = 'First item|https://testsite.localhost/|First item title'. PHP_EOL.

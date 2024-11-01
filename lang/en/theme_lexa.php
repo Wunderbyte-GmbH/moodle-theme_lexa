@@ -23,7 +23,6 @@
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
  */
 
- $string['backtooverview'] = "Zurück zur Übersicht";
 $string['choosereadme'] = '<div class="clearfix"><h2>Lexa</h2>'.
 '<h3>About</h3>'.
 '<p>Lexa is a child theme of the Boost theme.</p>'.
@@ -75,7 +74,3 @@ $string['privacy:metadata:preference:draweropenindex'] = 'The state of the cours
 $string['privacy:request:preference:draweropenindex'] = 'The user preference "{$a->name}" has the value "{$a->value}" which represents "{$a->decoded}" for the state of the course index.';
 $string['privacy:metadata:preference:draweropenblock'] = 'The state of the block drawer.';
 $string['privacy:request:preference:draweropenblock'] = 'The user preference "{$a->name}" has the value "{$a->value}" which represents "{$a->decoded}" for the state of the block drawer.';
-
-$string['communities'] = 'Communities';
-$string['support'] = 'Support';
-$string['sortby'] = 'Sort by';

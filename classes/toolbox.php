@@ -71,7 +71,7 @@ class toolbox {
             'general' => new \admin_settingpage(
                 'theme_lexa_general',
                 get_string('generalheading', 'theme_lexa')
-            )
+            ),
         ];
 
         // General settings.
