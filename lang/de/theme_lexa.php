@@ -23,9 +23,9 @@
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
  */
 
-// Note: Only add in strings that have been translated and not duplicates of English ones.
-//       As Moodle will default to 'en' if a 'de' version is not found.  This prevents
-//       different versions of the same English string value.
+/* Note: Only add in strings that have been translated and not duplicates of English ones.
+         As Moodle will default to 'en' if a 'de' version is not found.  This prevents
+         different versions of the same English string value. */
 
 $string['region-content'] = 'Inhalt';
 $string['region-landing'] = 'Landung';
