@@ -132,5 +132,6 @@ $string['privacy:metadata:preference:draweropenblock'] = 'The state of the block
 $string['privacy:request:preference:draweropenblock'] = 'The user preference "{$a->name}" has the value "{$a->value}" which represents "{$a->decoded}" for the state of the block drawer.';
 
 $string['communities'] = 'Communities';
+$string['searchfaq'] = "How can we help you? Are you looking for an answer or a topic...";
 $string['support'] = 'Support';
 $string['sortby'] = 'Sort by';

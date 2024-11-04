@@ -34,31 +34,26 @@
     }
 }}
 
-<div class="row mb-2 w-100 d-flex justify-content-center flex-column background backgroundfaq">
-  <div class="container mw-90 d-flex justify-content-center">
-    <div class="row mb-2 w-100 d-flex justify-content-center flex-column">
-      <h1 class="lexa-h1 text-center mb-4 text-light">
-      FAQ
-      </h1>
-      <div class="urise text-center align-bottom d-flex justify-content-center" style="display:flex;">
-          <input class='my-2 wbfaqinput form-control searchfaq-{{uid}}' type='text' id='searchfaq-{{uid}}' placeholder='{{#str}} searchfaq, theme_lexa {{/str}}'>
-      </div>
-    </div>
+<div class="local_wb_faq_container local_wb_faq_container-{{uid}}">
+  <div class="col-md-6 m-auto">
+  <div class="local_wb_faq-{{uid}}"></div>
   </div>
 </div>
 
-<div id="wb_faq_searchbox" class="wb_faq_searchbox-{{uid}}"></div>
-
+{{! Has to be included this way to make it work when lazy loaded via ajax }}
 <script>
   if (typeof require == 'function') {
-    require(['local_wb_faq/searchinput'], function(search) {
-      search.init('input.searchfaq-{{uid}}', '.wb_faq_searchbox-{{uid}}', '.wb_faq_searchbox-{{uid}} .accordion-item','.wb_faq_searchbox-{{uid}} .accordion-body', {{{json}}});
-    });
+      require(['local_wb_faq/faq', 'local_wb_faq/searchinput'], function(faq,search) {
+        faq.init({{{json}}}, {{{root}}}, '{{{uid}}}');
+      });
   }
 </script>
 
 {{#js}}
-  require(['local_wb_faq/searchinput'], function(search) {
-    search.init('input.searchfaq-{{uid}}', '.wb_faq_searchbox-{{uid}}', '.wb_faq_searchbox-{{uid}} .accordion-item','.wb_faq_searchbox-{{uid}} .accordion-body', {{{json}}});
-  });
+    require(['local_wb_faq/faq', 'local_wb_faq/searchinput'], function(faq,search) {
+      faq.init({{{json}}}, {{{root}}}, '{{{uid}}}');
+    });
+    require(['local_wb_faq/edit'], function(edit) {
+      edit.init();
+    });
 {{/js}}
