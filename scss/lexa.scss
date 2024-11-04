@@ -2582,7 +2582,7 @@ text-align: start;
     text-decoration: none !important;
 }
 
-@include media-breakpoint-down(sm) {
+@include media-breakpoint-down(sm) { 
     .wbfaqinput {
         width: 100%;
     }
@@ -2613,14 +2613,41 @@ box-shadow: 0px 12px 30px 0px #0000000D;
 
 .wbfaqaccordion
 .accordion-item {
+    border-bottom: 1px solid     #D9DBE9
+}
+
+.wbfaqaccordion .accordion-item:last-child {
+    border-bottom: none;
+}
+
+.wbfaqcollapsebutton .wbfaqaccordionbuttonm {
+    display: inline-block;
+}
+
+.wbfaqcollapsebutton .wbfaqaccordionbuttonp {
+    display: none;
+}
+
+.wbfaqcollapsebutton.collapsed .wbfaqaccordionbuttonp {
+    display: inline-block;
+}
+
+.wbfaqcollapsebutton.collapsed .wbfaqaccordionbuttonm {
+    display: none;
+}
+
+.wbfaqaccordion
+.accordion-item {
     border-bottom: 1px solid#D9DBE9
 }
+
 .wbfaqaccordion .accordion-item:last-child {
     border-bottom: none;
 }
 .current-faq.wb-breadcrumb .d-flex{
     border: 1px solid #D9E1E7;
     border-radius: 10px;
+    max-width: fit-content;
 }
 .wbfaqbreadcrumb {
     display: flex;
