@@ -48,13 +48,14 @@
   <div class="d-flex">
     {{#breadcrumbs}}
       <div class="btn wbfaqbreadcrumb{{#active}} wb_faq-active{{/active}}" data-catvalue="{{datacat}}" data-action="goto" data-targetid='{{id}}'>{{name}}</div>
+       <div class="wbfaqbreadcrumb" data-catvalue="{{datacat}}">
        {{^active}}
-       <div class="wbfaqbreadcrumb" data-catvalue="{{datacat}}"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g id="icon_stroke">
         <path id="Vector" d="M5 1L17 11L5 21" stroke="#809FB8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </g>
       </svg>
-    {{/active}}
+      {{/active}}
     </div>
     {{/breadcrumbs}}
   </div>
