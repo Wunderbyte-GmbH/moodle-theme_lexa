@@ -2622,10 +2622,12 @@ box-shadow: 0px 12px 30px 0px #0000000D;
 
 .wbfaqcollapsebutton .wbfaqaccordionbuttonm {
     display: inline-block;
+    line-height: 30px;
 }
 
 .wbfaqcollapsebutton .wbfaqaccordionbuttonp {
     display: none;
+    line-height: 30px;
 }
 
 .wbfaqcollapsebutton.collapsed .wbfaqaccordionbuttonp {
@@ -2661,3 +2663,7 @@ box-shadow: 0px 12px 30px 0px #0000000D;
 .wbfaqbreadcrumb.wb_faq-active {
     color:#0063A6;
 }
+
+.wbfaqaccordion {
+    list-style: none;
+  }
