@@ -34,21 +34,32 @@
   }
 }}
 
-<div class="current-faq wb-breadcrumb">
   {{#canedit}}
+  <div class="mb-2">
   <span>
     <a class="local_wb_faq_edit_button local_wb_faq_edit_category btn btn-secondary" data-faqroot="{{root}}" data-uid="{{uid}}">{{#str}} addcategory, local_wb_faq {{/str}} <i class="fa fa-plus"></i></a>
     <a class="local_wb_faq_edit_button local_wb_faq_edit_question btn btn-secondary" data-faqroot="{{root}}" data-uid="{{uid}}">{{#str}} addquestion, local_wb_faq {{/str}} <i class="fa fa-plus"></i></a>
   </span>
+  </div>
   {{/canedit}}
-
+{{#breadcrumbs.1}}
+<div class="current-faq wb-breadcrumb">
   <!-- Existing code for displaying breadcrumbs -->
-  <div class="d-flex mt-2">
+  <div class="d-flex">
     {{#breadcrumbs}}
-      <div class="btn btn-primary mb-2 px-4 mr-2 wbfaqbreadcrumb" data-catvalue="{{datacat}}" data-action="goto" data-targetid='{{id}}'>{{name}}</div>
+      <div class="btn wbfaqbreadcrumb{{#active}} wb_faq-active{{/active}}" data-catvalue="{{datacat}}" data-action="goto" data-targetid='{{id}}'>{{name}}</div>
+       {{^active}}
+       <div class="wbfaqbreadcrumb" data-catvalue="{{datacat}}"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="icon_stroke">
+        <path id="Vector" d="M5 1L17 11L5 21" stroke="#809FB8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+      </svg>
+    {{/active}}
+    </div>
     {{/breadcrumbs}}
   </div>
 </div>
+{{/breadcrumbs.1}}
 
 <ul class="draggable-cat list-unstyled">
   {{#categories}}
@@ -61,8 +72,6 @@
       <h2 class="lexa-h2">{{name}}</h2>
 {{/headertitle}}
   {{/entries.0}}
-
-
 
 <ul class="accordion draggable list-unstyled wbfaqaccordion" id="wb-faq-accordion">
   {{#entries}}
