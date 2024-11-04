@@ -45,8 +45,10 @@
       <h5 class="accordion-header m-0" id="heading-{{id}}-{{uid}}">
         <button class="btn btn-link btn-block text-left collapsed wbfaqcollapsebutton d-flex lexa-h4 text-dark" type="button" data-toggle="faqcollapse" data-target="#collapse-{{id}}-{{uid}}" aria-expanded="{{#open}}true{{/open}}{{^open}}false{{/open}}" aria-controls="collapse-{{id}}-{{uid}}">
          {{title}}
+         {{^canedit}}
           <i class="fa-solid fa-plus wbfaqaccordionbuttonp ml-auto"></i>
           <i class="fa-solid fa-minus wbfaqaccordionbuttonm ml-auto"></i>
+          {{/canedit}}
           {{#canedit}}
             <span class="wb_faq_edit_entry_elements">
               {{#enabled}}
