@@ -2582,7 +2582,7 @@ text-align: start;
     text-decoration: none !important;
 }
 
-@include media-breakpoint-down(sm) { 
+@include media-breakpoint-down(sm) {
     .wbfaqinput {
         width: 100%;
     }
@@ -2623,6 +2623,10 @@ box-shadow: 0px 12px 30px 0px #0000000D;
 .wbfaqcollapsebutton .wbfaqaccordionbuttonm {
     display: inline-block;
     line-height: 30px;
+}
+
+.local_wb_faq_container {
+    margin-top: 50px;
 }
 
 .wbfaqcollapsebutton .wbfaqaccordionbuttonp {
