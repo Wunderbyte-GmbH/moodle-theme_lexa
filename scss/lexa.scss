@@ -2582,7 +2582,7 @@ text-align: start;
     text-decoration: none !important;
 }
 
-@include media-breakpoint-down(sm) { 
+@include media-breakpoint-down(sm) {
     .wbfaqinput {
         width: 100%;
     }
@@ -2613,9 +2613,24 @@ box-shadow: 0px 12px 30px 0px #0000000D;
 
 .wbfaqaccordion
 .accordion-item {
-    border-bottom: 1px solid     #D9DBE9
+    border-bottom: 1px solid#D9DBE9
 }
-
 .wbfaqaccordion .accordion-item:last-child {
     border-bottom: none;
+}
+.current-faq.wb-breadcrumb .d-flex{
+    border: 1px solid #D9E1E7;
+    border-radius: 10px;
+}
+.wbfaqbreadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #809FB8;
+}
+.btn.wbfaqbreadcrumb {
+    padding: 10px 20px;
+}
+.wbfaqbreadcrumb.wb_faq-active {
+    color:#0063A6;
 }
