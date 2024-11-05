@@ -25,10 +25,10 @@
 
 namespace theme_lexa\output;
 
-use block_contents;
-use block_move_target;
-use coding_exception;
-use html_writer;
+use core\exception\coding_exception;
+use core\output\html_writer;
+use core_block\output\block_contents;
+use core_block\output\block_move_target;
 use stdClass;
 
 /**

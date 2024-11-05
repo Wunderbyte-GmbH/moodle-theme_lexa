@@ -41,7 +41,7 @@ function theme_lexa_get_pre_scss($theme) {
 
     static $boostuniontheme = null;
     if (empty($boostuniontheme)) {
-        $boostuniontheme = theme_config::load('boost_union'); // Needs to be the Boost Union theme so that we get its settings.
+        $boostuniontheme = \core\output\theme_config::load('boost_union'); // Needs to be the Boost Union theme so that we get its settings.
     }
 
     $scss = '';
@@ -73,7 +73,7 @@ function theme_lexa_get_main_scss_content($theme) {
 
     static $boostuniontheme = null;
     if (empty($boostuniontheme)) {
-        $boostuniontheme = theme_config::load('boost_union'); // Needs to be the Boost Union theme so that we get its settings.
+        $boostuniontheme = \core\output\theme_config::load('boost_union'); // Needs to be the Boost Union theme so that we get its settings.
     }
     $scss = theme_boost_union_get_main_scss_content($boostuniontheme);
 
@@ -94,7 +94,7 @@ function theme_lexa_get_main_scss_content($theme) {
 function theme_lexa_get_extra_scss($theme) {
     static $boostuniontheme = null;
     if (empty($boostuniontheme)) {
-        $boostuniontheme = theme_config::load('boost_union'); // Needs to be the Boost Union theme so that we get its settings.
+        $boostuniontheme = \core\output\theme_config::load('boost_union'); // Needs to be the Boost Union theme so that we get its settings.
     }
 
     $scss = theme_boost_union_get_extra_scss($boostuniontheme);

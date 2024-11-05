@@ -1,6 +1,10 @@
 Version Information
 ===================
 
+Version 405.0.1
+---------------
+1. Minimal theme with the parent of Boost Union.
+
 Version 404.0.1
 ---------------
 1. Minimal theme with the parent of Boost Union.

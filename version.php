@@ -25,13 +25,13 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version = 2024102700;
-$plugin->requires = 2024042200.00; // 4.4 (Build: 20240422).
-$plugin->supported = [404, 404];
+$plugin->version = 2024110500;
+$plugin->requires = 2024100700.00; // 4.5 (Build: 20241007).
+$plugin->supported = [405, 405];
 $plugin->component = 'theme_lexa';
 $plugin->maturity = MATURITY_ALPHA;
-$plugin->release = '404.0.1';
+$plugin->release = '405.0.1';
 $plugin->dependencies = [
-    'theme_boost'  => 2024042200, // M4.4.
-    'theme_boost_union'  => 2024060103, // v4.4-r4.
+    'theme_boost'  => 2024100700, // M4.5.
+    'theme_boost_union'  => 2024100701, // v4.5-r2.
 ];
