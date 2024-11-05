@@ -33,6 +33,7 @@ namespace theme_lexa;
  */
 final class toolbox_test extends \advanced_testcase {
     protected function setUp(): void {
+        parent::setUp();
         $this->resetAfterTest(true);
 
         set_config('theme', 'lexa');
