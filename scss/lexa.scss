@@ -1437,8 +1437,23 @@ body.limitedwidth #page.drawers .footer-popover {
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: 1fr;
         grid-column-gap: 20px;
-        border-bottom: 1px solid #D9E1E7;
     }
+
+
+    // .mod-booking-card-content {
+
+    //     position: relative;
+    //     border-bottom: none !important;
+    //     overflow: visible;
+    //   }
+    .mod-booking-card::after {
+      content: '';
+      position: absolute;
+      border-bottom: 1px solid #D9E1E7;
+      bottom: 20px;
+      left: -40px;
+      width: 110vw;
+  }
 
     .wunderbyte-table-grid {
       padding: 0px;
@@ -2122,11 +2137,12 @@ h4 {
     line-height: 18px;
     text-align: left;
     padding: 6px 8px;
-    border-radius: 150px;
+    border-radius: 15px;
 }
 
 .pill-blue {
     background: #CCEBFF;
+    margin-bottom: 10px;
 }
 
 .lexamenu .filterelement.datepicker-input[type="time"] {
@@ -2241,6 +2257,17 @@ h4 {
         text-align: center;
         width: 100%;
     }
+
+    .wunderbyte-table-grid .placeholderimage {
+        border-radius: 7px;
+    }
+
+    
+    .wunderbyte-table-grid .list-group-item img {
+        /* eslint-disable-next-line */
+        border-radius: 7px !important;
+    }
+
 }
 
 #footnote a {
@@ -2268,6 +2295,7 @@ text-align: start;
     align-items: center;
     gap: 17px;
     flex-shrink: 0;
+    margin-top: 40px;
 }
 
 @include media-breakpoint-down(sm) {
@@ -2282,7 +2310,19 @@ text-align: start;
 
     .infoslidermobile .carousel-indicators .active {
         background-color:  #809FB8;
+        width: 15px;
+        height: 15px;
         }
+    
+    .infoslidermobile .carousel-indicators li {
+        width: 15px;
+        height: 15px;
+        }
+
+    .infoslidermobile .carousel-indicators {
+         margin-top: 20px;
+    }
+
 
     .reverseonmobile {
         text-align: center;
@@ -2586,6 +2626,10 @@ text-align: start;
     .wbfaqinput {
         width: 100%;
     }
+
+    .mod-booking-card-body .description  {
+        display: none;
+    }
 }
 
 .wbfaqaccordion {
@@ -2671,3 +2715,39 @@ box-shadow: -5px 0px 10px 0px #00000005;
   #wb_faq_searchbox .wbfaqaccordion {
     box-shadow: none;
   }
+
+  .mod-booking-card-body .description {
+    margin-top: 10px;
+    font-family: Roboto;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.125rem;
+  }
+
+  .mod-booking-card-infos .bg-secondary.rounded.category {
+    margin-bottom: 10px;
+  }
+
+  .mod-booking-card-infos .bg-secondary.rounded.organisation {
+    margin-bottom: 10px;
+  } 
+
+  .mod-booking-card-infos .kompetenzen {
+    margin-left: -26px;
+  }
+  .bg-secondary.rounded.category:first-child {
+    margin-left: 26px;
+  }
+
+.price-card .uriseimage, .price-card .placeholderimage {
+    max-height: 260px;
+    object-fit: cover;
+}    
+.price-card .placeholderimage {
+  height: 260px;
+}
+
+.booking-button-mainarea.urisebutton.alert-warning {
+    background: var(--interface-light_content, #D9E1E7);
+    }
