@@ -2268,6 +2268,18 @@ h4 {
         border-radius: 7px !important;
     }
 
+    #page-mod-booking-optionview .page-context-header {
+        display: none !important;
+      }
+      
+      #page-mod-booking-optionview #topofscroll {
+        margin-top: 0;
+      }
+
+      #page-mod-booking-optionview .price-card {
+        margin-top: 30px;
+      }
+
 }
 
 #footnote a {
