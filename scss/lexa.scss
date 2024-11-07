@@ -2258,11 +2258,16 @@ h4 {
         width: 100%;
     }
 
+    .mobile100center img{
+        max-width: 140px !important;
+        max-height: 140px !important;
+    }
+
     .wunderbyte-table-grid .placeholderimage {
         border-radius: 7px;
     }
 
-    
+
     .wunderbyte-table-grid .list-group-item img {
         /* eslint-disable-next-line */
         border-radius: 7px !important;
@@ -2271,7 +2276,7 @@ h4 {
     #page-mod-booking-optionview .page-context-header {
         display: none !important;
       }
-      
+
       #page-mod-booking-optionview #topofscroll {
         margin-top: 0;
       }
@@ -2296,7 +2301,7 @@ h4 {
         position: relative;
         margin-bottom: 20px;
       }
-      
+
       .filtermobilewrap {
         margin: 0 auto;
         margin-top: 0 !important;
@@ -2347,7 +2352,7 @@ text-align: start;
         width: 15px;
         height: 15px;
         }
-    
+
     .infoslidermobile .carousel-indicators li {
         width: 15px;
         height: 15px;
@@ -2765,7 +2770,7 @@ box-shadow: -5px 0px 10px 0px #00000005;
 
   .mod-booking-card-infos .bg-secondary.rounded.organisation {
     margin-bottom: 10px;
-  } 
+  }
 
   .mod-booking-card-infos .kompetenzen {
     margin-left: -26px;
@@ -2777,7 +2782,7 @@ box-shadow: -5px 0px 10px 0px #00000005;
 .price-card .uriseimage, .price-card .placeholderimage {
     max-height: 260px;
     object-fit: cover;
-}    
+}
 .price-card .placeholderimage {
   height: 260px;
 }
@@ -2789,47 +2794,47 @@ box-shadow: -5px 0px 10px 0px #00000005;
     .wb-bt {
         border: 1px solid transparent;
       }
-      
+
       .wbanbieter .lexa-custom-collapse {
         padding: 0;
       }
-      
+
       .wbanbieter .lexa-custom-collapse a {
         margin-bottom: 0;
       }
-      
+
       .wbanbieter {
            border-bottom: 1px solid #99B2C6 !important;
           border-radius: 0;
           padding-bottom: 40px;
       }
-      
-      .wbanbieter  
+
+      .wbanbieter
       .lexa-custom-icon {
         margin-right: none;
       }
-      
-      .wbanbieter 
+
+      .wbanbieter
       .collapsed
       .lexa-custom-icon  .icon-down{
         display: inline-flex;
         width: 18px;
       }
-      
-      .wbanbieter 
+
+      .wbanbieter
       .collapsed
       .lexa-custom-icon.icon-down {
         display: none;
       }
-      
-      
-      .wbanbieter  
+
+
+      .wbanbieter
       .lexa-custom-collapse
       .text-primary:not(.collapsed)
       .lexa-custom-icon.icon-right {
         display: none;
       }
-    
+
     .wbrowstag {
         padding: 5px 10px !important;
         border-radius: 6px !important;
