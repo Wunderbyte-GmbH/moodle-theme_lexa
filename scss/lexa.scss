@@ -2280,6 +2280,28 @@ h4 {
         margin-top: 30px;
       }
 
+      .wunderbyteTableSelect {
+        margin-left: 0;
+        margin-right: 0;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        background: transparent;
+        border: 1px solid black;
+        color: black;
+        border-radius: 12px;
+        text-decoration: none;
+        position: relative;
+        margin-bottom: 20px;
+      }
+      
+      .filtermobilewrap {
+        margin: 0 auto;
+        margin-top: 0 !important;
+      }
+
 }
 
 #footnote a {
@@ -2763,3 +2785,47 @@ box-shadow: -5px 0px 10px 0px #00000005;
 .booking-button-mainarea.urisebutton.alert-warning {
     background: var(--interface-light_content, #D9E1E7);
     }
+
+    .wb-bt {
+        border: 1px solid transparent;
+      }
+      
+      .wbanbieter .lexa-custom-collapse {
+        padding: 0;
+      }
+      
+      .wbanbieter .lexa-custom-collapse a {
+        margin-bottom: 0;
+      }
+      
+      .wbanbieter {
+           border-bottom: 1px solid #99B2C6 !important;
+          border-radius: 0;
+          padding-bottom: 40px;
+      }
+      
+      .wbanbieter  
+      .lexa-custom-icon {
+        margin-right: none;
+      }
+      
+      .wbanbieter 
+      .collapsed
+      .lexa-custom-icon  .icon-down{
+        display: inline-flex;
+        width: 18px;
+      }
+      
+      .wbanbieter 
+      .collapsed
+      .lexa-custom-icon.icon-down {
+        display: none;
+      }
+      
+      
+      .wbanbieter  
+      .lexa-custom-collapse
+      .text-primary:not(.collapsed)
+      .lexa-custom-icon.icon-right {
+        display: none;
+      }
