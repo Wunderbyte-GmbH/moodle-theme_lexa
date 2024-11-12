@@ -2857,6 +2857,10 @@ box-shadow: -5px 0px 10px 0px #00000005;
     border-radius: 6px !important;
 }
 
+.urise-courses-container .wunderbyteTableFilter ul.wunderbyterFilterList li {
+    overflow-x: hidden;
+}
+
 @media (max-width: 768px) {
         .drawer-primary .drawercontent .list-group .list-group-item {
           border: none;
