@@ -2856,3 +2856,19 @@ box-shadow: -5px 0px 10px 0px #00000005;
         padding: 5px 10px !important;
         border-radius: 6px !important;
     }
+
+    @media (max-width: 768px) {
+        .drawer-primary .drawercontent .list-group .list-group-item {
+          border: none;
+          height:52px;
+          padding: 17px 0px 17px 25px
+          }
+        .drawer-primary .drawercontent
+        .footer-content-information .logo {
+          margin-bottom: calc(45px - 0.625rem)
+        }
+        .drawer-primary 
+        .logo {
+          margin-left: 20px;
+        }
+        }
