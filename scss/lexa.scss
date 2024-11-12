@@ -2808,67 +2808,67 @@ box-shadow: -5px 0px 10px 0px #00000005;
     background: var(--interface-light_content, #D9E1E7);
     }
 
-    .wb-bt {
-        border: 1px solid transparent;
-      }
-
-      .wbanbieter .lexa-custom-collapse {
-        padding: 0;
-      }
-
-      .wbanbieter .lexa-custom-collapse a {
-        margin-bottom: 0;
-      }
-
-      .wbanbieter {
-           border-bottom: 1px solid #99B2C6 !important;
-          border-radius: 0;
-          padding-bottom: 40px;
-      }
-
-      .wbanbieter
-      .lexa-custom-icon {
-        margin-right: none;
-      }
-
-      .wbanbieter
-      .collapsed
-      .lexa-custom-icon  .icon-down{
-        display: inline-flex;
-        width: 18px;
-      }
-
-      .wbanbieter
-      .collapsed
-      .lexa-custom-icon.icon-down {
-        display: none;
-      }
-
-
-      .wbanbieter
-      .lexa-custom-collapse
-      .text-primary:not(.collapsed)
-      .lexa-custom-icon.icon-right {
-        display: none;
-      }
-
-    .wbrowstag {
-        padding: 5px 10px !important;
-        border-radius: 6px !important;
+.wb-bt {
+    border: 1px solid transparent;
     }
 
-    @media (max-width: 768px) {
+    .wbanbieter .lexa-custom-collapse {
+    padding: 0;
+    }
+
+    .wbanbieter .lexa-custom-collapse a {
+    margin-bottom: 0;
+    }
+
+    .wbanbieter {
+        border-bottom: 1px solid #99B2C6 !important;
+        border-radius: 0;
+        padding-bottom: 40px;
+    }
+
+    .wbanbieter
+    .lexa-custom-icon {
+    margin-right: none;
+    }
+
+    .wbanbieter
+    .collapsed
+    .lexa-custom-icon  .icon-down{
+    display: inline-flex;
+    width: 18px;
+    }
+
+    .wbanbieter
+    .collapsed
+    .lexa-custom-icon.icon-down {
+    display: none;
+    }
+
+
+    .wbanbieter
+    .lexa-custom-collapse
+    .text-primary:not(.collapsed)
+    .lexa-custom-icon.icon-right {
+    display: none;
+    }
+
+.wbrowstag {
+    padding: 5px 10px !important;
+    border-radius: 6px !important;
+}
+
+@media (max-width: 768px) {
         .drawer-primary .drawercontent .list-group .list-group-item {
           border: none;
-          height:52px;
-          padding: 17px 0px 17px 25px
+          height: 52px;
+          padding: 17px 0px 17px 25px;
           }
         .drawer-primary .drawercontent
         .footer-content-information .logo {
-          margin-bottom: calc(45px - 0.625rem)
+          margin-bottom: calc(45px - 0.625rem);
         }
         .drawer-primary 
         .logo {
           margin-left: 20px;
         }
-        }
+}
