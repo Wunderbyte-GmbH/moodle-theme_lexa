@@ -2212,7 +2212,6 @@ h4 {
     }
     #lexa-drawer-logo {
         height: 25px;
-        padding-left: calc(1.25rem - 10px);
         width: 77px !important;
     }
     .drawer-primary .list-group {
@@ -2861,6 +2860,21 @@ box-shadow: -5px 0px 10px 0px #00000005;
     overflow-x: hidden;
 }
 
+.logomobile {
+    display: none;
+}
+.lexa-faqcat {
+    padding: 20px 0;
+    border-bottom: 1px solid #D9DBE9;
+}
+
+.wbfaqinput {
+    max-width: 628px !important;
+    width: 100% !important;
+    height: 55px !important;
+    padding-left: 21px !important;
+}
+
 @media (max-width: 768px) {
         .drawer-primary .drawercontent .list-group .list-group-item {
           border: none;
@@ -2871,8 +2885,26 @@ box-shadow: -5px 0px 10px 0px #00000005;
         .footer-content-information .logo {
           margin-bottom: calc(45px - 0.625rem);
         }
-        .drawer-primary 
+        #lexa-navbar-brand-second-row
         .logo {
           margin-left: 20px;
+        }
+        .drawercontent {
+            background: #fff !important;
+        }
+        .logomobile {
+            display: block;
+            width: 100px;
+            margin-left: 20px;
+        }
+        #lexa-navbar-scrolled-only {
+            width: 100%;
+            justify-content: space-between;
+        }
+        #lexa-navbar-scrolled {
+            height: 62px;
+        }
+        .navbar .navbar-brand-second-row .logo {
+            margin-left: 20px;
         }
 }
