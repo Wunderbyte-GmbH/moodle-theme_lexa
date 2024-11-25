@@ -43,3 +43,34 @@
         }
     }
 }
+
+// User menu.
+.usermenu {
+    #user-menu-toggle {
+        &.dropdown-toggle::after {
+            display: none;
+        }
+    }
+
+    #user-action-menu {
+        border: 0;
+        border-radius: 0;
+        bottom: 0;
+        height: calc(100vh - 1px - var(--navbar-height));
+        position: fixed;
+        right: 0;
+        top: calc (var(--navbar-height) + 1px);
+
+        #usermenu-carousel {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: center;
+            margin: auto 0;
+        }
+
+        .dropdown-divider {
+            display: none;
+        }
+    }
+}
