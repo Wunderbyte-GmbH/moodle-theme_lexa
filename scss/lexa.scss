@@ -56,10 +56,11 @@
         border: 0;
         border-radius: 0;
         bottom: 0;
-        height: calc(100vh - 1px - var(--navbar-height));
+        height: 100vh;
+        max-height: 100vh;
         position: fixed;
         right: 0;
-        top: calc (var(--navbar-height) + 1px);
+        top: 0;
 
         #usermenu-carousel {
             display: flex;
