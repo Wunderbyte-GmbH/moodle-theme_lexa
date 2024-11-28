@@ -2335,6 +2335,10 @@ text-align: start;
 }
 
 @include media-breakpoint-down(sm) {
+    .wb_news_slide {
+        flex-direction: column-reverse;
+    }
+
     .alleveranstaltungen {
         height: auto !important;
            font-size: 14px !important;
