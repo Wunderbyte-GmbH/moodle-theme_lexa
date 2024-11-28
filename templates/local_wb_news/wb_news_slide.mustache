@@ -34,9 +34,8 @@
         "tags": ["tag1", "tag2"]
     }
 }}
-
 <div class="d-flex justify-content-between align-items-center wb_news_slide">
-    <div class="left-panel{{#lightmode}} text-light{{/lightmode}}{{#cssclasses}} {{cssclasses}}{{/cssclasses}}">
+    <div class="col-md-6 {{#lightmode}} text-light{{/lightmode}}{{#cssclasses}} {{cssclasses}}{{/cssclasses}}">
         {{#tags}} <span class="badge badge-success">{{.}}</span>{{/tags}}
         {{#headline}}
             <h1>{{{headline}}}</h1>
@@ -59,7 +58,7 @@
         {{> local_wb_news/editsinglenews}}
         {{/editmode}}
     </div>
-    <div class="right-panel">
+    <div class="col-md-6">
         <div class="image-container w-100">
             <img src="{{bgimage}}{{headerimage}}" class="img-fluid w-100" alt="{{bgimagetext}}{{headerimagetext}}">
             {{#imagecaption}}
