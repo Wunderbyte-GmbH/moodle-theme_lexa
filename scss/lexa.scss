@@ -2878,7 +2878,7 @@ box-shadow: -5px 0px 10px 0px #00000005;
 }
 
 @media (max-width: 768px) {
-        .drawer-primary .drawercontent .list-group .list-group-item {
+        .drawer-primary .drawercontent .list-group a.list-group-item {
           border: none;
           height: 52px;
           padding: 17px 0px 17px 25px;
