@@ -2335,6 +2335,18 @@ text-align: start;
 }
 
 @include media-breakpoint-down(sm) {
+    [class*="col-"] {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+    .wunderbyte-table-grid.rows-container {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+      
+      
+
     .wb_news_slide {
         flex-direction: column-reverse;
     }
