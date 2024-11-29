@@ -37,10 +37,10 @@
             <div class="row" style="min-height: 280px;">
                 <div class="col-md-5">
                     {{#headerimage}}
-                    <img class="h-100 img-fluid rounded" style="object-fit:cover;" src="{{headerimage}}" alt="{{headerimagetext}}">
+                    <img class="h-100 img-fluid rounded" style="object-fit:cover;" src="{{headerimage}}" aria-label="{{headerimagetext}}">
                     {{/headerimage}}
                     {{#bgimage}}
-                    <img class="h-100 img-fluid rounded" style="object-fit:cover;"  src="{{bgimage}}" alt="{{bgimagetext}}">
+                    <img class="h-100 img-fluid rounded" style="object-fit:cover;"  src="{{bgimage}}" aria-label="{{bgimagetext}}">
                     {{/bgimage}}
                 </div>
                 <div class="col-md-7">
@@ -57,7 +57,7 @@
                         <p class="card-text">{{shortdescription}}</p>
                         <div class="media d-flex align-items-center mt-auto">
                           {{#profileurl}}
-                            <img src="{{profileurl}}" class="img-fluid rounded-circle profileimg" alt="Profile Picture of {{fullname}}">
+                            <img src="{{profileurl}}" class="img-fluid rounded-circle profileimg" aria-label="{{#str}} profilepicturealttext, local_wb_news, {{fullname}} {{/str}}">
                         {{/profileurl}}
                             <div class="media-body d-flex align-items-center ml-2">
                                 <h6 class="m-0 text-primary">{{fullname}}</h6>

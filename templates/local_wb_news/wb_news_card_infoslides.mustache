@@ -35,10 +35,10 @@
 <div class="card h-100 wb_news_card_infoslides{{#lightmode}} wb_news-light{{/lightmode}}{{#cssclasses}} {{cssclasses}}{{/cssclasses}} text-center justify-content-center infoslide" style="background-color: {{{bgcolor}}}; border: none;">
 <div class="infoslideimg d-flex align-items-start justify-content-center" style="height: 260px">
     {{#headerimage}}
-    <img class="img-fluid wb_news-headerimage" style="object-fit: contain;" src="{{headerimage}}" alt="{{headerimagetext}}">
+    <img class="img-fluid wb_news-headerimage" style="object-fit: contain;" src="{{headerimage}}" aria-label="{{headerimagetext}}">
     {{/headerimage}}
     {{#bgimage}}
-    <img class="img-fluid wb_news-headerimage" style="object-fit: contain;"  src="{{bgimage}}" alt="{{bgimagetext}}">
+    <img class="img-fluid wb_news-headerimage" style="object-fit: contain;"  src="{{bgimage}}" aria-label="{{bgimagetext}}">
     {{/bgimage}}
 </div>
 
@@ -49,7 +49,7 @@
     </div>
     {{#icon}}
     <div class="text-center">
-        <img src="{{icon}}" class="card-icon mb-2 text-center" alt="{{icontext}}">
+        <img src="{{icon}}" class="card-icon mb-2 text-center" aria-label="{{icontext}}">
     </div>
     {{/icon}}
     <h5 class="card-title">{{{headline}}}</h5>

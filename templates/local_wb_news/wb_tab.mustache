@@ -56,7 +56,7 @@
             <div class="col-lg-6">
                 {{#icon}}
                 <div class="text-left">
-                    <img src="{{icon}}" class="card-icon mb-2 text-center" alt="{{icontext}}">
+                    <img src="{{icon}}" class="card-icon mb-2 text-center" aria-label="{{icontext}}">
                 </div>
                 {{/icon}}
                 {{#tags}} <span class="badge badge-success">{{.}}</span>{{/tags}}
@@ -72,7 +72,7 @@
             </div>
             <div class="col-lg-6">
             {{#bgimage}}
-                <img src="{{bgimage}}" class="img-fluid w-100" alt="{{bgimagetext}}">
+                <img src="{{bgimage}}" class="img-fluid w-100" aria-label="{{bgimagetext}}">
             {{/bgimage}}
             </div>
         </div>
