@@ -35,10 +35,10 @@
 <div class="card h-100 wb_news_card_blog{{#lightmode}} wb_news-light{{/lightmode}}{{#cssclasses}} {{cssclasses}}{{/cssclasses}}" style="background-color: {{{bgcolor}}}; border: none;">
     {{#detailviewurl}}<a href="{{detailviewurl}}" class="stretched-link"></a> {{/detailviewurl}}
     {{#headerimage}}
-    <img class="w-100 img-fluid wb_news-headerimage h-50" style="object-fit:cover;" src="{{headerimage}}" alt="{{headerimagetext}}">
+    <img class="w-100 img-fluid wb_news-headerimage h-50" style="object-fit:cover;" src="{{headerimage}}" aria-label="{{headerimagetext}}">
     {{/headerimage}}
     {{#bgimage}}
-    <img class="w-100 img-fluid wb_news-headerimage h-50" style="object-fit:cover;"  src="{{bgimage}}" alt="{{bgimagetext}}">
+    <img class="w-100 img-fluid wb_news-headerimage h-50" style="object-fit:cover;"  src="{{bgimage}}" aria-label="{{bgimagetext}}">
     {{/bgimage}}
 
 
@@ -49,7 +49,7 @@
     </div>
     {{#icon}}
     <div class="text-center">
-        <img src="{{icon}}" class="card-icon mb-2 text-center" alt="{{icontext}}">
+        <img src="{{icon}}" class="card-icon mb-2 text-center" aria-label="{{icontext}}">
     </div>
     {{/icon}}
     <h5 class="card-title font-weight-normal">{{{headline}}}</h5>
@@ -62,7 +62,7 @@
     <div class="row no-gutters wb_news-userinfo">
         <div class="d-flex flex-grow-1 align-items-center">
             {{#profileurl}}
-                <img src="{{profileurl}}" class="img-fluid rounded-circle profileimg" alt="Profile Picture of {{fullname}}">
+                <img src="{{profileurl}}" class="img-fluid rounded-circle profileimg" aria-label="{{#str}} profilepicture, local_wb_news, {{fullname}} {{/str}}">
             {{/profileurl}}
             <span class="pl-2 smaller text-primary lexa-b2">{{fullname}}</span>
             <span class="smaller pl-2 ml-auto" style="color: #809FB8">{{{publishedon}}}</span>

@@ -34,11 +34,11 @@
             <div class="col-md-12">
                 <div class="row">
                 {{#bgimage}}
-                    <img class="img-fluid rounded-lg" src="{{bgimage}}" alt="{{bgimagetext}}"/>
+                    <img class="img-fluid rounded-lg" src="{{bgimage}}" aria-label="{{bgimagetext}}"/>
                     {{#additionaldata.copyright}} <p class="copyrighttext">{{.}}</p> {{/additionaldata.copyright}}
                 {{/bgimage}}
                 {{#headerimage}}
-                    <img class="img-fluid rounded-lg" src="{{headerimage}}" alt="{{headerimagetext}}"/>
+                    <img class="img-fluid rounded-lg" src="{{headerimage}}" aria-label="{{headerimagetext}}"/>
                     {{#additionaldata.copyright}} <p class="copyrighttext">{{.}}</p> {{/additionaldata.copyright}}
                 {{/headerimage}}
                 </div>
@@ -60,7 +60,7 @@
                 <div class="content"><p>{{{description}}}</p>
                 </div>
                 <div class="row no-gutters wb_news-userinfo align-items-center justify-content-start w-100">
-                        <img src="{{profileurl}}" class="img-fluid rounded-circle" style="height: 50px" alt="Profile Picture">
+                        <img src="{{profileurl}}" class="img-fluid rounded-circle" style="height: 50px" aria-label="{{#str}} profilepicture, local_wb_news, {{fullname}} {{/str}}">
                         <span class="pl-2 smaller text-primary"><b>{{fullname}}</b></span>
                 </div>
             </div>
