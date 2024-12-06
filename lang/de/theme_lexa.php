@@ -23,7 +23,7 @@
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later.
  */
 
-$string['backtooverview'] = "Back to overview";
+$string['backtooverview'] = "Zurück";
 $string['choosereadme'] = '<div class="clearfix"><h2>Lexa</h2>'.
 '<h3>About</h3>'.
 '<p>Lexa is a child theme of the Boost theme.</p>'.
