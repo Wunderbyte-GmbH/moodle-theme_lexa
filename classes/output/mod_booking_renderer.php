@@ -201,9 +201,10 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
                 $competencies = explode(',', $settings->customfields['kompetenzen']);
             }
 
+            $organisations = shortcodes::get_kompetenzen();
             if (count($competencies) > 1) {
                 $returnorgas = [];
-                $organisations = shortcodes::get_kompetenzen();
+
                 foreach ($settings->customfields['kompetenzen'] as $orgaid) {
                     if (isset($organisations[$orgaid])) {
                         $returnorgas[] = $organisations[$orgaid]['localizedname'];
@@ -213,6 +214,9 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
                 return $returnorgas;
             } else {
                 $value = reset($competencies);
+                if (isset($organisations[$value])) {
+                    $value = $organisations[$value]['localizedname'];
+                }
                 return [$value];
             }
         }
