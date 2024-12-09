@@ -4,6 +4,8 @@ Version Information
 Version 405.0.1
 ---------------
 1. Minimal theme with the parent of Boost Union.
+2. Move 'main' role from the 'main_content' method because of the landing block region being
+   complimentary, therefore the it is specified in the the drawers.mustache file instead.
 
 Version 404.0.1
 ---------------

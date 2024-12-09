@@ -52,6 +52,23 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
     }
 
     /**
+     * Returns standard main content placeholder.
+     * Designed to be called in theme layout.php files.
+     *
+     * @return string HTML fragment.
+     */
+    public function main_content() {
+        // This is here because it is the only place we can inject the "main" role over the entire main content area
+        // without requiring all theme's to manually do it, and without creating yet another thing people need to
+        // remember in the theme.  But in 'Lexa' this is needed to be overridden because of the landing block region
+        // being complimentary, therefore the 'main' role is specified in the the drawers.mustache file.
+        // This is an unfortunate hack. DO NO EVER add anything more here.
+        // DO NOT add classes.
+        // DO NOT add an id.
+        return '<div>' . $this->unique_main_content_token . '</div>';
+    }
+
+    /**
      * Return the site's logo URL, if any.
      *
      * @param int $maxwidth The maximum width, or null when the maximum width does not matter.
