@@ -2893,6 +2893,10 @@ box-shadow: -5px 0px 10px 0px #00000005;
     padding-left: 21px !important;
 }
 
+.wb_news .wb_news_card_crosslinks {
+    border: none;
+}
+
 @media (max-width: 768px) {
         .drawer-primary .drawercontent .list-group a.list-group-item {
           border: none;
