@@ -35,12 +35,15 @@
     }
 }}
 <div class="d-flex justify-content-between align-items-center wb_news_slide">
-    <div class="col-md-6 {{#lightmode}} text-light{{/lightmode}}{{#cssclasses}} {{cssclasses}}{{/cssclasses}}">
+    <div class="col-md-1"></div>
+    <div class="col-md-3 {{#lightmode}} text-light{{/lightmode}}{{#cssclasses}} {{cssclasses}}{{/cssclasses}}">
         {{#tags}} <span class="badge badge-success">{{.}}</span>{{/tags}}
         {{#headline}}
-            <h1>{{{headline}}}</h1>
+            <h2 class="lexa-h2">{{{headline}}}</h2>
         {{/headline}}
+        <span class="lexa-input">
         {{{description}}}
+        </span>
         {{#btntext}}
         <a href="{{btnlink}}" class="btn btn-primary mt-4">{{btntext}}</a>
         {{/btntext}}
@@ -60,6 +63,7 @@
         {{> local_wb_news/editsinglenews}}
         {{/editmode}}
     </div>
+    <div class="col-md-1"></div>
     <div class="col-md-6">
         <div class="image-container w-100">
             <img src="{{bgimage}}{{headerimage}}" class="img-fluid w-100" aria-label="{{bgimagetext}}{{headerimagetext}}">
@@ -68,4 +72,5 @@
             {{/imagecaption}}
         </div>
     </div>
+    <div class="col-md-1"></div>
 </div>
