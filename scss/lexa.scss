@@ -2897,6 +2897,13 @@ box-shadow: -5px 0px 10px 0px #00000005;
     border: none;
 }
 
+.wb_news .wb_news_card_crosslinks
+img {
+    background: white;
+    border-radius: 8px;
+    padding: 16px;
+}
+
 @media (max-width: 768px) {
         .drawer-primary .drawercontent .list-group a.list-group-item {
           border: none;
