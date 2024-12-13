@@ -2904,6 +2904,21 @@ img {
     padding: 16px;
 }
 
+.wb_news_slider_button_left {
+    border: 1px solid #D9E1E7;
+    padding: 10px 15px;
+    border-radius: 8px 0 0 8px;
+    color: var(--lightcontent);
+}
+
+.wb_news_slider_button_right {
+    border: 1px solid #D9E1E7;
+    padding: 10px 15px;
+    border-radius: 0 8px 8px 0;
+    color: var(--lightcontent);
+}
+
+
 @media (max-width: 768px) {
         .drawer-primary .drawercontent .list-group a.list-group-item {
           border: none;
