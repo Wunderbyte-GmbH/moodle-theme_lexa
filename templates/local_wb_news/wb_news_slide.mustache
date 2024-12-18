@@ -47,18 +47,20 @@
         {{#btntext}}
         <a href="{{btnlink}}" class="btn btn-primary mt-4">{{btntext}}</a>
         {{/btntext}}
-        <div class="row mt-4 justify-content-start">
-        <div class="col-md-6 mb-3">
-            <a class="mt-4 wb_news_slider_button_left" href="#wb_news_carousel-{{instanceid}}" role="button" data-slide="prev">
-                <span class="fa-solid fa-chevron-left" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="mt-4 wb_news_slider_button_right" href="#wb_news_carousel-{{instanceid}}" role="button" data-slide="next">
-                <span class="fa-solid fa-chevron-right" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-        </div>
+        {{^dontshowfleches}}
+            <div class="row mt-4 justify-content-start">
+                <div class="col-md-6 mb-3">
+                    <a class="mt-4 wb_news_slider_button_left" href="#wb_news_carousel-{{instanceid}}" role="button" data-slide="prev">
+                        <span class="fa-solid fa-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="mt-4 wb_news_slider_button_right" href="#wb_news_carousel-{{instanceid}}" role="button" data-slide="next">
+                        <span class="fa-solid fa-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        {{/dontshowfleches}}
         {{#editmode}}
         {{> local_wb_news/editsinglenews}}
         {{/editmode}}
