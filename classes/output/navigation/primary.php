@@ -122,31 +122,44 @@ class primary extends \theme_boost_union\output\navigation\primary {
             $info->unauthenticateduser['url'] = get_login_url();
 
             // Start of additional code to '\core\navigation\output\primary' version of 'get_user_menu'.
-            $customitems = user_convert_text_to_menu_items($CFG->customusermenuitems, $PAGE);
-            $navitems = [];
-            $custommenucount = 0;
-            foreach ($customitems as $item) {
-                $navitems[] = $item;
-                if ($item->itemtype !== 'divider' && $item->itemtype !== 'invalid') {
-                    $custommenucount++;
-                }
-            }
-            if ($custommenucount > 0) {
-                // Only add a divider if we have customusermenuitems.
-                $divider = new stdClass();
-                $divider->itemtype = 'divider';
-                $navitems[] = $divider;
-
-                $modifiedarray = array_map(function($value) {
-                    $value->divider = $value->itemtype == 'divider';
-                    $value->link = $value->itemtype == 'link';
-                    if (isset($value->pix) && !empty($value->pix)) {
-                        $value->pixicon = $value->pix;
-                        unset($value->pix);
+            if (!empty($CFG->customusermenuitems)) {
+                // Remove 'profile.php' if there.
+                $customusermenuitemslines = explode("\n", $CFG->customusermenuitems);
+                $customusermenuitems = [];
+                foreach ($customusermenuitemslines as $line) {
+                    $line = trim($line);
+                    if (!str_contains($line, 'profile.php')) {
+                        $customusermenuitems[] = $line;
                     }
-                    return $value;
-                }, $navitems);
-                $info->items = $modifiedarray;
+                }
+                $customusermenuitems = implode("\n", $customusermenuitems);
+
+                $customitems = user_convert_text_to_menu_items($customusermenuitems, $PAGE);
+                $navitems = [];
+                $custommenucount = 0;
+                foreach ($customitems as $item) {
+                    $navitems[] = $item;
+                    if ($item->itemtype !== 'divider' && $item->itemtype !== 'invalid') {
+                        $custommenucount++;
+                    }
+                }
+                if ($custommenucount > 0) {
+                    // Only add a divider if we have customusermenuitems.
+                    $divider = new stdClass();
+                    $divider->itemtype = 'divider';
+                    $navitems[] = $divider;
+
+                    $modifiedarray = array_map(function($value) {
+                        $value->divider = $value->itemtype == 'divider';
+                        $value->link = $value->itemtype == 'link';
+                        if (isset($value->pix) && !empty($value->pix)) {
+                            $value->pixicon = $value->pix;
+                            unset($value->pix);
+                        }
+                        return $value;
+                    }, $navitems);
+                    $info->items = $modifiedarray;
+                }
             }
             // End of additional code to '\core\navigation\output\primary' version of 'get_user_menu'.
 
