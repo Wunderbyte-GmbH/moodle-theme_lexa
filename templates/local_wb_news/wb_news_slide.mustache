@@ -45,7 +45,7 @@
         {{{description}}}
         </span>
         {{#btntext}}
-        <a href="{{btnlink}}" class="btn btn-primary mt-4">{{btntext}}</a>
+        <a href="{{btnlink}}" class="btn btn-primary mt-4" {{#btnlinktarget}}target="{{.}}"{{/btnlinktarget}} {{#btnlinkrel}}rel="{{.}}"{{/btnlinkrel}}>{{btntext}}>{{btntext}}</a>
         {{/btntext}}
         {{^dontshowarrows}}
             <div class="row mt-4 justify-content-start">

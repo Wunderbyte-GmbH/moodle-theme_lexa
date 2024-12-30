@@ -45,7 +45,7 @@
 
 <div class="container wb_news_tabcontainer{{#lightmode}} wb_news-light{{/lightmode}}{{#cssclasses}} {{cssclasses}}{{/cssclasses}}">
     {{^btntext}}
-    {{#btnlink}}<a href="{{btnlink}}" class="stretched-link"></a> {{/btnlink}}
+    {{#btnlink}}<a href="{{btnlink}}" class="stretched-link" {{#btnlinktarget}}target="{{.}}"{{/btnlinktarget}} {{#btnlinkrel}}rel="{{.}}"{{/btnlinkrel}}>{{btntext}}></a> {{/btnlink}}
     {{/btntext}}
     <div class="wb_news_tabscontent">
         {{#editmode}}
@@ -67,7 +67,7 @@
                     {{{description}}}
                 </p>
                 {{#btntext}}
-                    <a href="{{btnlink}}" class="btn btn-primary mt-auto">{{btntext}}</a>
+                    <a href="{{btnlink}}" class="btn btn-primary mt-auto" {{#btnlinktarget}}target="{{.}}"{{/btnlinktarget}} {{#btnlinkrel}}rel="{{.}}"{{/btnlinkrel}}>{{btntext}}>{{btntext}}</a>
                 {{/btntext}}
             </div>
             <div class="col-lg-6">
