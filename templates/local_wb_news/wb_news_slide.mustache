@@ -47,7 +47,7 @@
         {{#btntext}}
         <a href="{{btnlink}}" class="btn btn-primary mt-4">{{btntext}}</a>
         {{/btntext}}
-        {{^dontshowfleches}}
+        {{^dontshowarrows}}
             <div class="row mt-4 justify-content-start">
                 <div class="col-md-6 mb-3">
                     <a class="mt-4 wb_news_slider_button_left" href="#wb_news_carousel-{{instanceid}}" role="button" data-slide="prev">
@@ -60,7 +60,7 @@
                     </a>
                 </div>
             </div>
-        {{/dontshowfleches}}
+        {{/dontshowarrows}}
         {{#editmode}}
         {{> local_wb_news/editsinglenews}}
         {{/editmode}}
