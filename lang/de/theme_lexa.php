@@ -135,3 +135,10 @@ $string['communities'] = 'Communities';
 $string['searchfaq'] = "Wie können wir Ihnen helfen? Suchen Sie nach einer Antwort oder einem Thema...";
 $string['support'] = 'Support';
 $string['sortby'] = 'Sortieren nach';
+
+$string['loginuwien'] = 'Anmeldung für Angehörige der Universität Wien';
+$string['loginguest'] = 'Als Gast das Angebot der Bibliothek nutzen';
+$string['loginguesthl'] = 'Anmeldung mit Gastaccount';
+$string['guestlogin'] = 'Gastaccount für u:rise anlegen';
+$string['forgetguestlogin'] = 'Gastaccount Passwort vergessen';
+$string['loginuwienbtn'] = 'Hier mit u:account anmelden';
