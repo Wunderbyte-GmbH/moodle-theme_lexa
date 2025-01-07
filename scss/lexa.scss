@@ -795,8 +795,6 @@ body.limitedwidth #page.drawers .footer-popover {
     display: none !important;
 }
 
-
-
 .bookinglinkbutton:not(#page-mod-booking-optionview .bookinglinkbutton) {
     border: 1px solid black;
     border-radius: 8px;
@@ -2959,4 +2957,10 @@ img {
         .navbar .navbar-brand-second-row .logo {
             margin-left: 20px;
         }
+}
+
+.collapselogin {
+    padding: 10px;
+    background: var(--interface-bg, #EDF6FA);
+    color: var(--brand_primary-brand_primary, #0063A6);
 }
