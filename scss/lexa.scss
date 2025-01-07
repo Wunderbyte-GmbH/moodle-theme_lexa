@@ -1157,6 +1157,10 @@ body.limitedwidth #page.drawers .footer-popover {
     background: #BFD8E3;
   }
 
+  .wunderbyte_table_container.showontop {
+    min-height: 600px;
+  }
+
 //   .wunderbyte_table_container .urisebutton, .btn-secondary {
 //     transition: background 0.3s ease;
 //     color: #000;
@@ -2344,8 +2348,8 @@ text-align: start;
         padding-left: 0px !important;
         padding-right: 0px !important;
     }
-      
-      
+
+
 
     .wb_news_slide {
         flex-direction: column-reverse;
@@ -2683,13 +2687,13 @@ text-align: start;
     .mod-booking-card-body .description  {
         display: none;
     }
-    
+
     .wbwunschbox .img-fluid {
         max-width: 80%;
         margin: 0 auto;
         margin-bottom: 20px;
     }
-    
+
     .wbwunschbox .btn-primary {
       margin: 0 auto;
     }
@@ -2698,11 +2702,11 @@ text-align: start;
         margin-top: 14px;
         margin-bottom: 14px;
     }
-    
+
     .wb-records-count-label {
         font-size: 16px;
     }
-    
+
 }
 
 .wbfaqaccordion {
