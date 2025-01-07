@@ -223,7 +223,7 @@ class primary extends \theme_boost_union\output\navigation\primary {
         }, $info->navitems);
 
         // Include the language menu as a submenu within the user menu.
-        $languagemenu = new \core\output\language_menu($this->page);
+        $languagemenu = new \core\output\language_menu($PAGE);
         $langmenu = $languagemenu->export_for_template($output);
         if (!empty($langmenu)) {
             $languageitems = $langmenu['items'];
