@@ -34,6 +34,8 @@ require(__DIR__.'/../../config.php'); // phpcs:disable moodle.Files.RequireLogin
 require_once($CFG->dirroot.'/lib/authlib.php');
 require_once($CFG->dirroot.'/theme/boost_union/lib.php');
 
+// delete file probably.
+
 unset($SESSION->loginerrormsg);
 unset($SESSION->logininfomsg);
 
@@ -75,6 +77,5 @@ $templatecontext['saml'] = new moodle_url('/auth/saml2/login.php?wants&idp=3c014
 $templatecontext['logintoken'] = \core\session\manager::get_login_token();
 // Output the local login form.
 echo $OUTPUT->render_from_template('theme_lexa/localloginform', $templatecontext);
-
-// Finish page.
+// Finish page. 
 echo $OUTPUT->footer();
