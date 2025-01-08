@@ -191,9 +191,12 @@
         <div class="login-form-submit form-group text-right">
             <button class="btn btn-primary btn-lg gradienthover" type="submit" id="loginbtn">{{#str}}login{{/str}}<i class="fa-solid fa-arrow-right ml-2"></i></button>
         </div>
+
+        {{#cansignup}}
         <div class="text-left mt-6">
             <a href="{{signupurl}}">{{#str}}guestlogin, theme_lexa{{/str}}</a>
-            </div>
+        </div>
+        {{/cansignup}}
         <div class="text-left mt-6">
         <a href="{{forgotpasswordurl}}">{{#str}}forgetguestlogin, theme_lexa{{/str}}</a>
         </div>
@@ -211,11 +214,6 @@
     </div>
     </div>
     <div class="login-divider"></div>
-    {{#cansignup}}
-        <div class="login-signup">
-            <a class="btn btn-secondary" href="{{signupurl}}">{{#str}}startsignup{{/str}}</a>
-        </div>
-    {{/cansignup}}
 </div>
 
 {{#js}}
