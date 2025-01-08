@@ -2960,3 +2960,16 @@ img {
     background: var(--interface-bg, #EDF6FA);
     color: var(--brand_primary-brand_primary, #0063A6);
 }
+
+[aria-expanded="false"] > svg.closed {
+    display: inline;
+}
+[aria-expanded="true"] > svg.closed {
+    display: none;
+}
+[aria-expanded="false"] > svg.opened {
+    display: none;
+}
+[aria-expanded="true"] > svg.opened {
+    display: inline;
+}
