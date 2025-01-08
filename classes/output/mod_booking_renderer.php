@@ -168,7 +168,6 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
             $showdatesdata = new col_coursestarttime($optionid, $booking);
             $output = singleton_service::get_renderer('local_urise');
             $ret = $output->render_col_coursestarttime($showdatesdata);
-            $ret = str_replace(' - ', ' - <br>', $ret);
             $cache->set($cachekey, $ret);
         };
 
