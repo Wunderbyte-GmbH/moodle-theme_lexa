@@ -40,7 +40,7 @@ unset($SESSION->logininfomsg);
 $errorcode = optional_param('errorcode', 0, PARAM_INT);
 
 // Set page URL.
-$PAGE->set_url('/theme/lexa/locallogin.php');
+$PAGE->set_url('/theme/lexa/login.php');
 
 // Set page layout.
 $PAGE->set_pagelayout('login');
@@ -64,7 +64,6 @@ if ($errorcode) {
         $errorcode = 3;
     }
 }
-
 
 // Prepare the local login form.
 $templatecontext = [];
