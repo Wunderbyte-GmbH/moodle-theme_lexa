@@ -138,7 +138,7 @@ $string['sortby'] = 'Sort by';
 
 // Login.
 $string['loginuwien'] = 'Login for members of the University of Vienna';
-$string['loginguest'] = 'Use the library’s offerings as a guest';
+$string['loginguest'] = 'Use the library’s offerings as guest';
 $string['loginguesthl'] = 'Login with a guest account';
 $string['guestlogin'] = 'Create a guest account for u:rise';
 $string['forgetguestlogin'] = 'Forgot guest account password';
