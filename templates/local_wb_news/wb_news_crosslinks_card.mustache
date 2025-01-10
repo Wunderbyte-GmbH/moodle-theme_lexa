@@ -38,7 +38,7 @@
         <h4 class="lexa-h4">{{{headline}}}</h4>
         {{{description}}}
         {{#btntext}}
-        <a href="{{btnlink}}">{{btntext}}</a>
+        <a href="{{btnlink}}" {{#btnlinktarget}}target="{{.}}"{{/btnlinktarget}} {{#btnlinkrel}}rel="{{.}}"{{/btnlinkrel}}>{{btntext}}>{{btntext}}</a>
         {{/btntext}}
     </div>
 </div>
