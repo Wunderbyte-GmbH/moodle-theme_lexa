@@ -57,8 +57,8 @@
     </div>
     <div class="card-footer">
     {{#btntext}}
-        <a href="{{btnlink}}" class="btn btn-dark mt-auto gradienthover infoslidesbutton">{{btntext}}
-           <i class="fa-solid fa-arrow-right ml-2 smallericon"></i>
+        <a href="{{btnlink}}" class="btn btn-dark mt-auto gradienthover infoslidesbutton" {{#btnlinktarget}}target="{{.}}"{{/btnlinktarget}} {{#btnlinkrel}}rel="{{.}}"{{/btnlinkrel}}>
+            {{btntext}} <i class="fa-solid fa-arrow-right ml-2 smallericon"></i>
         </a>
     {{/btntext}}
     </div>

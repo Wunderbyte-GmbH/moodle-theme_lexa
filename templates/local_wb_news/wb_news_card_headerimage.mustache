@@ -56,7 +56,9 @@
     </div>
     <div class="card-footer">
     {{#btntext}}
-        <a href="{{btnlink}}" class="btn btn-primary mt-auto">{{btntext}}</a>
+        <a href="{{btnlink}}" class="btn btn-primary mt-auto" {{#btnlinktarget}}target="{{.}}"{{/btnlinktarget}} {{#btnlinkrel}}rel="{{.}}"{{/btnlinkrel}}>
+            {{btntext}}
+        </a>
     {{/btntext}}
     </div>
     {{#editmode}}

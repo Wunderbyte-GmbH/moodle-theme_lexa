@@ -53,7 +53,9 @@ style="{{#bgimage}}background-image: url({{bgimage}}); {{/bgimage}}{{#bgcolor}}b
     <h6 class="card-subtitle mb-2">{{{subheadline}}}</h6>
     <p class="card-text">{{{description}}}</p>
     {{#btntext}}
-    <a href="{{btnlink}}" class="btn btn-primary mt-auto">{{btntext}}</a>
+    <a href="{{btnlink}}" class="btn btn-primary mt-auto" {{#btnlinktarget}}target="{{.}}"{{/btnlinktarget}} {{#btnlinkrel}}rel="{{.}}"{{/btnlinkrel}}>
+        {{btntext}}
+    </a>
     {{/btntext}}
     </div>
 

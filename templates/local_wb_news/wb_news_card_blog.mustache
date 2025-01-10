@@ -57,7 +57,9 @@
     </div>
     <div class="card-footer">
     {{#btntext}}
-        <a href="{{btnlink}}" class="btn btn-primary mt-auto">{{btntext}}</a>
+        <a href="{{btnlink}}" class="btn btn-primary mt-auto" {{#btnlinktarget}}target="{{.}}"{{/btnlinktarget}} {{#btnlinkrel}}rel="{{.}}"{{/btnlinkrel}}>
+            {{btntext}}
+        </a>
     {{/btntext}}
     <div class="row no-gutters wb_news-userinfo">
         <div class="d-flex flex-grow-1 align-items-center">
