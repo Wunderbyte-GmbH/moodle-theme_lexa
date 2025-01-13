@@ -254,9 +254,17 @@
                     {{#teachers}}
                     <div class="profile-card d-flex mt-5 align-items-center mb-3">
                         <div class="mr-3">
-                            <div class="profile-icon-wrapper">
-                            <i class="fas fa-user"></i>
-                            </div>
+                            {{#image}}
+                                <a href="{{{teacherurl}}}">
+                                <img src="{{.}}" class="profile-icon-wrapper rounded-circle">
+                                </a>
+                            {{/image}}
+                            {{^image}}
+                                <div class="profile-icon-wrapper">
+                                <a href="{{{teacherurl}}}">
+                                <i class="fas fa-user"></i>
+                                </div>
+                            {{/image}}
                         </div>
                         <!-- Placeholder for profile icon -->
                         <div class="profile-info">
