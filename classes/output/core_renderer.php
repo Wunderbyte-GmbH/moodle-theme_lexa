@@ -219,4 +219,58 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
         }
         return $this->render_from_template($template, $context);
     }
+
+    /**
+     * Returns HTML to display course custom fields.
+     *
+     * @param core_course_list_element $course
+     * @return string
+     */
+    protected function course_custom_fields(core_course_list_element $course): string {
+
+        $content = '';
+
+        if ($course->has_custom_fields()) {
+            $handler = \core_course\customfield\course_handler::create();
+            $customfields = $handler->display_custom_fields_data($course->get_custom_fields());
+            // TODO show enrolled users.
+            if(get_config('theme_boost_union', 'enrolledusersenabled') == THEME_BOOST_UNION_SETTING_SELECT_YES) {
+                $enrolleduser = themehelper::get_number_of_enrolled_users($course->id);
+                $customfields .= '<div class="customfield customfield_text customfield_enrolledusers">
+                <span class="customfieldname">' . get_string('participants', 'theme_boost_union') .
+                '</span><span class="customfieldseparator">: </span><span class="customfieldvalue">' . $enrolleduser .
+                '<span class="mx-2 fa fa-user-o"></span></span></div>';
+            }
+            $content .= \html_writer::tag('div', $customfields, ['class' => 'customfields-container']);
+        }
+
+        return $content;
+    }
+
+    /**
+     * Generates the course card footer html
+     *
+     * @param core_course_list_element $course
+     *
+     * @return string
+     *
+     * @throws \coding_exception
+     * @throws \moodle_exception
+     */
+    protected function course_card_footer(core_course_list_element $course) {
+        if (isloggedin()) {
+
+            $content = html_writer::start_tag('div', ['class' => 'card-footer']);
+            $content .= $this->course_custom_fields($course);
+            $content .= html_writer::start_tag('div', ['class' => 'pull-right']);
+            $content .= html_writer::link(new moodle_url('/course/view.php', ['id' => $course->id]),
+                get_string('view', 'core'), ['class' => 'card-link btn btn-primary']);
+
+            $content .= html_writer::end_tag('div'); // End pull-right.
+
+            $content .= html_writer::end_tag('div'); // End card-footer.
+        }
+
+        return $content;
+    }
 }

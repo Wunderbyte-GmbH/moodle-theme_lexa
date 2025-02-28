@@ -1,0 +1,28 @@
+{{^isloggedin}}
+<div class="loginpopuplogin popuplogin">
+  <div id="loginmodal" class="modal" role="dialog">
+      <div class="modal-body" style="
+      max-width: 700px;
+      margin: auto;
+      margin-top: 20px;
+  ">
+        {{>theme_lexa/loginformmodal}}
+      </div>
+  </div>
+</div>
+{{#js}}
+require(['jquery'], function($) {
+    // Check if '.login a' exists
+    var trigger = $('.login a');
+    if (trigger.length > 0) {  // Only proceed if '.login a' exists
+        trigger.on('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            $('#loginmodal').modal('toggle');
+        });
+    }
+});
+{{/js}}
+{{/isloggedin}}
+
+

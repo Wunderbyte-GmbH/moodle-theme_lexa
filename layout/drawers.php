@@ -81,6 +81,14 @@ if (isloggedin()) {
     }
 }
 
+if (isloggedin()) {
+    $logintoken = '';
+    $loginurl = new \moodle_url('/login/index.php');
+} else {
+    $logintoken = \core\session\manager::get_login_token();
+    $loginurl = new \moodle_url('/login/index.php');
+}
+
 if (defined('BEHAT_SITE_RUNNING') && get_user_preferences('behat_keep_drawer_closed') != 1) {
     try {
         if (
@@ -182,6 +190,8 @@ $templatecontext = [
     'overflow' => $overflow,
     'headercontent' => $headercontent,
     'addblockbutton' => $addblockbutton,
+    'logintoken' => $logintoken,
+    'loginurl' => $loginurl
 ];
 
 // Include the template content for the course related hints.
