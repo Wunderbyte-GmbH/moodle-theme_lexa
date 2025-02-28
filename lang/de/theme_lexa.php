@@ -30,3 +30,4 @@
 $string['region-content'] = 'Inhalt';
 $string['region-landing'] = 'Landung';
 $string['region-side-pre'] = 'Rechts';
+$string['participants'] = 'TeilnehmerInnen';
