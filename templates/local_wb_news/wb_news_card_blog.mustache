@@ -33,7 +33,7 @@
 }}
 
 <div class="card h-100 wb_news_card_blog{{#lightmode}} wb_news-light{{/lightmode}}{{#cssclasses}} {{cssclasses}}{{/cssclasses}}" style="background-color: {{{bgcolor}}}; border: none;">
-    {{#detailviewurl}}<a href="{{detailviewurl}}" class="stretched-link"></a> {{/detailviewurl}}
+    {{#detailviewurl}}<a href="{{detailviewurl}}" class="stretched-link" {{#btnlinktarget}}target="{{.}}"{{/btnlinktarget}} {{#btnlinkrel}}rel="{{.}}"{{/btnlinkrel}}></a> {{/detailviewurl}}
     {{#headerimage}}
     <img class="w-100 img-fluid wb_news-headerimage h-50" style="object-fit:cover;" src="{{headerimage}}" aria-label="{{headerimagetext}}">
     {{/headerimage}}

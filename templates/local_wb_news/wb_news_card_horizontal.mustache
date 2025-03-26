@@ -34,7 +34,7 @@
 
 <div class="card h-100{{#lightmode}} wb_news-light{{/lightmode}}{{#cssclasses}} {{cssclasses}}{{/cssclasses}}"{{#bgcolor}} style="background-color: {{bgcolor}};"{{/bgcolor}}>
     {{^btntext}}
-    {{#btnlink}}<a href="{{btnlink}}" class="stretched-link"></a> {{/btnlink}}
+    {{#btnlink}}<a href="{{btnlink}}" class="stretched-link" {{#btnlinktarget}}target="{{.}}"{{/btnlinktarget}} {{#btnlinkrel}}rel="{{.}}"{{/btnlinkrel}}></a> {{/btnlink}}
     {{/btntext}}
     <div class="row">
     <div class="col-md-6">

@@ -36,7 +36,7 @@
 style="{{#bgimage}}background-image: url({{bgimage}}); {{/bgimage}}{{#bgcolor}}background-color: {{bgcolor}};{{/bgcolor}}">
     <div class="card-content">
     {{^btntext}}
-    {{#btnlink}}<a href="{{btnlink}}" class="stretched-link"></a> {{/btnlink}}
+    {{#btnlink}}<a href="{{btnlink}}" class="stretched-link" {{#btnlinktarget}}target="{{.}}"{{/btnlinktarget}} {{#btnlinkrel}}rel="{{.}}"{{/btnlinkrel}}></a> {{/btnlink}}
     {{/btntext}}
     <div>
     {{#tags}} <span class="badge badge-success">{{.}}</span>{{/tags}}

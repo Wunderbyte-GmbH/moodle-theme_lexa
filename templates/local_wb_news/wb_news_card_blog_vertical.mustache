@@ -33,7 +33,7 @@
 }}
 
 <div class="card {{#lightmode}} wb_news-light{{/lightmode}}{{#cssclasses}} {{cssclasses}}{{/cssclasses}} mb-4"{{#bgcolor}} style="background-color: {{bgcolor}}; min-height: 280px; border: none"{{/bgcolor}}>
-            {{#detailviewurl}}<a href="{{detailviewurl}}" class="stretched-link"></a> {{/detailviewurl}}
+            {{#detailviewurl}}<a href="{{detailviewurl}}" class="stretched-link" {{#btnlinktarget}}target="{{.}}"{{/btnlinktarget}} {{#btnlinkrel}}rel="{{.}}"{{/btnlinkrel}}></a> {{/detailviewurl}}
             <div class="row" style="min-height: 280px;">
                 <div class="col-md-5">
                     {{#headerimage}}
