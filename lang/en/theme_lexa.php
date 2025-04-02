@@ -135,6 +135,7 @@ $string['communities'] = 'Communities';
 $string['searchfaq'] = "How can we help you? Are you looking for an answer or a topic...";
 $string['support'] = 'Support';
 $string['sortby'] = 'Sort by';
+$string['templateswitchertext'] = 'Change view';
 
 // Login.
 $string['loginuwien'] = 'Login for members of the University of Vienna';
