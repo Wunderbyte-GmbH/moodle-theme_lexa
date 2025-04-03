@@ -21,6 +21,8 @@ defined('MOODLE_INTERNAL') || die();
 require_once($CFG->dirroot . '/user/classes/output/myprofile/renderer.php');
 
 use core_user\output\myprofile\category;
+use core_user\output\myprofile\node;
+
 
 /**
  * Custom myprofile renderer for theme_lexa.
@@ -72,6 +74,48 @@ class renderer extends \core_user\output\myprofile\renderer {
         $return .= \html_writer::end_tag('ul');
         $return .= \html_writer::end_tag('div');
         $return .= \html_writer::end_tag('section');
+        return $return;
+    }
+    /**
+     * Render a node.
+     *
+     * @param node $node
+     *
+     * @return string
+     */
+    public function render_node(node $node) {
+        $return = '';
+        if (is_object($node->url)) {
+            $header = \html_writer::link($node->url, $node->title, ['data-node-title' => $node->name]);
+        } else {
+            $header = $node->title;
+        }
+        $icon = $node->icon;
+        if (!empty($icon)) {
+            $header .= $this->render($icon);
+        }
+        $content = $node->content;
+        $classes = $node->classes;
+        if (!empty($content)) {
+            if ($header) {
+                // There is some content to display below this make this a header.
+                $return = \html_writer::tag('dt', $header, ['data-node-title' => $node->name]);
+                $return .= \html_writer::tag('dd', $content, ['data-node-title' => $node->name]);
+
+                $return = \html_writer::tag('dl', $return, ['data-node-title' => $node->name]);
+            } else {
+                $return = \html_writer::span($content);
+            }
+            if ($classes) {
+                $return = \html_writer::tag('li', $return, ['class' => 'contentnode ' . $classes, 'data-node-title' => $node->name]);
+            } else {
+                $return = \html_writer::tag('li', $return, ['class' => 'contentnode', 'data-node-title' => $node->name]);
+            }
+        } else {
+            $return = \html_writer::span($header);
+            $return = \html_writer::tag('li', $return, ['class' => $classes, 'data-node-title' => $node->name]);
+        }
+
         return $return;
     }
 }
