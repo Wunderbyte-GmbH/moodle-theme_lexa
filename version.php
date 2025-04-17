@@ -28,12 +28,12 @@ defined('MOODLE_INTERNAL') || die;
 $plugin->release = '0.1.5';
 $plugin->version = 2025032600;
 $plugin->requires = 2023100900.00;
-$plugin->supported = [404, 404];
+$plugin->supported = [405, 405];
 $plugin->component = 'theme_lexa';
 $plugin->maturity = MATURITY_STABLE;
-$plugin->release = '404.0.1';
+$plugin->release = '405.0.1';
 $plugin->dependencies = [
     'theme_boost'  => 2024042200,
-    'theme_boost_union'  => 2024060100,
+    'theme_boost_union'  => 2024101500,
     'local_shopping_cart' => 2025021102,
 ];
