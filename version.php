@@ -34,6 +34,6 @@ $plugin->maturity = MATURITY_STABLE;
 $plugin->release = '405.0.1';
 $plugin->dependencies = [
     'theme_boost'  => 2024042200,
-    'theme_boost_union'  => 2024101500,
+    'theme_boost_union'  => 2024100728,
     'local_shopping_cart' => 2025021102,
 ];
