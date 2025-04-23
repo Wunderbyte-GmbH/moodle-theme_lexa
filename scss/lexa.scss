@@ -771,7 +771,6 @@ body.limitedwidth #page.drawers .footer-popover {
     /* eslint-enable */
 }
 
-
 .booking-button-area .booking-button-area:not(#page-mod-booking-optionview .booking-button-area .booking-button-area), .urisebutton:not(#page-mod-booking-optionview .urisebutton) {
     background: transparent;
     border: black 1px solid;
@@ -801,6 +800,32 @@ body.limitedwidth #page.drawers .footer-popover {
     color: black;
     font-weight: normal;
     text-shadow: none;
+}
+
+.dots-horizontal-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.25rem;
+    padding: 0.25rem 1rem; /* more internal spacing */
+    font-family: Roboto, monospace; /* fallback for better dot spacing */
+    font-size: 1rem; /* slightly bigger for visibility */
+    border: 1px solid black;
+    border-radius: 8px;
+    font-weight: 500;
+    height: 100%;
+    color: black;
+    background-color: #fff;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.dots-horizontal-button:hover,
+.dots-horizontal-button:focus {
+    background: linear-gradient(90deg, #0063a6 0%, #0cbac5 101%);
+    color: white;
+    border: none;
+    text-decoration: none;
 }
 
 .urisecalendarcard {
