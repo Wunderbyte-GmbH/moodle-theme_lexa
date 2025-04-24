@@ -24,8 +24,8 @@
  * * Include static pages
  * * Include info banners
  *
- * @package   theme_boost_union
- * @copyright 2022 Luca Bösch, BFH Bern University of Applied Sciences luca.boesch@bfh.ch
+ * @package   theme_lexa
+ * @copyright 2025 Wunderbyte
  * @copyright based on code from theme_boost by Damyon Wiese
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -44,7 +44,8 @@ $headercontent = $header->export_for_template($renderer);
 
 foreach ($primarymenu['moremenu']['nodearray'] as $nodearray) {
     if (is_object($nodearray) && $nodearray->text == "Communities") {
-        $title = get_string_manager()->string_exists('communities', 'theme_lexa') ? get_string('communities', 'theme_lexa') : $nodearray->text;
+        $title = get_string_manager()->string_exists('communities', 'theme_lexa')
+            ? get_string('communities', 'theme_lexa') : $nodearray->text;
 
         $nodearray->text = $title;
         $nodearray->isshortcode = "true";
@@ -56,7 +57,8 @@ foreach ($primarymenu['moremenu']['nodearray'] as $nodearray) {
 
 foreach ($primarymenu['moremenu']['nodearray'] as $nodearray) {
     if (is_object($nodearray) && $nodearray->text == "Support") {
-        $title = get_string_manager()->string_exists('support', 'theme_lexa') ? get_string('support', 'theme_lexa') : $nodearray->text;
+        $title = get_string_manager()->string_exists('support', 'theme_lexa')
+            ? get_string('support', 'theme_lexa') : $nodearray->text;
 
         $nodearray->text = $title;
         $nodearray->isshortcode = "true";
