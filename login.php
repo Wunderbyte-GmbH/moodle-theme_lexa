@@ -19,8 +19,8 @@
  *
  * This file is copied, reduced and modified from /login/index.php.
  *
- * @package   theme_boost_union
- * @copyright 2023 Alexander Bias <bias@alexanderbias.de>
+ * @package   theme_lexa
+ * @copyright 2025 Wunderbyte GmbH
  *            based on code 1999 onwards Martin Dougiamas
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -33,8 +33,6 @@ require(__DIR__.'/../../config.php'); // phpcs:disable moodle.Files.RequireLogin
 // Require the necessary libraries.
 require_once($CFG->dirroot.'/lib/authlib.php');
 require_once($CFG->dirroot.'/theme/boost_union/lib.php');
-
-// delete file probably.
 
 unset($SESSION->loginerrormsg);
 unset($SESSION->logininfomsg);
@@ -77,5 +75,5 @@ $templatecontext['saml'] = new moodle_url('/auth/saml2/login.php?wants&idp=3c014
 $templatecontext['logintoken'] = \core\session\manager::get_login_token();
 // Output the local login form.
 echo $OUTPUT->render_from_template('theme_lexa/localloginform', $templatecontext);
-// Finish page. 
+// Finish page.
 echo $OUTPUT->footer();
