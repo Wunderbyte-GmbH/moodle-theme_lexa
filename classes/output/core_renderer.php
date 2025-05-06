@@ -237,7 +237,7 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
             if(get_config('theme_boost_union', 'enrolledusersenabled') == THEME_BOOST_UNION_SETTING_SELECT_YES) {
                 $enrolleduser = themehelper::get_number_of_enrolled_users($course->id);
                 $customfields .= '<div class="customfield customfield_text customfield_enrolledusers">
-                <span class="customfieldname">' . get_string('participants', 'theme_boost_union') .
+                <span class="customfieldname">' . get_string('participants', 'theme_lexa') .
                 '</span><span class="customfieldseparator">: </span><span class="customfieldvalue">' . $enrolleduser .
                 '<span class="mx-2 fa fa-user-o"></span></span></div>';
             }

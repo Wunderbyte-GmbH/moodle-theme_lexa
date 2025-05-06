@@ -90,15 +90,20 @@ $regionmainsettingsmenu = $buildregionmainsettings ? $OUTPUT->region_main_settin
 $header = $PAGE->activityheader;
 $headercontent = $header->export_for_template($renderer);
 
-$bodyattributes = $OUTPUT->body_attributes($extraclasses); // In the original layout file, this line is place more above,
-                                                           // but we amended $extraclasses and had to move it.
+$bodyattributes = $OUTPUT->body_attributes($extraclasses); 
+// In the original layout file, this line is place more above,
+// but we amended $extraclasses and had to move it.
 
 if (isloggedin()) {
     $logintoken = '';
     $loginurl = new \moodle_url('/login/index.php');
+    $login = [];
 } else {
     $logintoken = \core\session\manager::get_login_token();
     $loginurl = new \moodle_url('/login/index.php');
+    $authsequence = get_enabled_auth_plugins();
+    $loginrenderable = new \core_auth\output\login($authsequence);
+    $login = $loginrenderable->export_for_template($renderer);
 }
 
 $templatecontext = [
@@ -118,7 +123,8 @@ $templatecontext = [
     'overflow' => $overflow,
     'addblockbutton' => $addblockbutton,
     'logintoken' => $logintoken,
-    'loginurl' => $loginurl
+    'loginurl' => $loginurl,
+    'login' => $login,
 ];
 
 // Include the template content for the course related hints.

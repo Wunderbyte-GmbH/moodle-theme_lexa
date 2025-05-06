@@ -51,6 +51,7 @@ require_once($CFG->dirroot . '/course/lib.php');
 
 // Require own locallib.php.
 require_once($CFG->dirroot . '/theme/boost_union/locallib.php');
+require_once($CFG->libdir . '/authlib.php'); 
 
 // Add activity navigation if the feature is enabled.
 $activitynavigation = get_config('theme_boost_union', 'activitynavigation');
@@ -79,14 +80,6 @@ if (isloggedin()) {
     if (get_config('theme_boost_union', 'showsitehomerighthandblockdraweronvisit') == THEME_BOOST_UNION_SETTING_SELECT_YES) {
         $blockdraweropen = true;
     }
-}
-
-if (isloggedin()) {
-    $logintoken = '';
-    $loginurl = new \moodle_url('/login/index.php');
-} else {
-    $logintoken = \core\session\manager::get_login_token();
-    $loginurl = new \moodle_url('/login/index.php');
 }
 
 if (defined('BEHAT_SITE_RUNNING') && get_user_preferences('behat_keep_drawer_closed') != 1) {
@@ -143,6 +136,19 @@ $primary = new theme_boost_union\output\navigation\primary($PAGE);
 $renderer = $PAGE->get_renderer('core');
 $primarymenu = $primary->export_for_template($renderer);
 
+if (isloggedin()) {
+    $logintoken = '';
+    $loginurl = new \moodle_url('/login/index.php');
+    $login = [];
+
+} else {
+    $logintoken = \core\session\manager::get_login_token();
+    $loginurl = new \moodle_url('/login/index.php');
+    $authsequence = get_enabled_auth_plugins();
+    $loginrenderable = new \core_auth\output\login($authsequence);
+    $login = $loginrenderable->export_for_template($renderer);
+}
+
 // Add special class selectors to improve the Smart menus SCSS selectors.
 if (isset($primarymenu['includesmartmenu']) && $primarymenu['includesmartmenu'] == true) {
     $extraclasses[] = 'theme-boost-union-smartmenu';
@@ -191,7 +197,8 @@ $templatecontext = [
     'headercontent' => $headercontent,
     'addblockbutton' => $addblockbutton,
     'logintoken' => $logintoken,
-    'loginurl' => $loginurl
+    'loginurl' => $loginurl,
+    'login' => $login,
 ];
 
 // Include the template content for the course related hints.
