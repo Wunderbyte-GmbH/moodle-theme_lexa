@@ -160,7 +160,7 @@
         </div>
     </div>
     <div class="row mod-booking-row align-items-end">
-        <div class="col-md-7 mb-8">
+        <div class="col-md-7 mb-6">
             <div class="card corner-right-bottom py-6">
             <div class="card-body">
             <h3 class="bookingcategory">{{{bookingcategory}}}</h3>
@@ -175,7 +175,7 @@
         </div>
         </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="card price-card corner-left-bottom py-5">
                 <div class="card-body">
                     <div class="d-flex">
@@ -183,8 +183,8 @@
                         {{{formattedregions}}}
                     </div>
                     <div>
-                        06.05.–10.06.2025
-                        18 bis 19:30 Uhr
+                        <p>06.05.–10.06.2025<br>
+                        18 bis 19:30 Uhr</p>
                         {{{formattedlearningformat}}}
                         {{learningformat}}
                     </div>
@@ -266,7 +266,7 @@
 <div class="additional-section mb-8">
     <div class="container-fluid">
         <div class="row mod-booking-row align-items-center">
-            <h2 class="col-md-12 text-center mt-8 mx-auto">Weitere Details zur Veranstaltung</h2>
+            <h2 class="col-md-12 text-center mt-8 mx-auto">{{#str}} addveranstaltungen, theme_lexa {{/str}}</h2>
             {{#entryfee}}
             <div class="col-md-6 mt-8 mx-auto">
                 <div class="d-flex align-items-start gapx-4">
@@ -276,7 +276,7 @@
                         </div>
                     </div>
                     <div>
-                        <h5>Teilnahmebetrag</h5>
+                        <h5>{{#str}} entryfee, theme_lexa {{/str}}</h5>
                         {{{entryfee}}}
                     </div>
                 </div>
@@ -291,7 +291,7 @@
                         </div>
                     </div>
                     <div>
-                        <h5>Zielgruppe</h5>
+                        <h5>{{#str}} targetgroup, theme_lexa {{/str}}</h5>
                         {{{targetgroup}}}
                     </div>
                 </div>
@@ -311,10 +311,8 @@
   width: 100%;
   overflow: hidden;
 }
-.main-section {
-    margin-top: 100px;
-}
-#page.drawers  {
+.hero-wrapper  {
+    padding-top:100px;
     background: url({{imageurl}});
     background-size: 100% auto;
     max-height: 75vh;
@@ -327,8 +325,9 @@
 #region-main,#topofscroll,#page.drawers .main-inner {
     background: transparent;
 }
-#page.drawers .main-inner {
-    margin-top: 200px;
+#page-mod-booking-optionview #page #footnote {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
 }
 </style>
 {{/imageurl}}

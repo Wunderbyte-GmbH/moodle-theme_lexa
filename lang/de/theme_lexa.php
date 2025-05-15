@@ -30,3 +30,7 @@
 $string['region-content'] = 'Inhalt';
 $string['region-landing'] = 'Landung';
 $string['region-side-pre'] = 'Rechts';
+
+$string['addveranstaltungen'] = 'Weitere Details zur Veranstaltung';
+$string['entryfee'] = 'Teilnahmebetrag';
+$string['targetgroup'] = 'Zielgruppe';

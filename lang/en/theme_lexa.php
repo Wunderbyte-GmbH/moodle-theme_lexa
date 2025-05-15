@@ -74,3 +74,7 @@ $string['privacy:metadata:preference:draweropenindex'] = 'The state of the cours
 $string['privacy:request:preference:draweropenindex'] = 'The user preference "{$a->name}" has the value "{$a->value}" which represents "{$a->decoded}" for the state of the course index.';
 $string['privacy:metadata:preference:draweropenblock'] = 'The state of the block drawer.';
 $string['privacy:request:preference:draweropenblock'] = 'The user preference "{$a->name}" has the value "{$a->value}" which represents "{$a->decoded}" for the state of the block drawer.';
+
+$string['addveranstaltungen'] = 'Further details about the event';
+$string['entryfee'] = 'Participation fee';
+$string['targetgroup'] = 'Target group';
