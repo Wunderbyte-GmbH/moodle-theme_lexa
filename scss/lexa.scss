@@ -35,6 +35,47 @@
     }
 }
 
+.corner-right-bottom {
+    border-radius: 2.5rem 2.5rem 0rem 2.5rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+.corner-left-bottom {
+    border-radius: 2.5em 2.5em 2.5em 0em;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.py-6 {
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+
+.py-5 {
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.gapx-4 {
+    gap: 20px;
+}
+.mt-8 {
+    margin-top: 120px;
+}
+.mb-8 {
+    margin-bottom: 120px;
+}
+
+.overflow-visible {
+    overflow: visible !important;
+}
+
+h2 {
+    font-size: 38px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--e-global-color-accent);
+}
 @include media-breakpoint-up(md) {
     body:not(.editing) #page.drawers {
         #block-region-landing {
@@ -43,3 +84,94 @@
         }
     }
 }
+
+// #page-mod-booking-optionview 
+#page-mod-booking-optionview {
+  
+    #page {
+      padding: 0;
+  
+      #footnote {
+        padding: 0;
+        margin-left: 0;
+        margin-right: 0;
+  
+        .container-fluid {
+          max-width: 100%;
+          padding: 0;
+        }
+      }
+    }
+  
+    #topofscroll,
+    #footnote .container-fluid {
+      max-width: 100%;
+      padding: 0;
+    }
+  
+    .container-fluid {
+      max-width: 1380px;
+    }
+  
+    .hero-section {
+      background-color: rgb(167, 31, 92);
+      color: #fff;
+      padding-top: 300px;
+      padding-bottom: 300px;
+      text-align: center;
+      font-size: 38px;
+    }
+  
+    .icon-widget {
+      background-color: #A71F5C;
+      padding: 7px 0 7px 2px;
+      border-radius: 12px 12px 0 12px;
+      color: white;
+    }
+  }
+  
+
+  .bookingcategory {
+    font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #90BF68;
+  }
+  .hero-section {
+    position: relative;
+  }
+  .hero-section::before {
+    content: "";
+    position: absolute;
+    top: -47px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 282px;
+    height: 94px;
+    background-image: url('https://freda.wunderbyte.at/pluginfile.php/1/theme_boost_union/additionalresources/0/Polygon-1.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 1;
+  }
+  .booking-button-mainarea.p-1.btn.btn-secondary.mt-1.mb-1.w-100.text-center {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #A71F5C;
+    border-radius: 36px 36px 36px 36px;
+    line-height: 1;
+    padding: 12px 24px !important;;
+    fill: #fff;
+    text-align: center;
+    transition: all .3s;
+    width: unset !important;
+    border: none;
+  }
+  
+  .hero-section .booking-button-mainarea.p-1.btn.btn-secondary.mt-1.mb-1.w-100.text-center {
+      background-color: #fff;
+      color: #90BF68;
+  }
+  
+  
