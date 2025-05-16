@@ -180,19 +180,18 @@
                 {{/default}}
                 {{#hierarchy}}
                     <ul class="wunderbyterFilterList hierarchy pt-2" data-moodletype="hierarchylist">
-                        <span class="d-flex">
-                        <input class="hierarchycategory-checkbox form-check form-check-input filterelement ml-1" type="checkbox"
-                            value="{{value}}"
-                            id="{{index}}{{columnname}}{{idstring}}"
-                            {{checked}} name="{{id}}"
-                            data-key="{{label}}"
-                            data-targetvalue="{{columnname}}">
-                        <label class="form-check-label" for="{{index}}{{columnname}}{{idstring}}">
-                        <span class="filterkeylabel">x</span> <span class="filtercategorycountlabel">x</span>
-                        </label>
-                        <button class="btn btn-nolabel dropdown-item dropdown-toggle hierarchybutton text-wrap"  data-ident="{{columnname}}" data-toggle="collapse" href="javascript:void(0)" role="button" aria-controls="collapseExample">
-                            <span class="filtercategorykeylabel">{{label}}</span> <span class="filtercategorycountlabel">{{#count}}({{count}}){{/count}}</span>
-                        </button>
+                        <span class="d-flex parent">
+                            <input class="hierarchycategory-checkbox form-check form-check-input filterelement ml-1" type="checkbox"
+                                value="{{value}}"
+                                id="{{index}}{{columnname}}{{idstring}}"
+                                {{checked}} name="{{id}}"
+                                data-key="{{label}}"
+                                data-targetvalue="{{columnname}}">
+                            <label class="form-check-label" for="{{index}}{{columnname}}{{idstring}}">
+                            </label>
+                            <button class="btn btn-nolabel dropdown-item dropdown-toggle hierarchybutton text-wrap"  data-ident="{{columnname}}" data-toggle="collapse" href="javascript:void(0)" role="button" aria-controls="{{id}}">
+                                <span class="filtercategorykeylabel">{{label}}</span> <span class="filtercategorycountlabel">{{#count}}({{count}}){{/count}}</span>
+                            </button>
                         </span>
                         <div class="collapse" id="{{id}}">
                             <div class="card card-body">
