@@ -3042,6 +3042,17 @@ img {
     display: inline;
 }
 
+.wunderbyteTableFilter .parent .form-check-label::before {
+    left: 5px;
+}
+  
+.wunderbyteTableFilter .parent .form-check-label::after {
+    left: calc(0.25rem + 5px);
+}
+.wunderbyteTableFilter .parent .form-check-label {
+    width: 28px;
+}
+
 #theme_boost_union-loginorder-local #loginbtn {
     padding: 6px 10px !important;
-  }
+}
