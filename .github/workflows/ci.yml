@@ -16,11 +16,10 @@ jobs:
       # Command to install more dependencies
       extra_plugin_runners: |
         moodle-plugin-ci add-plugin --branch main Wunderbyte-GmbH/moodle-local_wunderbyte_table
-      #   moodle-plugin-ci add-plugin --branch master branchup/moodle-filter_shortcodes
-      #   moodle-plugin-ci add-plugin --branch main Wunderbyte-GmbH/moodle-tool_mocktesttime
 
       # If you need to ignore specific paths (third-party libraries are ignored by default)
       ignore_paths: 'node_modules'
+
       ignore_names: '*.txt,fallback.css'
 
       # Specify paths to ignore for mustache lint
