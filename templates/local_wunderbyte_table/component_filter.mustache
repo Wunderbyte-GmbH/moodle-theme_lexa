@@ -186,10 +186,11 @@
                                 id="{{index}}{{columnname}}{{idstring}}"
                                 {{checked}} name="{{id}}"
                                 data-key="{{label}}"
-                                data-targetvalue="{{columnname}}">
+                                data-targetvalue="{{columnname}}"
+                                aria-label="Select all from {{columnname}}">>
                             <label class="form-check-label" for="{{index}}{{columnname}}{{idstring}}">
                             </label>
-                            <button class="btn btn-nolabel dropdown-item dropdown-toggle hierarchybutton text-wrap"  data-ident="{{columnname}}" data-toggle="collapse" href="javascript:void(0)" role="button" aria-controls="{{id}}">
+                            <button class="btn btn-nolabel dropdown-item dropdown-toggle hierarchybutton text-wrap"  data-ident="{{columnname}}" data-toggle="collapse" href="javascript:void(0)" role="button" aria-controls="{{id}}" aria-label="Expand category {{columnname}}>
                                 <span class="filtercategorykeylabel">{{label}}</span> <span class="filtercategorycountlabel">{{#count}}({{count}}){{/count}}</span>
                             </button>
                         </span>
