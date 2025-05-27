@@ -25,8 +25,8 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->release = '0.1.6';
-$plugin->version = 2025052000;
+$plugin->release = '0.1.7';
+$plugin->version = 2025052700;
 $plugin->requires = 2023100900.00;
 $plugin->supported = [405, 405];
 $plugin->component = 'theme_lexa';
