@@ -156,12 +156,6 @@
          fn.setup();
       });
 
-      {{#shoppingcartisavailable}}
-      require(['local_shopping_cart/cart'], function(cart) {
-         cart.buttoninit(null, 'mod_booking');
-      });
-      {{/shoppingcartisavailable}}
-
       require(['mod_booking/modal_init'], function(fn) {
          fn.init();
       });
