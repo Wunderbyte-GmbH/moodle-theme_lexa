@@ -169,7 +169,7 @@
                 <div class="booking-option-info-invisible">{{#str}} invisibleoption, mod_booking {{/str}}</div>
             {{/invisible}}
             {{#statusdescription}}<div class="bo_statusdescription"><p>{{{.}}}</p></div>{{/statusdescription}}
-            {{#description}}<div class="content"><p>{{{.}}}</p></div>{{/description}}
+            {{#summary}}<div class="content"><p>{{{.}}}</p></div>{{/summary}}
                 {{{ bookitsection }}}
 
         </div>
@@ -183,8 +183,9 @@
                         {{{formattedregions}}}
                     </div>
                     <div>
-                        <p>06.05.–10.06.2025<br>
-                        18 bis 19:30 Uhr</p>
+                        <p>
+                        <span class="teaserdate">06.05.–10.06.2025</span><br>
+                        <span class="time">18 bis 19:30 Uhr</span></p>
                         {{{formattedlearningformat}}}
                         {{learningformat}}
                     </div>
@@ -301,7 +302,6 @@
     </div>
 </div>
 
-{{#imageurl}}
 <style>
 .hero-wrapper .card {
     max-height: 500px;
@@ -313,7 +313,8 @@
 }
 .hero-wrapper  {
     padding-top:100px;
-    background: url({{imageurl}});
+    {{#imageurl}}background: url({{imageurl}});{{/imageurl}}
+    {{^imageurl}}background: rgb(144 191 104 / .07);{{/imageurl}}
     background-size: 100% auto;
     max-height: 75vh;
     width: 100%;
@@ -330,7 +331,6 @@
     margin-right: 0px !important;
 }
 </style>
-{{/imageurl}}
 <script>
   window.addEventListener('scroll', function () {
     if (window.scrollY > 0) {

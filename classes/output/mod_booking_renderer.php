@@ -68,6 +68,10 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
         $o = '';
         $data = $data->export_for_template($this);
 
+        if (!empty($data['description'])) {
+            $data['summary'] = $this->truncate_to_max_words($data['description']);
+        }
+        
         if (!empty($data['region'])) {
             $data['formattedregions'] = $this->format_region_list($data['region']);
         }
@@ -113,4 +117,22 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
 
         return $output;
     }
+
+    /**
+     * Helper to format the region list as HTML.
+     *
+     * @param string $content
+     * @param int $maxwords
+     * @return string
+     */
+    private function truncate_to_max_words(string $content, int $maxwords = 100): string {
+        $text = strip_tags($content);
+        $words = preg_split('/\s+/', trim($text));
+        if (count($words) > $maxwords) {
+            $words = array_slice($words, 0, $maxwords);
+            return implode(' ', $words) . '...';
+        }
+        return implode(' ', $words);
+    }
+    
 }
