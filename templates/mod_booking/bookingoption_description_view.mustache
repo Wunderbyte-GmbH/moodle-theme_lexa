@@ -179,13 +179,19 @@
             <div class="card price-card corner-left-bottom py-5">
                 <div class="card-body">
                     <div class="d-flex">
-                        <i class="fa fa-map-marker me-2" aria-hidden="true"></i>
                         {{{formattedregions}}}
+                        {{#dates}}
+                        {{#entitylink}}
+                        <h3 class="mb-0">{{{.}}}</h3>
+                        {{/entitylink}}
+                        {{/dates}}
+
                     </div>
+                        <div>
+                        {{address}}
+                        </div>
                     <div>
-                        <p>
-                        <span class="teaserdate">06.05.–10.06.2025</span><br>
-                        <span class="time">18 bis 19:30 Uhr</span></p>
+                        <span class="teaserdate">{{#dates}}{{{teaserdate}}}{{/dates}}</span><br>
                         {{{formattedlearningformat}}}
                         {{learningformat}}
                     </div>
@@ -264,6 +270,7 @@
      {{{ bookitsection }}}
     </div>
 </div>
+{{#entryfee}}
 <div class="additional-section mb-8">
     <div class="container-fluid">
         <div class="row mod-booking-row align-items-center">
@@ -301,6 +308,7 @@
         </div>
     </div>
 </div>
+{{/entryfee}}
 
 <style>
 .hero-wrapper .card {

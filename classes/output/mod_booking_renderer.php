@@ -76,6 +76,10 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
             $data['formattedregions'] = $this->format_region_list($data['region']);
         }
 
+        if (!empty($data['dates'])) {
+            $data['teaserdate'] = $this->format_datestring($data['dates'][0]['datestring']);
+        }
+        //var_dump($data);
         try {
             $o .= $this->render_from_template('mod_booking/bookingoption_description_view', $data);
         } catch (Exception $e) {
@@ -134,5 +138,28 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
         }
         return implode(' ', $words);
     }
+
+     /**
+     * Helper to format the datestring as HTML.
+     *
+     * @param string $datestring
+     * @return string
+     */
+    private function format_datestring(string $datestring): string {
+        $dates = explode(',', $datestring);
+
+        if (empty($dates)) {
+            return '';
+        }
+
+        $output = '<div class="mt-2">';
+        $output .= '<div class="">' . htmlspecialchars($dates[0]) . '</div>';
+        $output .= '<div class="small">' . htmlspecialchars($dates[1]) . '</div>';
+
+        $output .= '</div>';
+
+        return $output;
+    }
+
     
 }
