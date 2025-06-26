@@ -26,7 +26,7 @@
 defined('MOODLE_INTERNAL') || die;
 
 $plugin->release = '0.1.8';
-$plugin->version = 2025061100;
+$plugin->version = 2025062600;
 $plugin->requires = 2023100900.00;
 $plugin->supported = [404, 405];
 $plugin->component = 'theme_lexa';
@@ -36,4 +36,5 @@ $plugin->dependencies = [
     'theme_boost'  => 2024042200,
     'theme_boost_union'  => 2024060100,
     'local_shopping_cart' => 2025021102,
+    'mod_booking' => 2025062600,
 ];

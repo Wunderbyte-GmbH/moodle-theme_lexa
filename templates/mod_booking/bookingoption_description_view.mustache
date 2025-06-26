@@ -285,18 +285,24 @@
                     <span class="lexa-input">{{{.}}}</span>
                 </div>
                 {{/sonstigeinfos}}
+                <div>
+                {{#responsiblecontactuser.0}}
+                <div class="my-6 detailsresponsiblecontact">
+                    <h2 class="lexa-h2">{{#str}} orgacontact, local_urise {{/str}}</h2>
+                </div>
+                {{/responsiblecontactuser.0}}
                 {{#responsiblecontactuser}}
-                <div class="my-7">
-                    <h2 class="lexa-h2"> {{#str}} orgacontact, local_urise {{/str}}</h2>
+                <div class="my-6">
                     <div>
-                    <p class="lexa-input">{{{firstname}}} {{{lastname}}}</p>
-                    <p>
-                        <i class="fa-solid fa-fw fa-envelope text-primary"></i>
-                        <a href="mailto:{{{email}}}">{{{email}}}</a>
-                    </p>
+                        <p class="lexa-input">{{{firstname}}} {{{lastname}}}</p>
+                        <p>
+                            <i class="fa-solid fa-fw fa-envelope text-primary"></i>
+                            <a href="mailto:{{{email}}}">{{{email}}}</a>
+                        </p>
                     </div>
                 </div>
                 {{/responsiblecontactuser}}
+                </div>
             </div>
             <div class="col-md-5 col-12 lexa-ib lexa-sticky-column" >
             <div>
