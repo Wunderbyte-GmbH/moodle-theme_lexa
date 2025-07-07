@@ -129,6 +129,9 @@
     {{/userisediting}}
 
     <div id="page" data-region="mainpage" data-usertour="scroller" class="drawers {{#courseindexopen}}show-drawer-left{{/courseindexopen}} {{#blockdraweropen}}show-drawer-right{{/blockdraweropen}} drag-container">
+        {{#sliderpositionbeforebefore}}
+            {{> theme_boost_union/slider }}
+        {{/sliderpositionbeforebefore}}
         {{#haslandingblocks}}
             {{{landingblocks}}}
         {{/haslandingblocks}}
@@ -236,9 +239,7 @@
                             </div>
                         {{/overflow}}
                         {{{courserelatedhints}}}
-                        {{#sliderpositionbeforebefore}}
-                            {{> theme_boost_union/slider }}
-                        {{/sliderpositionbeforebefore}}
+
                         {{#advtilespositionbefore}}
                             {{> theme_boost_union/advertisementtiles }}
                         {{/advtilespositionbefore}}
