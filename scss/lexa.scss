@@ -3045,7 +3045,7 @@ img {
 .wunderbyteTableFilter .parent .form-check-label::before {
     left: 5px;
 }
-  
+
 .wunderbyteTableFilter .parent .form-check-label::after {
     left: calc(0.25rem + 5px);
 }
@@ -3059,4 +3059,12 @@ img {
 
 .wunderbyteTableFilter .form-check-label {
     padding-left: 1.5rem;
+}
+
+.wbt-gotopage select{
+    color: #99B2C6;
+    border: 2px solid #99B2C6;
+    border-radius: 10px;
+    line-height: 2;
+    height: 100%;
 }
