@@ -43,7 +43,7 @@
 }}
 
 {{^nopages}}
-    <nav aria-label="{{#str}} page, core {{/str}}">
+    <nav class="mt-4" aria-label="{{#str}} page, core {{/str}}">
     <ul class="pagination justify-content-center align-items-center">
         <li class="page-item {{disableprevious}} mr-4" data-pagenumber="{{previouspage}}">
             <a class="page-link pagbutton px-4 py-3" role="button" aria-label="{{#str}} previous, core {{/str}}">
@@ -61,7 +61,19 @@
         <li class="page-item {{disablenext}} ml-4" data-pagenumber="{{nextpage}}">
             <a class="page-link pagbutton px-4 py-3" role="button" aria-label="{{#str}} next, core {{/str}}">
                 <i class="fa-solid fa-arrow-right paginationicon"></i>
-            </a></li>
+            </a>
+        </li>
+        {{#gotopage}}
+            <div class="wbt-gotopage float-right pagination pagbutton d-flex align-items-center ml-4">
+                <span class="mr-2"> {{#str}} gotopage, local_wunderbyte_table {{/str}}</span>
+                <select class="custom-select go-to-page-select" data-initial-value="5">
+                    {{#totalpages}}
+                        <option {{#selected}}selected{{/selected}}>{{value}}</option>
+                    {{/totalpages}}
+                </select>
+            </div>
+        {{/gotopage}}
     </ul>
+
     </nav>
 {{/nopages}}
