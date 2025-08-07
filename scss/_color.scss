@@ -1,0 +1,53 @@
+// _color.scss
+
+// Neutral Colors
+$color-neutral-300: #f9f9ff;
+$color-neutral-500: #e7e6f2;
+$color-neutral-600: #d4d2e3;
+$color-neutral-900: #8d8ba7;
+$color-neutral-headings-black: #5d5a88;
+
+// Neutral Purple
+$color-neutral-purple-100: #dfddf1;
+$color-neutral-purple-300: #807696;
+$color-neutral-purple-500: #534d75;
+$color-neutral-purple-700: #32334d;
+
+// Neutral Misc
+$color-neutral-400: #d9dbe9;
+
+// Primary Colors
+$color-primary-150: #fdeecc;
+$color-primary-450: #f6b826;
+$color-primary-500: #f5ac00;
+
+:root {
+    /* Neutral Colors */
+    --color-neutral-300: #f9f9ff;
+    --color-neutral-500: #e7e6f2;
+    --color-neutral-600: #d4d2e3;
+    --color-neutral-900: #8d8ba7;
+    --color-neutral-headings-black: #5d5a88;
+  
+    /* Neutral Purple */
+    --color-neutral-purple-100: #dfddf1;
+    --color-neutral-purple-300: #807696;
+    --color-neutral-purple-500: #534d75;
+    --color-neutral-purple-700: #32334d;
+  
+    /* Neutral Misc */
+    --color-neutral-400: #d9dbe9;
+  
+    /* Primary Colors */
+    --color-primary-150: #fdeecc;
+    --color-primary-450: #f6b826;
+    --color-primary-500: #f5ac00;
+  
+    /* Additional Colors */
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-dark-gray: #32334c;
+    --color-dark-blue: #182b48;
+}
+
+  

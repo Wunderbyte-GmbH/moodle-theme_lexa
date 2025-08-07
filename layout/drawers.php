@@ -51,6 +51,7 @@ require_once($CFG->dirroot . '/course/lib.php');
 
 // Require own locallib.php.
 require_once($CFG->dirroot . '/theme/boost_union/locallib.php');
+use theme_lexa\toolbox;
 
 // Add activity navigation if the feature is enabled.
 $activitynavigation = get_config('theme_boost_union', 'activitynavigation');
@@ -159,6 +160,14 @@ $bodyattributes = $OUTPUT->body_attributes($extraclasses); // In the original la
 
 $header = $PAGE->activityheader;
 $headercontent = $header->export_for_template($renderer);
+if ($PAGE->pagelayout == 'course' && $PAGE->course->id != SITEID) {
+    $courseinfos = toolbox::get_course_infos($PAGE->course->id);
+}
+
+if ($PAGE->pagelayout == 'admin') {
+    $adminpage = true;
+}
+
 
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
@@ -182,6 +191,8 @@ $templatecontext = [
     'overflow' => $overflow,
     'headercontent' => $headercontent,
     'addblockbutton' => $addblockbutton,
+    'courseinfos' => $courseinfos ?? '',
+    'adminpage' => $adminpage,
 ];
 
 // Include the template content for the course related hints.
@@ -228,4 +239,6 @@ if ($PAGE->pagelayout == 'frontpage') {
 require_once($CFG->dirroot . '/theme/boost_union/layout/includes/smartmenus.php');
 
 // Render drawers.mustache from theme_boost (which is overridden in theme_boost_union).
+
 echo $OUTPUT->render_from_template('theme_lexa/drawers', $templatecontext);
+

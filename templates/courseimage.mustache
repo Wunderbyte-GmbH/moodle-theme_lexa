@@ -1,0 +1,129 @@
+
+<div class="container-hero lgonly">
+    <div class="course-banner" style="background-image: url('{{headerimage}}'); background-size: cover">
+        <div class="overlay">
+            <div class="text-block">
+                <p class="course-date">{{startdate}}{{#enddate}} - {{enddate}}{{/enddate}}</p>
+                <h2 class="course-title">{{title}}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mobileonly headercard card course-card mx-1 mt-2" role="listitem"
+    data-region="course-content"
+    data-course-id="{{{id}}}">
+    {{overviewfiles}}
+    <div class="bg" style="background-image: url('{{headerimage}}')">
+<div class="card-banner" >
+    <div class="overlay">
+        <div class="text-block">
+            <p class="course-date">{{startdate}}{{#enddate}} - {{enddate}}{{/enddate}}</p>
+            <h2 class="course-title">{{title}}</h2>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+
+
+<style>
+.mobileonly {
+    display: none;
+}
+
+.lgonly {
+    display: block;
+}
+.course-banner {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    overflow: hidden;
+}
+
+.course-banner .background-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.course-banner .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparent black for overlay effect */
+}
+
+.course-banner .text-block {
+    margin-left: 100px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-radius: 0px 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 60px 60px 70px 60px;
+    background: var(--Primary-500, #F5AC00); /* Primary color or fallback */
+    max-width: 50%; /* Adjust the width for the text block */
+    color: #ffffff;
+}
+
+.course-banner .course-date {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #2d2d2d;
+}
+
+.course-banner .course-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2d2d2d;
+    line-height: 1.2;
+}
+
+.headercard.card .bg {
+    height: 100%;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.card.course-card {
+    aspect-ratio: 1;
+    width: 100%;
+    height: unset;
+}
+
+
+.card-banner .text-block {
+    margin: 20px 20px;
+    border-radius: 0 60px;
+    padding: 20px;
+    background: var(--Primary-500, #F5AC00);
+    max-width: 80%;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .mobileonly {
+        display: block;
+    }
+    .lgonly {
+        display: none;
+    }
+    h2 {
+        font-size: 26px;
+        line-height: 32px;
+    }
+}
+
+</style>

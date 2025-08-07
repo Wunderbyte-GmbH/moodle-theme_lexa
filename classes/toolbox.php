@@ -26,6 +26,7 @@
 namespace theme_lexa;
 
 use moodle_url;
+use core_course\customfield\course_handler;
 
 /**
  * The theme's toolbox.
@@ -192,4 +193,63 @@ class toolbox {
             return format_string($setting);
         }
     }
+
+    public static function get_course_infos($courseid) {
+        global $DB, $CFG;
+    
+        $courseinfos = [];
+    
+        $course = $DB->get_record('course', ['id' => $courseid], 'id, fullname, startdate, enddate, summary');
+    
+        if ($course) {
+            $defaultimage = $CFG->wwwroot . '/theme/image.php?theme=boost&component=core&image=f%2Fdefault';
+    
+            $context = \context_course::instance($course->id);
+            $files = get_file_storage()->get_area_files($context->id, 'course', 'overviewfiles', false, 'filename', false);
+    
+            $courseimage = $defaultimage;
+            if ($files) {
+                foreach ($files as $file) {
+                    $courseimage = file_encode_url($CFG->wwwroot . '/pluginfile.php', '/' . $context->id . '/course/overviewfiles/' . $file->get_filename());
+                    break;
+                }
+            }
+
+            // Get the custom fields for the course.
+            $handler = course_handler::get_handler('core_course', 'course');
+
+            // Load custom fields data for the specific course.
+            $customfields = $handler->get_instance_data($courseid, true);
+
+            // Extract the field values.
+            $result = [];
+            foreach ($customfields as $data) {
+                $fieldname = $data->get_field()->get('name'); // Name of the custom field
+                $fieldvalue = $data->export_value();            // Value of the custom field
+                $result[$fieldname] = $fieldvalue;
+                if ($fieldname == "headerpic") {
+                    preg_match('/src="([^"]+)"/', $fieldvalue, $matches);
+                    
+                    $src = $matches[1] ?? '';
+                    $cardimg = $src;
+                }
+            }
+            if (!$cardimg) {
+                $cardimg = $courseimage;
+            }
+            $courseinfos = [
+                'id' => $course->id,
+                'title' => $course->fullname,
+                'startdate' => date('d. F Y', $course->startdate),
+                'enddate' => date('d. F Y', $course->enddate),
+                'image' => $courseimage,
+                'headerimage' => $cardimg,
+                'summary' => format_text($course->summary, FORMAT_HTML)
+            ];
+        }
+    
+        return $courseinfos;
+    }
+    
+
 }

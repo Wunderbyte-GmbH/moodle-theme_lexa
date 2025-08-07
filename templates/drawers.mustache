@@ -72,9 +72,7 @@
 <body {{{ bodyattributes }}}>
 {{> core/local/toast/wrapper}}
 <div id="page-wrapper" class="d-print-block">
-
     {{{ output.standard_top_of_body_html }}}
-
     {{> theme_boost/navbar }}
     {{#courseindex}}
         {{< theme_boost/drawer }}
@@ -200,12 +198,18 @@
             </div>
             {{> theme_boost_union/javascriptdisabledhint }}
             {{> theme_boost_union/infobanners }}
-            {{{ output.full_header }}}
+            {{^courseinfos}}
+                {{{ output.full_header }}}
+            {{/courseinfos}}
             {{#secondarymoremenu}}
                 <div class="secondary-navigation d-print-none">
                     {{> core/moremenu}}
                 </div>
             {{/secondarymoremenu}}
+                {{#courseinfos}}
+                    {{> theme_lexa/courseimage }}
+                    {{{ output.full_header }}}
+                {{/courseinfos}}
             {{#regions.contentupper.hasblocks}}
                 <section id="theme-block-region-content-upper" class="theme-block-region" aria-label="{{#str}}blocks{{/str}}">
                     {{{ regions.contentupper.addblockbutton }}}

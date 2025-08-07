@@ -25,7 +25,7 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version = 2024102700;
+$plugin->version = 2024102902;
 $plugin->requires = 2024042200.00; // 4.4 (Build: 20240422).
 $plugin->supported = [404, 404];
 $plugin->component = 'theme_lexa';
