@@ -1474,7 +1474,17 @@ body.limitedwidth #page.drawers .footer-popover {
     //     border-bottom: none !important;
     //     overflow: visible;
     //   }
-
+    .mod-booking-card::after {
+        content: '';
+        position: absolute;
+        border-bottom: 1px solid #D9E1E7;
+        bottom: 20px;
+        left: -40px;
+        width: 110vw;
+    }
+    .landingblock .no-overflow {
+        overflow: hidden;
+    }
     .wunderbyte-table-grid {
       padding: 0px;
     }
