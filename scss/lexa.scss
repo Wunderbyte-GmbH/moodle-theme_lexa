@@ -1460,12 +1460,12 @@ body.limitedwidth #page.drawers .footer-popover {
 }
 
 @media (max-width: 768px) {
-    .mod-booking-card-content.d-flex {
-        display: grid !important;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: 1fr;
-        grid-column-gap: 20px;
-    }
+    // .mod-booking-card-content.d-flex {
+    //     display: grid !important;
+    //     grid-template-columns: repeat(4, 1fr);
+    //     grid-template-rows: 1fr;
+    //     grid-column-gap: 20px;
+    // }
 
 
     // .mod-booking-card-content {
