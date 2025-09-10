@@ -157,7 +157,7 @@
         {{^expanded}}
             aria-expanded="false"
         {{/expanded}}
-    aria-controls="id_collapse_{{columnname}}" class="btn dropdown-toggle dropdownMenuButton" type="button" data-ident="{{columnname}}" data-toggle="dropdown" aria-haspopup="true">
+    href="id_collapse_{{columnname}}" aria-controls="id_collapse_{{columnname}}" class="btn dropdown-toggle dropdownMenuButton" type="button" data-ident="{{columnname}}" data-bs-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true">
         {{name}} <span class="filtercounter badge badge-light {{^filtercounter}}hidden{{/filtercounter}}">{{filtercounter}}</span>
     </button>
     <div class="dropdown-menu">
