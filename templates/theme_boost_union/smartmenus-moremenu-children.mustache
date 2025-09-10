@@ -34,7 +34,8 @@
 {{#haschildren}}
     <li class="dropdown nav-item {{#menuclasses}}{{.}} {{/menuclasses}} "  data-name="{{text}}" role="none" data-forceintomoremenu="{{#forceintomoremenu}}true{{/forceintomoremenu}}{{^forceintomoremenu}}false{{/forceintomoremenu}}">
         <a class="dropdown-toggle nav-link {{#isactive}}active{{/isactive}} {{#classes}}{{.}} {{/classes}}" id="drop-down-{{moremenuid}}" role="menuitem" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false" href="#" aria-controls="drop-down-menu-{{moremenuid}}"
+            data-bs-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false" href="#drop-down-menu-{{moremenuid}}" aria-controls="drop-down-menu-{{moremenuid}}"
             {{#tooltip}}title="{{.}}" data-toggle="tooltip"{{/tooltip}}{{^tooltip}}{{#title}}title="{{.}}"{{/title}}{{/tooltip}}
             {{#attributes}}{{name}}="{{value}}" {{/attributes}}
             {{#isactive}}aria-current="true"{{/isactive}}
