@@ -229,7 +229,23 @@
     {{/error}}
     {{#error}}
         document.getElementById('loginerrormessage').focus();
+        var loginContainer = document.getElementById('logincontainer');
+        loginContainer.classList.add('show');
+        loginContainer.setAttribute('aria-expanded', 'true');
+        
+        var toggleButton = document.querySelector('[data-target="#logincontainer"]');
+        toggleButton.setAttribute('aria-expanded', 'true');
     {{/error}}
+    {{#info}}
+        document.getElementById('logininfomessage').focus();
+        
+        var loginContainer = document.getElementById('logincontainer');
+        loginContainer.classList.add('show');
+        loginContainer.setAttribute('aria-expanded', 'true');
+        
+        var toggleButton = document.querySelector('[data-target="#logincontainer"]');
+        toggleButton.setAttribute('aria-expanded', 'true');
+    {{/info}}
     require(['core_form/submit'], function(Submit) {
         Submit.init("loginbtn");
         {{#canloginasguest}}
