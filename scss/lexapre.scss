@@ -1,3 +1,5 @@
+
+$prefix: '' !default;
 // Colours.
 $blue: #0063a6 !default; // Blue 500.
 $blue_700: #005c99 !default;
@@ -38,7 +40,6 @@ $alertinfocolor: rgb(11, 52, 110);
 $alertinfobg: rgb(205, 224, 236);
 
 $headings-color: $darkprimary !default;
-
 $lightcontent: #D9E1E7 !default;
 $light_secondary: #99B2C6 !default;
 
@@ -133,3 +134,13 @@ $breadcrumb-item-padding: 2.5rem !default;
 
 
 $body-color: $primary_900 !default;
+
+:root {
+    --lightcontent: $lightcontent;
+    --light_secondary: $light_secondary;
+    --primarylightbg: $primarylightbg;
+    --drawer-bg-color: $drawer-bg-color;
+    --calendar-bg-color: $calendar-bg-color;
+    --footerdivider: $white;
+    --body-color: $body-color;
+}

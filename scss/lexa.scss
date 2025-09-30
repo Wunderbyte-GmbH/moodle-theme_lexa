@@ -918,7 +918,7 @@ body.limitedwidth #page.drawers .footer-popover {
 
 .page-item.active .page-link {
     color: white;
-    background: var(--primary);
+    background: var(--primary) !important;
     border-radius: 7px;
 }
 
