@@ -159,53 +159,44 @@
             {{/editurl}}
         </div>
     </div>
-    <div class="row mod-booking-row align-items-end">
-        <div class="col-md-7 mb-6">
-            <div class="card corner-right-bottom py-6">
-            <div class="card-body">
+    </div>
+</div>
+<div class="container-fluid main-section">
+        <div class="row mod-booking-row align-items-end">
+        <div class="col-md-12">
             <h3 class="bookingcategory">{{{bookingcategory}}}</h3>
-            <h2 class="title" >{{{title}}}</h2>
+            <h2 class="title py-3" >{{{title}}}</h2>
+            <div class="card">
+            <div class="card-body">
             {{#invisible}}
                 <div class="booking-option-info-invisible">{{#str}} invisibleoption, mod_booking {{/str}}</div>
             {{/invisible}}
             {{#statusdescription}}<div class="bo_statusdescription"><p>{{{.}}}</p></div>{{/statusdescription}}
             {{#summary}}<div class="content"><p>{{{.}}}</p></div>{{/summary}}
-                {{{ bookitsection }}}
+            <div class="d-flex">
+                {{{formattedregions}}}
+                {{#dates}}
+                {{#entitylink}}
+                <p class="mb-0 bold">{{{.}}}</p>
+                {{/entitylink}}
+                {{/dates}}
 
-        </div>
-        </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card price-card corner-left-bottom py-5">
-                <div class="card-body">
-                    <div class="d-flex">
-                        {{{formattedregions}}}
-                        {{#dates}}
-                        {{#entitylink}}
-                        <h3 class="mb-0">{{{.}}}</h3>
-                        {{/entitylink}}
-                        {{/dates}}
-
-                    </div>
-                        <div>
-                        {{address}}
-                        </div>
-                    <div>
-                        <span class="teaserdate">{{#dates}}{{{teaserdate}}}{{/dates}}</span><br>
-                        {{{formattedlearningformat}}}
-                        {{learningformat}}
-                    </div>
+            </div>
+                <div>
+                {{address}}
                 </div>
+            <div>
+                <div class="bold">{{#dates}}{{{teaserdate}}}{{/dates}}</div><br>
+                {{{formattedlearningformat}}}
+                {{learningformat}}
+            </div>
+            <div class="w-50 py-3 mx-auto">{{{ bookitsection }}}</div> 
+            </div>
             </div>
         </div>
     </div>
-    </div>
-</div>
-<div class="container-fluid main-section">
     <div class="row mod-booking-row">
         <div class="col-md-12">
-            <div class="card border-0">
-            <div class="card-body">
             {{#invisible}}
                 <div class="booking-option-info-invisible">{{#str}} invisibleoption, mod_booking {{/str}}</div>
             {{/invisible}}
@@ -259,17 +250,13 @@
                 {{#str}} selflearningcoursetimeremaininginfoexpired, booking {{/str}}
             {{/selflearningcourseshowdurationinfoexpired}}
         </div>
-        </div>
-        </div>
     </div>
 </div>
-<div class="hero-section">
     <div class="container-fluid">
-    <h2>Anmeldung -</h2>
-    <h2>{{heroteaser}}</h2>
+    <h3>Anmeldung: </h3>
+    <h3>{{heroteaser}}</h3>
      {{{ bookitsection }}}
     </div>
-</div>
 {{#entryfee}}
 <div class="additional-section mb-8">
     <div class="container-fluid">

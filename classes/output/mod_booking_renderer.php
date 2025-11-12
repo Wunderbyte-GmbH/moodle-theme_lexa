@@ -105,7 +105,7 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
         $count = count($regions);
 
         $output = '<span class="yellowtag">';
-        $output .= '<span class="bl first-bl">' . htmlspecialchars($firstregion) . '</span>';
+        $output .= '<span class="bl bold">' . htmlspecialchars($firstregion) . '</span>';
 
         if ($count > 0) {
             $output .= '<span class="more-bl">';
