@@ -78,13 +78,13 @@
         {{/sub}}
         {{#main}}
             {{#link}}
-                <a class="booking-button-mainarea urisebutton p-1 {{class}} mb-1 mt-1 p-1 mr-1 gradienthover" role="{{role}}" href="{{link}}" data-action="bookondetail">
+                <a class="d-flex flex-column booking-button-mainarea urisebutton p-1 {{class}} mb-1 mt-1 p-1 mr-1 gradienthover" role="{{role}}" href="{{link}}" data-action="bookondetail">
                     {{{label}}} {{#foruser}}<br><span>{{{foruser}}}</span>{{/foruser}}
                     {{#showicon}} <i class="fa-solid {{{showicon}}} ml-2 mr-1"></i> {{/showicon}}
                 </a>
             {{/link}}
             {{^link}}
-                <div class="booking-button-mainarea urisebutton gradienthover p-1 {{class}} mb-1 mt-1 p-1" role="{{role}}">
+                <div class="d-flex flex-column booking-button-mainarea urisebutton gradienthover p-1 {{class}} mb-1 mt-1 p-1" role="{{role}}">
                     {{{label}}}{{#foruser}}<br><span>{{{foruser}}}</span>{{/foruser}}
                 </div>
             {{/link}}
