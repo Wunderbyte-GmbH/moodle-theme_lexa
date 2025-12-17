@@ -1765,6 +1765,7 @@ border-radius: 10px !important;
 .filtercategorykeylabel {
     overflow: auto;
     word-wrap: break-word;
+    padding-right: 2rem;
 }
 
 .wunderbyte_table_container .hierarchybutton.dropdown-item.active,.wunderbyte_table_container .hierarchybutton.dropdown-item:active,.wunderbyte_table_container .dropdown-item:hover,.wunderbyte_table_container .dropdown-item:focus,.wunderbyte_table_container .dropdown-item:focus-within {
@@ -3072,4 +3073,77 @@ img {
     border-radius: 10px;
     line-height: 2;
     height: 100%;
+}
+
+.navbar-row .custom-control-input {
+  z-index: 9;
+}
+
+.navbar-expand .navbar-nav .dropdown-menu {
+  position: absolute;
+    top: 100%;
+}
+
+.navbar-expand #lexa-npo-two {
+  overflow: visible;
+}
+
+.mod-booking-card-header .col-ap-availableplaces {
+  max-width: fit-content;
+}
+
+.postdoc .mod-booking-card {
+  background: white;
+}
+.postdoc {
+  padding: 20px !important;
+}
+
+.wb_news-userinfo {
+    img {
+        width: auto;
+    }
+}
+
+.page-allteachers-card {
+    width: 23.5rem !important;
+    padding: 0;
+}
+
+.wbt-gotopage span {
+    min-width: fit-content;
+}
+
+.wunderbyte_table_components .wunderbyteTableFilter .form-check-label {
+    margin-left: 1.5rem;
+    padding-left: 0.6rem;
+}
+
+.wunderbyte_table_components .wunderbyteTableFilter .parent .form-check-label {
+    margin-left: 1.5rem;
+    padding-left: 0.6rem;
+    &::before {
+        top: 25%;
+    }
+    &::after {
+            top: 35%;
+    }
+}
+
+
+.wunderbyte_table_components .wunderbyterFilterList.hierarchy .parent:hover {
+    background: rgba(233, 240, 243, 0.279);
+    color: #0063a6;
+}
+
+.wunderbyte_table_components .wunderbyte_table_container .hierarchybutton.dropdown-item.active,
+.wunderbyte_table_container .hierarchybutton.dropdown-item:active,
+.wunderbyte_table_container .dropdown-item:hover,
+.wunderbyte_table_container .dropdown-item:focus,
+.wunderbyte_table_container .dropdown-item:focus-within {
+    background: initial;
+}
+
+.hierarchy .card.card-body .form-check {
+    padding-left: 2.5rem;
 }
