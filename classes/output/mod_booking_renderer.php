@@ -264,7 +264,6 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
         return [];
     }
 
-
     /**
      * Retrieve course format from custom fields.
      *
@@ -280,7 +279,6 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
             return format_string($value);
         }
     }
-
 
     /**
      * Prepare dates collapse.
