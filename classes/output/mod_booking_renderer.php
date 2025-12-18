@@ -189,7 +189,6 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
      * @throws InvalidArgumentException When the ID is not a valid integer.
      */
     public function prepare_kompetenzen($id) {
-
         $settings = singleton_service::get_instance_of_booking_option_settings((int)$id);
 
         if (isset($settings->customfields) && isset($settings->customfields['kompetenzen'])) {
@@ -246,7 +245,6 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
      *
      */
     public function prepare_organisation($id) {
-
         $settings = singleton_service::get_instance_of_booking_option_settings((int)$id);
         if (isset($settings->customfields) && isset($settings->customfields['organisation'])) {
             if (is_array($settings->customfields['organisation'])) {
@@ -269,7 +267,6 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
         return [];
     }
 
-
     /**
      * Retrieve course format from custom fields.
      *
@@ -286,7 +283,6 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
         }
     }
 
-
     /**
      * Prepare dates collapse.
      *
@@ -294,7 +290,6 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
      * @return bool The course language or null if not found.
      */
     public function prepare_dates($values) {
-
         $maxdates = get_config('booking', 'collapseshowsettings') ?? 2; // Hardcoded fallback on two.
         // Show a collapse button for the dates.
         if (!empty($values['dates']) && count($values['dates']) > $maxdates) {
@@ -303,5 +298,4 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
             return false;
         }
     }
-
 }

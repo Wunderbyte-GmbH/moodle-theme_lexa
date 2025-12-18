@@ -88,7 +88,7 @@ class toolbox {
             )
         );
 
-        // Booking module code(s).
+        // Booking module code(s) .
         $name = 'theme_lexa/mod_booking_codes';
         $title = get_string('mod_booking_codes', 'theme_lexa');
         $description = get_string('mod_booking_codesdesc', 'theme_lexa');
@@ -125,9 +125,9 @@ class toolbox {
         // Course offerings.
         $name = 'theme_lexa/footercourseofferings';
         $title = get_string('footercourseofferings', 'theme_lexa');
-        $description = get_string('footercourseofferingsdesc', 'theme_lexa').
-            PHP_EOL.get_string('footerformat', 'theme_lexa').
-            PHP_EOL.get_string('footerfontawesomenote', 'theme_lexa');
+        $description = get_string('footercourseofferingsdesc', 'theme_lexa') .
+            PHP_EOL . get_string('footerformat', 'theme_lexa') .
+            PHP_EOL . get_string('footerfontawesomenote', 'theme_lexa');
         $default = '';
         $setting = new \admin_setting_configtextarea($name, $title, $description, $default);
         $settingspages['footer']->add($setting);
@@ -135,9 +135,9 @@ class toolbox {
         // Communites.
         $name = 'theme_lexa/footercommunities';
         $title = get_string('footercommunities', 'theme_lexa');
-        $description = get_string('footercommunitiesdesc', 'theme_lexa').
-            PHP_EOL.get_string('footerformat', 'theme_lexa').
-            PHP_EOL.get_string('footerfontawesomenote', 'theme_lexa');
+        $description = get_string('footercommunitiesdesc', 'theme_lexa') .
+            PHP_EOL . get_string('footerformat', 'theme_lexa') .
+            PHP_EOL . get_string('footerfontawesomenote', 'theme_lexa');
         $default = '';
         $setting = new \admin_setting_configtextarea($name, $title, $description, $default);
         $settingspages['footer']->add($setting);
@@ -145,9 +145,9 @@ class toolbox {
         // Contact us.
         $name = 'theme_lexa/footercontactus';
         $title = get_string('footercontactus', 'theme_lexa');
-        $description = get_string('footercontactusdesc', 'theme_lexa').
-            PHP_EOL.get_string('footerformat', 'theme_lexa').
-            PHP_EOL.get_string('footerfontawesomenote', 'theme_lexa');
+        $description = get_string('footercontactusdesc', 'theme_lexa') .
+            PHP_EOL . get_string('footerformat', 'theme_lexa') .
+            PHP_EOL . get_string('footerfontawesomenote', 'theme_lexa');
         $default = '';
         $setting = new \admin_setting_configtextarea($name, $title, $description, $default);
         $settingspages['footer']->add($setting);
@@ -155,9 +155,9 @@ class toolbox {
         // Social.
         $name = 'theme_lexa/footersocial';
         $title = get_string('footersocial', 'theme_lexa');
-        $description = get_string('footersocialdesc', 'theme_lexa').
-            PHP_EOL.get_string('footerformat', 'theme_lexa').
-            PHP_EOL.get_string('footerfontawesomenote', 'theme_lexa');
+        $description = get_string('footersocialdesc', 'theme_lexa') .
+            PHP_EOL . get_string('footerformat', 'theme_lexa') .
+            PHP_EOL . get_string('footerfontawesomenote', 'theme_lexa');
         $default = '';
         $setting = new \admin_setting_configtextarea($name, $title, $description, $default);
         $settingspages['footer']->add($setting);

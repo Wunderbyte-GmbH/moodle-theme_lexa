@@ -46,9 +46,9 @@ class toolbox_test extends \advanced_testcase {
     public function test_convert_text_to_items() {
         $toolbox = \theme_lexa\toolbox::get_instance();
 
-        $testitems = 'First item|https://testsite.localhost/|First item title'. PHP_EOL.
-            'Second item|https://testsite.localhost/|Second item title|en'. PHP_EOL.
-            'Zweite item|https://testsite.localhost/|Zweite item title|de'. PHP_EOL.
+        $testitems = 'First item|https://testsite.localhost/|First item title' . PHP_EOL.
+            'Second item|https://testsite.localhost/|Second item title|en' . PHP_EOL.
+            'Zweite item|https://testsite.localhost/|Zweite item title|de' . PHP_EOL.
             '|https://testsite.localhost/|FontAwesome test||fa-solid fa-font-awesome';
 
         $enitems = $toolbox->convert_text_to_items($testitems, 'en');
