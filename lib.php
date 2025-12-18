@@ -26,7 +26,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 global $CFG;
-require_once($CFG->dirroot.'/theme/boost/lib.php');
+require_once($CFG->dirroot . '/theme/boost/lib.php');
 
 /**
  * Get SCSS to prepend.
@@ -59,7 +59,7 @@ function theme_lexa_get_pre_scss($theme) {
 
     // Navbar scrolled layout.
     if (!empty($theme->settings->navbarscrolledlayout)) {
-        $scss .= '$navbar-scrolled-layout: ' . $theme->settings->navbarscrolledlayout .';' . PHP_EOL;
+        $scss .= '$navbar-scrolled-layout: ' . $theme->settings->navbarscrolledlayout . ';' . PHP_EOL;
     }
 
     return $scss;

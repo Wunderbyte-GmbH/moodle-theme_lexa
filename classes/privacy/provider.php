@@ -39,7 +39,6 @@ class provider implements
 
     // This plugin has some sitewide user preferences to export.
     \core_privacy\local\request\user_preference_provider {
-
     /**
      * Returns meta data about this system.
      *

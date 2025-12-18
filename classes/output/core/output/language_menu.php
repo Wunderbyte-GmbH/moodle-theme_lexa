@@ -37,7 +37,6 @@ namespace theme_lexa\output\core\output;
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class language_menu extends \core\output\language_menu {
-
     /**
      * Export the data.
      *

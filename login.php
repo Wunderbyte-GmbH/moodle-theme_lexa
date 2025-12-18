@@ -28,11 +28,11 @@
 // Include config.php.
 // Let codechecker ignore the next line because otherwise it would complain about a missing login check
 // after requiring config.php which is really not needed.
-require(__DIR__.'/../../config.php'); // phpcs:disable moodle.Files.RequireLogin.Missing
+require(__DIR__ . '/../../config.php'); // phpcs:disable moodle.Files.RequireLogin.Missing
 
 // Require the necessary libraries.
-require_once($CFG->dirroot.'/lib/authlib.php');
-require_once($CFG->dirroot.'/theme/boost_union/lib.php');
+require_once($CFG->dirroot . '/lib/authlib.php');
+require_once($CFG->dirroot . '/theme/boost_union/lib.php');
 
 unset($SESSION->loginerrormsg);
 unset($SESSION->logininfomsg);

@@ -43,7 +43,6 @@ use mod_booking\singleton_service;
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class mod_booking_renderer extends \mod_booking\output\renderer {
-
     /**
      * Render output for action column.
      * @param object $data
@@ -93,7 +92,6 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
         if (isset($settings->customfields) && isset($settings->customfields['botags'])) {
             $botagsarray = $settings->customfields['botags'];
             if (!empty($botagsarray)) {
-
                 if (!is_array($botagsarray)) {
                     $botagsarray = (array)$botagsarray;
                 }
@@ -130,22 +128,22 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
     public function render_bookingoption_description_view(bookingoption_description $data) {
         $o = '';
         $data = $data->export_for_template($this);
-        $data['title'] = strip_tags( $data['title']);
+        $data['title'] = strip_tags($data['title']);
         // Prepare Data for template.
         if (!empty($data['bookinginformation'])) {
             $data['bookings'] = $this->prepare_bookings($data['bookinginformation'], $data['modalcounter']);
         }
         if (!empty($data['kurssprache'])) {
-            $data['kurssprache'] = $this->prepare_kurssprache($data['kurssprache'], $data['modalcounter'] );
+            $data['kurssprache'] = $this->prepare_kurssprache($data['kurssprache'], $data['modalcounter']);
         }
         if (!empty($data['format'])) {
-            $data['format'] = $this->prepare_format($data['format'], $data['modalcounter'] );
+            $data['format'] = $this->prepare_format($data['format'], $data['modalcounter']);
         }
         if (!empty($data['kompetenzen'])) {
-            $data['competency'] = $this->prepare_kompetenzen($data['modalcounter'] );
+            $data['competency'] = $this->prepare_kompetenzen($data['modalcounter']);
         }
         if (!empty($data['organisation'])) {
-            $data['organisation'] = $this->prepare_organisation($data['modalcounter'] );
+            $data['organisation'] = $this->prepare_organisation($data['modalcounter']);
         }
         $data['botags'] = $this->prepare_botags($data['modalcounter']);
         $data['showcollapse'] = $this->prepare_dates($data);
@@ -189,7 +187,6 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
      * @throws InvalidArgumentException When the ID is not a valid integer.
      */
     public function prepare_kompetenzen($id) {
-
         $settings = singleton_service::get_instance_of_booking_option_settings((int)$id);
 
         if (isset($settings->customfields) && isset($settings->customfields['kompetenzen'])) {
@@ -246,7 +243,6 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
      *
      */
     public function prepare_organisation($id) {
-
         $settings = singleton_service::get_instance_of_booking_option_settings((int)$id);
         if (isset($settings->customfields) && isset($settings->customfields['organisation'])) {
             if (is_array($settings->customfields['organisation'])) {
@@ -265,7 +261,6 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
                 return [$value];
             }
         }
-
         return [];
     }
 
@@ -294,7 +289,6 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
      * @return bool The course language or null if not found.
      */
     public function prepare_dates($values) {
-
         $maxdates = get_config('booking', 'collapseshowsettings') ?? 2; // Hardcoded fallback on two.
         // Show a collapse button for the dates.
         if (!empty($values['dates']) && count($values['dates']) > $maxdates) {
@@ -303,5 +297,5 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
             return false;
         }
     }
-
 }
+

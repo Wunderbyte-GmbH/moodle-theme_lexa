@@ -165,8 +165,10 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
      * @return string HTML to display the main header.
      */
     public function full_header() {
-        if (($this->page->pagetype == 'site-index') ||
-            ($this->page->pagetype == 'course-index-category')) {
+        if (
+            ($this->page->pagetype == 'site-index') ||
+            ($this->page->pagetype == 'course-index-category')
+        ) {
             return '';
         }
         return parent::full_header();
@@ -203,7 +205,7 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
         $classes = (array)$classes;
         $classes[] = 'block-region';
         $attributes = [
-            'id' => 'block-region-'.preg_replace('#[^a-zA-Z0-9_\-]+#', '-', $displayregion),
+            'id' => 'block-region-' . preg_replace('#[^a-zA-Z0-9_\-]+#', '-', $displayregion),
             'class' => join(' ', $classes),
             'data-blockregion' => $displayregion,
             'data-droptarget' => '1',
@@ -265,14 +267,15 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
                     continue;
                 }
                 if (!empty($bcadditionalclasses)) {
-                    $bc->attributes['class'] .= ' '.$bcadditionalclasses;
+                    $bc->attributes['class'] .= ' ' . $bcadditionalclasses;
                 }
                 if (($notediting) && ($region == 'landing')) {
                     preg_match('/\[(.*?)\]/', $bc->title, $matches);
                     if (isset($matches[1])) {
-                        $bc->attributes['class'] .= ' '.$matches[1];
+                        $bc->attributes['class'] .= ' ' . $matches[1];
                     }
-                    $output .= html_writer::tag('div',
+                    $output .= html_writer::tag(
+                        'div',
                         $this->block(
                             $bc,
                             $region,

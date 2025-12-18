@@ -176,7 +176,7 @@ $THEME->layouts = [
 ];
 
 $THEME->prescsscallback = 'theme_lexa_get_pre_scss';
-$THEME->scss = function(theme_config $theme) {
+$THEME->scss = function (theme_config $theme) {
     return theme_lexa_get_main_scss_content($theme);
 };
 $THEME->extrascsscallback = 'theme_lexa_get_extra_scss';

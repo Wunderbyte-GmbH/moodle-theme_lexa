@@ -24,16 +24,16 @@
  */
 
 $string['backtooverview'] = "Zurück";
-$string['choosereadme'] = '<div class="clearfix"><h2>Lexa</h2>'.
-'<h3>About</h3>'.
-'<p>Lexa is a child theme of the Boost theme.</p>'.
-'<h3>Theme Credits</h3>'.
-'<p>Author: G J Barnard<br>'.
-'Contact: <a href="http://moodle.org/user/profile.php?id=442195">Moodle profile</a><br>'.
-'Website: <a href="https://gjbarnard.co.uk">gjbarnard.co.uk</a>'.
-'</p>'.
-'<h3>More information</h3>'.
-'<p><a href="lexa/Readme.md">How to use this theme.</a></p>'.
+$string['choosereadme'] = '<div class="clearfix"><h2>Lexa</h2>' .
+'<h3>About</h3>' .
+'<p>Lexa is a child theme of the Boost theme.</p>' .
+'<h3>Theme Credits</h3>' .
+'<p>Author: G J Barnard<br>' .
+'Contact: <a href="http://moodle.org/user/profile.php?id=442195">Moodle profile</a><br>' .
+'Website: <a href="https://gjbarnard.co.uk">gjbarnard.co.uk</a>' .
+'</p>' .
+'<h3>More information</h3>' .
+'<p><a href="lexa/Readme.md">How to use this theme.</a></p>' .
 '</div></div>';
 
 $string['configtitle'] = 'Lexa';
@@ -119,11 +119,11 @@ $string['footersocialdesc'] = 'Enter the social links, for example:
 |http://www.youtube.com/|My Youtube||fa-brands fa-youtube
 </pre>';
 
-$string['footerformat'] = 'In the format of \'text|url|title|langs|fontawesome classes\'.  Only enter what you require.  If you don\'t need something but do need another thing further along then leave it blank but still use the \'|\' delimiter.  For example: \'text|url|||fontawesome classes\'.';
-$string['footerfontawesomenote'] = 'To find the FontAwesome(Free) classes for the icon you wish to use, go to <a href="https://fontawesome.com/search?o=r&m=free" target="_blank">Font Awesome</a> and search for the icon.  Both CSS classes are required, such as \'fa-solid fa-user-graduate\'.  The installed version of FontAwesome is 6.4.0, so if it is for above then it will not be available.';
+$string['footerformat'] = 'In the format of \'text|url|title|langs|fontawesome classes\' .  Only enter what you require.  If you don\'t need something but do need another thing further along then leave it blank but still use the \'|\' delimiter.  For example: \'text|url|||fontawesome classes\' .';
+$string['footerfontawesomenote'] = 'To find the FontAwesome(Free) classes for the icon you wish to use, go to <a href="https://fontawesome.com/search?o=r&m=free" target="_blank">Font Awesome</a> and search for the icon.  Both CSS classes are required, such as \'fa-solid fa-user-graduate\' .  The installed version of FontAwesome is 6.4.0, so if it is for above then it will not be available.';
 
 // Privacy.
-$string['privacynote'] = 'Note: The Lexa theme stores has settings that pertain to its configuration.  Specific user settings are described in the \'Plugin privacy registry\'.  For the other settings, it is your responsibility to ensure that no user data is entered in any of the free text fields.  Setting a setting will result in that action being logged within the core Moodle logging system against the user whom changed it, this is outside of the themes control, please see the core logging system for privacy compliance for this.  When uploading images, you should avoid uploading images with embedded location data (EXIF GPS) included or other such personal data.  It would be possible to extract any location / personal data from the images.  Please examine the code carefully to be sure that it complies with your interpretation of your privacy laws.  I am not a lawyer and my analysis is based on my interpretation.  If you have any doubt then remove the theme forthwith.';
+$string['privacynote'] = 'Note: The Lexa theme stores has settings that pertain to its configuration.  Specific user settings are described in the \'Plugin privacy registry\' .  For the other settings, it is your responsibility to ensure that no user data is entered in any of the free text fields.  Setting a setting will result in that action being logged within the core Moodle logging system against the user whom changed it, this is outside of the themes control, please see the core logging system for privacy compliance for this.  When uploading images, you should avoid uploading images with embedded location data (EXIF GPS) included or other such personal data.  It would be possible to extract any location / personal data from the images.  Please examine the code carefully to be sure that it complies with your interpretation of your privacy laws.  I am not a lawyer and my analysis is based on my interpretation.  If you have any doubt then remove the theme forthwith.';
 $string['privacy:closed'] = 'Closed';
 $string['privacy:open'] = 'Open';
 $string['privacy:metadata:preference:draweropenindex'] = 'The state of the course index.';

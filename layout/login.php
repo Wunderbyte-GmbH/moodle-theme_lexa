@@ -33,7 +33,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $bodyattributes = $OUTPUT->body_attributes();
-list($loginbackgroundimagetext, $loginbackgroundimagetextcolor) = theme_boost_union_get_loginbackgroundimage_text();
+[$loginbackgroundimagetext, $loginbackgroundimagetextcolor] = theme_boost_union_get_loginbackgroundimage_text();
 
 $primary = new theme_lexa\output\navigation\primary($PAGE);
 $renderer = $PAGE->get_renderer('core');
@@ -74,7 +74,7 @@ $templatecontext = [
     'bodyattributes' => $bodyattributes,
     'loginbackgroundimagetext' => $loginbackgroundimagetext,
     'loginbackgroundimagetextcolor' => $loginbackgroundimagetextcolor,
-    'loginwrapperclass' => 'login-wrapper-'.get_config('theme_boost_union', 'loginformposition'),
+    'loginwrapperclass' => 'login-wrapper-' . get_config('theme_boost_union', 'loginformposition'),
     'logincontainerclass' =>
             (get_config('theme_boost_union', 'loginformtransparency') == THEME_BOOST_UNION_SETTING_SELECT_YES) ?
                     'login-container-80t' : '',

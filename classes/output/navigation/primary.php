@@ -41,7 +41,6 @@ use renderer_base;
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class primary extends \theme_boost_union\output\navigation\primary {
-
     /** @var \moodle_page $page the moodle page that the navigation belongs to */
     private $page = null;
 
@@ -177,7 +176,7 @@ class primary extends \theme_boost_union\output\navigation\primary {
             }
         }
 
-        $modifiedarray = array_map(function($value) {
+        $modifiedarray = array_map(function ($value) {
             $value->divider = $value->itemtype == 'divider';
             $value->link = $value->itemtype == 'link';
             if (isset($value->pix) && !empty($value->pix)) {
