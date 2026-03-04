@@ -59,7 +59,7 @@
 
 
 <div id="newsCarousel" class="slide mt-5 wb_news container-xl infoslidermobile" data-id="{{id}}" >
-<div id="carouseluriseIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
+<div id="carouseluriseIndicators" class="carousel slide" data-ride="carousel" data-bs-ride="carousel" data-interval="false" data-bs-interval="false">
     <div class="carousel-inner" style="height: 500px; max-height: min-content;">
         {{#news}}
         <div class="carousel-item {{#slideactive}} active {{/slideactive}} h-100">
@@ -74,7 +74,7 @@
     </div>
    <ol class="carousel-indicators">
         {{#news}}
-        <li  {{#slideactive}}class="active" {{/slideactive}} data-target="#carouseluriseIndicators" data-slide-to="{{sliderindex}}"></li>
+        <li  {{#slideactive}}class="active" {{/slideactive}} data-target="#carouseluriseIndicators" data-bs-target="#carouseluriseIndicators" data-slide-to="{{sliderindex}}" data-bs-slide-index="{{sliderindex}}"></li>
         {{/news}}
     </ol>
 </div>

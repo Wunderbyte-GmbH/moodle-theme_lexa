@@ -157,7 +157,7 @@
         {{^expanded}}
             aria-expanded="false"
         {{/expanded}}
-    href="id_collapse_{{columnname}}" aria-controls="id_collapse_{{columnname}}" class="btn dropdown-toggle dropdownMenuButton" type="button" data-ident="{{columnname}}" data-bs-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true">
+    href="id_collapse_{{columnname}}" aria-controls="id_collapse_{{columnname}}" class="btn dropdown-toggle dropdownMenuButton" type="button" data-ident="{{columnname}}" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true">
         {{name}} <span class="filtercounter badge badge-light {{^filtercounter}}hidden{{/filtercounter}}">{{filtercounter}}</span>
     </button>
     <div class="dropdown-menu">
@@ -190,7 +190,7 @@
                                 aria-label="Select all from {{columnname}}">
                             <label class="form-check-label" for="{{index}}{{columnname}}{{idstring}}">
                             </label>
-                            <button class="btn btn-nolabel dropdown-item dropdown-toggle hierarchybutton text-wrap"  data-ident="{{columnname}}" data-toggle="collapse" href="javascript:void(0)" role="button" aria-controls="{{id}}" aria-label="Expand category {{columnname}}">
+                            <button class="btn btn-nolabel dropdown-item dropdown-toggle hierarchybutton text-wrap"  data-ident="{{columnname}}" data-toggle="collapse" data-bs-toggle="collapse" href="javascript:void(0)" role="button" aria-controls="{{id}}" aria-label="Expand category {{columnname}}">
                                 <span class="filtercategorykeylabel">{{label}}</span>
                             </button>
                         </span>
