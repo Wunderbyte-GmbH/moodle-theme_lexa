@@ -140,7 +140,6 @@ if (isloggedin()) {
     $logintoken = '';
     $loginurl = new \moodle_url('/login/index.php');
     $login = [];
-
 } else {
     $logintoken = \core\session\manager::get_login_token();
     $loginurl = new \moodle_url('/login/index.php');

@@ -177,7 +177,7 @@ class course_renderer extends \core_course_renderer {
     protected function coursecat_coursebox(coursecat_helper $chelper, $course, $additionalclasses = '') {
 
         $lang = current_language();
-        if ($lang == 'en') {
+        if ($lang == 'en' || $lang == 'sw') {
             $langid = 1;
         }
         if ($lang == 'es') {
