@@ -3147,3 +3147,14 @@ img {
 .hierarchy .card.card-body .form-check {
     padding-left: 2.5rem;
 }
+
+// Fix: presence status select + submit button should sit inline (mod_booking report page).
+#studentsform select[name="selectpresencestatus"] {
+    display: inline-block !important;
+    width: auto !important;
+    vertical-align: middle;
+}
+#studentsform select[name="selectpresencestatus"] + .singlebutton {
+    display: inline-block;
+    vertical-align: middle;
+}
