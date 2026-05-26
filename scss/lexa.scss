@@ -1687,6 +1687,7 @@ border-radius: 10px !important;
     border: 1px solid $primary_900;
     padding: 4px;
     border-radius: 10px;
+    margin-right: 0.75rem;
 }
 
 .wunderbyteTableSelect a i {
@@ -1698,6 +1699,8 @@ border-radius: 10px !important;
 }
 
 .wunderbyteTableSelect .sortcolumn.urisesort {
+    -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
     padding-left: 0;
     font-size: 14px;
@@ -1706,7 +1709,7 @@ border-radius: 10px !important;
     line-height: 18px;
     height: fit-content;
     border: none;
-    padding: 4px 0;
+    padding: 4px 1.5rem 4px 0;
     text-align: center;
 }
 
@@ -3146,6 +3149,14 @@ img {
 
 .hierarchy .card.card-body .form-check {
     padding-left: 2.5rem;
+}
+
+// Fix: sort widget shrinks/clips text in booking instance flex toolbar.
+#page-mod-booking-view .wunderbyteTableSelect {
+    flex-shrink: 0;
+}
+#page-mod-booking-view .wunderbyteTableSelect .sortcolumn {
+    min-width: max-content;
 }
 
 // Fix: presence status select + submit button should sit inline (mod_booking report page).
