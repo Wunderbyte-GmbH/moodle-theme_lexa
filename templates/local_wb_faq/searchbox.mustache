@@ -37,14 +37,14 @@
 
 <div class="card my-7">
     <div class="card-body">
-        {{#.}}
+        {{#items}}
         {{#iscategory}}
         {{#title}}
             {{>local_wb_faq/category}}
         {{/title}}
         {{/iscategory}}
-        {{/.}}
-        {{#.}}
+        {{/items}}
+        {{#items}}
         {{^iscategory}}
         {{#title}}
         <ul class="wbfaqaccordion">
@@ -83,7 +83,7 @@
         </ul>
         {{/title}}
         {{/iscategory}}
-        {{/.}}
+        {{/items}}
         </div>
     </div>
 </div>
