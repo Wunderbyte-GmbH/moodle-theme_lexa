@@ -898,6 +898,14 @@ body.limitedwidth #page.drawers .footer-popover {
     color: #fff;
 }
 
+/* Move booking separator hiding from core to theme: keep admin and editoptions pages tidy. */
+#page-admin-setting-modsettingbooking [id$="_hr"],
+#page-admin-setting-modsettingbooking [id$="_hr"] > hr,
+#page-mod-booking-editoptions [id$="_hr"],
+#page-mod-booking-editoptions [id$="_hr"] > hr {
+    display: none !important;
+}
+
 
 .pagination .page-item .page-link {
     border: none;
