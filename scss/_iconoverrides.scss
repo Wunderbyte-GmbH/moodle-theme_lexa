@@ -243,6 +243,18 @@
   background-image: url('/theme/lexa/pix/i/sl_arrow_right_white.svg');
 }
 
+.bookinglinkbutton:not(#page-mod-booking-optionview .bookinglinkbutton) .fa-solid.fa-arrow-right::before {
+  background-image: url('/theme/lexa/pix/i/sl_arrow_right_black.svg');
+  width: 16px;
+  height: 16px;
+}
+
+.bookinglinkbutton:not(#page-mod-booking-optionview .bookinglinkbutton):hover .fa-solid.fa-arrow-right::before {
+  background-image: url('/theme/lexa/pix/i/sl_arrow_right_white.svg');
+  width: 16px;
+  height: 16px;
+}
+
 .btn-primary:not(.urisebutton) .fa-arrow-right::before,.btn-dark  .fa-arrow-right::before {
   background-image: url('/theme/lexa/pix/i/sl_arrow_right_white.svg');
 }
