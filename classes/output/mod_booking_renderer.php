@@ -226,6 +226,10 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
      * @return string|null The course language or null if not found.
      */
     public function prepare_kurssprache($values, $id) {
+
+        if (!empty($values)) {
+            return format_string($values);
+        }
         $settings = singleton_service::get_instance_of_booking_option_settings((int)$id);
 
         if (isset($settings->customfieldsfortemplates) && isset($settings->customfieldsfortemplates['kurssprache'])) {
@@ -272,6 +276,10 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
      * @return string|null The course language or null if not found.
      */
     public function prepare_format($values, $id) {
+
+        if (!empty($values)) {
+            return format_string($values);
+        }
         $settings = singleton_service::get_instance_of_booking_option_settings((int)$id);
 
         if (isset($settings->customfieldsfortemplates) && isset($settings->customfieldsfortemplates['format'])) {
