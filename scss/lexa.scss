@@ -3215,3 +3215,12 @@ img {
     display: inline-block;
     vertical-align: middle;
 }
+
+// Hide scrollbars globally while keeping scroll functionality.
+*::-webkit-scrollbar {
+    display: none;
+}
+* {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
