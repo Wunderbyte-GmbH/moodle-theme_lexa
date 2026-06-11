@@ -39,6 +39,12 @@
     color: $alertwarningcolor;
 }
 
+.alert-secondary {
+    background-color: $alertsecondarybg;
+    border-color: $alertsecondarybg;
+    color: $alertsecondarycolor;
+}
+
 // Navbar.
 :root {
     --lexa-navbar-pos: #{$navbar-height};
