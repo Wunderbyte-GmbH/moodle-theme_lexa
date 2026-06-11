@@ -34,7 +34,11 @@
 <div class="divider border-left h-75 align-self-center mr-1"></div>
 <form action="{{{legacyseturl}}}" method="post" class="d-flex align-items-center editmode-switch-form">
     <div class="input-group">
-        <div class="custom-control custom-switch">
+        <div class="custom-control custom-switch"{{!
+            }} title="{{#str}} editmode {{/str}}"{{!
+            }} data-toggle="tooltip"{{!
+            }} data-placement="bottom"{{!
+            }} aria-label="{{#str}} editmode {{/str}}">
             <input type="checkbox"{{!
                 }} name="setmode"{{!
                 }}{{#checked}}{{!
