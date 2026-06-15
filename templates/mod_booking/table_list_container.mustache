@@ -29,16 +29,18 @@
           }}{{#filterdeactivated}} inactivefilter{{/filterdeactivated}}{{!
           }}{{#nofilteratall}} nofilter{{/nofilteratall}} mt-2 px-2" data-encodedtable="{{encodedtable}}">
           <div class="container-fluid ms-0">
-               <div class="d-flex align-items-center justify-content-between flex-wrap mb-2">
-                    <div class="d-flex align-items-center">
-                         {{> local_wunderbyte_table/component_toggle }}
-                         {{> local_wunderbyte_table/component_reload }}
-                         {{> local_wunderbyte_table/component_edit }}
-                    </div>
-                    <div class="d-flex align-items-center">
-                         {{> local_wunderbyte_table/component_switchtemplates }}
-                         {{> local_wunderbyte_table/component_sort }}
-                         {{> local_wunderbyte_table/component_search }}
+               <div class="mb-2">
+                    <div class="d-flex align-items-center justify-content-between flex-wrap">
+                         <div class="d-flex align-items-center">
+                              {{> local_wunderbyte_table/component_toggle }}
+                              {{> local_wunderbyte_table/component_reload }}
+                              {{> local_wunderbyte_table/component_edit }}
+                         </div>
+                         <div class="d-flex align-items-center">
+                              {{> local_wunderbyte_table/component_switchtemplates }}
+                              {{> local_wunderbyte_table/component_sort }}
+                              {{> local_wunderbyte_table/component_search }}
+                         </div>
                     </div>
                     {{^showdownloadbuttonatbottom}}
                     <div class="d-flex align-items-center">
