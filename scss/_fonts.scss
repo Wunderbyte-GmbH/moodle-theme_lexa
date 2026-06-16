@@ -125,27 +125,6 @@
     word-break: break-word;
 }
 
-// On the booking option detail page, custom field values render either as a bare
-// text node (text fields, via format_string) or as <div class="text_to_html">
-// <p>…</p></div> (editor fields, via format_text). Scope the spacing
-// normalization to this page so generic .lexa-input / .text_to_html usage in
-// other templates (FAQ, news, shopping cart, ...) is left untouched.
-#page-mod-booking-optionview .lexa-input {
-    .text_to_html {
-        margin: 0;
-    }
-
-    p {
-        margin-top: 0;
-        margin-bottom: 1rem; // Inter-paragraph spacing for editor fields.
-        line-height: inherit;
-
-        &:last-child {
-            margin-bottom: 0; // No trailing gap, so it matches the plain text field.
-        }
-    }
-}
-
 .lexa-h1 {
     font-family: Roboto;
     font-size: 3.5rem; /* 56px / 16 = 3.5rem */
