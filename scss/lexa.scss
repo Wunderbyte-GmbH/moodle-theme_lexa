@@ -2102,6 +2102,25 @@ h4 {
     width: 90%;
 }
 
+// The hierarchy PARENT row (span.parent) is excluded — it holds the expand
+// button, which a full-row overlay must not cover.
+.wunderbyterFilterList li.dropdown-item.form-check,
+.wunderbyterFilterList.hierarchy .card-body li.form-check {
+    position: relative;
+}
+
+.wunderbyterFilterList li.dropdown-item.form-check > .form-check-input[type="checkbox"],
+.wunderbyterFilterList.hierarchy .card-body li.form-check > .form-check-input[type="checkbox"] {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 30000001;
+}
+
 
 .hierarchy .card.card-body {
   padding: 0 0 2px 0;
@@ -3170,7 +3189,7 @@ img {
 }
 
 .wunderbyte_table_components .wunderbyteTableFilter .parent .form-check-label {
-    margin-left: 1.5rem;
+    margin-left: 0.5rem;
     padding-left: 0.6rem;
     &::before {
         top: 25%;
