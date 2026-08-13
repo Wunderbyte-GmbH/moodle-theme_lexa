@@ -2792,8 +2792,17 @@ text-align: start;
         gap: 20px;
     }
 
-.hidefaq {
-    display: inline-block !important;
+// faq.js marks breadcrumb chips with .hidefaq when they must not be shown
+// (embed root, targets outside the loaded tree, current category). Hide them
+// and the arrow following them, but keep the last chip visible as the
+// non-clickable label of the current category.
+.wbfaqbreadcrumb.hidefaq,
+.wbfaqbreadcrumb.hidefaq + .wbfaqbreadcrumb:not(.btn) {
+    display: none !important;
+}
+
+.wb-breadcrumb .d-flex .btn.wbfaqbreadcrumb.hidefaq:nth-last-child(2) {
+    display: flex !important;
 }
 
 .backgroundfaq {
@@ -2802,10 +2811,6 @@ text-align: start;
 
 .wbfaqinput {
     width: 600px;
-}
-
-.wbfaqbreadcrumb[data-catvalue="FAQ"] {
-    display: none !important;
 }
 
 .wbfaqcollapsebutton:focus,

@@ -47,7 +47,7 @@
   <!-- Existing code for displaying breadcrumbs -->
   <div class="d-flex">
     {{#breadcrumbs}}
-      <div class="btn wbfaqbreadcrumb{{#active}} wb_faq-active{{/active}}" data-catvalue="{{datacat}}" data-action="goto" data-targetid='{{id}}'>{{name}}</div>
+      <div class="btn wbfaqbreadcrumb{{#active}} wb_faq-active{{/active}}" data-catvalue="{{datacat}}" data-action="goto" data-targetid='{{id}}'>{{{name}}}</div>
        <div class="wbfaqbreadcrumb" data-catvalue="{{datacat}}">
        {{^active}}
         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -70,7 +70,7 @@
 
   {{#entries.0}}
 {{#headertitle}}
-      <h2 class="lexa-h2" style="margin-bottom: 45px">{{name}}</h2>
+      <h2 class="lexa-h2" style="margin-bottom: 45px">{{{name}}}</h2>
 {{/headertitle}}
   {{/entries.0}}
 
