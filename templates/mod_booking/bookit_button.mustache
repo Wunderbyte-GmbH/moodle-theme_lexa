@@ -50,13 +50,20 @@
     }
 }}
 <div class="d-flex align-items-center w-100">
-    <div class="booking-button-area noprice w-100 lexa-caption"
+    {{!
+        d-flex flex-column: the warning of an availability condition ("top") gets its own line ABOVE
+        the price / button row. local_urise sets display:flex on .booking-button-area, which laid the
+        warning out LEFT of the button. The price label (sub), the button and the details dots keep
+        the row layout of the theme, nested in the row below.
+    }}
+    <div class="booking-button-area noprice w-100 lexa-caption d-flex flex-column align-items-end"
         tabindex="0"
         data-itemid="{{itemid}}"
         data-componentname="mod_booking"
         data-area="{{area}}"
         data-userid="{{userid}}"
         data-results="{{results}}"
+        {{#overrideids}}data-overrideids="{{overrideids}}"{{/overrideids}}
         {{#dataaction}}data-action="{{dataaction}}"{{/dataaction}}
         {{#nojs}}data-nojs="1"{{/nojs}}>
         {{#onlist}}
@@ -71,37 +78,39 @@
             </div>
         {{/onlist}}
         {{#top}}
-            <div class="booking-button-toparea urisebutton mb-1 mt-1 p-1 {{class}} mr-1"
+            <div class="booking-button-toparea urisebutton mb-1 mt-1 p-1 {{class}}"
                  role="{{role}}"
                  {{#nojs}}data-nojs="1"{{/nojs}}>
                 {{{label}}}
             </div>
         {{/top}}
-        {{#sub}}
-            <div class="booking-button-subarea h5 mb-1 mt-1 p-1 {{class}} mr-auto font-weight-normal d-flex align-items-center mr-1" role="{{role}}">
-                {{{label}}}
-            </div>
-        {{/sub}}
-        {{#main}}
-            {{#link}}
-                <a class="d-flex align-items-center booking-button-mainarea urisebutton p-1 {{class}} mb-1 mt-1 p-1 mr-1 gradienthover" role="{{role}}" href="{{link}}" data-action="bookondetail">
-                    {{{label}}} {{#foruser}}<br><span>{{{foruser}}}</span>{{/foruser}}
-                    {{#showicon}} <i class="fa-solid {{{showicon}}} ml-2 mr-1"></i> {{/showicon}}
-                </a>
-            {{/link}}
-            {{^link}}
-                <div class="d-flex flex-column booking-button-mainarea urisebutton gradienthover p-1 {{class}} mb-1 mt-1 p-1" role="{{role}}">
-                    {{{label}}}{{#foruser}}<br><span>{{{foruser}}}</span>{{/foruser}}
+        <div class="d-flex align-items-center justify-content-end w-100">
+            {{#sub}}
+                <div class="booking-button-subarea h5 mb-1 mt-1 p-1 {{class}} mr-auto font-weight-normal d-flex align-items-center mr-1" role="{{role}}">
+                    {{{label}}}
                 </div>
-            {{/link}}
-        {{/main}}
-        {{#showdetaildots}}
-            <div class="booking-booked-dots-button mb-1 mt-1">
-                <a href="{{url}}" class="dots-horizontal-button" title="{{#str}} details {{/str}}">
-                    <i class="fa fa-ellipsis-h"></i>
-                </a>
-            </div>
-        {{/showdetaildots}}
+            {{/sub}}
+            {{#main}}
+                {{#link}}
+                    <a class="d-flex align-items-center booking-button-mainarea urisebutton p-1 {{class}} mb-1 mt-1 p-1 mr-1 gradienthover" role="{{role}}" href="{{link}}" data-action="bookondetail">
+                        {{{label}}} {{#foruser}}<br><span>{{{foruser}}}</span>{{/foruser}}
+                        {{#showicon}} <i class="fa-solid {{{showicon}}} ml-2 mr-1"></i> {{/showicon}}
+                    </a>
+                {{/link}}
+                {{^link}}
+                    <div class="d-flex flex-column booking-button-mainarea urisebutton gradienthover p-1 {{class}} mb-1 mt-1 p-1" role="{{role}}">
+                        {{{label}}}{{#foruser}}<br><span>{{{foruser}}}</span>{{/foruser}}
+                    </div>
+                {{/link}}
+            {{/main}}
+            {{#showdetaildots}}
+                <div class="booking-booked-dots-button mb-1 mt-1">
+                    <a href="{{url}}" class="dots-horizontal-button" title="{{#str}} details {{/str}}">
+                        <i class="fa fa-ellipsis-h"></i>
+                    </a>
+                </div>
+            {{/showdetaildots}}
+        </div>
     </div>
 </div>
 
