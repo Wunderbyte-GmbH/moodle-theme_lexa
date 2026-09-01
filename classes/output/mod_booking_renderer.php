@@ -147,6 +147,12 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
         }
         $data['botags'] = $this->prepare_botags($data['modalcounter']);
         $data['showcollapse'] = $this->prepare_dates($data);
+
+        // The orgacontact customfield is injected into $data by bookingoption_description::get_returnarray(),
+        // which flattens every customfield shortname into a top level template key.
+        // Mustache cannot express an OR, so we decide here whether heading and container are shown at all.
+        $data['showorgacontact'] = !empty($data['orgacontact']) || !empty($data['responsiblecontactuser']);
+
         $settings = singleton_service::get_instance_of_booking_option_settings((int)$data['modalcounter']);
 
         if (!empty($settings->entity)) {
