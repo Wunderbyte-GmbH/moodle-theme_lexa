@@ -67,6 +67,17 @@
             ""
             ]
         },
+        "responsiblecontactuser": [
+            {
+                "id": "2",
+                "firstname": "Maxima",
+                "lastname": "Yoga",
+                "email": "maxima.yoga@example.com",
+                "link": "http://site/user/profile.php?id=2"
+            }
+        ],
+        "orgacontact": "<p>Institute for Sports Science<br>Tel. +43 1 4277 00000<br><a href=\"mailto:sport@example.com\">sport@example.com</a></p>",
+        "showorgacontact": true,
         "bookinginformation": {
             "waiting": 0,
             "booked": 1,
@@ -285,22 +296,23 @@
                     <span class="lexa-input">{{{.}}}</span>
                 </div>
                 {{/sonstigeinfos}}
-                {{#responsiblecontactuser.0}}
+                {{#showorgacontact}}
                     <h2 class="lexa-h2 lexa-heading-orgacontact"> {{#str}} orgacontact, local_urise {{/str}}</h2>
                     <div class="my-7 lexa-container-orgacontacts">
-                {{/responsiblecontactuser.0}}
-                {{#responsiblecontactuser}}
-                    <div class="lexa-container-single-orgacontact">
-                        <p class="lexa-input lexa-orgacontact-name">{{{firstname}}} {{{lastname}}}</p>
-                        <p class="lexa-orgacontact-email">
-                            <i class="fa-solid fa-fw fa-envelope text-primary"></i>
-                            <a href="mailto:{{{email}}}">{{{email}}}</a>
-                        </p>
+                        {{#responsiblecontactuser}}
+                        <div class="lexa-container-single-orgacontact">
+                            <p class="lexa-input lexa-orgacontact-name">{{{firstname}}} {{{lastname}}}</p>
+                            <p class="lexa-orgacontact-email">
+                                <i class="fa-solid fa-fw fa-envelope text-primary"></i>
+                                <a href="mailto:{{{email}}}">{{{email}}}</a>
+                            </p>
+                        </div>
+                        {{/responsiblecontactuser}}
+                        {{#orgacontact}}
+                        <div class="lexa-input lexa-container-orgacontact-customfield">{{{.}}}</div>
+                        {{/orgacontact}}
                     </div>
-                {{/responsiblecontactuser}}
-                {{#responsiblecontactuser.0}}
-                </div>
-                {{/responsiblecontactuser.0}}
+                {{/showorgacontact}}
             </div>
             <div class="col-md-5 col-12 lexa-ib lexa-sticky-column" >
             <div>

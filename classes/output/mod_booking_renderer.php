@@ -147,6 +147,12 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
         }
         $data['botags'] = $this->prepare_botags($data['modalcounter']);
         $data['showcollapse'] = $this->prepare_dates($data);
+
+        // The orgacontact customfield is injected into $data by bookingoption_description::get_returnarray(),
+        // which flattens every customfield shortname into a top level template key.
+        // Mustache cannot express an OR, so we decide here whether heading and container are shown at all.
+        $data['showorgacontact'] = !empty($data['orgacontact']) || !empty($data['responsiblecontactuser']);
+
         $settings = singleton_service::get_instance_of_booking_option_settings((int)$data['modalcounter']);
 
         if (!empty($settings->entity)) {
@@ -188,9 +194,7 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
      */
     public function prepare_kompetenzen($id) {
         $settings = singleton_service::get_instance_of_booking_option_settings((int)$id);
-
         if (isset($settings->customfields) && isset($settings->customfields['kompetenzen'])) {
-
             if (is_array($settings->customfields['kompetenzen'])) {
                 $competencies = $settings->customfields['kompetenzen'];
             } else {
@@ -250,7 +254,6 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
         $settings = singleton_service::get_instance_of_booking_option_settings((int)$id);
         if (isset($settings->customfields) && isset($settings->customfields['organisation'])) {
             if (is_array($settings->customfields['organisation'])) {
-
                 $returnorgas = [];
                 foreach ($settings->customfields['organisation'] as $orgaid) {
                     $organisations = shortcodes::organisations();
@@ -304,4 +307,3 @@ class mod_booking_renderer extends \mod_booking\output\renderer {
         }
     }
 }
-
