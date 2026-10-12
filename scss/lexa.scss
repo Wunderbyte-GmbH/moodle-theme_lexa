@@ -3241,11 +3241,10 @@ img {
     vertical-align: middle;
 }
 
-// Hide scrollbars globally while keeping scroll functionality.
-*::-webkit-scrollbar {
-    display: none;
-}
-* {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+// Prevent an unnecessary horizontal page scrollbar caused by slightly overflowing elements.
+// Vertical scrolling and scrollable inner containers (e.g. wide tables) keep their scrollbars.
+// Clip (not hidden) does not create a scroll container, so position: sticky keeps working.
+html,
+body {
+    overflow-x: clip;
 }
