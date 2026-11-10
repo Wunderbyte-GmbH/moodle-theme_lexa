@@ -19,6 +19,7 @@
 
     The smart menus more menu children.
     This is a modified version of core/moremenu_children.
+    Lexa: a node with ismegamenu renders the trigger of the mega menu (theme_lexa/megamenu).
 
     Example context (json):
     {
@@ -31,6 +32,18 @@
         "url": "https://moodle.org"
     }
 }}
+{{#ismegamenu}}
+    <li class="nav-item lexa-megamenu-item {{#menuclasses}}{{.}} {{/menuclasses}}" data-name="{{text}}" role="none" data-forceintomoremenu="false">
+        <a class="nav-link lexa-megamenu-toggle {{#isactive}}active{{/isactive}} {{#classes}}{{.}} {{/classes}}" role="menuitem" href="{{{url}}}"
+            data-action="lexa-megamenu-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="lexa-megamenu"
+            {{#isactive}}aria-current="true"{{/isactive}}
+            {{^isactive}}tabindex="-1"{{/isactive}}
+        >
+            {{{text}}}
+        </a>
+    </li>
+{{/ismegamenu}}
+{{^ismegamenu}}
 {{#haschildren}}
     <li class="dropdown nav-item {{#menuclasses}}{{.}} {{/menuclasses}} "  data-name="{{text}}" role="none" data-forceintomoremenu="{{#forceintomoremenu}}true{{/forceintomoremenu}}{{^forceintomoremenu}}false{{/forceintomoremenu}}">
         <a class="dropdown-toggle nav-link {{#isactive}}active{{/isactive}} {{#classes}}{{.}} {{/classes}}" id="drop-down-{{moremenuid}}" role="menuitem" data-toggle="dropdown"
@@ -145,3 +158,4 @@
         {{/istablist}}
     </li>
 {{/haschildren}}
+{{/ismegamenu}}

@@ -1,0 +1,73 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_lexa/megamenu_block
+
+    A block in the middle column of the mega menu: a card row, topic links or chips.
+    Also used by the editor of local_urise to show examples of the blocks.
+
+    Example context (json):
+    {
+        "animkey": "chips-0", "ischips": true, "title": "Weitere Schwerpunkte",
+        "links": [{"id": "c1", "label": "IT Services & Tools", "url": "https://example.com"}]
+    }
+}}
+{{#iscardrow}}
+    <div class="lexa-megamenu-cards" data-animkey="{{animkey}}">
+        {{#cards}}
+            <div class="lexa-megamenu-card">
+                <div class="lexa-megamenu-card-header"{{#editpath}} data-editpath="{{.}}" data-editform="card"{{/editpath}}>
+                    {{#title}}<h3 class="lexa-megamenu-card-title">{{title}}</h3>{{/title}}
+                    {{#subtitle}}<p class="lexa-megamenu-card-subtitle">{{subtitle}}</p>{{/subtitle}}
+                </div>
+                <ul class="list-unstyled m-0">
+                    {{#links}}
+                        <li>
+                            <a class="lexa-megamenu-cardlink {{#incomplete}}incomplete{{/incomplete}}" href="{{url}}"{{#editpath}} data-editpath="{{.}}" data-editform="link"{{/editpath}}>
+                                <span>{{label}}</span><span class="lexa-megamenu-icon" aria-hidden="true">›</span>
+                            </a>
+                        </li>
+                    {{/links}}
+                </ul>
+            </div>
+        {{/cards}}
+    </div>
+{{/iscardrow}}
+{{#islinkgrid}}
+    <div class="lexa-megamenu-linkgrid {{#boxed}}boxed{{/boxed}}" data-animkey="{{animkey}}">
+        {{#title}}<h3 class="lexa-megamenu-blocktitle"{{#editpath}} data-editpath="{{.}}" data-editform="block"{{/editpath}}>{{title}}</h3>{{/title}}
+        <ul class="list-unstyled m-0">
+            {{#links}}
+                <li>
+                    <a class="lexa-megamenu-topiclink {{#incomplete}}incomplete{{/incomplete}}" href="{{url}}"{{#editpath}} data-editpath="{{.}}" data-editform="link"{{/editpath}}>
+                        <span>{{label}}</span><span class="lexa-megamenu-icon" aria-hidden="true">›</span>
+                    </a>
+                </li>
+            {{/links}}
+        </ul>
+    </div>
+{{/islinkgrid}}
+{{#ischips}}
+    <div class="lexa-megamenu-chips" data-animkey="{{animkey}}">
+        {{#title}}<h3 class="lexa-megamenu-chipstitle"{{#editpath}} data-editpath="{{.}}" data-editform="block"{{/editpath}}>{{title}}</h3>{{/title}}
+        <ul class="list-unstyled m-0">
+            {{#links}}
+                <li><a class="lexa-megamenu-chip {{#incomplete}}incomplete{{/incomplete}}" href="{{url}}"{{#editpath}} data-editpath="{{.}}" data-editform="link"{{/editpath}}>{{label}}</a></li>
+            {{/links}}
+        </ul>
+    </div>
+{{/ischips}}

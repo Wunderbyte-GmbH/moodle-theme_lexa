@@ -224,6 +224,7 @@ $templatecontext = [
     'blockdraweropen' => $blockdraweropen,
     'courseindex' => $courseindex,
     'primarymoremenu' => $primarymenu['moremenu'],
+    'megamenu' => $primarymenu['megamenu'] ?? null,
     'secondarymoremenu' => $secondarynavigation ?: false,
     'mobileprimarynav' => $primarymenu['mobileprimarynav'],
     'usermenu' => $primarymenu['user'],

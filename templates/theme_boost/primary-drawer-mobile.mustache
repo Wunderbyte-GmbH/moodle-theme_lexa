@@ -54,8 +54,16 @@
         <img id="lexa-drawer-logo" src="{{output.get_compact_second_logo_url}}" class="logo h-auto w-50 mb-auto mr-auto mt-auto" alt="{{sitename}}">
     {{/drawerheading}}
     {{$drawercontent}}
-        <div class="list-group">
+        {{! Lexa: the mega menu item (ismegamenu) renders its entries here and its communities as a second level, see theme_lexa/megamenu_mobile. }}
+        <div class="{{#megamenu.mobile}}lexa-mm-mobile{{/megamenu.mobile}}" {{#megamenu.mobile}}data-region="lexa-megamenu-mobile"{{/megamenu.mobile}}>
+        <div class="list-group lexa-mm-mobile-level" {{#megamenu.mobile}}data-region="lexa-megamenu-mobile-level1"{{/megamenu.mobile}}>
             {{#mobileprimarynav}}
+                {{#ismegamenu}}
+                    {{#megamenu}}
+                        {{> theme_lexa/megamenu_mobile }}
+                    {{/megamenu}}
+                {{/ismegamenu}}
+                {{^ismegamenu}}
                 {{#haschildren}}
                 <a id="drop-down-{{sort}}" href="#" class="list-group-item list-group-item-action icons-collapse-expand {{^isopen}}collapsed {{/isopen}}d-flex" data-toggle="collapse" data-bs-toggle="collapse" href="#drop-down-menu-{{sort}}" data-target="#drop-down-menu-{{sort}}" data-bs-target="#drop-down-menu-{{sort}}" aria-expanded="{{#isopen}}true{{/isopen}}{{^isopen}}false{{/isopen}}" aria-controls="drop-down-menu-{{sort}}">
                     {{{text}}}
@@ -85,7 +93,14 @@
                     {{{text}}}
                 </a>
                 {{/haschildren}}
+                {{/ismegamenu}}
             {{/mobileprimarynav}}
+        </div>
+        {{#megamenu.mobile}}
+            {{#megamenu}}
+                {{> theme_lexa/megamenu_mobile_panels }}
+            {{/megamenu}}
+        {{/megamenu.mobile}}
         </div>
     {{/drawercontent}}
     {{$drawerstate}}show-drawer-primary{{/drawerstate}}

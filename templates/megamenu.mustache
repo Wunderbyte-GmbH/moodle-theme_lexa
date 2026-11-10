@@ -1,0 +1,142 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_lexa/megamenu
+
+    The desktop mega menu, opened by the primary menu item with ismegamenu.
+    The content is maintained in local_urise (\local_urise\megamenu\menu::export_for_template()).
+    With preview, the menu is shown open, e.g. in the editor of local_urise, whose elements carry data-editpath.
+    The mobile version is in theme_lexa/megamenu_mobile and theme_lexa/megamenu_mobile_panels (primary drawer).
+
+    Example context (json):
+    {
+        "label": "Angebot",
+        "tabs": [
+            {
+                "id": "overview", "label": "Gesamtes Angebot", "isoverview": true, "haspanel": true, "active": true,
+                "url": "https://example.com/course/index.php?categoryid=6", "color": "blue",
+                "heading": "Angebot nach Community", "hint": "Wählen Sie links Communities.",
+                "blocks": [{"id": "topics", "islinkgrid": true, "boxed": true, "title": "Themen für alle Communities",
+                    "links": [{"id": "l1", "label": "Digital Accessibility", "url": "https://example.com"}]}],
+                "cta": {"label": "Zum gesamten Angebot", "url": "https://example.com"},
+                "secondarylinks": [{"id": "faq", "label": "FAQs", "url": "https://example.com"}]
+            },
+            {
+                "id": "postdocs", "label": "PostDocs", "haspanel": true, "color": "yellow",
+                "heading": "Empfohlene Angebote für PostDocs",
+                "blocks": [{"id": "chips", "ischips": true, "title": "Weitere Schwerpunkte",
+                    "links": [{"id": "c1", "label": "IT Services & Tools", "url": "https://example.com"}]}],
+                "news": {"kicker": "PostDocs", "headline": "Neue Reihe: Grant Writing", "image": "", "url": "https://example.com"}
+            },
+            {"id": "ai", "label": "Künstliche Intelligenz", "islink": true, "url": "https://example.com"}
+        ]
+    }
+}}
+<div id="lexa-megamenu" class="lexa-megamenu {{#preview}}show lexa-megamenu-preview{{/preview}}" data-region="lexa-megamenu" role="region" aria-label="{{label}}" {{^preview}}hidden{{/preview}}>
+    <div class="lexa-megamenu-grid" data-region="lexa-megamenu-grid">
+        <nav class="lexa-megamenu-nav" aria-label="{{label}}">
+            <ul class="list-unstyled m-0">
+                {{#tabs}}
+                    {{#isoverview}}
+                        {{#url}}
+                            <li class="lexa-megamenu-overview">
+                                <a class="lexa-megamenu-navitem lexa-megamenu-navlink" href="{{url}}" data-region="lexa-megamenu-navitem"{{#linkeditpath}} data-editpath="{{.}}" data-editform="link"{{/linkeditpath}}>
+                                    <span>{{label}}</span><span class="lexa-megamenu-icon" aria-hidden="true">›</span>
+                                </a>
+                            </li>
+                        {{/url}}
+                    {{/isoverview}}
+                    {{^isoverview}}
+                        {{#haspanel}}
+                            <li>
+                                <button type="button" class="lexa-megamenu-navitem lexa-mm-color-{{color}} {{#active}}selected{{/active}} {{#iconsvg}}has-icon{{/iconsvg}}"
+                                    data-action="lexa-megamenu-select" data-region="lexa-megamenu-navitem" data-tab="{{id}}"
+                                    aria-controls="lexa-megamenu-panel-{{id}}" aria-expanded="{{#active}}true{{/active}}{{^active}}false{{/active}}"
+                                    tabindex="{{#active}}0{{/active}}{{^active}}-1{{/active}}">
+                                    <span class="lexa-megamenu-navitem-main">
+                                        {{#iconsvg}}<span class="lexa-mm-iconbox" aria-hidden="true">{{{iconsvg}}}</span>{{/iconsvg}}
+                                        <span>{{label}}</span>
+                                    </span>
+                                    <span class="lexa-megamenu-icon" aria-hidden="true">→</span>
+                                </button>
+                            </li>
+                        {{/haspanel}}
+                        {{#islink}}
+                            {{#url}}
+                                <li>
+                                    <a class="lexa-megamenu-navitem lexa-mm-color-{{color}} {{#iconsvg}}has-icon{{/iconsvg}}" href="{{url}}" data-region="lexa-megamenu-navitem" tabindex="-1"{{#linkeditpath}} data-editpath="{{.}}" data-editform="link"{{/linkeditpath}}>
+                                        <span class="lexa-megamenu-navitem-main">
+                                            {{#iconsvg}}<span class="lexa-mm-iconbox" aria-hidden="true">{{{iconsvg}}}</span>{{/iconsvg}}
+                                            <span>{{label}}</span>
+                                        </span>
+                                    </a>
+                                </li>
+                            {{/url}}
+                        {{/islink}}
+                    {{/isoverview}}
+                {{/tabs}}
+            </ul>
+        </nav>
+        {{#tabs}}
+            {{#haspanel}}
+                <div id="lexa-megamenu-panel-{{id}}" class="lexa-megamenu-panel lexa-mm-color-{{color}}" data-region="lexa-megamenu-panel"
+                    data-tab="{{id}}" {{^active}}hidden{{/active}} {{#default}}data-default="true"{{/default}}>
+                    <div class="lexa-megamenu-main">
+                        {{#heading}}<h2 class="lexa-megamenu-heading" data-animkey="heading" tabindex="-1"{{#editpath}} data-editpath="{{.}}" data-editform="tab"{{/editpath}}>{{heading}}</h2>{{/heading}}
+                        {{#intro}}<p class="lexa-megamenu-intro" data-animkey="intro"{{#editpath}} data-editpath="{{.}}" data-editform="tab"{{/editpath}}>{{intro}}</p>{{/intro}}
+                        {{#hint}}
+                            <p class="lexa-megamenu-hint" data-animkey="hint"{{#editpath}} data-editpath="{{.}}" data-editform="tab"{{/editpath}}><span class="lexa-megamenu-hint-arrow" aria-hidden="true">←</span>{{hint}}</p>
+                        {{/hint}}
+                        {{#blocks}}
+                            {{> theme_lexa/megamenu_block}}
+                        {{/blocks}}
+                    </div>
+                    <div class="lexa-megamenu-aside">
+                        {{#news}}
+                            <a class="lexa-megamenu-news" href="{{url}}" data-animkey="news"{{#editpath}} data-editpath="{{.}}" data-editform="tab"{{/editpath}}>
+                                <span class="lexa-megamenu-news-image" aria-hidden="true">
+                                    {{#image}}<img src="{{image}}" alt="" loading="lazy">{{/image}}
+                                </span>
+                                <span class="lexa-megamenu-news-body">
+                                    <span class="lexa-megamenu-news-meta">
+                                        {{#kicker}}<span class="lexa-megamenu-news-kicker">{{kicker}}</span>{{/kicker}}
+                                        {{#date}}<span class="lexa-megamenu-news-date">{{date}}</span>{{/date}}
+                                    </span>
+                                    <span class="lexa-megamenu-news-headline">{{headline}}</span>
+                                    <span class="lexa-megamenu-news-more">{{#str}}megamenu:readmore, theme_lexa{{/str}}</span>
+                                </span>
+                            </a>
+                        {{/news}}
+                        <div class="lexa-megamenu-aside-links">
+                            {{#cta}}
+                                <a class="lexa-megamenu-cta {{#incomplete}}incomplete{{/incomplete}}" href="{{url}}" data-animkey="cta"{{#editpath}} data-editpath="{{.}}" data-editform="link"{{/editpath}}>{{label}}</a>
+                            {{/cta}}
+                            {{#secondarylinks}}
+                                <a class="lexa-megamenu-secondary {{#incomplete}}incomplete{{/incomplete}}" href="{{url}}" data-animkey="{{animkey}}"{{#editpath}} data-editpath="{{.}}" data-editform="link"{{/editpath}}>{{label}}</a>
+                            {{/secondarylinks}}
+                        </div>
+                    </div>
+                </div>
+            {{/haspanel}}
+        {{/tabs}}
+    </div>
+</div>
+{{#js}}
+    require(['theme_lexa/megamenu'], function(megamenu) {
+        megamenu.init();
+    });
+{{/js}}
