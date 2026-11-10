@@ -25,6 +25,7 @@
 
 namespace theme_lexa\output\navigation;
 
+use moodle_url;
 use renderer_base;
 
 /**
@@ -71,7 +72,62 @@ class primary extends \theme_boost_union\output\navigation\primary {
         $languagemenu = new \theme_lexa\output\core\output\language_menu($this->page);
         $retr['lang'] = $languagemenu->export_for_template($output);
 
+        $retr['megamenu'] = $this->attach_megamenu($retr['moremenu']['nodearray'] ?? [], $retr['mobileprimarynav'] ?? []);
+
         return $retr;
+    }
+
+    /**
+     * Turns the primary menu item that links to the configured page into the mega menu trigger.
+     *
+     * The menu content is maintained in local_urise. The item keeps its link, so it still works without JavaScript.
+     *
+     * @param array $nodes The primary menu nodes.
+     * @param array $mobilenodes The nodes of the mobile drawer, whose matching item is marked too.
+     * @return array|null The mega menu for the template, or null if there is none.
+     */
+    protected function attach_megamenu(array $nodes, array $mobilenodes = []): ?array {
+        if (!class_exists(\local_urise\megamenu\menu::class)) {
+            return null;
+        }
+        // Editors can preview the draft with ?megamenupreview=1.
+        $preview = optional_param('megamenupreview', false, PARAM_BOOL)
+            && has_capability('local/urise:canedit', \context_system::instance());
+        $megamenu = \local_urise\megamenu\menu::export_for_template($preview);
+        if (empty($megamenu)) {
+            return null;
+        }
+
+        $attachurl = new moodle_url($megamenu['attachurl']);
+        $matches = function (array $nodes) use ($attachurl): ?object {
+            foreach ($nodes as $node) {
+                if (!is_object($node) || !empty($node->haschildren) || empty($node->url)) {
+                    continue;
+                }
+                $nodeurl = new moodle_url(html_entity_decode($node->url, ENT_QUOTES));
+                if ($nodeurl->compare($attachurl, URL_MATCH_EXACT)) {
+                    return $node;
+                }
+            }
+            return null;
+        };
+
+        $node = $matches($nodes);
+        if (!$node) {
+            return null;
+        }
+        $node->ismegamenu = true;
+        $megamenu['label'] = strip_tags($node->text);
+        // Inside the tabs of the templates, "label" is the tab's label, so the menu's label gets its own name.
+        $megamenu['menulabel'] = $megamenu['label'];
+
+        // The mobile drawer only gets the menu if it has the item, e.g. not on the login page.
+        $mobilenode = $matches($mobilenodes);
+        $megamenu['mobile'] = (bool)$mobilenode;
+        if ($mobilenode) {
+            $mobilenode->ismegamenu = true;
+        }
+        return $megamenu;
     }
 
     /**

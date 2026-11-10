@@ -80,6 +80,7 @@ $templatecontext = [
                     'login-container-80t' : '',
     'headercontent' => $headercontent,
     'primarymoremenu' => $primarymenu['moremenu'],
+    'megamenu' => $primarymenu['megamenu'] ?? null,
     'langmenu' => $primarymenu['lang'],
 ];
 

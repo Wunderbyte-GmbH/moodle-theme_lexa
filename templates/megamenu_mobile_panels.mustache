@@ -1,0 +1,153 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_lexa/megamenu_mobile_panels
+
+    The second level of the mobile mega menu: one panel per community (Figma "Megamenü Mobile", Screen=<Community>).
+    A panel replaces the whole drawer content and has a back link to level 1.
+    In the editor preview the elements carry data-editpath (click to edit), like in theme_lexa/megamenu.
+
+    Context: the mega menu of \local_urise\megamenu\menu::export_for_template() with menulabel.
+
+    Example context (json):
+    {
+        "menulabel": "Angebot",
+        "tabs": [
+            {"id": "phd", "label": "Doctoral Candidates", "haspanel": true, "color": "petrol", "iconsvg": "<svg></svg>",
+                "intro": "", "cta": {"label": "Zur Landing Page Doctoral Candidates", "url": "https://example.com"},
+                "blocks": [{"id": "phases", "iscardrow": true, "animkey": "cardrow-0", "cards": [
+                    {"id": "phase1", "title": "Eingangsphase", "subtitle": "Year 1", "first": true,
+                        "links": [{"id": "l1", "label": "Datenmanagement", "url": "https://example.com"}]}]}],
+                "news": {"kicker": "Doctoral Candidates", "headline": "Writing Retreat", "image": "", "url": "https://example.com", "date": "24. Juli 2026"},
+                "secondarylinks": [{"id": "faq", "label": "FAQs", "url": "https://example.com", "animkey": "secondary-0"}]}
+        ]
+    }
+}}
+{{#tabs}}
+    {{#haspanel}}
+        {{^isoverview}}
+            <section id="lexa-mm-mobile-panel-{{id}}" class="lexa-mm-mobile-level lexa-mm-mobile-panel lexa-mm-color-{{color}}"
+                data-region="lexa-megamenu-mobile-panel" data-tab="{{id}}" aria-label="{{label}}" hidden>
+                <button type="button" class="lexa-mm-mobile-back" data-action="lexa-megamenu-back">
+                    <span class="lexa-mm-mobile-back-icon" aria-hidden="true">‹</span>
+                    <span>{{menulabel}}</span>
+                    <span class="sr-only">({{#str}}megamenu:back, theme_lexa{{/str}})</span>
+                </button>
+                <div class="lexa-mm-mobile-titlewrap">
+                    <h2 class="lexa-mm-mobile-title" data-animkey="heading"{{#editpath}} data-editpath="{{.}}" data-editform="tab"{{/editpath}}>
+                        {{#iconsvg}}<span class="lexa-mm-iconbox lexa-mm-iconbox-lg" aria-hidden="true">{{{iconsvg}}}</span>{{/iconsvg}}
+                        <span class="lexa-mm-mobile-titletext">{{label}}</span>
+                    </h2>
+                </div>
+                <div class="lexa-mm-mobile-body">
+                    {{#cta}}
+                        <a class="lexa-megamenu-cta {{#incomplete}}incomplete{{/incomplete}}" href="{{url}}" data-animkey="cta"{{#editpath}} data-editpath="{{.}}" data-editform="link"{{/editpath}}>{{label}}</a>
+                    {{/cta}}
+                    {{#intro}}<p class="lexa-mm-mobile-intro" data-animkey="intro"{{#editpath}} data-editpath="{{.}}" data-editform="tab"{{/editpath}}>{{intro}}</p>{{/intro}}
+                    {{#blocks}}
+                        {{#iscardrow}}
+                            {{#cards}}
+                                {{#links.0}}
+                                    <div class="lexa-mm-mobile-accordion">
+                                        <button type="button" class="lexa-mm-mobile-accordion-header {{^first}}collapsed{{/first}}"
+                                            data-toggle="collapse" data-bs-toggle="collapse"
+                                            data-target="#lexa-mm-mobile-acc-{{id}}" data-bs-target="#lexa-mm-mobile-acc-{{id}}"
+                                            aria-expanded="{{#first}}true{{/first}}{{^first}}false{{/first}}" aria-controls="lexa-mm-mobile-acc-{{id}}">
+                                            <span class="lexa-mm-mobile-accordion-title lexa-mm-mobile-cardheader"{{#editpath}} data-editpath="{{.}}" data-editform="card"{{/editpath}}>{{title}}</span>
+                                            {{#subtitle}}<span class="lexa-mm-mobile-accordion-subtitle">{{subtitle}}</span>{{/subtitle}}
+                                            <span class="lexa-mm-mobile-caret" aria-hidden="true"></span>
+                                        </button>
+                                        <div id="lexa-mm-mobile-acc-{{id}}" class="collapse {{#first}}show{{/first}}">
+                                            <ul class="lexa-mm-mobile-list list-unstyled m-0">
+                                                {{#links}}
+                                                    <li><a class="lexa-mm-mobile-listlink lexa-mm-mobile-cardlink {{#incomplete}}incomplete{{/incomplete}}" href="{{url}}"{{#editpath}} data-editpath="{{.}}" data-editform="link"{{/editpath}}><span>{{label}}</span><span class="lexa-megamenu-icon" aria-hidden="true">›</span></a></li>
+                                                {{/links}}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                {{/links.0}}
+                            {{/cards}}
+                        {{/iscardrow}}
+                        {{#islinkgrid}}
+                            {{#links.0}}
+                                {{#boxed}}
+                                    {{! A box with a title becomes an accordion, like "Empfohlen, unabhängig von der Phase". }}
+                                    <div class="lexa-mm-mobile-accordion">
+                                        <button type="button" class="lexa-mm-mobile-accordion-header collapsed"
+                                            data-toggle="collapse" data-bs-toggle="collapse"
+                                            data-target="#lexa-mm-mobile-acc-{{id}}" data-bs-target="#lexa-mm-mobile-acc-{{id}}"
+                                            aria-expanded="false" aria-controls="lexa-mm-mobile-acc-{{id}}">
+                                            <span class="lexa-mm-mobile-accordion-title lexa-mm-mobile-blockheader"{{#editpath}} data-editpath="{{.}}" data-editform="block"{{/editpath}}>{{title}}{{^title}}{{label}}{{/title}}</span>
+                                            <span class="lexa-mm-mobile-caret" aria-hidden="true"></span>
+                                        </button>
+                                        <div id="lexa-mm-mobile-acc-{{id}}" class="collapse">
+                                            <ul class="lexa-mm-mobile-list list-unstyled m-0">
+                                                {{#links}}
+                                                    <li><a class="lexa-mm-mobile-listlink {{#incomplete}}incomplete{{/incomplete}}" href="{{url}}"{{#editpath}} data-editpath="{{.}}" data-editform="link"{{/editpath}}><span>{{label}}</span><span class="lexa-megamenu-icon" aria-hidden="true">›</span></a></li>
+                                                {{/links}}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                {{/boxed}}
+                                {{^boxed}}
+                                    <div class="lexa-mm-mobile-topics">
+                                        {{#title}}<h3 class="lexa-megamenu-chipstitle lexa-megamenu-blocktitle"{{#editpath}} data-editpath="{{.}}" data-editform="block"{{/editpath}}>{{title}}</h3>{{/title}}
+                                        <ul class="lexa-mm-mobile-list list-unstyled m-0">
+                                            {{#links}}
+                                                <li><a class="lexa-mm-mobile-listlink {{#incomplete}}incomplete{{/incomplete}}" href="{{url}}"{{#editpath}} data-editpath="{{.}}" data-editform="link"{{/editpath}}><span>{{label}}</span><span class="lexa-megamenu-icon" aria-hidden="true">›</span></a></li>
+                                            {{/links}}
+                                        </ul>
+                                    </div>
+                                {{/boxed}}
+                            {{/links.0}}
+                        {{/islinkgrid}}
+                        {{#ischips}}
+                            {{#links.0}}
+                                <div class="lexa-megamenu-chips" data-animkey="{{animkey}}">
+                                    {{#title}}<h3 class="lexa-megamenu-chipstitle"{{#editpath}} data-editpath="{{.}}" data-editform="block"{{/editpath}}>{{title}}</h3>{{/title}}
+                                    <ul class="list-unstyled m-0">
+                                        {{#links}}
+                                            <li><a class="lexa-megamenu-chip {{#incomplete}}incomplete{{/incomplete}}" href="{{url}}"{{#editpath}} data-editpath="{{.}}" data-editform="link"{{/editpath}}>{{label}}</a></li>
+                                        {{/links}}
+                                    </ul>
+                                </div>
+                            {{/links.0}}
+                        {{/ischips}}
+                    {{/blocks}}
+                    {{#news}}
+                        <a class="lexa-megamenu-news" href="{{url}}" data-animkey="news"{{#editpath}} data-editpath="{{.}}" data-editform="tab"{{/editpath}}>
+                            <span class="lexa-megamenu-news-image" aria-hidden="true">
+                                {{#image}}<img src="{{image}}" alt="" loading="lazy">{{/image}}
+                            </span>
+                            <span class="lexa-megamenu-news-body">
+                                <span class="lexa-megamenu-news-meta">
+                                    {{#kicker}}<span class="lexa-megamenu-news-kicker">{{kicker}}</span>{{/kicker}}
+                                    {{#date}}<span class="lexa-megamenu-news-date">{{date}}</span>{{/date}}
+                                </span>
+                                <span class="lexa-megamenu-news-headline">{{headline}}</span>
+                                <span class="lexa-megamenu-news-more">{{#str}}megamenu:readmore, theme_lexa{{/str}}</span>
+                            </span>
+                        </a>
+                    {{/news}}
+                    {{#secondarylinks}}
+                        <a class="lexa-megamenu-secondary {{#incomplete}}incomplete{{/incomplete}}" href="{{url}}" data-animkey="{{animkey}}"{{#editpath}} data-editpath="{{.}}" data-editform="link"{{/editpath}}>{{label}}</a>
+                    {{/secondarylinks}}
+                </div>
+            </section>
+        {{/isoverview}}
+    {{/haspanel}}
+{{/tabs}}

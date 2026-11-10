@@ -1,0 +1,108 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_lexa/megamenu_mobile
+
+    The mega menu in the mobile drawer (Figma "Megamenü Mobile"). Level 1 lists the entries under the
+    menu item, a community opens its own level with a back link. The communities are rendered by
+    theme_lexa/megamenu_mobile_panels next to the level 1 list, see theme_boost/primary-drawer-mobile.
+
+    Context: the mega menu of \local_urise\megamenu\menu::export_for_template() with menulabel.
+
+    Example context (json):
+    {
+        "menulabel": "Angebot",
+        "tabs": [
+            {"id": "overview", "label": "Gesamtes Angebot", "isoverview": true, "haspanel": true, "color": "blue",
+                "url": "https://example.com/course/index.php?categoryid=6", "iconsvg": "<svg></svg>",
+                "blocks": [{"id": "topics", "islinkgrid": true, "title": "Themen für alle Communities",
+                    "links": [{"id": "l1", "label": "Digital Accessibility", "url": "https://example.com"}]}]},
+            {"id": "phd", "label": "Doctoral Candidates", "haspanel": true, "color": "petrol", "iconsvg": "<svg></svg>"},
+            {"id": "ai", "label": "Künstliche Intelligenz", "islink": true, "color": "rose", "url": "https://example.com"}
+        ]
+    }
+}}
+<a id="lexa-mm-mobile-toggle" href="#" class="list-group-item list-group-item-action icons-collapse-expand d-flex lexa-mm-mobile-toggle"
+    data-toggle="collapse" data-bs-toggle="collapse" data-target="#lexa-mm-mobile-sub" data-bs-target="#lexa-mm-mobile-sub"
+    aria-expanded="true" aria-controls="lexa-mm-mobile-sub">
+    {{menulabel}}
+    <span class="ml-auto expanded-icon icon-no-margin mx-2">
+        {{#pix}} t/expanded, core {{/pix}}
+        <span class="sr-only">{{#str}} collapse, core {{/str}}</span>
+    </span>
+    <span class="ml-auto collapsed-icon icon-no-margin mx-2">
+        {{#pix}} t/collapsed, core {{/pix}}
+        <span class="sr-only">{{#str}} expand, core {{/str}}</span>
+    </span>
+</a>
+<div class="collapse show list-group-item p-0 border-0 lexa-mm-mobile-sub" id="lexa-mm-mobile-sub" aria-labelledby="lexa-mm-mobile-toggle">
+    <ul class="list-unstyled m-0">
+        {{#tabs}}
+            {{#isoverview}}
+                {{#url}}
+                    <li>
+                        <a class="lexa-mm-mobile-row lexa-mm-mobile-overview lexa-mm-color-{{color}}" href="{{url}}"{{#linkeditpath}} data-editpath="{{.}}" data-editform="link"{{/linkeditpath}}>
+                            {{#iconsvg}}<span class="lexa-mm-iconbox" aria-hidden="true">{{{iconsvg}}}</span>{{/iconsvg}}
+                            <span class="lexa-mm-mobile-rowlabel">{{label}}</span>
+                            <span class="lexa-megamenu-icon" aria-hidden="true">›</span>
+                        </a>
+                    </li>
+                {{/url}}
+            {{/isoverview}}
+            {{^isoverview}}
+                {{#haspanel}}
+                    <li>
+                        <button type="button" class="lexa-mm-mobile-row lexa-mm-color-{{color}}" data-action="lexa-megamenu-drill"
+                            data-tab="{{id}}" aria-controls="lexa-mm-mobile-panel-{{id}}" aria-expanded="false">
+                            {{#iconsvg}}<span class="lexa-mm-iconbox" aria-hidden="true">{{{iconsvg}}}</span>{{/iconsvg}}
+                            <span class="lexa-mm-mobile-rowlabel">{{label}}</span>
+                            <span class="lexa-megamenu-icon" aria-hidden="true">›</span>
+                        </button>
+                    </li>
+                {{/haspanel}}
+                {{#islink}}
+                    {{#url}}
+                        <li>
+                            <a class="lexa-mm-mobile-row lexa-mm-color-{{color}}" href="{{url}}"{{#linkeditpath}} data-editpath="{{.}}" data-editform="link"{{/linkeditpath}}>
+                                {{#iconsvg}}<span class="lexa-mm-iconbox" aria-hidden="true">{{{iconsvg}}}</span>{{/iconsvg}}
+                                <span class="lexa-mm-mobile-rowlabel">{{label}}</span>
+                                <span class="lexa-megamenu-icon" aria-hidden="true">›</span>
+                            </a>
+                        </li>
+                    {{/url}}
+                {{/islink}}
+            {{/isoverview}}
+        {{/tabs}}
+    </ul>
+    {{! The topics of the overview, as chips like in the design. }}
+    {{#tabs}}
+        {{#isoverview}}
+            {{#blocks}}
+                {{#links.0}}
+                    <div class="lexa-megamenu-chips lexa-mm-mobile-chips">
+                        {{#title}}<h3 class="lexa-megamenu-chipstitle"{{#editpath}} data-editpath="{{.}}" data-editform="block"{{/editpath}}>{{title}}</h3>{{/title}}
+                        <ul class="list-unstyled m-0">
+                            {{#links}}
+                                <li><a class="lexa-megamenu-chip {{#incomplete}}incomplete{{/incomplete}}" href="{{url}}"{{#editpath}} data-editpath="{{.}}" data-editform="link"{{/editpath}}>{{label}}</a></li>
+                            {{/links}}
+                        </ul>
+                    </div>
+                {{/links.0}}
+            {{/blocks}}
+        {{/isoverview}}
+    {{/tabs}}
+</div>
