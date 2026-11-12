@@ -47,7 +47,11 @@
   <!-- Existing code for displaying breadcrumbs -->
   <div class="d-flex">
     {{#breadcrumbs}}
-      <div class="btn wbfaqbreadcrumb{{#active}} wb_faq-active{{/active}}" data-catvalue="{{datacat}}" data-action="goto" data-targetid='{{id}}'>{{{name}}}</div>
+      {{! faq.js needs the div.btn wrapper. }}
+      <div class="btn wbfaqbreadcrumb{{#active}} wb_faq-active{{/active}}" data-catvalue="{{datacat}}" data-action="goto" data-targetid='{{id}}'>
+        {{^active}}<button type="button" class="lexa-faq-crumbbutton" data-action="goto" data-targetid='{{id}}'>{{{name}}}</button>{{/active}}
+        {{#active}}<span aria-current="true">{{{name}}}</span>{{/active}}
+      </div>
        <div class="wbfaqbreadcrumb" data-catvalue="{{datacat}}">
        {{^active}}
         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">

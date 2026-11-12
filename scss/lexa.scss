@@ -2923,6 +2923,28 @@ box-shadow: -5px 0px 10px 0px #00000005;
 .btn.wbfaqbreadcrumb {
     padding: 10px 20px;
 }
+// FAQ buttons. Children must not catch the click, faq.js reads the click target.
+.lexa-faq-catbutton,
+.lexa-faq-crumbbutton {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    text-align: inherit;
+
+    > * {
+        pointer-events: none;
+    }
+}
+
+.lexa-faq-catbutton {
+    display: block;
+    width: 100%;
+}
+
 .wbfaqbreadcrumb.wb_faq-active {
     color:#0063A6;
 }
