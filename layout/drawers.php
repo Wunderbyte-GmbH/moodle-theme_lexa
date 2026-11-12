@@ -126,7 +126,8 @@ if ($hasblocks) {
     $blockdraweropen = false;
 }
 
-$landingblockshtml = $OUTPUT->blocks('landing');
+// Landing region is main content: div instead of aside.
+$landingblockshtml = $OUTPUT->blocks('landing', [], 'div');
 $haslandingblocks = (strpos($landingblockshtml, 'data-block=') !== false || !empty($addblockbutton));
 
 $forceblockdraweropen = $OUTPUT->firstview_fakeblocks();
