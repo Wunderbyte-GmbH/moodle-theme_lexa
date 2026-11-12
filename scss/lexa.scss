@@ -1,5 +1,62 @@
 @import "fonts";
 @import "iconoverrides";
+// Keyboard focus indicator. Has to stay before the mega menu import.
+$lexa-focus: $primary_900 !default; // On white, light grey and the gold header bar.
+$lexa-focus-inverse: $white !default; // On the dark footer and the policy bar.
+$lexa-focus-width: 2px !default;
+$lexa-focus-offset: 2px !default;
+
+@mixin lexa-focus-ring($color: $lexa-focus) {
+    &:focus-visible {
+        outline: $lexa-focus-width solid $color;
+        outline-offset: $lexa-focus-offset;
+    }
+}
+
+a,
+button,
+input,
+select,
+textarea,
+summary,
+video,
+audio,
+iframe,
+:where([tabindex]:not([tabindex="-1"])), // :where keeps the specificity below component rules.
+[role="button"],
+.btn,
+.nav-link,
+.dropdown-item,
+.page-link,
+.form-control,
+.custom-select,
+.form-select {
+    @include lexa-focus-ring;
+}
+
+// Replaces the Boost focus shadow.
+.aabtn,
+.btn-link,
+.nav-link,
+[role="button"],
+.list-group-item-action,
+input[type="checkbox"],
+input[type="radio"],
+input[type="file"],
+input[type="image"],
+.visually-hidden-focusable,
+.sr-only-focusable,
+a.dropdown-toggle,
+button.btn-close,
+.navbar-brand,
+.navbar-toggler {
+    &:focus-visible {
+        outline: $lexa-focus-width solid $lexa-focus;
+        outline-offset: $lexa-focus-offset;
+        box-shadow: none;
+    }
+}
+
 @import "megamenu";
 
 // Colour - general.
@@ -667,6 +724,43 @@ body.limitedwidth #page.drawers .footer-popover {
     color: unset;
     background-color: unset;
     box-shadow: unset;
+}
+
+// Keyboard focus indicator, same selectors as the reset above.
+.aalink,
+a.autolink,
+.arrow_link,
+a:not([class]),
+.activityinstance > a,
+#page-footer a:not([class]) {
+    @include lexa-focus-ring;
+}
+
+// Header rows: ring inside the element.
+.navbar .navbar-brand,
+.navbar .navbar-toggler,
+.navbar .nav-link {
+    &:focus-visible {
+        outline-offset: -$lexa-focus-width;
+    }
+}
+
+// Crosslink cards: room for the ring.
+.wb_news .wb_news_card_crosslinks > div {
+    margin-left: -($lexa-focus-width + $lexa-focus-offset);
+    padding-left: $lexa-focus-width + $lexa-focus-offset;
+}
+
+// Dark surfaces.
+#page-footer .bg-footer,
+.eupopup-container {
+    a,
+    a:not([class]),
+    button,
+    .btn,
+    [tabindex]:not([tabindex="-1"]) {
+        @include lexa-focus-ring($lexa-focus-inverse);
+    }
 }
 
 @media (max-width: 575.98px) {
