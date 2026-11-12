@@ -44,28 +44,22 @@
 }}
 
 <div class="container wb_news_tabcontainer{{#lightmode}} wb_news-light{{/lightmode}}{{#cssclasses}} {{cssclasses}}{{/cssclasses}}">
-    {{^btntext}}
-    {{#btnlink}}
-    <a href="{{btnlink}}" class="stretched-link" {{#btnlinktarget}}target="{{.}}"{{/btnlinktarget}} {{#btnlinkrel}}rel="{{.}}"{{/btnlinkrel}}>
-        {{btntext}}>
-    </a>
-    {{/btnlink}}
-    {{/btntext}}
+    {{^headline}}{{^btntext}}{{#btnlink}}<a href="{{btnlink}}" class="stretched-link" aria-labelledby="wbnews-{{uniqid}}-{{id}}-body" {{#btnlinktarget}}target="{{.}}"{{/btnlinktarget}} {{#btnlinkrel}}rel="{{.}}"{{/btnlinkrel}}></a>{{/btnlink}}{{/btntext}}{{/headline}}
     <div class="wb_news_tabscontent">
         {{#editmode}}
         {{> local_wb_news/editsinglenews}}
         {{/editmode}}
         <div class="rounded-background"></div>
         <div class="row my-4 p-4">
-            <div class="col-lg-6">
+            <div id="wbnews-{{uniqid}}-{{id}}-body" class="col-lg-6">
                 {{#icon}}
                 <div class="text-left">
-                    <img src="{{icon}}" class="card-icon mb-2 text-center" aria-label="{{icontext}}">
+                    <img src="{{icon}}" class="card-icon mb-2 text-center" alt="{{icontext}}">
                 </div>
                 {{/icon}}
                 {{#tags}} <span class="badge badge-success">{{.}}</span>{{/tags}}
                 {{#headline}}
-                    <h3>{{{headline}}}</h3>
+                    <h3>{{^btntext}}{{#btnlink}}<a href="{{btnlink}}" class="stretched-link lexa-news-titlelink" {{#btnlinktarget}}target="{{.}}"{{/btnlinktarget}} {{#btnlinkrel}}rel="{{.}}"{{/btnlinkrel}}>{{/btnlink}}{{/btntext}}{{{headline}}}{{^btntext}}{{#btnlink}}</a>{{/btnlink}}{{/btntext}}</h3>
                 {{/headline}}
                 <p>
                     {{{description}}}
@@ -76,7 +70,7 @@
             </div>
             <div class="col-lg-6">
             {{#bgimage}}
-                <img src="{{bgimage}}" class="img-fluid w-100" aria-label="{{bgimagetext}}">
+                <img src="{{bgimage}}" class="img-fluid w-100" alt="{{bgimagetext}}">
             {{/bgimage}}
             </div>
         </div>

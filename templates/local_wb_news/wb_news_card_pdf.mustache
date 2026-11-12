@@ -33,21 +33,19 @@
 }}
 
 <div class="card h-100{{#lightmode}} wb_news-light{{/lightmode}}{{#cssclasses}} {{cssclasses}}{{/cssclasses}}"{{#bgcolor}} style="background-color: {{bgcolor}};"{{/bgcolor}}>
-    {{#pdflink}}
-    <a href="{{pdflink}}" class="stretched-link" target="_blank"></a>
-    {{/pdflink}}
+    {{^headline}}{{#pdflink}}<a href="{{pdflink}}" class="stretched-link" aria-labelledby="wbnews-{{uniqid}}-{{id}}-body" target="_blank"></a>{{/pdflink}}{{/headline}}
     {{#icon}}
     <div class="text-center">
-        <img src="{{icon}}" class="w-100 img-fluid wb_news-headerimage" aria-label="{{icontext}}">
+        <img src="{{icon}}" class="w-100 img-fluid wb_news-headerimage" alt="{{icontext}}">
     </div>
     {{/icon}}
     <div>
     {{#tags}} <span class="badge badge-success">{{.}}</span>{{/tags}}
     </div>
 
-    <div class="card-body">
+    <div id="wbnews-{{uniqid}}-{{id}}-body" class="card-body">
 
-    <h5 class="card-title">{{{headline}}}</h5>
+    <h5 class="card-title">{{#headline}}{{#pdflink}}<a href="{{pdflink}}" class="stretched-link lexa-news-titlelink" target="_blank">{{/pdflink}}{{/headline}}{{{headline}}}{{#headline}}{{#pdflink}}</a>{{/pdflink}}{{/headline}}</h5>
     <h6 class="card-subtitle mb-2{{^lightmode}} text-muted{{/lightmode}}">{{{subheadline}}}</h6>
     </div>
     <div class="card-footer">
