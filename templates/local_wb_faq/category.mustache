@@ -54,13 +54,14 @@
         <i class="fa fa-arrows"></i>
     </span>
     {{/canedit}}
-    <h4 class="lexa-h4" data-action="goto"
-        data-targetid="{{id}}"
-        data-id="{{id}}"
-        data-sortorder="{{sortorder}}"
-        data-module="{{module}}"
-        data-supplement="{{supplement}}">
-    {{{title}}}
+    {{! faq.js reads the data attributes from the click target. }}
+    <h4 class="lexa-h4">
+        <button type="button" class="lexa-faq-catbutton" data-action="goto"
+            data-targetid="{{id}}"
+            data-id="{{id}}"
+            data-sortorder="{{sortorder}}"
+            data-module="{{module}}"
+            data-supplement="{{supplement}}">{{{title}}}</button>
     </h4>
     {{#canedit}}
         <span class="wb_faq_edit_entry_elements">
