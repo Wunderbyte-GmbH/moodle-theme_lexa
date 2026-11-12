@@ -336,6 +336,9 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
         }
 
         if (!empty($blockoptions['landingblock'])) {
+            // Landing blocks are main content: no skip link, no generic label.
+            $context->showskiplink = false;
+            $context->arialabel = '';
             $template = 'theme_lexa/landing_block';
         } else {
             $template = 'core/block';
