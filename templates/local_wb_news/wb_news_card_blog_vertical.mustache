@@ -33,18 +33,18 @@
 }}
 
 <div class="card {{#lightmode}} wb_news-light{{/lightmode}}{{#cssclasses}} {{cssclasses}}{{/cssclasses}} mb-4"{{#bgcolor}} style="background-color: {{bgcolor}}; min-height: 280px; border: none"{{/bgcolor}}>
-            {{#detailviewurl}}<a href="{{detailviewurl}}" class="stretched-link" {{#btnlinktarget}}target="{{.}}"{{/btnlinktarget}} {{#btnlinkrel}}rel="{{.}}"{{/btnlinkrel}}></a> {{/detailviewurl}}
+            {{^headline}}{{#detailviewurl}}<a href="{{detailviewurl}}" class="stretched-link" aria-labelledby="wbnews-{{uniqid}}-{{id}}-body" {{#btnlinktarget}}target="{{.}}"{{/btnlinktarget}} {{#btnlinkrel}}rel="{{.}}"{{/btnlinkrel}}></a>{{/detailviewurl}}{{/headline}}
             <div class="row" style="min-height: 280px;">
                 <div class="col-md-5">
                     {{#headerimage}}
-                    <img class="h-100 img-fluid rounded" style="object-fit:cover;" src="{{headerimage}}" aria-label="{{headerimagetext}}">
+                    <img class="h-100 img-fluid rounded" style="object-fit:cover;" src="{{headerimage}}" alt="{{headerimagetext}}">
                     {{/headerimage}}
                     {{#bgimage}}
-                    <img class="h-100 img-fluid rounded" style="object-fit:cover;"  src="{{bgimage}}" aria-label="{{bgimagetext}}">
+                    <img class="h-100 img-fluid rounded" style="object-fit:cover;"  src="{{bgimage}}" alt="{{bgimagetext}}">
                     {{/bgimage}}
                 </div>
                 <div class="col-md-7">
-                    <div class="card-body h-100">
+                    <div id="wbnews-{{uniqid}}-{{id}}-body" class="card-body h-100">
                         <div class="d-flex justify-content-start align-items-center">
                             {{#tags}} <span class="btn btn-outline-secondary mr-2 text-primary btn-sm rounded-lg d-flex align-items-center">{{.}}</span>{{/tags}}
                             <small style="border-left: 2px solid var(--lightgrayurise);
@@ -52,12 +52,12 @@
                                 }" class="text-muted">{{{publishedon}}}
                             </small>
                         </div>
-                        <h5 class="card-title mt-2">{{{headline}}}</h5>
+                        <h5 class="card-title mt-2">{{#headline}}{{#detailviewurl}}<a href="{{detailviewurl}}" class="stretched-link lexa-news-titlelink" {{#btnlinktarget}}target="{{.}}"{{/btnlinktarget}} {{#btnlinkrel}}rel="{{.}}"{{/btnlinkrel}}>{{/detailviewurl}}{{/headline}}{{{headline}}}{{#headline}}{{#detailviewurl}}</a>{{/detailviewurl}}{{/headline}}</h5>
                         <h6 class="card-subtitle mb-2{{^lightmode}} text-muted{{/lightmode}}">{{{subheadline}}}</h6>
                         <p class="card-text">{{shortdescription}}</p>
                         <div class="media d-flex align-items-center mt-auto">
                           {{#profileurl}}
-                            <img src="{{profileurl}}" class="img-fluid rounded-circle profileimg" aria-label="{{#str}} profilepicturealttext, local_wb_news, {{fullname}} {{/str}}">
+                            <img src="{{profileurl}}" class="img-fluid rounded-circle profileimg" alt="{{#str}} profilepicturealttext, local_wb_news, {{fullname}} {{/str}}">
                         {{/profileurl}}
                             <div class="media-body d-flex align-items-center ml-2">
                                 <h6 class="m-0 text-primary">{{fullname}}</h6>

@@ -35,21 +35,19 @@
 <div class="card h-100{{#lightmode}} wb_news-light{{/lightmode}}{{#cssclasses}} {{cssclasses}}{{/cssclasses}}"
 style="{{#bgimage}}background-image: url({{bgimage}}); {{/bgimage}}{{#bgcolor}}background-color: {{bgcolor}};{{/bgcolor}}">
     <div class="card-content">
-    {{^btntext}}
-    {{#btnlink}}<a href="{{btnlink}}" class="stretched-link" {{#btnlinktarget}}target="{{.}}"{{/btnlinktarget}} {{#btnlinkrel}}rel="{{.}}"{{/btnlinkrel}}></a> {{/btnlink}}
-    {{/btntext}}
+    {{^headline}}{{^btntext}}{{#btnlink}}<a href="{{btnlink}}" class="stretched-link" aria-labelledby="wbnews-{{uniqid}}-{{id}}-body" {{#btnlinktarget}}target="{{.}}"{{/btnlinktarget}} {{#btnlinkrel}}rel="{{.}}"{{/btnlinkrel}}></a>{{/btnlink}}{{/btntext}}{{/headline}}
     <div>
     {{#tags}} <span class="badge badge-success">{{.}}</span>{{/tags}}
     </div>
     <div class="card-body">
     {{#icon}}
     <div class="text-center">
-        <img src="{{icon}}" class="card-icon mb-2 text-center" aria-label="{{icontext}}">
+        <img src="{{icon}}" class="card-icon mb-2 text-center" alt="{{icontext}}">
     </div>
     {{/icon}}
     </div>
-    <div class="card-footer">
-    <h5 class="card-title">{{{headline}}}</h5>
+    <div id="wbnews-{{uniqid}}-{{id}}-body" class="card-footer">
+    <h5 class="card-title">{{#headline}}{{^btntext}}{{#btnlink}}<a href="{{btnlink}}" class="stretched-link lexa-news-titlelink" {{#btnlinktarget}}target="{{.}}"{{/btnlinktarget}} {{#btnlinkrel}}rel="{{.}}"{{/btnlinkrel}}>{{/btnlink}}{{/btntext}}{{/headline}}{{{headline}}}{{#headline}}{{^btntext}}{{#btnlink}}</a>{{/btnlink}}{{/btntext}}{{/headline}}</h5>
     <h6 class="card-subtitle mb-2">{{{subheadline}}}</h6>
     <p class="card-text">{{{description}}}</p>
     {{#btntext}}

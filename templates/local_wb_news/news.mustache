@@ -68,16 +68,16 @@
     <span><strong>Instance ID:</strong> {{instanceid}}</span>
   </div>
   <div class="news-image">
-    <img src="{{bgimage}}" aria-label="{{bgimagetext}}">
+    <img src="{{bgimage}}" alt="{{bgimagetext}}">
     {{#icon}}
-      <img src="{{icon}}" aria-label="{{icontext}}">
+      <img src="{{icon}}" alt="{{icontext}}">
     {{/icon}}
   </div>
   <div class="news-description">
     {{{description}}}
   </div>
   {{#btnlink}}
-    <a href="{{btnlink}}" class="news-button" {{#btnlinktarget}}target="{{.}}"{{#btnlinktarget}} {{#btnlinkrel}}rel="{{.}}"{{#btnlinkrel}}>{{btntext}}</a>
+    <a href="{{btnlink}}" class="news-button" {{#btnlinktarget}}target="{{.}}"{{/btnlinktarget}} {{#btnlinkrel}}rel="{{.}}"{{/btnlinkrel}}>{{btntext}}</a>
   {{/btnlink}}
 </div>
 
